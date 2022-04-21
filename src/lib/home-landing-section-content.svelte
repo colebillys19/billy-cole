@@ -2,24 +2,16 @@
 	import { fade } from 'svelte/transition';
 
 	import NameSvg from '../svgComponents/landing-name.svelte';
-	import IlluSvgDark from '../svgComponents/landing-illu-dark.svelte';
-	import IlluSvgLight from '../svgComponents/landing-illu-light.svelte';
-	import store from '../store';
-
-	const { isDarkMode } = store;
+	import IlluSvg from '../svgComponents/landing-illu.svelte';
 </script>
 
 <div in:fade={{ duration: 300 }} class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer">
-			<NameSvg color={$isDarkMode ? '#fffeef' : '#383d5d'} />
+			<NameSvg />
 		</div>
 		<div class="illuContainer">
-			{#if $isDarkMode}
-				<IlluSvgLight />
-			{:else}
-				<IlluSvgDark />
-			{/if}
+			<IlluSvg />
 		</div>
 	</div>
 </div>
