@@ -1,12 +1,27 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import '../styles/reset.css';
 	import '../styles/global.scss';
 	import store from '../store';
 
 	const { isDarkMode } = store;
 
+	onMount(() => {
+		if (localStorage.getItem('isDarkMode')) {
+			isDarkMode.set(true);
+		}
+	});
+
 	const toggleDarkMode = () => {
-		isDarkMode.update((v) => !v);
+		isDarkMode.update((prevIsDark) => {
+			if (!prevIsDark) {
+				localStorage.setItem('isDarkMode', 'true');
+			} else if (prevIsDark && localStorage.getItem('isDarkMode')) {
+				localStorage.removeItem('isDarkMode');
+			}
+			return !prevIsDark;
+		});
 	};
 </script>
 
