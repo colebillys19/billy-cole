@@ -1,0 +1,18 @@
+$palette-a: #fffeef;
+$palette-b: #f2c3ad;
+$palette-c: #e68a6e;
+$palette-d: #bb77a2;
+$palette-e: #817a99;
+$palette-f: #5d5c7b;
+$palette-g: #383d5d;
+// $palette-h: #1c1e2e;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+	font-family: 'Roboto Mono', monospace;
+}
+
+html {
+	background-color: $palette-f;
+}
