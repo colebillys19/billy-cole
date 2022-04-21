@@ -1,7 +1,7 @@
 <script lang="ts">
-	import NameSvg from '../svgComponnents/landing-name.svelte';
-	import IlluSvgDark from '../svgComponnents/landing-illu-dark.svelte';
-	import IlluSvgLight from '../svgComponnents/landing-illu-light.svelte';
+	import NameSvg from '../svgComponents/landing-name.svelte';
+	import IlluSvgDark from '../svgComponents/landing-illu-dark.svelte';
+	import IlluSvgLight from '../svgComponents/landing-illu-light.svelte';
 	import store from '../store';
 
 	const { isDarkMode } = store;
@@ -10,7 +10,7 @@
 <section class="bgColorA">
 	<div class="contentContainer">
 		<div class="nameContainer">
-			<NameSvg color={$isDarkMode ? '#e68a6e' : '#383d5d'} />
+			<NameSvg color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 		</div>
 		<div class="illuContainer">
 			{#if $isDarkMode}
