@@ -9,15 +9,17 @@
 
 <section class="bgColorA">
 	<div class="contentContainer">
-		<div class="nameContainer">
-			<NameSvg color={$isDarkMode ? '#fffeef' : '#383d5d'} />
-		</div>
-		<div class="illuContainer">
-			{#if $isDarkMode}
-				<IlluSvgLight />
-			{:else}
-				<IlluSvgDark />
-			{/if}
+		<div class="contentSubcontainer">
+			<div class="nameContainer">
+				<NameSvg color={$isDarkMode ? '#fffeef' : '#383d5d'} />
+			</div>
+			<div class="illuContainer">
+				{#if $isDarkMode}
+					<IlluSvgLight />
+				{:else}
+					<IlluSvgDark />
+				{/if}
+			</div>
 		</div>
 	</div>
 </section>
@@ -26,20 +28,28 @@
 	section {
 		align-items: center;
 		display: flex;
-		height: 100vh;
+		height: 150vh;
 		justify-content: center;
-		padding: 30px;
+		position: relative;
 	}
 
 	.contentContainer {
+		height: 100vh;
+		padding: 40px;
+		position: fixed;
+		top: 0;
+	}
+
+	.contentSubcontainer {
 		column-gap: 60px;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-		height: 100vw;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(6, 1fr);
+		height: 100%;
 		max-width: 1200px;
+		position: relative;
 		row-gap: 30px;
-		width: 100vw;
+		width: 100%;
 	}
 
 	.illuContainer {
@@ -59,7 +69,7 @@
 	}
 
 	@media (min-width: 768px) {
-		section {
+		.contentContainer {
 			padding: 60px;
 		}
 
