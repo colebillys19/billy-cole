@@ -2,15 +2,17 @@
 	import store from '../store';
 
 	const { isDarkMode } = store;
+
+	export let scrollOffset = 0;
 </script>
 
 <svg
-	class="landingIllu"
 	width="810"
 	height="771"
 	viewBox="0 0 810 771"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
+	style={`transform: translateY(${scrollOffset}px);`}
 >
 	<path
 		d="M102.617 304.809C102.617 304.809 111.861 299.861 117.437 292.253C120.137 288.569 154.457 222.268 154.457 222.268C154.457 222.268 147.093 219.308 144.369 222.696C141.649 226.084 137.541 234.116 137.541 234.116L131.885 233.276L130.365 235.337L135.689 237.872L128.537 250.804L122.797 250.716L122.125 252.828L126.057 255.872L119.717 268.676L114.449 268.528L113.385 270.461L117.437 273.492L102.617 304.809Z"
@@ -68,7 +70,9 @@
 
 <style>
 	svg {
-		width: 100%;
 		height: 100%;
+		position: absolute;
+		right: -80px;
+		width: 100%;
 	}
 </style>

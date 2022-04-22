@@ -6,25 +6,22 @@
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
 
 	const { isDarkMode } = store;
+
+	export let scrollY = 0;
 </script>
 
 <div in:fade={{ duration: 300 }} class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer">
-			<NameSvg />
+			<NameSvg scrollOffset={scrollY / -4} />
 		</div>
 		<div class={`illuContainer ${$isDarkMode ? 'lightBorder' : 'darkBorder'}`}>
-			<IlluSvg />
+			<IlluSvg scrollOffset={scrollY / -16} />
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
-	:global(svg.landingIllu) {
-		position: absolute;
-		right: -80px;
-	}
-
 	.contentContainer {
 		height: 100vh;
 		padding: 40px;
