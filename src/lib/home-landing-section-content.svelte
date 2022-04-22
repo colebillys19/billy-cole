@@ -1,8 +1,11 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 
+	import store from '../store';
 	import NameSvg from '../svgComponents/landing-name.svelte';
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
+
+	const { isDarkMode } = store;
 </script>
 
 <div in:fade={{ duration: 300 }} class="contentContainer">
@@ -10,13 +13,18 @@
 		<div class="nameContainer">
 			<NameSvg />
 		</div>
-		<div class="illuContainer">
+		<div class={`illuContainer ${$isDarkMode ? 'lightBorder' : 'darkBorder'}`}>
 			<IlluSvg />
 		</div>
 	</div>
 </div>
 
-<style>
+<style lang="scss">
+	:global(svg.landingIllu) {
+		position: absolute;
+		right: -80px;
+	}
+
 	.contentContainer {
 		height: 100vh;
 		padding: 40px;
@@ -36,11 +44,24 @@
 		width: 100%;
 	}
 
+	.darkBorder {
+		border-right-color: $palette-f;
+	}
+
 	.illuContainer {
+		border-right-style: solid;
+		border-right-width: 4px;
 		grid-column-end: 6;
 		grid-column-start: 1;
 		grid-row-end: 6;
 		grid-row-start: 1;
+		overflow: hidden;
+		padding: 30px;
+		position: relative;
+	}
+
+	.lightBorder {
+		border-right-color: $palette-b;
 	}
 
 	.nameContainer {
