@@ -7,16 +7,37 @@
 
 	const { isDarkMode } = store;
 
-	export let scrollY = 0;
+	export let scrollY: number = 0;
+
+	$: mouseInitialX = -1;
+	$: mouseInitialY = -1;
+	$: mouseX = 0;
+	$: mouseY = 0;
+
+	const handleMouseMove = (e: MouseEvent) => {
+		if (mouseInitialX === -1) {
+			mouseInitialX = e.clientX;
+			mouseInitialY = e.clientY;
+		}
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+	};
 </script>
 
+<svelte:window on:mousemove={handleMouseMove} />
 <div in:fade={{ duration: 300 }} class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer">
-			<NameSvg scrollOffset={scrollY / -4} />
+			<NameSvg
+				offsetX={(mouseInitialX - mouseX) / -120}
+				offsetY={(mouseInitialY - mouseY) / -160 - scrollY / 4}
+			/>
 		</div>
 		<div class={`illuContainer ${$isDarkMode ? 'lightBorder' : 'darkBorder'}`}>
-			<IlluSvg scrollOffset={scrollY / -16} />
+			<IlluSvg
+				offsetX={(mouseInitialX - mouseX) / 360}
+				offsetY={(mouseInitialY - mouseY) / 320 - scrollY / 16}
+			/>
 		</div>
 	</div>
 </div>
