@@ -6,25 +6,43 @@
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
 
 	const { isDarkMode } = store;
+
+	export let scrollY = 0;
+
+	$: mouseInitialX = -1;
+	$: mouseInitialY = -1;
+	$: mouseX = 0;
+	$: mouseY = 0;
+
+	const handleMouseMove = (e: MouseEvent) => {
+		if (mouseInitialX === -1) {
+			mouseInitialX = e.clientX;
+			mouseInitialY = e.clientY;
+		}
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+	};
 </script>
 
+<svelte:window on:mousemove={handleMouseMove} />
 <div in:fade={{ duration: 300 }} class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer">
-			<NameSvg />
+			<NameSvg
+				offsetX={(mouseInitialX - mouseX) / -120}
+				offsetY={(mouseInitialY - mouseY) / -160 - scrollY / 5}
+			/>
 		</div>
 		<div class={`illuContainer ${$isDarkMode ? 'lightBorder' : 'darkBorder'}`}>
-			<IlluSvg />
+			<IlluSvg
+				offsetX={(mouseInitialX - mouseX) / 360}
+				offsetY={(mouseInitialY - mouseY) / 320 - scrollY / 20}
+			/>
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
-	:global(svg.landingIllu) {
-		position: absolute;
-		right: -80px;
-	}
-
 	.contentContainer {
 		height: 100vh;
 		padding: 40px;
