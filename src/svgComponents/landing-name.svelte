@@ -1,19 +1,12 @@
 <script lang="ts">
 	import store from '../store';
 
-	export let offsetX: number = 0;
-	export let offsetY: number = 0;
-
 	const { isDarkMode } = store;
 
-	export let scrollOffset = 0;
+	export let offsetX: number = 0;
+	export let offsetY: number = 0;
 </script>
 
-<svelte:window
-	on:click={() => {
-		console.log({ offsetX, offsetY });
-	}}
-/>
 <svg
 	width="284"
 	height="53"
