@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let className = '';
-	export let name = '';
+	export let className: string = '';
+	export let name: string = '';
 </script>
 
 <section class={className}>

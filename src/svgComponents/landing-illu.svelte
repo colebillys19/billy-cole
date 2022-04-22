@@ -1,8 +1,8 @@
 <script lang="ts">
 	import store from '../store';
 
-	export let offsetX = 0;
-	export let offsetY = 0;
+	export let offsetX: number = 0;
+	export let offsetY: number = 0;
 
 	const { isDarkMode } = store;
 </script>
