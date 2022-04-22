@@ -30,13 +30,13 @@
 		<div class="nameContainer">
 			<NameSvg
 				offsetX={(mouseInitialX - mouseX) / -120}
-				offsetY={(mouseInitialY - mouseY) / -160 - scrollY / 5}
+				offsetY={(mouseInitialY - mouseY) / -160 - scrollY / 4}
 			/>
 		</div>
 		<div class={`illuContainer ${$isDarkMode ? 'lightBorder' : 'darkBorder'}`}>
 			<IlluSvg
 				offsetX={(mouseInitialX - mouseX) / 360}
-				offsetY={(mouseInitialY - mouseY) / 320 - scrollY / 20}
+				offsetY={(mouseInitialY - mouseY) / 320 - scrollY / 16}
 			/>
 		</div>
 	</div>
