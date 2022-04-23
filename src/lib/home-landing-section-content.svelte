@@ -2,7 +2,6 @@
 	import { fade } from 'svelte/transition';
 
 	import store from '../store';
-	import NameSvg from '../svgComponents/landing-name.svelte';
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
 
 	const { isDarkMode } = store;
@@ -28,10 +27,14 @@
 <div in:fade={{ duration: 300 }} class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer">
-			<NameSvg
-				offsetX={(mouseInitialX - mouseX) / -120}
-				offsetY={(mouseInitialY - mouseY) / -160 - scrollY / 4}
-			/>
+			<h1
+				class={$isDarkMode ? 'lightFont' : 'darkFont'}
+				style={`transform: translate(${(mouseInitialX - mouseX) / -120}px, ${
+					(mouseInitialY - mouseY) / -160 - scrollY / 4
+				}px);`}
+			>
+				Billy Cole
+			</h1>
 		</div>
 		<div class={`illuContainer ${$isDarkMode ? 'lightBorder' : 'darkBorder'}`}>
 			<IlluSvg
@@ -43,6 +46,10 @@
 </div>
 
 <style lang="scss">
+	h1 {
+		font-size: 48px;
+	}
+
 	.contentContainer {
 		height: 100vh;
 		padding: 40px;
@@ -66,6 +73,10 @@
 		border-right-color: $palette-f;
 	}
 
+	.darkFont {
+		color: $palette-g;
+	}
+
 	.illuContainer {
 		border-right-style: solid;
 		border-right-width: 4px;
@@ -80,6 +91,10 @@
 
 	.lightBorder {
 		border-right-color: $palette-b;
+	}
+
+	.lightFont {
+		color: $palette-a;
 	}
 
 	.nameContainer {
