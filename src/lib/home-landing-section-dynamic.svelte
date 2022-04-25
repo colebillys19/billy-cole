@@ -52,7 +52,7 @@
 	}
 
 	.contentContainer {
-		clip-path: inset(0 40px 0 40px);
+		clip-path: inset(0 40px 0 0);
 		height: 100vh;
 		padding: 40px;
 		position: fixed;
@@ -114,7 +114,7 @@
 		}
 
 		.contentContainer {
-			clip-path: inset(0 60px 0 60px);
+			clip-path: inset(0 60px 0 0);
 			padding: 60px;
 		}
 

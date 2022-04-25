@@ -11,5 +11,6 @@
 <style>
 	section {
 		min-height: 100vh;
+		padding: 30px 60px;
 	}
 </style>
