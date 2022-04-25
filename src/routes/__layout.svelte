@@ -14,20 +14,8 @@
 			isDarkMode.set(true);
 		}
 	});
-
-	const toggleDarkMode = () => {
-		isDarkMode.update((prevIsDark) => {
-			if (!prevIsDark) {
-				localStorage.setItem('isDarkMode', 'true');
-			} else if (prevIsDark && localStorage.getItem('isDarkMode')) {
-				localStorage.removeItem('isDarkMode');
-			}
-			return !prevIsDark;
-		});
-	};
 </script>
 
-<button on:click={toggleDarkMode} class="toggleDark">toggle dark mode</button>
 <HomeNavMobile />
 <main class:isDarkMode={$isDarkMode}>
 	<slot />

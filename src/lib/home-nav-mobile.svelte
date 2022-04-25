@@ -1,13 +1,15 @@
 <script lang="ts">
+	import BulbIcon from '../svgComponents/bulb-icon.svelte';
 	import CloseIcon from '../svgComponents/close-icon.svelte';
 	import HamburgerIcon from '../svgComponents/hamburger-icon.svelte';
-	import MonitorIcon from '../svgComponents/monitor-icon.svelte';
-	import BulbIcon from '../svgComponents/bulb-icon.svelte';
-	import UserIcon from '../svgComponents/user-icon.svelte';
 	import MailIcon from '../svgComponents/mail-icon.svelte';
+	import MonitorIcon from '../svgComponents/monitor-icon.svelte';
+	import MoonIcon from '../svgComponents/moon-icon.svelte';
+	import SunIcon from '../svgComponents/sun-icon.svelte';
+	import UserIcon from '../svgComponents/user-icon.svelte';
 	import store from '../store';
 
-	const { isNavOpen } = store;
+	const { isDarkMode, isNavOpen } = store;
 
 	const handleOpenMenu = () => {
 		isNavOpen.set(true);
@@ -15,6 +17,17 @@
 
 	const handleCloseMenu = () => {
 		isNavOpen.set(false);
+	};
+
+	const toggleDarkMode = () => {
+		isDarkMode.update((prevIsDark) => {
+			if (!prevIsDark) {
+				localStorage.setItem('isDarkMode', 'true');
+			} else if (prevIsDark && localStorage.getItem('isDarkMode')) {
+				localStorage.removeItem('isDarkMode');
+			}
+			return !prevIsDark;
+		});
 	};
 </script>
 
@@ -26,6 +39,15 @@
 		<button on:click={handleCloseMenu} class="closeButton">
 			<CloseIcon />
 		</button>
+		{#if $isDarkMode}
+			<button on:click={toggleDarkMode} class="darkLightButton">
+				<SunIcon />
+			</button>
+		{:else}
+			<button on:click={toggleDarkMode} class="darkLightButton">
+				<MoonIcon />
+			</button>
+		{/if}
 		<ul>
 			<li>
 				<a on:click={handleCloseMenu} href="#work">
@@ -58,6 +80,7 @@
 <style lang="scss">
 	nav {
 		background-color: rgba(56, 61, 93, 0.9);
+		border-bottom: 4px solid $palette-c;
 		height: 380px;
 		position: relative;
 		width: 100vw;
@@ -82,7 +105,6 @@
 		display: flex;
 		height: 60px;
 		justify-content: center;
-		left: 10px;
 		position: absolute;
 		width: 60px;
 	}
@@ -115,15 +137,22 @@
 	}
 
 	.closeButton {
+		left: 10px;
 		top: 10px;
 	}
 
 	.openButton {
+		left: 10px;
 		top: calc(100vh + 10px);
 		transition: top 250ms ease;
 	}
 
 	.isOpen .openButton {
 		top: -70px;
+	}
+
+	.darkLightButton {
+		right: 10px;
+		top: 10px;
 	}
 </style>
