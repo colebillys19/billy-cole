@@ -11,6 +11,10 @@
 <style>
 	section {
 		min-height: 100vh;
-		padding: 30px 60px;
+		padding: 24px 60px;
+	}
+
+	h2 {
+		text-align: right;
 	}
 </style>

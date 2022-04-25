@@ -9,8 +9,6 @@
 
 	const { isDarkMode } = store;
 
-	$: isNavOpen = false;
-
 	onMount(() => {
 		if (localStorage.getItem('isDarkMode')) {
 			isDarkMode.set(true);
@@ -27,14 +25,9 @@
 			return !prevIsDark;
 		});
 	};
-
-	const toggleNavOpen = () => {
-		isNavOpen = !isNavOpen;
-	};
 </script>
 
 <button on:click={toggleDarkMode} class="toggleDark">toggle dark mode</button>
-<button on:click={toggleNavOpen} class="toggleNav">toggle nav</button>
 <HomeNavMobile />
 <main class:isDarkMode={$isDarkMode}>
 	<slot />
@@ -68,17 +61,9 @@
 
 	.toggleDark {
 		font-size: 10px;
-		position: absolute;
+		position: fixed;
 		right: 0;
 		top: 0;
-		z-index: 1;
-	}
-
-	.toggleNav {
-		font-size: 10px;
-		position: absolute;
-		right: 0;
-		top: 30px;
 		z-index: 1;
 	}
 </style>
