@@ -58,7 +58,7 @@
 <style lang="scss">
 	nav {
 		background-color: rgba(56, 61, 93, 0.9);
-		height: 400px;
+		height: 380px;
 		position: relative;
 		width: 100vw;
 	}
@@ -107,6 +107,7 @@
 		top: -100vh;
 		width: 100vw;
 		z-index: 2;
+		transition: top 250ms ease;
 	}
 
 	.isOpen {
@@ -117,12 +118,12 @@
 		top: 10px;
 	}
 
-	// .isOpen .closeButton {}
-
 	.openButton {
 		top: calc(100vh + 10px);
+		transition: top 250ms ease;
 	}
 
 	.isOpen .openButton {
+		top: -70px;
 	}
 </style>
