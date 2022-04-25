@@ -7,9 +7,9 @@
 	import HomeLandingSectionStatic from '$lib/home-landing-section-static.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
 
-	$: innerHeight = 0;
-	$: scrollY = 0;
-	$: shouldRenderLandingContent = true;
+	let innerHeight = 0;
+	let scrollY = 0;
+	let shouldRenderLandingContent = true;
 
 	const handleScroll = () => {
 		if (scrollY > innerHeight * 1.5) {

@@ -8,10 +8,10 @@
 
 	export let scrollY: number = 0;
 
-	$: mouseInitialX = -1;
-	$: mouseInitialY = -1;
-	$: mouseX = 0;
-	$: mouseY = 0;
+	let mouseInitialX = -1;
+	let mouseInitialY = -1;
+	let mouseX = 0;
+	let mouseY = 0;
 
 	const handleMouseMove = (e: MouseEvent) => {
 		if (mouseInitialX === -1) {
