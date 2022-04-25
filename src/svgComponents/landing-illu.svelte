@@ -73,7 +73,7 @@
 	svg {
 		height: 100%;
 		position: absolute;
-		right: -80px;
+		right: -100px;
 		width: 100%;
 	}
 </style>

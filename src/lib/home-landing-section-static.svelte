@@ -5,42 +5,15 @@
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
 
 	const { isDarkMode } = store;
-
-	export let scrollY: number = 0;
-
-	$: mouseInitialX = -1;
-	$: mouseInitialY = -1;
-	$: mouseX = 0;
-	$: mouseY = 0;
-
-	const handleMouseMove = (e: MouseEvent) => {
-		if (mouseInitialX === -1) {
-			mouseInitialX = e.clientX;
-			mouseInitialY = e.clientY;
-		}
-		mouseX = e.clientX;
-		mouseY = e.clientY;
-	};
 </script>
 
-<svelte:window on:mousemove={handleMouseMove} />
-<div in:fade={{ duration: 300 }} class="contentContainer">
+<div class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer">
-			<h1
-				class={$isDarkMode ? 'lightFont' : 'darkFont'}
-				style={`transform: translate(${(mouseInitialX - mouseX) / -120}px, ${
-					(mouseInitialY - mouseY) / -160 - scrollY / 4
-				}px);`}
-			>
-				Billy Cole
-			</h1>
+			<h1 class={$isDarkMode ? 'lightFont' : 'darkFont'}>Billy Cole</h1>
 		</div>
 		<div class={`illuContainer ${$isDarkMode ? 'lightBorder' : 'darkBorder'}`}>
-			<IlluSvg
-				offsetX={(mouseInitialX - mouseX) / 360}
-				offsetY={(mouseInitialY - mouseY) / 320 - scrollY / 16}
-			/>
+			<IlluSvg />
 		</div>
 	</div>
 </div>
