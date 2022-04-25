@@ -47,10 +47,12 @@
 
 <style lang="scss">
 	h1 {
-		font-size: 48px;
+		font-size: 32px;
+		white-space: nowrap;
 	}
 
 	.contentContainer {
+		clip-path: inset(0 40px 0 40px);
 		height: 100vh;
 		padding: 40px;
 		position: fixed;
@@ -84,8 +86,6 @@
 		grid-column-start: 1;
 		grid-row-end: 6;
 		grid-row-start: 1;
-		overflow: hidden;
-		padding: 30px;
 		position: relative;
 	}
 
@@ -104,10 +104,17 @@
 		grid-column-start: 2;
 		grid-row-end: 7;
 		grid-row-start: 6;
+		justify-content: center;
+		position: relative;
 	}
 
 	@media (min-width: 768px) {
+		h1 {
+			font-size: 48px;
+		}
+
 		.contentContainer {
+			clip-path: inset(0 60px 0 60px);
 			padding: 60px;
 		}
 
@@ -123,6 +130,17 @@
 			grid-column-start: 1;
 			grid-row-end: 7;
 			grid-row-start: 1;
+			justify-content: flex-start;
 		}
 	}
+
+	// @media (orientation: landscape) {
+	// 	h1 {
+	// 		font-size: 32px;
+	// 	}
+
+	// 	.nameContainer {
+	// 		left: 10px;
+	// 	}
+	// }
 </style>
