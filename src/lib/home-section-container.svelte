@@ -3,7 +3,7 @@
 	export let name: string = '';
 </script>
 
-<section class={className}>
+<section id={name} class={className}>
 	<h2>{name}</h2>
 	<slot />
 </section>

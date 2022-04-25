@@ -4,33 +4,39 @@
 	import BulbIcon from '../svgComponents/bulb-icon.svelte';
 	import UserIcon from '../svgComponents/user-icon.svelte';
 	import MailIcon from '../svgComponents/mail-icon.svelte';
+
+	const handleLinkClick = () => {
+		// close menu
+	};
 </script>
 
 <nav>
-	<CloseIcon />
+	<button>
+		<CloseIcon />
+	</button>
 	<ul>
 		<li>
-			<a href="#work">
+			<a on:click={handleLinkClick} href="#work">
 				<MonitorIcon />
-				work
+				<span>work</span>
 			</a>
 		</li>
 		<li>
-			<a href="#blog">
+			<a on:click={handleLinkClick} href="#blog">
 				<BulbIcon />
-				blog
+				<span>blog</span>
 			</a>
 		</li>
 		<li>
-			<a href="#about">
+			<a on:click={handleLinkClick} href="#about">
 				<UserIcon />
-				about
+				<span>about</span>
 			</a>
 		</li>
 		<li>
-			<a href="#contact">
+			<a on:click={handleLinkClick} href="#contact">
 				<MailIcon />
-				contact
+				<span>contact</span>
 			</a>
 		</li>
 	</ul>
@@ -38,8 +44,8 @@
 
 <style lang="scss">
 	nav {
-		background-color: rgba(0, 0, 0, 0.3);
-		height: 600px;
+		background-color: rgba(56, 61, 93, 0.9);
+		height: 320px;
 		left: 0;
 		position: fixed;
 		top: 0;
@@ -49,7 +55,39 @@
 
 	ul {
 		list-style: none;
-		margin: 0;
+		margin: 30px 0 0 0;
 		padding: 0;
+		text-align: center;
+	}
+
+	li:not(:last-of-type) {
+		margin-bottom: 30px;
+	}
+
+	button {
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0);
+		border-radius: 50%;
+		border: none;
+		display: flex;
+		height: 60px;
+		justify-content: center;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 60px;
+	}
+
+	a {
+		align-items: center;
+		color: $palette-a;
+		display: inline-flex;
+		font-size: 24px;
+		justify-content: center;
+		text-decoration: none;
+	}
+
+	a span {
+		margin-left: 12px;
 	}
 </style>
