@@ -18,6 +18,11 @@
 			shouldRenderLandingContent = true;
 		}
 	};
+
+	const handleBackToTop = () => {
+		shouldRenderLandingContent = true;
+		scrollY = 0;
+	};
 </script>
 
 <svelte:window bind:innerHeight bind:scrollY on:scroll={handleScroll} />
@@ -30,7 +35,7 @@
 	<HomeWorkSection />
 	<HomeBlogSection />
 	<HomeAboutSection />
-	<HomeContactSection />
+	<HomeContactSection {handleBackToTop} />
 </div>
 
 <style>
