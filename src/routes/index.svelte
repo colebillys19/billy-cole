@@ -4,7 +4,7 @@
 	import HomeContactSection from '$lib/home-contact-section.svelte';
 	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
 	import HomeLandingSectionDynamic from '$lib/home-landing-section-dynamic.svelte';
-	import HomeLandingSectionStatic from '$lib/home-landing-section-static.svelte';
+	// import HomeLandingSectionStatic from '$lib/home-landing-section-static.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
 
 	let innerHeight = 0;
@@ -12,7 +12,7 @@
 	let shouldRenderLandingContent = true;
 
 	const handleScroll = () => {
-		if (scrollY > innerHeight * 1.5) {
+		if (scrollY > innerHeight * 2) {
 			shouldRenderLandingContent = false;
 		} else {
 			shouldRenderLandingContent = true;
@@ -24,8 +24,6 @@
 <HomeLandingSectionContainer>
 	{#if shouldRenderLandingContent}
 		<HomeLandingSectionDynamic {scrollY} />
-	{:else}
-		<HomeLandingSectionStatic />
 	{/if}
 </HomeLandingSectionContainer>
 <div class="raised">

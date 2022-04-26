@@ -105,6 +105,7 @@
 		display: flex;
 		height: 60px;
 		justify-content: center;
+		padding: 0;
 		position: absolute;
 		width: 60px;
 	}
@@ -129,7 +130,7 @@
 		top: -100vh;
 		width: 100vw;
 		z-index: 2;
-		transition: top 250ms ease;
+		transition: top 400ms ease;
 	}
 
 	.isOpen {
@@ -144,7 +145,7 @@
 	.openButton {
 		left: 10px;
 		top: calc(100vh + 10px);
-		transition: top 250ms ease;
+		transition: top 400ms ease;
 	}
 
 	.isOpen .openButton {
