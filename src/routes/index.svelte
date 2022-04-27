@@ -4,7 +4,6 @@
 	import HomeContactSection from '$lib/home-contact-section.svelte';
 	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
 	import HomeLandingSectionDynamic from '$lib/home-landing-section-dynamic.svelte';
-	// import HomeLandingSectionStatic from '$lib/home-landing-section-static.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
 
 	let innerHeight = 0;

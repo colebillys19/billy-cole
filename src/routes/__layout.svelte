@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import NavMenu from '$lib/nav-menu.svelte';
+	import HomeNavMenu from '$lib/home-nav-menu.svelte';
 
 	import '../styles/reset.css';
 	import '../styles/global.scss';
@@ -19,7 +19,7 @@
 </script>
 
 <svelte:window bind:innerWidth />
-<NavMenu isDesktop={innerWidth >= 1024} />
+<HomeNavMenu isDesktop={innerWidth >= 1024} />
 <main class:isDarkMode={$isDarkMode}>
 	<slot />
 </main>
@@ -48,13 +48,5 @@
 
 	:global(.bgColorB) {
 		background-color: $palette-b;
-	}
-
-	.toggleDark {
-		font-size: 10px;
-		position: fixed;
-		right: 0;
-		top: 0;
-		z-index: 1;
 	}
 </style>

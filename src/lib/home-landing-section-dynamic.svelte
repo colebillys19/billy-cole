@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
-
 	import store from '../store';
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
 

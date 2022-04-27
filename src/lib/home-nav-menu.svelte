@@ -33,7 +33,7 @@
 	};
 </script>
 
-<div on:click={handleCloseMenu} class={`navContainer ${$isNavOpen ? 'isOpen' : ''}`}>
+<div on:click={handleCloseMenu} class={`navContainer ${$isNavOpen ? 'isNavOpen' : ''}`}>
 	<nav class:isDesktop on:click|stopPropagation={null}>
 		<button on:click={handleOpenMenu} class="openButton">
 			<HamburgerIcon />
@@ -71,7 +71,7 @@
 			{#if $isDarkMode}
 				<SunIcon />
 			{:else}
-				<MoonIcon />
+				<MoonIcon color="#fffeef" />
 			{/if}
 		</button>
 	</nav>
@@ -112,6 +112,10 @@
 		width: 60px;
 	}
 
+	button:hover {
+		cursor: pointer;
+	}
+
 	a {
 		align-items: center;
 		color: $palette-a;
@@ -132,10 +136,10 @@
 		top: -100vh;
 		width: 100vw;
 		z-index: 2;
-		transition: top 400ms ease;
+		transition: top 360ms ease-in-out;
 	}
 
-	.isOpen {
+	.isNavOpen {
 		top: 0;
 	}
 
@@ -143,10 +147,10 @@
 		left: 10px;
 		position: absolute;
 		top: calc(100vh + 10px);
-		transition: top 400ms ease;
+		transition: top 360ms ease-in-out;
 	}
 
-	.isOpen .openButton {
+	.isNavOpen .openButton {
 		top: calc(-100vh - 10px);
 	}
 
