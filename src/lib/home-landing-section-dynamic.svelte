@@ -9,7 +9,7 @@
 	export let scrollY: number = 0;
 
 	let mouseInitialX = -1;
-	let mouseInitialY = -1;
+	let mouseInitialY = 0;
 	let mouseX = 0;
 	let mouseY = 0;
 

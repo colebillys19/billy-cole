@@ -11,6 +11,8 @@
 
 	const { isDarkMode, isNavOpen } = store;
 
+	export let isDesktop = false;
+
 	const handleOpenMenu = () => {
 		isNavOpen.set(true);
 	};
@@ -32,22 +34,13 @@
 </script>
 
 <div on:click={handleCloseMenu} class={`navContainer ${$isNavOpen ? 'isOpen' : ''}`}>
-	<nav on:click|stopPropagation={null}>
+	<nav class:isDesktop on:click|stopPropagation={null}>
 		<button on:click={handleOpenMenu} class="openButton">
 			<HamburgerIcon />
 		</button>
 		<button on:click={handleCloseMenu} class="closeButton">
 			<CloseIcon />
 		</button>
-		{#if $isDarkMode}
-			<button on:click={toggleDarkMode} class="darkLightButton">
-				<SunIcon />
-			</button>
-		{:else}
-			<button on:click={toggleDarkMode} class="darkLightButton">
-				<MoonIcon />
-			</button>
-		{/if}
 		<ul>
 			<li>
 				<a on:click={handleCloseMenu} href="#work">
@@ -74,27 +67,37 @@
 				</a>
 			</li>
 		</ul>
+		<button on:click={toggleDarkMode} class="darkLightButton">
+			{#if $isDarkMode}
+				<SunIcon />
+			{:else}
+				<MoonIcon />
+			{/if}
+		</button>
 	</nav>
 </div>
 
 <style lang="scss">
 	nav {
 		background-color: rgba(56, 61, 93, 0.9);
-		border-bottom: 4px solid $palette-c;
-		height: 380px;
+		border-bottom-color: $palette-c;
+		border-bottom-style: solid;
+		border-bottom-width: 6px;
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
 		position: relative;
-		width: 100vw;
 	}
 
 	ul {
 		list-style: none;
-		margin: 0;
-		padding: 60px 0 0 0;
+		margin: 50px 0 0 0;
+		padding: 0;
 		text-align: center;
 	}
 
-	li:not(:last-of-type) {
-		margin-bottom: 30px;
+	li {
+		margin-bottom: 60px;
 	}
 
 	button {
@@ -106,7 +109,6 @@
 		height: 60px;
 		justify-content: center;
 		padding: 0;
-		position: absolute;
 		width: 60px;
 	}
 
@@ -137,23 +139,32 @@
 		top: 0;
 	}
 
-	.closeButton {
-		left: 10px;
-		top: 10px;
-	}
-
 	.openButton {
 		left: 10px;
+		position: absolute;
 		top: calc(100vh + 10px);
 		transition: top 400ms ease;
 	}
 
 	.isOpen .openButton {
-		top: -70px;
+		top: calc(-100vh - 10px);
 	}
 
-	.darkLightButton {
-		right: 10px;
-		top: 10px;
+	.isDesktop {
+		border-bottom-width: 4px;
+	}
+
+	.isDesktop ul {
+		display: flex;
+		margin: 0;
+		align-items: center;
+	}
+
+	.isDesktop li {
+		margin: 0;
+	}
+
+	.isDesktop li:not(:last-of-type) {
+		margin: 0 60px 0 0;
 	}
 </style>

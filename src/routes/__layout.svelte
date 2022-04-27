@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import HomeNavMobile from '$lib/home-nav-mobile.svelte';
+	import NavMenu from '$lib/nav-menu.svelte';
 
 	import '../styles/reset.css';
 	import '../styles/global.scss';
 	import store from '../store';
 
 	const { isDarkMode } = store;
+
+	let innerWidth = 0;
 
 	onMount(() => {
 		if (localStorage.getItem('isDarkMode')) {
@@ -16,7 +18,8 @@
 	});
 </script>
 
-<HomeNavMobile />
+<svelte:window bind:innerWidth />
+<NavMenu isDesktop={innerWidth >= 1024} />
 <main class:isDarkMode={$isDarkMode}>
 	<slot />
 </main>
