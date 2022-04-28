@@ -9,9 +9,10 @@
 	import UserIcon from '../svgComponents/user-icon.svelte';
 	import store from '../store';
 
-	const { isDarkMode, isNavOpen } = store;
+	const { aboutOffset, blogOffset, contactOffset, isDarkMode, isNavOpen, workOffset } = store;
 
 	let innerWidth = 0;
+	let scrollY = 0;
 
 	const handleOpenMenu = () => {
 		isNavOpen.set(true);
@@ -19,6 +20,11 @@
 
 	const handleCloseMenu = () => {
 		isNavOpen.set(false);
+	};
+
+	const handleScrollClick = (offset: number) => {
+		handleCloseMenu();
+		scrollY = offset;
 	};
 
 	const toggleDarkMode = () => {
@@ -33,42 +39,42 @@
 	};
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth bind:scrollY />
 <div on:click={handleCloseMenu} class={`navContainer ${$isNavOpen ? 'isNavOpen' : ''}`}>
 	<nav class:isDesktop={innerWidth >= 960} on:click|stopPropagation={null}>
-		<button on:click={handleOpenMenu} class="openButton">
+		<button on:click={handleOpenMenu} class="iconButton openButton">
 			<HamburgerIcon />
 		</button>
-		<button on:click={handleCloseMenu} class="closeButton">
+		<button on:click={handleCloseMenu} class="iconButton closeButton">
 			<CloseIcon />
 		</button>
 		<ul>
 			<li>
-				<a on:click={handleCloseMenu} href="#work">
+				<button on:click={() => handleScrollClick($workOffset)}>
 					<MonitorIcon />
 					<span>work</span>
-				</a>
+				</button>
 			</li>
 			<li>
-				<a on:click={handleCloseMenu} href="#blog">
+				<button on:click={() => handleScrollClick($blogOffset)}>
 					<BulbIcon />
 					<span>blog</span>
-				</a>
+				</button>
 			</li>
 			<li>
-				<a on:click={handleCloseMenu} href="#about">
+				<button on:click={() => handleScrollClick($aboutOffset)}>
 					<UserIcon />
 					<span>about</span>
-				</a>
+				</button>
 			</li>
 			<li>
-				<a on:click={handleCloseMenu} href="#contact">
+				<button on:click={() => handleScrollClick($contactOffset)}>
 					<MailIcon />
 					<span>contact</span>
-				</a>
+				</button>
 			</li>
 		</ul>
-		<button on:click={toggleDarkMode} class="darkLightButton">
+		<button on:click={toggleDarkMode} class="iconButton darkLightButton">
 			{#if $isDarkMode}
 				<SunIcon />
 			{:else}
@@ -101,18 +107,6 @@
 		margin-bottom: 30px;
 	}
 
-	button {
-		align-items: center;
-		background-color: rgba(0, 0, 0, 0);
-		border-radius: 50%;
-		border: none;
-		display: flex;
-		height: 60px;
-		justify-content: center;
-		padding: 0;
-		width: 60px;
-	}
-
 	button:hover {
 		cursor: pointer;
 	}
@@ -142,6 +136,18 @@
 
 	.isNavOpen {
 		top: 0;
+	}
+
+	.iconButton {
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0);
+		border-radius: 50%;
+		border: none;
+		display: flex;
+		height: 60px;
+		justify-content: center;
+		padding: 0;
+		width: 60px;
 	}
 
 	.openButton {

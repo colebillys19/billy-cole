@@ -10,16 +10,16 @@
 	let sectionElement: HTMLElement;
 
 	onMount(() => {
-		updateOffset(innerHeight * 2 + sectionElement.offsetTop);
+		updateOffset(innerHeight * 1.5 + sectionElement.offsetTop);
 	});
 
 	const handleResize = debounce(() => {
-		updateOffset(innerHeight * 2 + sectionElement.offsetTop);
+		updateOffset(innerHeight * 1.5 + sectionElement.offsetTop);
 	}, 300);
 </script>
 
 <svelte:window bind:innerHeight on:resize={handleResize} />
-<section bind:this={sectionElement} id={name} class={className}>
+<section bind:this={sectionElement} class={className}>
 	<h2>{name}</h2>
 	<slot />
 </section>
