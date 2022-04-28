@@ -1,9 +1,25 @@
 <script lang="ts">
-	export let className: string = '';
-	export let name: string = '';
+	import { onMount } from 'svelte';
+	import debounce from 'lodash.debounce';
+
+	export let className = '';
+	export let name = '';
+	export let updateOffset = (offset: number): void => undefined;
+
+	let innerHeight = 0;
+	let sectionElement: HTMLElement;
+
+	onMount(() => {
+		updateOffset(innerHeight * 2 + sectionElement.offsetTop);
+	});
+
+	const handleResize = debounce(() => {
+		updateOffset(innerHeight * 2 + sectionElement.offsetTop);
+	}, 300);
 </script>
 
-<section id={name} class={className}>
+<svelte:window bind:innerHeight on:resize={handleResize} />
+<section bind:this={sectionElement} id={name} class={className}>
 	<h2>{name}</h2>
 	<slot />
 </section>

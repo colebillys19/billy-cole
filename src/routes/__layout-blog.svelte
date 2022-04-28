@@ -33,17 +33,11 @@
 
 <main class:isDarkMode={$isDarkMode}>
 	<nav>
+		<button on:click={() => goto('/')}>
+			<HomeIcon />
+		</button>
 		{#if $page.url.pathname !== '/blog'}
-			<div>
-				<button on:click={() => goto('/')}>
-					<HomeIcon />
-				</button>
-				<a href="/blog">blog</a>
-			</div>
-		{:else}
-			<button on:click={() => goto('/')}>
-				<HomeIcon />
-			</button>
+			<a href="/blog">blog page</a>
 		{/if}
 		<button on:click={toggleDarkMode}>
 			{#if $isDarkMode}
@@ -64,10 +58,6 @@
 
 	main.isDarkMode {
 		background-color: $palette-g;
-	}
-
-	:global(p) {
-		margin-bottom: 30px;
 	}
 
 	button {
@@ -93,13 +83,7 @@
 		padding: 10px;
 	}
 
-	nav div {
-		display: flex;
-		align-items: center;
-	}
-
-	nav div a {
-		margin-left: 30px;
+	nav a {
 		text-decoration: none;
 		font-size: 24px;
 	}

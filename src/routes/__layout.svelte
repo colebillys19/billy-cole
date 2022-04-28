@@ -9,8 +9,6 @@
 
 	const { isDarkMode } = store;
 
-	let innerWidth = 0;
-
 	onMount(() => {
 		if (localStorage.getItem('isDarkMode')) {
 			isDarkMode.set(true);
@@ -18,8 +16,7 @@
 	});
 </script>
 
-<svelte:window bind:innerWidth />
-<HomeNavMenu isDesktop={innerWidth >= 1024} />
+<HomeNavMenu />
 <main class:isDarkMode={$isDarkMode}>
 	<slot />
 </main>

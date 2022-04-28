@@ -11,7 +11,7 @@
 
 	const { isDarkMode, isNavOpen } = store;
 
-	export let isDesktop = false;
+	let innerWidth = 0;
 
 	const handleOpenMenu = () => {
 		isNavOpen.set(true);
@@ -33,8 +33,9 @@
 	};
 </script>
 
+<svelte:window bind:innerWidth />
 <div on:click={handleCloseMenu} class={`navContainer ${$isNavOpen ? 'isNavOpen' : ''}`}>
-	<nav class:isDesktop on:click|stopPropagation={null}>
+	<nav class:isDesktop={innerWidth >= 960} on:click|stopPropagation={null}>
 		<button on:click={handleOpenMenu} class="openButton">
 			<HamburgerIcon />
 		</button>
@@ -91,13 +92,13 @@
 
 	ul {
 		list-style: none;
-		margin: 50px 0 0 0;
+		margin: 30px 0 0 0;
 		padding: 0;
 		text-align: center;
 	}
 
 	li {
-		margin-bottom: 60px;
+		margin-bottom: 30px;
 	}
 
 	button {

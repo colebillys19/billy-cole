@@ -3,7 +3,7 @@
 	import HomeBlogSection from '$lib/home-blog-section.svelte';
 	import HomeContactSection from '$lib/home-contact-section.svelte';
 	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
-	import HomeLandingSectionDynamic from '$lib/home-landing-section-dynamic.svelte';
+	import HomeLandingSection from '$lib/home-landing-section.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
 
 	let innerHeight = 0;
@@ -27,7 +27,7 @@
 <svelte:window bind:innerHeight bind:scrollY on:scroll={handleScroll} />
 <HomeLandingSectionContainer>
 	{#if shouldRenderLandingContent}
-		<HomeLandingSectionDynamic {scrollY} />
+		<HomeLandingSection {scrollY} />
 	{/if}
 </HomeLandingSectionContainer>
 <div class="raised">
