@@ -40,7 +40,7 @@
 
 <svelte:window bind:innerWidth bind:scrollY />
 <div on:click={handleCloseMenu} class={`navContainer ${$isNavOpen ? 'isNavOpen' : ''}`}>
-	<nav class:isDesktop={innerWidth >= 960} on:click|stopPropagation={() => null}>
+	<nav class:isDesktop={innerWidth >= 816} on:click|stopPropagation={() => null}>
 		<button on:click={handleOpenMenu} class="iconButton openButton">
 			<HamburgerIcon />
 		</button>
@@ -107,16 +107,16 @@
 	}
 
 	li button {
-		background-color: rgba(0, 0, 0, 0);
-		display: flex;
 		align-items: center;
+		background-color: rgba(0, 0, 0, 0);
 		border: none;
+		display: flex;
 	}
 
 	li button span {
-		margin-left: 12px;
-		font-size: 18px;
 		color: $palette-a;
+		font-size: 18px;
+		margin-left: 12px;
 	}
 
 	button:hover {
@@ -128,9 +128,9 @@
 		left: 0;
 		position: fixed;
 		top: -100vh;
+		transition: top 320ms ease-in-out;
 		width: 100vw;
 		z-index: 2;
-		transition: top 320ms ease-in-out;
 	}
 
 	.isNavOpen {
@@ -165,9 +165,9 @@
 	}
 
 	.isDesktop ul {
+		align-items: center;
 		display: flex;
 		margin: 0;
-		align-items: center;
 	}
 
 	.isDesktop li {

@@ -3,6 +3,27 @@
 
 	import PostContainer from '$lib/blog-post-container.svelte';
 	import CodeBlock from '$lib/blog-code-block.svelte';
+	import MetalDivider from '$lib/blog-metal-divider.svelte';
+
+	import {
+		computedSvelte,
+		computedVue,
+		conditionalSvelte,
+		conditionalVue,
+		inputBindingSvelte,
+		inputBindingVue,
+		loopingSvelte,
+		loopingVue,
+		namedSlotsSvelte,
+		namedSlotsVue,
+		propsSvelte,
+		propsVue,
+		reactiveSvelte,
+		reactiveVue,
+		svelteA,
+		vueA,
+		vueB
+	} from './snippets';
 
 	// const { isDarkMode } = store;
 </script>
@@ -51,16 +72,16 @@
 		Each component uses a template syntax that's accessible to any developer with a rudimentary
 		knowledge of HTML, CSS, and JavaScript.
 	</p>
-	<CodeBlock>hello</CodeBlock>
+	<CodeBlock>{vueA}</CodeBlock>
 	<p>
 		Additionally, it's possible to create a Vue application without a build step - you can pull the
 		framework into an HTML document via a script tag and you're off to the races.
 	</p>
-	<CodeBlock>hello</CodeBlock>
+	<CodeBlock>{vueB}</CodeBlock>
 	<p>
 		A framework like Angular sometimes gets described as having too many tools included out of the
 		box. Which isn't desirable to developers who want to make a simple application. On the contrary,
-		a framework like React sometimes gets described as not having enough included. Which makes it
+		a framework like React sometimes gets described as not having enough included. This makes it
 		challenging to figure out which tools to reach for. Vue does a great job of keeping things
 		minimal, while at the same time including just enough out of the box to get your app up and
 		running quickly. Also, it's clear which tools to reach for (and how to use them) when you want
@@ -104,7 +125,7 @@
 		performs lightning quick.
 	</p>
 	<p>Svelte's component syntax is pretty similar to Vue, but it's even simpler:</p>
-	<CodeBlock>hello</CodeBlock>
+	<CodeBlock>{svelteA}</CodeBlock>
 	<p>
 		With all that said - the Vue team has started adopting Svelte's ideas in recent years. Compared
 		to the original version, the most recent version of Vue does more at compile time in an effort
@@ -112,6 +133,47 @@
 		frameworks than there was five years ago. But the developer experience Svelte provides is still
 		second to none.
 	</p>
+	<MetalDivider />
 	<p>To wrap up, here's a syntax comparison for a few common scenarios:</p>
-	<CodeBlock>hello</CodeBlock>
+	<h2>Conditionals</h2>
+	<p>Vue</p>
+	<CodeBlock>{conditionalVue}</CodeBlock>
+	<p>Svelte</p>
+	<CodeBlock>{conditionalSvelte}</CodeBlock>
+	<div class="divider" />
+	<h2>Looping</h2>
+	<p>Vue</p>
+	<CodeBlock>{loopingVue}</CodeBlock>
+	<p>Svelte</p>
+	<CodeBlock>{loopingSvelte}</CodeBlock>
+	<div class="divider" />
+	<h2>Reactive Values</h2>
+	<p>Vue</p>
+	<CodeBlock>{reactiveVue}</CodeBlock>
+	<p>Svelte</p>
+	<CodeBlock>{reactiveSvelte}</CodeBlock>
+	<div class="divider" />
+	<h2>Binding an Input Value</h2>
+	<p>Vue</p>
+	<CodeBlock>{inputBindingVue}</CodeBlock>
+	<p>Svelte</p>
+	<CodeBlock>{inputBindingSvelte}</CodeBlock>
+	<div class="divider" />
+	<h2>Computed Values</h2>
+	<p>Vue</p>
+	<CodeBlock>{computedVue}</CodeBlock>
+	<p>Svelte</p>
+	<CodeBlock>{computedSvelte}</CodeBlock>
+	<div class="divider" />
+	<h2>Props</h2>
+	<p>Vue</p>
+	<CodeBlock>{propsVue}</CodeBlock>
+	<p>Svelte</p>
+	<CodeBlock>{propsSvelte}</CodeBlock>
+	<div class="divider" />
+	<h2>Named Slots</h2>
+	<p>Vue</p>
+	<CodeBlock>{namedSlotsVue}</CodeBlock>
+	<p>Svelte</p>
+	<CodeBlock noMargin={true}>{namedSlotsSvelte}</CodeBlock>
 </PostContainer>

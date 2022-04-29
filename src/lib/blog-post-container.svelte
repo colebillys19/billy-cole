@@ -8,16 +8,18 @@
 </div>
 
 <style global lang="scss">
-	h1 {
-		margin-bottom: 30px;
-	}
-
+	h1,
+	h2,
 	p {
 		margin-bottom: 30px;
 	}
 
+	p {
+		font-size: 18px;
+	}
+
 	.blogPostContainer {
-		padding: 0 24px;
+		padding: 0 24px 96px;
 	}
 
 	.divider {
@@ -29,19 +31,19 @@
 
 	@media (min-width: 480px) {
 		.blogPostContainer {
-			padding: 0 48px;
+			padding: 0 48px 96px;
 		}
 	}
 
 	@media (min-width: 768px) {
 		.blogPostContainer {
-			padding: 0 72px;
+			padding: 0 72px 96px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		.blogPostContainer {
-			padding: 0 96px;
+			padding: 0 96px 96px;
 		}
 	}
 </style>
