@@ -21,7 +21,7 @@
 	<slot />
 </main>
 
-<style lang="scss">
+<style global lang="scss">
 	main {
 		background-color: $palette-a;
 		min-height: 100vh;
@@ -31,19 +31,19 @@
 		background-color: $palette-g;
 	}
 
-	:global(main.isDarkMode .bgColorA) {
+	main.isDarkMode .bgColorA {
 		background-color: $palette-g;
 	}
 
-	:global(main.isDarkMode .bgColorB) {
+	main.isDarkMode .bgColorB {
 		background-color: $palette-f;
 	}
 
-	:global(.bgColorA) {
+	.bgColorA {
 		background-color: $palette-a;
 	}
 
-	:global(.bgColorB) {
+	.bgColorB {
 		background-color: $palette-b;
 	}
 </style>

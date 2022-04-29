@@ -1,12 +1,13 @@
 <script lang="ts">
 	// import store from '../../store';
 
-	import BlogPostContainer from '$lib/blog-post-container.svelte';
+	import PostContainer from '$lib/blog-post-container.svelte';
+	import CodeBlock from '$lib/blog-code-block.svelte';
 
 	// const { isDarkMode } = store;
 </script>
 
-<BlogPostContainer title="Vue vs. Svelte">
+<PostContainer title="Vue vs. Svelte">
 	<p>
 		Javascript frameworks like React, Vue, and Svelte make building robust web applications easier.
 		They provide a declarative layer that acts as sort of a middle-man between the user and DOM. The
@@ -50,12 +51,12 @@
 		Each component uses a template syntax that's accessible to any developer with a rudimentary
 		knowledge of HTML, CSS, and JavaScript.
 	</p>
-	<h1>CODE</h1>
+	<CodeBlock>hello</CodeBlock>
 	<p>
 		Additionally, it's possible to create a Vue application without a build step - you can pull the
 		framework into an HTML document via a script tag and you're off to the races.
 	</p>
-	<h1>CODE</h1>
+	<CodeBlock>hello</CodeBlock>
 	<p>
 		A framework like Angular sometimes gets described as having too many tools included out of the
 		box. Which isn't desirable to developers who want to make a simple application. On the contrary,
@@ -65,7 +66,7 @@
 		running quickly. Also, it's clear which tools to reach for (and how to use them) when you want
 		to scale up your project's complexity.
 	</p>
-	<h1>- - - - -</h1>
+	<div class="divider" />
 	<p>
 		In 2016, a developer named Rich Harris started working on a new framework called Svelte. His aim
 		was to push Evan's ideas even further. He wanted to make a tool that was more performant than
@@ -103,7 +104,7 @@
 		performs lightning quick.
 	</p>
 	<p>Svelte's component syntax is pretty similar to Vue, but it's even simpler:</p>
-	<h1>CODE</h1>
+	<CodeBlock>hello</CodeBlock>
 	<p>
 		With all that said - the Vue team has started adopting Svelte's ideas in recent years. Compared
 		to the original version, the most recent version of Vue does more at compile time in an effort
@@ -112,5 +113,5 @@
 		second to none.
 	</p>
 	<p>To wrap up, here's a syntax comparison for a few common scenarios:</p>
-	<h1>CODE</h1>
-</BlogPostContainer>
+	<CodeBlock>hello</CodeBlock>
+</PostContainer>

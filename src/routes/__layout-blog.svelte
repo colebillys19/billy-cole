@@ -84,7 +84,7 @@
 	}
 
 	nav a {
+		font-size: 18px;
 		text-decoration: none;
-		font-size: 24px;
 	}
 </style>
