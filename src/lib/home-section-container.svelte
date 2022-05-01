@@ -6,19 +6,22 @@
 	export let name = '';
 	export let updateOffset = (offset: number): void => undefined;
 
-	let innerHeight = 0;
 	let sectionElement: HTMLElement;
 
 	onMount(() => {
-		updateOffset(innerHeight * 1.5 + sectionElement.offsetTop);
+		if (sectionElement.parentElement) {
+			updateOffset(sectionElement.parentElement.offsetTop + sectionElement.offsetTop);
+		}
 	});
 
 	const handleResize = debounce(() => {
-		updateOffset(innerHeight * 1.5 + sectionElement.offsetTop);
+		if (sectionElement.parentElement) {
+			updateOffset(sectionElement.parentElement.offsetTop + sectionElement.offsetTop);
+		}
 	}, 300);
 </script>
 
-<svelte:window bind:innerHeight on:resize={handleResize} />
+<svelte:window on:resize={handleResize} />
 <section bind:this={sectionElement} class={className}>
 	<h2>{name}</h2>
 	<slot />
