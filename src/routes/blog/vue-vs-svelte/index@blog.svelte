@@ -1,8 +1,8 @@
 <script lang="ts">
 	// import store from '../../store';
 
+	import CodeSnip from '$lib/blog-code-snippet.svelte';
 	import PostContainer from '$lib/blog-post-container.svelte';
-	import CodeBlock from '$lib/blog-code-block.svelte';
 	import MetalDivider from '$lib/blog-metal-divider.svelte';
 
 	import {
@@ -72,12 +72,12 @@
 		Each component uses a template syntax that's accessible to any developer with a rudimentary
 		knowledge of HTML, CSS, and JavaScript.
 	</p>
-	<CodeBlock>{vueA}</CodeBlock>
+	<CodeSnip code={vueA} />
 	<p>
 		Additionally, it's possible to create a Vue application without a build step - you can pull the
 		framework into an HTML document via a script tag and you're off to the races.
 	</p>
-	<CodeBlock>{vueB}</CodeBlock>
+	<CodeSnip code={vueB} />
 	<p>
 		A framework like Angular sometimes gets described as having too many tools included out of the
 		box. Which isn't desirable to developers who want to make a simple application. On the contrary,
@@ -125,7 +125,7 @@
 		performs lightning quick.
 	</p>
 	<p>Svelte's component syntax is pretty similar to Vue, but it's even simpler:</p>
-	<CodeBlock>{svelteA}</CodeBlock>
+	<CodeSnip code={svelteA} />
 	<p>
 		With all that said - the Vue team has started adopting Svelte's ideas in recent years. Compared
 		to the original version, the most recent version of Vue does more at compile time in an effort
@@ -137,43 +137,43 @@
 	<p>To wrap up, here's a syntax comparison for a few common scenarios:</p>
 	<h2>Conditionals</h2>
 	<p>Vue</p>
-	<CodeBlock>{conditionalVue}</CodeBlock>
+	<CodeSnip code={conditionalVue} />
 	<p>Svelte</p>
-	<CodeBlock>{conditionalSvelte}</CodeBlock>
+	<CodeSnip code={conditionalSvelte} />
 	<div class="divider" />
 	<h2>Looping</h2>
 	<p>Vue</p>
-	<CodeBlock>{loopingVue}</CodeBlock>
+	<CodeSnip code={loopingVue} />
 	<p>Svelte</p>
-	<CodeBlock>{loopingSvelte}</CodeBlock>
+	<CodeSnip code={loopingSvelte} />
 	<div class="divider" />
 	<h2>Reactive Values</h2>
 	<p>Vue</p>
-	<CodeBlock>{reactiveVue}</CodeBlock>
+	<CodeSnip code={reactiveVue} />
 	<p>Svelte</p>
-	<CodeBlock>{reactiveSvelte}</CodeBlock>
+	<CodeSnip code={reactiveSvelte} />
 	<div class="divider" />
 	<h2>Binding an Input Value</h2>
 	<p>Vue</p>
-	<CodeBlock>{inputBindingVue}</CodeBlock>
+	<CodeSnip code={inputBindingVue} />
 	<p>Svelte</p>
-	<CodeBlock>{inputBindingSvelte}</CodeBlock>
+	<CodeSnip code={inputBindingSvelte} />
 	<div class="divider" />
 	<h2>Computed Values</h2>
 	<p>Vue</p>
-	<CodeBlock>{computedVue}</CodeBlock>
+	<CodeSnip code={computedVue} />
 	<p>Svelte</p>
-	<CodeBlock>{computedSvelte}</CodeBlock>
+	<CodeSnip code={computedSvelte} />
 	<div class="divider" />
 	<h2>Props</h2>
 	<p>Vue</p>
-	<CodeBlock>{propsVue}</CodeBlock>
+	<CodeSnip code={propsVue} />
 	<p>Svelte</p>
-	<CodeBlock>{propsSvelte}</CodeBlock>
+	<CodeSnip code={propsSvelte} />
 	<div class="divider" />
 	<h2>Named Slots</h2>
 	<p>Vue</p>
-	<CodeBlock>{namedSlotsVue}</CodeBlock>
+	<CodeSnip code={namedSlotsVue} />
 	<p>Svelte</p>
-	<CodeBlock noMargin={true}>{namedSlotsSvelte}</CodeBlock>
+	<CodeSnip code={namedSlotsSvelte} />
 </PostContainer>

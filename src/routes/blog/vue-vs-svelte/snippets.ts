@@ -1,5 +1,4 @@
-export const vueA = `
-<script>
+export const vueA = `<script>
   export default {
     data() {
       return { count: 0 };
@@ -19,8 +18,7 @@ export const vueA = `
 </style>
 `;
 
-export const vueB = `
-<!DOCTYPE html>
+export const vueB = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Hello World</title>
@@ -43,8 +41,7 @@ export const vueB = `
 </body>
 </html>`;
 
-export const svelteA = `
-<script>
+export const svelteA = `<script>
   let count = 0;
 </script>
 
@@ -59,13 +56,11 @@ export const svelteA = `
   }
 </style>`;
 
-export const conditionalVue = `
-<div v-if="conditionA">some content</div>
+export const conditionalVue = `<div v-if="conditionA">some content</div>
 <div v-else-if="conditionB">some other content</div>
 <div v-else>even more content</div>`;
 
-export const conditionalSvelte = `
-{#if conditionA}
+export const conditionalSvelte = `{#if conditionA}
   <div>some content</div>
 {:else if conditionB}
   <div>some other content</div>
@@ -73,22 +68,19 @@ export const conditionalSvelte = `
   <div>even more content</div>
 {/if}`;
 
-export const loopingVue = `
-<ul>
+export const loopingVue = `<ul>
   <li v-bind:key="value" v-for="value in arr">
     {{ value }}
   </li>
 </ul>`;
 
-export const loopingSvelte = `
-<ul>
+export const loopingSvelte = `<ul>
   {#each arr as value}
     <li>{value}</li>
   {/each}
 </ul>`;
 
-export const reactiveVue = `
-<script>
+export const reactiveVue = `<script>
   export default {
     data() {
       return { count: 0 };
@@ -101,8 +93,7 @@ export const reactiveVue = `
   <div>{{ count }}</div>
 </template>`;
 
-export const reactiveSvelte = `
-<script>
+export const reactiveSvelte = `<script>
   let count = 0;
 </script>
 
@@ -111,8 +102,7 @@ export const reactiveSvelte = `
 </button>
 <p>{count}</p>`;
 
-export const inputBindingVue = `
-<script>
+export const inputBindingVue = `<script>
   export default {
     data() {
       return {
@@ -126,15 +116,13 @@ export const inputBindingVue = `
   <input v-model="inputValue" />
 </template>`;
 
-export const inputBindingSvelte = `
-<script>
+export const inputBindingSvelte = `<script>
   let inputValue = 0;
 </script>
 
 <input bind:value={inputValue}>`;
 
-export const computedVue = `
-<script>
+export const computedVue = `<script>
   export default {
     data() {
       return { count: 0 };
@@ -153,8 +141,7 @@ export const computedVue = `
   <p>{{ double }}</p>
 </template>`;
 
-export const computedSvelte = `
-<script>
+export const computedSvelte = `<script>
   let count = 0;
   $: double = count * 2;
 </script>
@@ -165,8 +152,7 @@ export const computedSvelte = `
 <p>{count}</p>
 <p>{double}</p>`;
 
-export const propsVue = `
-<script>
+export const propsVue = `<script>
   export default {
     props: ["count"],
   };
@@ -176,15 +162,13 @@ export const propsVue = `
   <p>{{ count }}</p>
 </template>`;
 
-export const propsSvelte = `
-<script>
+export const propsSvelte = `<script>
   export let count;
 </script>
 
 <p>{count}</p>`;
 
-export const namedSlotsVue = `
-<BaseLayout>
+export const namedSlotsVue = `<BaseLayout>
   <template #header>
     <div>header content</div>
   </template>
@@ -208,8 +192,7 @@ export const namedSlotsVue = `
   </footer>
 </template>`;
 
-export const namedSlotsSvelte = `
-<BaseLayout>
+export const namedSlotsSvelte = `<BaseLayout>
   <header slot="header">header content</header>
   <main>main content</main>
   <footer slot="footer">footer content</footer>
