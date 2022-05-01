@@ -2,6 +2,7 @@
 <script lang="ts">
 	export let code: any = undefined;
 	export let langtag = false;
+	export let noMargin = false;
 
 	import hljs from 'highlight.js';
 	import { createEventDispatcher, afterUpdate } from 'svelte';
@@ -30,13 +31,24 @@
 	{@html $isDarkMode ? snippetStylesDark : snippetStylesLight}
 </svelte:head>
 <slot {highlighted}>
-	<pre class:langtag data-language={(language && language) || 'plaintext'} {...$$restProps}><code
-			class="hljs"
+	<pre
+		class:langtag
+		class:noMargin
+		data-language={(language && language) || 'plaintext'}
+		{...$$restProps}><code class="hljs"
 			>{#if highlighted !== undefined}{@html highlighted}{:else}{code}{/if}</code
 		></pre>
 </slot>
 
 <style>
+	code {
+		padding: 30px !important;
+	}
+
+	pre {
+		margin: 0 0 30px 0;
+	}
+
 	pre.langtag {
 		position: relative;
 	}
@@ -55,5 +67,9 @@
 		background: var(--hljs-background);
 		color: var(--hljs-foreground);
 		border-radius: var(--hljs-radius);
+	}
+
+	.noMargin {
+		margin: 0;
 	}
 </style>

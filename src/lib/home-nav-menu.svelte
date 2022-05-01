@@ -39,7 +39,7 @@
 </script>
 
 <svelte:window bind:innerWidth bind:scrollY />
-<div on:click={handleCloseMenu} class={`navContainer ${$isNavOpen ? 'isNavOpen' : ''}`}>
+<div class:isNavOpen={$isNavOpen} on:click={handleCloseMenu} class="navContainer">
 	<nav class:isDesktop={innerWidth >= 816} on:click|stopPropagation={() => null}>
 		<button on:click={handleOpenMenu} class="iconButton openButton">
 			<HamburgerIcon />

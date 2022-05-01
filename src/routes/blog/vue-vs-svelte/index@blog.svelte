@@ -1,6 +1,4 @@
 <script lang="ts">
-	// import store from '../../store';
-
 	import CodeSnip from '$lib/blog-code-snippet.svelte';
 	import PostContainer from '$lib/blog-post-container.svelte';
 	import MetalDivider from '$lib/blog-metal-divider.svelte';
@@ -24,8 +22,6 @@
 		vueA,
 		vueB
 	} from './snippets';
-
-	// const { isDarkMode } = store;
 </script>
 
 <PostContainer title="Vue vs. Svelte">
@@ -175,5 +171,5 @@
 	<p>Vue</p>
 	<CodeSnip code={namedSlotsVue} />
 	<p>Svelte</p>
-	<CodeSnip code={namedSlotsSvelte} />
+	<CodeSnip code={namedSlotsSvelte} noMargin={true} />
 </PostContainer>

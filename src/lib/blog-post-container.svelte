@@ -1,8 +1,12 @@
 <script lang="ts">
+	import store from '../store';
+
 	export let title = '';
+
+	const { isDarkMode } = store;
 </script>
 
-<div class="blogPostContainer">
+<div class:isDarkMode={$isDarkMode} class="blogPostContainer">
 	<h1>{title}</h1>
 	<slot />
 </div>
@@ -27,6 +31,22 @@
 		height: 30px;
 		margin-bottom: 30px;
 		width: 100%;
+	}
+
+	// dark styles
+
+	.isDarkMode a {
+		color: $palette-b;
+	}
+
+	.isDarkMode h1,
+	.isDarkMode h2,
+	.isDarkMode p {
+		color: $palette-a;
+	}
+
+	.isDarkMode .divider {
+		border-bottom: 1px solid $palette-a;
 	}
 
 	@media (min-width: 480px) {
