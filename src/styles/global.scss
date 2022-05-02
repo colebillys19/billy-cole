@@ -6,10 +6,10 @@ $palette-e: #817a99;
 $palette-f: #5d5c7b;
 $palette-g: #383d5d;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
-	font-family: 'JetBrains Mono', monospace;
+	font-family: 'Source Code Pro', monospace;
 	color: $palette-g;
 }
 
