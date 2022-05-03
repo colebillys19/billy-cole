@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+
 	import HomeAboutSection from '$lib/home-about-section.svelte';
 	import HomeBlogSection from '$lib/home-blog-section.svelte';
 	import HomeContactSection from '$lib/home-contact-section.svelte';
-	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
 	import HomeLandingSection from '$lib/home-landing-section.svelte';
+	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
+	import HomeNavMenu from '$lib/home-nav-menu.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
 
 	let innerHeight = 0;
@@ -25,6 +28,9 @@
 </script>
 
 <svelte:window bind:innerHeight bind:scrollY on:scroll={handleScroll} />
+{#if $page.url.pathname !== '/blog'}
+	<HomeNavMenu />
+{/if}
 <HomeLandingSectionContainer>
 	{#if shouldRenderLandingContent}
 		<HomeLandingSection {scrollY} />

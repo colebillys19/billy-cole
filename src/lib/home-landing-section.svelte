@@ -22,11 +22,10 @@
 </script>
 
 <svelte:window on:mousemove={handleMouseMove} />
-<div class="contentContainer">
+<div class:isDarkMode={$isDarkMode} class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer">
 			<h1
-				class={$isDarkMode ? 'lightFont' : 'darkFont'}
 				style={`transform: translate(${(mouseInitialX - mouseX) / -120}px, ${
 					(mouseInitialY - mouseY) / -160 - scrollY / 4
 				}px);`}
@@ -34,7 +33,7 @@
 				Billy Cole
 			</h1>
 		</div>
-		<div class={`illuContainer ${$isDarkMode ? 'lightBorder' : 'darkBorder'}`}>
+		<div class="illuContainer">
 			<IlluSvg
 				offsetX={(mouseInitialX - mouseX) / 360}
 				offsetY={(mouseInitialY - mouseY) / 320 - scrollY / 16}
@@ -69,30 +68,15 @@
 		width: 100%;
 	}
 
-	.darkBorder {
-		border-right-color: $palette-f;
-	}
-
-	.darkFont {
-		color: $palette-g;
-	}
-
 	.illuContainer {
 		border-right-style: solid;
 		border-right-width: 4px;
+		border-right-color: $palette-f;
 		grid-column-end: 6;
 		grid-column-start: 1;
 		grid-row-end: 6;
 		grid-row-start: 1;
 		position: relative;
-	}
-
-	.lightBorder {
-		border-right-color: $palette-b;
-	}
-
-	.lightFont {
-		color: $palette-a;
 	}
 
 	.nameContainer {
@@ -104,6 +88,16 @@
 		grid-row-start: 6;
 		justify-content: center;
 		position: relative;
+	}
+
+	// dark
+
+	.isDarkMode h1 {
+		color: $palette-a;
+	}
+
+	.isDarkMode .illuContainer {
+		border-right-color: $palette-b;
 	}
 
 	@media (min-width: 768px) {

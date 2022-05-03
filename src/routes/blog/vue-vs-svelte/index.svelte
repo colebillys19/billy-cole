@@ -1,8 +1,8 @@
 <script lang="ts">
 	import CodeSnip from '$lib/blog-code-snippet.svelte';
-	import PostContainer from '$lib/blog-post-container.svelte';
 	import MetalDivider from '$lib/blog-metal-divider.svelte';
 
+	import store from '../../../store';
 	import {
 		computedSvelte,
 		computedVue,
@@ -22,9 +22,12 @@
 		vueA,
 		vueB
 	} from './snippets';
+
+	const { isDarkMode } = store;
 </script>
 
-<PostContainer title="Vue vs. Svelte">
+<div class:isDarkMode={$isDarkMode} class="blogPostContainer">
+	<h1>Vue vs. Svelte</h1>
 	<p>
 		Javascript frameworks like React, Vue, and Svelte make building robust web applications easier.
 		They provide a declarative layer that acts as sort of a middle-man between the user and DOM. The
@@ -172,4 +175,6 @@
 	<CodeSnip code={namedSlotsVue} />
 	<p>Svelte</p>
 	<CodeSnip code={namedSlotsSvelte} noMargin={true} />
-</PostContainer>
+</div>
+
+<style src="../../../styles/blog-post-styles.scss"></style>

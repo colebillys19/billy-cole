@@ -2,11 +2,23 @@
 	import HomeSectionContainer from './home-section-container.svelte';
 	import store from '../store';
 
-	const { aboutOffset } = store;
+	const { aboutOffset, isDarkMode } = store;
 
 	const updateOffset = (offset: number): void => {
 		aboutOffset.set(offset);
 	};
 </script>
 
-<HomeSectionContainer className="bgColorB" name="about" {updateOffset} />
+<HomeSectionContainer className="bgColorB" name="about" {updateOffset}>
+	<div class:isDarkMode={$isDarkMode}>
+		<p>hi</p>
+	</div>
+</HomeSectionContainer>
+
+<style lang="scss">
+	// dark
+
+	.isDarkMode p {
+		color: $palette-a;
+	}
+</style>

@@ -2,6 +2,10 @@
 	import { onMount } from 'svelte';
 	import debounce from 'lodash.debounce';
 
+	import store from '../store';
+
+	const { isDarkMode } = store;
+
 	export let className = '';
 	export let name = '';
 	export let updateOffset = (offset: number): void => undefined;
@@ -22,12 +26,12 @@
 </script>
 
 <svelte:window on:resize={handleResize} />
-<section bind:this={sectionElement} class={className}>
+<section bind:this={sectionElement} class:isDarkMode={$isDarkMode} class={className}>
 	<h2>{name}</h2>
 	<slot />
 </section>
 
-<style>
+<style lang="scss">
 	section {
 		min-height: 100vh;
 		padding: 24px 60px;
@@ -35,5 +39,27 @@
 
 	h2 {
 		text-align: right;
+	}
+
+	.bgColorA {
+		background-color: $palette-a;
+	}
+
+	.bgColorB {
+		background-color: $palette-b;
+	}
+
+	// dark
+
+	.isDarkMode h2 {
+		color: $palette-a;
+	}
+
+	.isDarkMode.bgColorA {
+		background-color: $palette-g;
+	}
+
+	.isDarkMode.bgColorB {
+		background-color: $palette-f;
 	}
 </style>
