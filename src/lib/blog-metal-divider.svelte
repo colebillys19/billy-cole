@@ -12,7 +12,7 @@
 		align-items: center;
 		display: flex;
 		font-size: 36px;
-		margin-bottom: 30px;
+		margin: 120px 0 30px;
 		width: 100%;
 	}
 
