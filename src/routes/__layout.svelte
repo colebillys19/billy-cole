@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import GetIsMobile from '$lib/get-is-mobile.svelte';
 	import '../styles/reset.css';
 	import '../styles/global.scss';
 	import store from '../store';
@@ -14,6 +15,7 @@
 	});
 </script>
 
+<GetIsMobile />
 <main class:isDarkMode={$isDarkMode}>
 	<slot />
 </main>

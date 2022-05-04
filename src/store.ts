@@ -5,6 +5,7 @@ const store = {
 	blogOffset: writable(0),
 	contactOffset: writable(0),
 	isDarkMode: writable(false),
+	isMobile: writable(-1),
 	isNavOpen: writable(false),
 	workOffset: writable(0)
 };

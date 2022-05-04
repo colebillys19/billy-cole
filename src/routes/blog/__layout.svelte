@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import GetIsMobile from '$lib/get-is-mobile.svelte';
 	import NavMenu from '$lib/blog-nav-menu.svelte';
 	import store from '../../store';
 	import '../../styles/reset.css';
@@ -15,6 +16,7 @@
 	});
 </script>
 
+<GetIsMobile />
 <NavMenu />
 <main class:isDarkMode={$isDarkMode}>
 	<slot />

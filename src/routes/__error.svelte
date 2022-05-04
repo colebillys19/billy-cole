@@ -6,6 +6,7 @@
 </script>
 
 <script lang="ts">
+	import GetIsMobile from '$lib/get-is-mobile.svelte';
 	import NavMenu from '$lib/blog-nav-menu.svelte';
 	import store from '../store';
 
@@ -14,6 +15,7 @@
 	export let error = { message: '' };
 </script>
 
+<GetIsMobile />
 <NavMenu isErrorNav />
 <main class:isDarkMode={$isDarkMode}>
 	<p>{error.message}</p>
