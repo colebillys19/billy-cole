@@ -23,6 +23,7 @@
 	};
 
 	const handleScrollClick = (offset: number) => {
+		isNavOpen.set(false);
 		scrollY = offset;
 	};
 
@@ -39,11 +40,11 @@
 </script>
 
 <svelte:window bind:innerWidth bind:scrollY />
-<div class:isNavOpen={$isNavOpen} on:click={handleCloseMenu} class="navContainer">
-	<nav class:isDesktop={innerWidth >= 816} on:click|stopPropagation={() => null}>
-		<button on:click={handleOpenMenu} class="iconButton openButton">
-			<HamburgerIcon />
-		</button>
+<div class:isNavOpen={$isNavOpen}>
+	<button on:click={handleOpenMenu} class="iconButton openButton">
+		<HamburgerIcon />
+	</button>
+	<nav class:isDesktop={innerWidth >= 816}>
 		<button on:click={handleCloseMenu} class="iconButton closeButton">
 			<CloseIcon />
 		</button>
@@ -92,7 +93,11 @@
 		display: flex;
 		justify-content: space-between;
 		padding: 10px;
-		position: relative;
+		position: fixed;
+		top: -304px;
+		transition: top 320ms ease-in-out;
+		width: 100vw;
+		z-index: 2;
 	}
 
 	ul {
@@ -123,20 +128,6 @@
 		cursor: pointer;
 	}
 
-	.navContainer {
-		height: 100vh;
-		left: 0;
-		position: fixed;
-		top: -100vh;
-		transition: top 320ms ease-in-out;
-		width: 100vw;
-		z-index: 2;
-	}
-
-	.isNavOpen {
-		top: 0;
-	}
-
 	.iconButton {
 		align-items: center;
 		background-color: rgba(0, 0, 0, 0);
@@ -151,30 +142,40 @@
 
 	.openButton {
 		left: 10px;
-		position: absolute;
-		top: calc(100vh + 10px);
+		position: relative;
+		top: 10px;
 		transition: top 320ms ease-in-out;
+		z-index: 1;
+	}
+
+	// nav open
+
+	.isNavOpen nav {
+		top: 0;
 	}
 
 	.isNavOpen .openButton {
-		top: calc(-100vh - 10px);
+		top: -70px;
 	}
 
-	.isDesktop {
-		border-bottom-width: 4px;
-	}
+	@media (min-width: 816px) {
+		nav {
+			border-bottom-width: 4px;
+			top: -84px;
+		}
 
-	.isDesktop ul {
-		align-items: center;
-		display: flex;
-		margin: 0;
-	}
+		ul {
+			align-items: center;
+			display: flex;
+			margin: 0;
+		}
 
-	.isDesktop li {
-		margin: 0;
-	}
+		li {
+			margin: 0;
+		}
 
-	.isDesktop li:not(:last-of-type) {
-		margin: 0 60px 0 0;
+		li:not(:last-of-type) {
+			margin: 0 60px 0 0;
+		}
 	}
 </style>
