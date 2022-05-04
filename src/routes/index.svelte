@@ -1,13 +1,15 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-
 	import HomeAboutSection from '$lib/home-about-section.svelte';
 	import HomeBlogSection from '$lib/home-blog-section.svelte';
 	import HomeContactSection from '$lib/home-contact-section.svelte';
-	import HomeLandingSection from '$lib/home-landing-section.svelte';
+	import HomeLandingSectionMobile from '$lib/home-landing-section-mobile.svelte';
+	import HomeLandingSectionDesktop from '$lib/home-landing-section-desktop.svelte';
 	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
 	import HomeNavMenu from '$lib/home-nav-menu.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
+	import store from '../store';
+
+	const { isMobile } = store;
 
 	let innerHeight = 0;
 	let scrollY = 0;
@@ -28,12 +30,14 @@
 </script>
 
 <svelte:window bind:innerHeight bind:scrollY on:scroll={handleScroll} />
-{#if $page.url.pathname !== '/blog'}
-	<HomeNavMenu />
-{/if}
+<HomeNavMenu />
 <HomeLandingSectionContainer>
 	{#if shouldRenderLandingContent}
-		<HomeLandingSection {scrollY} />
+		{#if $isMobile}
+			<HomeLandingSectionMobile {scrollY} />
+		{:else}
+			<HomeLandingSectionDesktop {scrollY} />
+		{/if}
 	{/if}
 </HomeLandingSectionContainer>
 <div class="raised">
