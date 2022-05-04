@@ -11,7 +11,6 @@
 
 	const { aboutOffset, blogOffset, contactOffset, isDarkMode, isNavOpen, workOffset } = store;
 
-	let innerWidth = 0;
 	let scrollY = 0;
 
 	const handleOpenMenu = () => {
@@ -23,8 +22,14 @@
 	};
 
 	const handleScrollClick = (offset: number) => {
-		isNavOpen.set(false);
 		scrollY = offset;
+	};
+
+	const handleWindowClick = (e: MouseEvent) => {
+		const classArr = [...e.target.classList];
+		if (!classArr.includes('dontCloseNav')) {
+			isNavOpen.set(false);
+		}
 	};
 
 	const toggleDarkMode = () => {
@@ -39,16 +44,16 @@
 	};
 </script>
 
-<svelte:window bind:innerWidth bind:scrollY />
-<div class:isNavOpen={$isNavOpen}>
-	<button on:click={handleOpenMenu} class="iconButton openButton">
+<svelte:window bind:scrollY on:click={handleWindowClick} />
+<div class:isDarkMode={$isDarkMode} class:isNavOpen={$isNavOpen}>
+	<button on:click={handleOpenMenu} class="iconButton openButton dontCloseNav">
 		<HamburgerIcon />
 	</button>
-	<nav class:isDesktop={innerWidth >= 816}>
+	<nav class="dontCloseNav">
 		<button on:click={handleCloseMenu} class="iconButton closeButton">
 			<CloseIcon />
 		</button>
-		<ul>
+		<ul class="dontCloseNav">
 			<li>
 				<button on:click={() => handleScrollClick($workOffset)}>
 					<MonitorIcon />
@@ -74,7 +79,7 @@
 				</button>
 			</li>
 		</ul>
-		<button on:click={toggleDarkMode} class="iconButton darkLightButton">
+		<button on:click={toggleDarkMode} class="iconButton darkLightButton dontCloseNav">
 			{#if $isDarkMode}
 				<SunIcon />
 			{:else}
@@ -146,6 +151,10 @@
 		top: 10px;
 		transition: top 320ms ease-in-out;
 		z-index: 1;
+	}
+
+	.isDarkMode {
+		background-color: $palette-g;
 	}
 
 	// nav open

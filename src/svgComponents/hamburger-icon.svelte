@@ -10,3 +10,9 @@
 		fill={$isDarkMode ? '#fffeef' : '#383d5d'}
 	/>
 </svg>
+
+<style>
+	svg {
+		pointer-events: none;
+	}
+</style>
