@@ -11,8 +11,8 @@ const light = `
     }
     
     .hljs {
-      background: #fff;
-      color: #24292e;
+      background: #ffffff;
+      color: #24292e !important;
     }
     
     .hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-variable.language_ {

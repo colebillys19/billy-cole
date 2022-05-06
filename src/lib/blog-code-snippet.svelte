@@ -32,6 +32,7 @@
 </svelte:head>
 <slot {highlighted}>
 	<pre
+		class:isDarkMode={$isDarkMode}
 		class:langtag
 		class:noMargin
 		data-language={(language && language) || 'plaintext'}
@@ -40,12 +41,15 @@
 		></pre>
 </slot>
 
-<style>
+<style lang="scss">
 	code {
 		padding: 30px !important;
 	}
 
 	pre {
+		border-color: $palette-e;
+		border-style: solid;
+		border-width: 1px;
 		margin: 0 0 30px 0;
 	}
 
@@ -71,5 +75,9 @@
 
 	.noMargin {
 		margin: 0;
+	}
+
+	.isDarkMode {
+		border-color: $palette-a;
 	}
 </style>

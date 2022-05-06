@@ -12,7 +12,7 @@ const dark = `
     
     .hljs {
       color: #c9d1d9;
-      background: #000;
+      background: #000000;
     }
     
     .hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-variable.language_ {

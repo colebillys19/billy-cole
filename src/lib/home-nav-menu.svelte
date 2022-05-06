@@ -26,8 +26,14 @@
 	};
 
 	const handleWindowClick = (e: MouseEvent) => {
-		const classArr = [...e.target.classList];
-		if (!classArr.includes('dontCloseNav')) {
+		const target = e.target as HTMLElement;
+		let shouldCloseNav = true;
+		target.classList.forEach((v) => {
+			if (v === 'navElement') {
+				shouldCloseNav = false;
+			}
+		});
+		if (shouldCloseNav) {
 			isNavOpen.set(false);
 		}
 	};
@@ -46,14 +52,14 @@
 
 <svelte:window bind:scrollY on:click={handleWindowClick} />
 <div class:isDarkMode={$isDarkMode} class:isNavOpen={$isNavOpen}>
-	<button on:click={handleOpenMenu} class="iconButton openButton dontCloseNav">
+	<button on:click={handleOpenMenu} class="iconButton openButton navElement">
 		<HamburgerIcon />
 	</button>
-	<nav class="dontCloseNav">
+	<nav class="navElement">
 		<button on:click={handleCloseMenu} class="iconButton closeButton">
 			<CloseIcon />
 		</button>
-		<ul class="dontCloseNav">
+		<ul class="navElement">
 			<li>
 				<button on:click={() => handleScrollClick($workOffset)}>
 					<MonitorIcon />
@@ -79,7 +85,7 @@
 				</button>
 			</li>
 		</ul>
-		<button on:click={toggleDarkMode} class="iconButton darkLightButton dontCloseNav">
+		<button on:click={toggleDarkMode} class="iconButton darkLightButton navElement">
 			{#if $isDarkMode}
 				<SunIcon />
 			{:else}
