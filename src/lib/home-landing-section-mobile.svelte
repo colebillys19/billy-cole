@@ -2,7 +2,7 @@
 	import store from '../store';
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
 
-	const { isDarkMode } = store;
+	const { isDarkMode, isMobile } = store;
 
 	export let scrollY: number = 0;
 </script>
@@ -13,7 +13,7 @@
 			<h1 style={`transform: translateY(${scrollY / -4}px);`}>Billy Cole</h1>
 		</div>
 		<div class="illuContainer">
-			<IlluSvg offsetY={scrollY / -16} />
+			<IlluSvg isMobile={$isMobile === 1} offsetY={scrollY / -16} />
 		</div>
 	</div>
 </div>
@@ -102,13 +102,13 @@
 		}
 	}
 
-	// @media (orientation: landscape) {
-	// 	h1 {
-	// 		font-size: 32px;
-	// 	}
+	@media (orientation: landscape) {
+		h1 {
+			font-size: 32px;
+		}
 
-	// 	.nameContainer {
-	// 		left: 10px;
-	// 	}
-	// }
+		.nameContainer {
+			left: 10px;
+		}
+	}
 </style>

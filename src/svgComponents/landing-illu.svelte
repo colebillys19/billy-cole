@@ -3,11 +3,13 @@
 
 	const { isDarkMode } = store;
 
+	export let isMobile: boolean = false;
 	export let offsetX: number = 0;
 	export let offsetY: number = 0;
 </script>
 
 <svg
+	class:isMobile
 	width="810"
 	height="771"
 	viewBox="0 0 810 771"
@@ -78,15 +80,19 @@
 		z-index: -1;
 	}
 
+	.isMobile {
+		right: -72px;
+	}
+
 	@media (min-width: 768px) {
 		svg {
 			right: -96px;
 		}
 	}
 
-	/* @media (orientation: landscape) {
-		svg {
-			right: -96px;
+	@media (orientation: landscape) {
+		.isMobile {
+			right: -108px;
 		}
-	} */
+	}
 </style>
