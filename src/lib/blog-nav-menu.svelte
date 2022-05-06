@@ -86,6 +86,6 @@
 	}
 
 	.isDarkMode a {
-		color: $palette-a;
+		color: $palette-b;
 	}
 </style>

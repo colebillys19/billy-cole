@@ -1,6 +1,7 @@
 <!-- code taken from svelte-hightlight package: https://github.com/metonym/svelte-highlight -->
 <script lang="ts">
 	export let code: any = undefined;
+	export let caption = '';
 	export let langtag = false;
 	export let noMargin = false;
 
@@ -31,14 +32,15 @@
 	{@html $isDarkMode ? snippetStylesDark : snippetStylesLight}
 </svelte:head>
 <slot {highlighted}>
-	<pre
-		class:isDarkMode={$isDarkMode}
-		class:langtag
-		class:noMargin
-		data-language={(language && language) || 'plaintext'}
-		{...$$restProps}><code class="hljs"
-			>{#if highlighted !== undefined}{@html highlighted}{:else}{code}{/if}</code
-		></pre>
+	<figure class:isDarkMode={$isDarkMode} class:noMargin>
+		{#if caption}
+			<figcaption>{caption}</figcaption>
+		{/if}
+		<pre class:langtag data-language={(language && language) || 'plaintext'} {...$$restProps}><code
+				class="hljs"
+				>{#if highlighted !== undefined}{@html highlighted}{:else}{code}{/if}</code
+			></pre>
+	</figure>
 </slot>
 
 <style lang="scss">
@@ -46,11 +48,21 @@
 		padding: 30px !important;
 	}
 
+	figure {
+		margin: 0 0 30px 0;
+	}
+
+	figcaption {
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
+	}
+
 	pre {
 		border-color: $palette-e;
 		border-style: solid;
 		border-width: 1px;
-		margin: 0 0 30px 0;
+		margin: 0;
+		box-shadow: 1px 1px 1px rgba(129, 122, 153, 0.5);
 	}
 
 	pre.langtag {
@@ -77,7 +89,12 @@
 		margin: 0;
 	}
 
-	.isDarkMode {
+	.isDarkMode pre {
 		border-color: $palette-a;
+		box-shadow: 1px 1px 1px rgba(255, 254, 239, 0.5);
+	}
+
+	.isDarkMode figcaption {
+		color: $palette-a;
 	}
 </style>

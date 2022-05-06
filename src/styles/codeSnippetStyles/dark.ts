@@ -11,7 +11,7 @@ const dark = `
     }
     
     .hljs {
-      color: #c9d1d9;
+      color: #c9d1d9 !important;
       background: #000000;
     }
     

@@ -180,6 +180,7 @@ export const namedSlotsVue = `<BaseLayout>
   </template>
 </BaseLayout>
 
+<!-- BaseLayout component -->
 <template>
   <header>
     <slot name="header"></slot>
@@ -198,6 +199,7 @@ export const namedSlotsSvelte = `<BaseLayout>
   <footer slot="footer">footer content</footer>
 </BaseLayout>
 
+<!-- BaseLayout component -->
 <slot name="header"></slot>
 <slot></slot>
 <slot name="footer"></slot>`;

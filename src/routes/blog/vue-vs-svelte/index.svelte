@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CodeSnip from '$lib/blog-code-snippet.svelte';
-	import MetalDivider from '$lib/blog-metal-divider.svelte';
+	import HornsDivider from '$lib/blog-horns-divider.svelte';
 
 	import store from '../../../store';
 	import {
@@ -132,49 +132,35 @@
 		frameworks than there was five years ago. But the developer experience Svelte provides is still
 		second to none.
 	</p>
-	<MetalDivider />
+	<HornsDivider />
 	<p>To wrap up, here's a syntax comparison for a few common scenarios:</p>
 	<h2>Conditionals</h2>
-	<p>Vue</p>
-	<CodeSnip code={conditionalVue} />
-	<p>Svelte</p>
-	<CodeSnip code={conditionalSvelte} />
+	<CodeSnip caption="Vue" code={conditionalVue} />
+	<CodeSnip caption="Svelte" code={conditionalSvelte} />
 	<div class="divider" />
 	<h2>Looping</h2>
-	<p>Vue</p>
-	<CodeSnip code={loopingVue} />
-	<p>Svelte</p>
-	<CodeSnip code={loopingSvelte} />
+	<CodeSnip caption="Vue" code={loopingVue} />
+	<CodeSnip caption="Svelte" code={loopingSvelte} />
 	<div class="divider" />
 	<h2>Reactive Values</h2>
-	<p>Vue</p>
-	<CodeSnip code={reactiveVue} />
-	<p>Svelte</p>
-	<CodeSnip code={reactiveSvelte} />
+	<CodeSnip caption="Vue" code={reactiveVue} />
+	<CodeSnip caption="Svelte" code={reactiveSvelte} />
 	<div class="divider" />
 	<h2>Binding an Input Value</h2>
-	<p>Vue</p>
-	<CodeSnip code={inputBindingVue} />
-	<p>Svelte</p>
-	<CodeSnip code={inputBindingSvelte} />
+	<CodeSnip caption="Vue" code={inputBindingVue} />
+	<CodeSnip caption="Svelte" code={inputBindingSvelte} />
 	<div class="divider" />
 	<h2>Computed Values</h2>
-	<p>Vue</p>
-	<CodeSnip code={computedVue} />
-	<p>Svelte</p>
-	<CodeSnip code={computedSvelte} />
+	<CodeSnip caption="Vue" code={computedVue} />
+	<CodeSnip caption="Svelte" code={computedSvelte} />
 	<div class="divider" />
 	<h2>Props</h2>
-	<p>Vue</p>
-	<CodeSnip code={propsVue} />
-	<p>Svelte</p>
-	<CodeSnip code={propsSvelte} />
+	<CodeSnip caption="Vue" code={propsVue} />
+	<CodeSnip caption="Svelte" code={propsSvelte} />
 	<div class="divider" />
 	<h2>Named Slots</h2>
-	<p>Vue</p>
-	<CodeSnip code={namedSlotsVue} />
-	<p>Svelte</p>
-	<CodeSnip code={namedSlotsSvelte} noMargin={true} />
+	<CodeSnip caption="Vue" code={namedSlotsVue} />
+	<CodeSnip caption="Svelte" code={namedSlotsSvelte} noMargin={true} />
 </div>
 
 <style src="../../../styles/blog-post-styles.scss"></style>
