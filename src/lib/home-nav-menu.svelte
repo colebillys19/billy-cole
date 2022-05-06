@@ -25,8 +25,18 @@
 		scrollY = offset;
 	};
 
-	const handleWindowClick = (e: MouseEvent) => {
-		const target = e.target as HTMLElement;
+	const toggleDarkMode = () => {
+		isDarkMode.update((prevIsDark) => {
+			if (!prevIsDark) {
+				localStorage.setItem('isDarkMode', 'true');
+			} else if (prevIsDark && localStorage.getItem('isDarkMode')) {
+				localStorage.removeItem('isDarkMode');
+			}
+			return !prevIsDark;
+		});
+	};
+
+	const closeOnClickAway = (target: HTMLElement) => {
 		let shouldCloseNav = true;
 		target.classList.forEach((v) => {
 			if (v === 'navElement') {
@@ -38,19 +48,18 @@
 		}
 	};
 
-	const toggleDarkMode = () => {
-		isDarkMode.update((prevIsDark) => {
-			if (!prevIsDark) {
-				localStorage.setItem('isDarkMode', 'true');
-			} else if (prevIsDark && localStorage.getItem('isDarkMode')) {
-				localStorage.removeItem('isDarkMode');
-			}
-			return !prevIsDark;
-		});
+	const handleMousedown = (e: MouseEvent) => {
+		const target = e.target as HTMLElement;
+		closeOnClickAway(target);
+	};
+
+	const handleTouchstart = (e: TouchEvent) => {
+		const target = e.target as HTMLElement;
+		closeOnClickAway(target);
 	};
 </script>
 
-<svelte:window bind:scrollY on:click={handleWindowClick} />
+<svelte:window bind:scrollY on:click={handleMousedown} on:touchstart={handleTouchstart} />
 <div class:isDarkMode={$isDarkMode} class:isNavOpen={$isNavOpen}>
 	<button on:click={handleOpenMenu} class="iconButton openButton navElement">
 		<HamburgerIcon />
@@ -107,7 +116,7 @@
 		position: fixed;
 		top: -304px;
 		transition: top 320ms ease-in-out;
-		width: 100vw;
+		width: 100%;
 		z-index: 2;
 	}
 
