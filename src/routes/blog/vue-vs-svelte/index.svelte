@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CodeSnip from '$lib/blog-code-snippet.svelte';
 	import HornsDivider from '$lib/blog-horns-divider.svelte';
+	import PostFooter from '$lib/blog-post-footer.svelte';
 
 	import store from '../../../store';
 	import {
@@ -162,5 +163,6 @@
 	<CodeSnip caption="Vue" code={namedSlotsVue} />
 	<CodeSnip caption="Svelte" code={namedSlotsSvelte} noMargin={true} />
 </div>
+<PostFooter />
 
 <style src="../../../styles/blog-post-styles.scss"></style>

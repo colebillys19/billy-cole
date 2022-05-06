@@ -1,0 +1,33 @@
+<script lang="ts">
+	import store from '../store';
+
+	const { isDarkMode } = store;
+</script>
+
+<footer class:isDarkMode={$isDarkMode}>
+	<a href="/blog">blog page</a>
+</footer>
+
+<style lang="scss">
+	footer {
+		height: 80px;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+
+	a {
+		font-size: 18px;
+		text-decoration: none;
+	}
+
+	// dark
+
+	.isDarkMode {
+		background-color: $palette-g;
+	}
+
+	.isDarkMode a {
+		color: $palette-b;
+	}
+</style>

@@ -25,7 +25,7 @@
 <style lang="scss">
 	main {
 		background-color: $palette-a;
-		min-height: 100vh;
+		min-height: calc(100vh - 80px);
 	}
 
 	// dark
