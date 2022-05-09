@@ -4,7 +4,7 @@
 
 	const { isDarkMode, isMobile } = store;
 
-	export let scrollY: number = 0;
+	export let scrollY = 0;
 </script>
 
 <div class:isDarkMode={$isDarkMode} class="contentContainer">

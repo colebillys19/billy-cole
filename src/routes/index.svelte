@@ -7,6 +7,7 @@
 	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
 	import HomeNavMenu from '$lib/home-nav-menu.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
+
 	import store from '../store';
 
 	const { isMobile } = store;

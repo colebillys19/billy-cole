@@ -8,6 +8,7 @@
 <script lang="ts">
 	import GetIsMobile from '$lib/get-is-mobile.svelte';
 	import NavMenu from '$lib/blog-nav-menu.svelte';
+
 	import store from '../store';
 
 	const { isDarkMode } = store;

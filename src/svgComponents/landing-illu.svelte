@@ -3,9 +3,9 @@
 
 	const { isDarkMode } = store;
 
-	export let isMobile: boolean = false;
-	export let offsetX: number = 0;
-	export let offsetY: number = 0;
+	export let isMobile = false;
+	export let offsetX = 0;
+	export let offsetY = 0;
 </script>
 
 <svg

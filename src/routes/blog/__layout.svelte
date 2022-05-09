@@ -3,6 +3,7 @@
 
 	import GetIsMobile from '$lib/get-is-mobile.svelte';
 	import NavMenu from '$lib/blog-nav-menu.svelte';
+
 	import store from '../../store';
 	import '../../styles/reset.css';
 	import '../../styles/global.scss';

@@ -4,7 +4,7 @@
 
 	const { isDarkMode } = store;
 
-	export let scrollY: number = 0;
+	export let scrollY = 0;
 
 	let mouseInitialX = -1;
 	let mouseInitialY = 0;

@@ -1,4 +1,7 @@
 <script lang="ts">
+	import IconButton from '$lib/icon-button.svelte';
+
+	import store from '../store';
 	import BulbIcon from '../svgComponents/bulb-icon.svelte';
 	import CloseIcon from '../svgComponents/close-icon.svelte';
 	import HamburgerIcon from '../svgComponents/hamburger-icon.svelte';
@@ -7,7 +10,6 @@
 	import MoonIcon from '../svgComponents/moon-icon.svelte';
 	import SunIcon from '../svgComponents/sun-icon.svelte';
 	import UserIcon from '../svgComponents/user-icon.svelte';
-	import store from '../store';
 
 	const { aboutOffset, blogOffset, contactOffset, isDarkMode, isNavOpen, workOffset } = store;
 
@@ -61,13 +63,13 @@
 
 <svelte:window bind:scrollY on:click={handleMousedown} on:touchstart={handleTouchstart} />
 <div class:isDarkMode={$isDarkMode} class:isNavOpen={$isNavOpen}>
-	<button on:click={handleOpenMenu} class="iconButton openButton navElement">
+	<IconButton class="openButton navElement" handleClick={handleOpenMenu} hideHamburger={$isNavOpen}>
 		<HamburgerIcon />
-	</button>
+	</IconButton>
 	<nav class="navElement">
-		<button on:click={handleCloseMenu} class="iconButton closeButton">
+		<IconButton class="closeButton" handleClick={handleCloseMenu}>
 			<CloseIcon />
-		</button>
+		</IconButton>
 		<ul class="navElement">
 			<li>
 				<button on:click={() => handleScrollClick($workOffset)}>
@@ -94,13 +96,13 @@
 				</button>
 			</li>
 		</ul>
-		<button on:click={toggleDarkMode} class="iconButton darkLightButton navElement">
+		<IconButton class="navElement" handleClick={toggleDarkMode}>
 			{#if $isDarkMode}
 				<SunIcon />
 			{:else}
 				<MoonIcon color="#fffeef" />
 			{/if}
-		</button>
+		</IconButton>
 	</nav>
 </div>
 
@@ -148,25 +150,7 @@
 		cursor: pointer;
 	}
 
-	.iconButton {
-		align-items: center;
-		background-color: rgba(0, 0, 0, 0);
-		border-radius: 50%;
-		border: none;
-		display: flex;
-		height: 60px;
-		justify-content: center;
-		padding: 0;
-		width: 60px;
-	}
-
-	.openButton {
-		left: 10px;
-		position: relative;
-		top: 10px;
-		transition: top 320ms ease-in-out;
-		z-index: 1;
-	}
+	// dark
 
 	.isDarkMode {
 		background-color: $palette-g;
@@ -176,10 +160,6 @@
 
 	.isNavOpen nav {
 		top: 0;
-	}
-
-	.isNavOpen .openButton {
-		top: -70px;
 	}
 
 	@media (min-width: 816px) {

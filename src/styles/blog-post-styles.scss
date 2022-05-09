@@ -15,7 +15,7 @@ a {
 }
 
 .divider {
-	border-bottom: 1px solid $palette-g;
+	border-bottom: 1px solid $palette-c;
 	height: 90px;
 	margin-bottom: 30px;
 	width: 100%;
@@ -31,10 +31,6 @@ a {
 .isDarkMode h2,
 .isDarkMode p {
 	color: $palette-a;
-}
-
-.isDarkMode .divider {
-	border-bottom: 1px solid $palette-a;
 }
 
 @media (min-width: 480px) {
