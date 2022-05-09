@@ -19,10 +19,15 @@
 <GetIsMobile />
 <NavMenu isErrorNav />
 <main class:isDarkMode={$isDarkMode}>
+	<p>404</p>
 	<p>{error.message}</p>
 </main>
 
 <style lang="scss">
+	main {
+		min-height: calc(100vh - 80px);
+	}
+
 	// dark
 
 	.isDarkMode {
@@ -31,6 +36,5 @@
 
 	.isDarkMode p {
 		color: $palette-a;
-		min-height: 100vh;
 	}
 </style>
