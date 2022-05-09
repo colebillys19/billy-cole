@@ -1,9 +1,10 @@
 <script lang="ts">
 	export let handleClick: () => void;
 	export let hideHamburger = false;
+	export let tabIndex = 0;
 </script>
 
-<button class:hideHamburger on:click={handleClick} class={$$props.class}>
+<button class:hideHamburger on:click={handleClick} class={$$props.class} tabindex={tabIndex}>
 	<slot />
 </button>
 

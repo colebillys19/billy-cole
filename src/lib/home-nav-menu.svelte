@@ -63,40 +63,45 @@
 
 <svelte:window bind:scrollY on:click={handleMousedown} on:touchstart={handleTouchstart} />
 <div class:isDarkMode={$isDarkMode} class:isNavOpen={$isNavOpen}>
-	<IconButton class="openButton navElement" handleClick={handleOpenMenu} hideHamburger={$isNavOpen}>
+	<IconButton
+		class="openButton navElement"
+		handleClick={handleOpenMenu}
+		hideHamburger={$isNavOpen}
+		tabIndex={$isNavOpen ? -1 : 0}
+	>
 		<HamburgerIcon />
 	</IconButton>
 	<nav class="navElement">
-		<IconButton class="closeButton" handleClick={handleCloseMenu}>
+		<IconButton class="closeButton" handleClick={handleCloseMenu} tabIndex={$isNavOpen ? 0 : -1}>
 			<CloseIcon />
 		</IconButton>
 		<ul class="navElement">
 			<li>
-				<button on:click={() => handleScrollClick($workOffset)}>
+				<button on:click={() => handleScrollClick($workOffset)} tabindex={$isNavOpen ? 0 : -1}>
 					<MonitorIcon />
 					<span>work</span>
 				</button>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($blogOffset)}>
+				<button on:click={() => handleScrollClick($blogOffset)} tabindex={$isNavOpen ? 0 : -1}>
 					<BulbIcon />
 					<span>blog</span>
 				</button>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($aboutOffset)}>
+				<button on:click={() => handleScrollClick($aboutOffset)} tabindex={$isNavOpen ? 0 : -1}>
 					<UserIcon />
 					<span>about</span>
 				</button>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($contactOffset)}>
+				<button on:click={() => handleScrollClick($contactOffset)} tabindex={$isNavOpen ? 0 : -1}>
 					<MailIcon />
 					<span>contact</span>
 				</button>
 			</li>
 		</ul>
-		<IconButton class="navElement" handleClick={toggleDarkMode}>
+		<IconButton class="navElement" handleClick={toggleDarkMode} tabIndex={$isNavOpen ? 0 : -1}>
 			{#if $isDarkMode}
 				<SunIcon />
 			{:else}
