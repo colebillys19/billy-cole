@@ -64,6 +64,7 @@
 <svelte:window bind:scrollY on:click={handleMousedown} on:touchstart={handleTouchstart} />
 <div class:isDarkMode={$isDarkMode} class:isNavOpen={$isNavOpen}>
 	<IconButton
+		ariaLabel="open nav menu"
 		class="openButton navElement"
 		handleClick={handleOpenMenu}
 		hideHamburger={$isNavOpen}
@@ -72,7 +73,12 @@
 		<HamburgerIcon />
 	</IconButton>
 	<nav class="navElement">
-		<IconButton class="closeButton" handleClick={handleCloseMenu} tabIndex={$isNavOpen ? 0 : -1}>
+		<IconButton
+			ariaLabel="close nav menu"
+			class="closeButton"
+			handleClick={handleCloseMenu}
+			tabIndex={$isNavOpen ? 0 : -1}
+		>
 			<CloseIcon />
 		</IconButton>
 		<ul class="navElement">
@@ -101,7 +107,12 @@
 				</button>
 			</li>
 		</ul>
-		<IconButton class="navElement" handleClick={toggleDarkMode} tabIndex={$isNavOpen ? 0 : -1}>
+		<IconButton
+			ariaLabel="toggle dark mode"
+			class="navElement"
+			handleClick={toggleDarkMode}
+			tabIndex={$isNavOpen ? 0 : -1}
+		>
 			{#if $isDarkMode}
 				<SunIcon />
 			{:else}

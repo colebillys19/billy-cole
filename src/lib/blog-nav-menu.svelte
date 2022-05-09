@@ -35,13 +35,13 @@
 </script>
 
 <nav class:isDarkMode={$isDarkMode}>
-	<IconButton handleClick={() => goto('/')}>
+	<IconButton ariaLabel="go to home" handleClick={() => goto('/')}>
 		<HomeIcon />
 	</IconButton>
 	{#if $page.url.pathname !== '/blog' && !isErrorNav}
 		<a href="/blog">blog page</a>
 	{/if}
-	<IconButton handleClick={toggleDarkMode}>
+	<IconButton ariaLabel="toggle dark mode" handleClick={toggleDarkMode}>
 		{#if $isDarkMode}
 			<SunIcon />
 		{:else}

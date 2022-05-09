@@ -111,12 +111,15 @@
 		the browser, everything's already been converted to plain JS.
 	</p>
 	<p>
-		In <a href="https://www.youtube.com/watch?v=JIBZwYZcwIo" target="_blank">this</a> LogRocket interview,
-		Rich mentions he feels the concept of a virtual DOM (referring to React's approach to declarative/reactive
-		rendering) is less about performance and "more about providing this really nice, declarative programming
-		model". He goes on to say how there are other ways to provide that same declarative programming model
-		without the overhead that comes with it. Essentially he wanted to create a tool that provides the
-		same functionality but without the extra baggage.
+		In <a
+			aria-label="youtube video: Svelte with Rich Harris"
+			href="https://www.youtube.com/watch?v=JIBZwYZcwIo"
+			target="_blank">this</a
+		> LogRocket interview, Rich mentions he feels the concept of a virtual DOM (referring to React's
+		approach to declarative/reactive rendering) is less about performance and "more about providing this
+		really nice, declarative programming model". He goes on to say how there are other ways to provide
+		that same declarative programming model without the overhead that comes with it. Essentially he wanted
+		to create a tool that provides the same functionality but without the extra baggage.
 	</p>
 	<p>
 		Rich says: "Svelte analyzes your code during your build step and converts it into (essentially)

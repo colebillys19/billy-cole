@@ -17,7 +17,7 @@
 <HomeSectionContainer className="bgColorA" name="contact" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode}>
 		<p>yes</p>
-		<IconButton handleClick={handleBackToTop}>
+		<IconButton ariaLabel="back to top" handleClick={handleBackToTop}>
 			<ArrowUpIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 		</IconButton>
 	</div>
