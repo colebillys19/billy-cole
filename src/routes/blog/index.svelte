@@ -9,6 +9,9 @@
 	<div>
 		<a href="/blog/vue-vs-svelte">vue vs svelte</a>
 	</div>
+	<div>
+		<a href="/blog/intro-to-wordpress">intro to wordpress</a>
+	</div>
 </div>
 
 <style lang="scss">

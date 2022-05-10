@@ -84,8 +84,9 @@
 		a framework like React sometimes gets described as not having enough included. This makes it
 		challenging to figure out which tools to reach for. Vue does a great job of keeping things
 		minimal, while at the same time including just enough out of the box to get your app up and
-		running quickly. Also, it's clear which tools to reach for (and how to use them) when you want
-		to scale up your project's complexity.
+		running quickly. Also, it's clear which tools to reach for <span class="parens"
+			>(and how to use them)</span
+		> when you want to scale up your project's complexity.
 	</p>
 	<div class="divider" />
 	<p>
@@ -106,26 +107,29 @@
 		Although Vue's declarative/reactive model works like a charm, it leaves more to be desired from
 		a performance standpoint. The 2022 user expects speedy applications. Svelte is more surgical in
 		how it updates the page when state changes. Instead of diffing the entire application with each
-		change, Svelte (or rather just JavaScript) updates the HTML elements associated with that
-		changed state. With Svelte there are no components in play by the time your app is running in
-		the browser, everything's already been converted to plain JS.
+		change, Svelte <span class="parens">(or rather just JavaScript)</span> updates the HTML elements
+		associated with that changed state. With Svelte there are no components in play by the time your
+		app is running in the browser, everything's already been converted to plain JS.
 	</p>
 	<p>
 		In <a
 			aria-label="youtube video: Svelte with Rich Harris"
 			href="https://www.youtube.com/watch?v=JIBZwYZcwIo"
-			target="_blank">this</a
-		> LogRocket interview, Rich mentions he feels the concept of a virtual DOM (referring to React's
-		approach to declarative/reactive rendering) is less about performance and "more about providing this
-		really nice, declarative programming model". He goes on to say how there are other ways to provide
-		that same declarative programming model without the overhead that comes with it. Essentially he wanted
-		to create a tool that provides the same functionality but without the extra baggage.
+			target="_blank">this LogRocket interview</a
+		>, Rich mentions he feels the concept of a virtual DOM
+		<span class="parens">(referring to React's approach to declarative/reactive rendering)</span> is
+		less about performance and "more about providing this really nice, declarative programming model".
+		He goes on to say how there are other ways to provide that same declarative programming model without
+		the overhead that comes with it. Essentially he wanted to create a tool that provides the same functionality
+		but without the extra baggage.
 	</p>
 	<p>
-		Rich says: "Svelte analyzes your code during your build step and converts it into (essentially)
-		vanilla JavaScript. Or as close as possible to what you would write if you were writing your
-		code by hand." So, as far as the browser's concerned, you're not even using a framework. It
-		performs lightning quick.
+		Rich says: "Svelte analyzes your code during your build step and converts it into <span
+			class="parens">(essentially)</span
+		>
+		vanilla JavaScript. Or as close as possible to what you would write if you were writing your code
+		by hand." So, as far as the browser's concerned, you're not even using a framework. It performs lightning
+		quick.
 	</p>
 	<p>Svelte's component syntax is pretty similar to Vue, but it's even simpler:</p>
 	<CodeSnip code={svelteA} />
