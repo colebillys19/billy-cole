@@ -12,6 +12,9 @@
 	<div>
 		<a href="/blog/intro-to-wordpress">intro to wordpress</a>
 	</div>
+	<div>
+		<a href="/blog/how-the-web-works">how the web works</a>
+	</div>
 </div>
 
 <style lang="scss">
