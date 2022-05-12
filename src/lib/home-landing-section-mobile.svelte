@@ -21,6 +21,7 @@
 <style lang="scss">
 	h1 {
 		font-size: 32px;
+		text-shadow: 1px 1px 2px $palette-e;
 		white-space: nowrap;
 	}
 
@@ -70,6 +71,7 @@
 
 	.isDarkMode h1 {
 		color: $palette-a;
+		text-shadow: 1px 1px 2px $palette-c;
 	}
 
 	.isDarkMode .illuContainer {
