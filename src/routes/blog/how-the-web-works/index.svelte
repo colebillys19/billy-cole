@@ -3,13 +3,17 @@
 	import HornsDivider from '$lib/blog-horns-divider.svelte';
 	import PostFooter from '$lib/blog-post-footer.svelte';
 
-	import { httpRequest, httpResponse } from './snippets';
-
 	import store from '../../../store';
+	import snippetStylesDark from '../../../styles/codeSnippetStyles/dark';
+	import snippetStylesLight from '../../../styles/codeSnippetStyles/light';
+	import { httpRequest, httpResponse } from './snippets';
 
 	const { isDarkMode } = store;
 </script>
 
+<svelte:head>
+	{@html $isDarkMode ? snippetStylesDark : snippetStylesLight}
+</svelte:head>
 <div class:isDarkMode={$isDarkMode} class="blogPostContainer">
 	<h1>How the Web Works</h1>
 	<p>

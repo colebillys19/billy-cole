@@ -8,8 +8,6 @@
 	import hljs from 'highlight.js';
 	import { createEventDispatcher, afterUpdate } from 'svelte';
 
-	import snippetStylesDark from '../styles/codeSnippetStyles/dark';
-	import snippetStylesLight from '../styles/codeSnippetStyles/light';
 	import store from '../store';
 
 	const { isDarkMode } = store;
@@ -28,9 +26,6 @@
 	}
 </script>
 
-<svelte:head>
-	{@html $isDarkMode ? snippetStylesDark : snippetStylesLight}
-</svelte:head>
 <slot {highlighted}>
 	<figure class:isDarkMode={$isDarkMode} class:noMargin>
 		{#if caption}
