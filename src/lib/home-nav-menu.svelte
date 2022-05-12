@@ -28,13 +28,10 @@
 	};
 
 	const toggleDarkMode = () => {
-		isDarkMode.update((prevIsDark) => {
-			if (!prevIsDark) {
-				localStorage.setItem('isDarkMode', 'true');
-			} else if (prevIsDark && localStorage.getItem('isDarkMode')) {
-				localStorage.removeItem('isDarkMode');
-			}
-			return !prevIsDark;
+		isDarkMode.update((userPrefersDarkModeState) => {
+			const newValue = !userPrefersDarkModeState;
+			localStorage.setItem('isDarkMode', newValue.toString());
+			return newValue;
 		});
 	};
 

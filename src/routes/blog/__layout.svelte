@@ -11,22 +11,28 @@
 	const { isDarkMode } = store;
 
 	onMount(() => {
-		if (localStorage.getItem('isDarkMode')) {
+		const userPrefersDarkMode = localStorage.getItem('isDarkMode');
+		const browserPrefersDarkMode =
+			window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		if (userPrefersDarkMode === null && browserPrefersDarkMode) {
 			isDarkMode.set(true);
+		} else {
+			isDarkMode.set(userPrefersDarkMode === 'true');
 		}
 	});
 </script>
 
 <GetIsMobile />
-<NavMenu />
 <main class:isDarkMode={$isDarkMode}>
+	<NavMenu />
 	<slot />
 </main>
 
 <style lang="scss">
 	main {
 		background-color: $palette-a;
-		min-height: calc(100vh - 80px);
+		min-height: 100vh;
 	}
 
 	// dark

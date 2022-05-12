@@ -9,8 +9,14 @@
 	const { isDarkMode } = store;
 
 	onMount(() => {
-		if (localStorage.getItem('isDarkMode')) {
+		const userPrefersDarkMode = localStorage.getItem('isDarkMode');
+		const browserPrefersDarkMode =
+			window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		if (userPrefersDarkMode === null && browserPrefersDarkMode) {
 			isDarkMode.set(true);
+		} else {
+			isDarkMode.set(userPrefersDarkMode === 'true');
 		}
 	});
 </script>
