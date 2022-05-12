@@ -15,8 +15,7 @@ export const vueA = `<script>
   p {
     color: blue;
   }
-</style>
-`;
+</style>`;
 
 export const vueB = `<!DOCTYPE html>
 <html lang="en">

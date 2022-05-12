@@ -1,6 +1,9 @@
 <script lang="ts">
+	import TextSnippet from '$lib/blog-text-snippet.svelte';
 	import HornsDivider from '$lib/blog-horns-divider.svelte';
 	import PostFooter from '$lib/blog-post-footer.svelte';
+
+	import { httpRequest, httpResponse } from './snippets';
 
 	import store from '../../../store';
 
@@ -49,11 +52,9 @@
 		the language that clients and servers use to talk to each other - but let's ignore this for now.
 	</p>
 	<p class="lessBottomMargin">Here's a simple example of an HTTP request:</p>
-	<p class="lessBottomMargin">
-		<span class="monospace">GET /index.html HTTP/1.1</span><br />
-		<span class="monospace">Host: www.amazon.com</span><br />
-		<span class="monospace">Accept-Language: en-us</span><br />
-	</p>
+	<TextSnippet class="inline lessBottomMargin">
+		{httpRequest}
+	</TextSnippet>
 	<ul>
 		<li>
 			on the first line it says that it wants to get a page or a file called “index.html” using HTTP
@@ -76,15 +77,9 @@
 		response is like the waiter delivering you your meal.
 	</p>
 	<p class="lessBottomMargin">Here's a simple example of an HTTP response:</p>
-	<p class="lessBottomMargin">
-		<span class="monospace">HTTP/1.1 200 OK</span><br />
-		<span class="monospace">Date: 1 Jan 2022 09:00</span><br />
-		<span class="monospace">Content-Type: text/html</span><br /><br />
-		<span class="monospace">{'<!DOCTYPE html>'}</span><br />
-		<span class="monospace">{'<html>'}</span><br />
-		<span class="monospace">&nbsp;&nbsp;...</span><br />
-		<span class="monospace">{'</html>'}</span><br />
-	</p>
+	<TextSnippet class="inline lessBottomMargin">
+		{httpResponse}
+	</TextSnippet>
 	<ul>
 		<li>
 			on the first line you can see the version of http protocol used, followed by the “status code”

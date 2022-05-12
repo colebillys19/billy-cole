@@ -11,23 +11,24 @@
 	<h1>Intro to WordPress</h1>
 	<p>
 		Content management systems <span class="parens">(or CMS for short)</span> are used to manage the
-		creation and modification of digital content.Enter WordPress. WordPress is a free, open-source
-		content management system. It's written in PHP and paired with a MySQL
+		creation and modification of digital content. There are quite a few web page CMS options out
+		there, but one stands out from the rest as the most widely used. Enter WordPress. WordPress is a
+		free, open-source content management system. It's written in PHP and paired with a MySQL
 		<span class="parens">(or MariaDB)</span>
 		database. WordPress is very popular among those with little to no coding experience who want to create
 		and manage a website for cheap. It's also popular among freelance web developers with small business
 		clients. Although it's not at the forefront of web developement tech like it was in it's hay day,
-		it's still very widely used. It was originally intended to be a tool for bloggers
+		it still holds its own. WordPress was originally intended to be a tool for bloggers
 		<span class="parens">(hence the name)</span>, but over the years folks have started using it for
-		much, much more. Pretty much anyone can use WordPress. It's unique in that you can set up a
-		pretty formidable site with no code at all ...orrr you can go under the hood and customize
-		whatever you want.
+		much, much more. Pretty much anyone can use it - it's unique in that you can set up a pretty
+		formidable site with no code at all ...orrr you can go under the hood and customize whatever you
+		want.
 	</p>
 	<p>
 		Recently I decided to check it out for myself. In a nutshell - when you're setting up a
 		WordPress site, first you pick the "theme" you'd like to use. This determines the overall feel
-		of the application. A theme will take care of things like layout, styling, fonts, etc. Then you
-		can add to your site with "plugins". Plugins are pretty much just functionality developers have
+		of your site. A theme will take care of things like layout, styling, fonts, etc. Then you can
+		add to your site with "plugins". Plugins are pretty much just functionality developers have
 		created and made available for others to use. There are plenty of free plugins, but some are
 		paid.
 	</p>
@@ -50,7 +51,7 @@
 	</p>
 	<p>
 		Local is great because it streamlines the whole process of downloading an up-to-date version of
-		WordPress, setting up project file architecture, and hosting sites. Using other methods, you
+		WordPress, setting up project file architecture, and hosting your site. Using other methods, you
 		typically have to do all of this separately. Plus the UI on the Local native app is &#x1F525;.
 	</p>
 	<p>Run through the following steps:</p>
@@ -60,11 +61,12 @@
 				>https://localwp.com/</a
 			>
 		</li>
-		<li>download for free</li>
+		<li>download it for free</li>
 		<li>
-			you'll be prompted for name/email/phone but this information doesn't have to be real &#x1F601;
+			you'll be prompted for name/email/phone - but this information doesn't have to be real
+			&#x1F601;
 		</li>
-		<li>install and open</li>
+		<li>install it and open it up</li>
 		<li>create a new site</li>
 		<li>pick a site name</li>
 		<li>choose "Preferred"</li>
@@ -77,12 +79,12 @@
 		<li>login with the credentials you chose</li>
 	</ol>
 	<p>
-		This is the WordPress dashboard, the interface that allows you to build and customize your site.
-		To access the site as it will appear to the user, click the button in the top left that shows
-		the site name with a house icon. As is, your site should just contain a header with some links,
-		a summary/link to a single blog post, and a footer with more links. Side note - when working
-		with WordPress I like to view the site in a separate incognito window, that way it doesn't show
-		the admin menu up top.
+		At this point you'll be looking at the WordPress dashboard, the interface that allows you to
+		build and customize your site. To access the site as it will appear to the user, click the
+		button in the top left that shows the site name with a house icon. As is, your site should just
+		contain a header with some links, a summary/link to a single blog post, and a footer with more
+		links. Side note - when working with WordPress I like to view the site in a separate incognito
+		window, that way it doesn't show the admin menu up top.
 	</p>
 	<p>
 		Let's go back to the dashboard. You'll see a sidebar that includes things like "posts", "pages",
@@ -112,7 +114,8 @@
 			aria-label="wordpress boilerplate theme"
 			href="https://github.com/colebillys19/wordpress-theme-boilerplate"
 			target="_blank">simple theme</a
-		> I created that you can use as a sort of jumping off point for future projects.
+		> I created that you can use as a sort of jumping off point for future projects. Either download
+		the zip file or clone the repo.
 	</p>
 	<p>
 		Back in Local, right click the name of your site in the sites pane and click "reveal in finder".
