@@ -4,6 +4,7 @@
 	import ss3MobileImgA from '../images/ss3-mobile-a.jpg';
 	import ss3MobileImgB from '../images/ss3-mobile-b.jpg';
 	import ss3MobileImgC from '../images/ss3-mobile-c.jpg';
+	import victoryImg from '../images/victory.jpg';
 	import HomeSectionContainer from './home-section-container.svelte';
 
 	const { isDarkMode, workOffset } = store;
@@ -32,6 +33,7 @@
 			excepturi itaque.
 		</p>
 		<h3>Victory Templates</h3>
+		<img class="victoryImg" src={victoryImg} alt="victory" />
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero ipsam, porro placeat
 			eaque tempora id labore cumque velit tenetur hic nam inventore quia quod sit non voluptatum
@@ -45,12 +47,13 @@
 		display: inline-block;
 	}
 
-	.loanhengeImg {
-		width: 998px;
+	.loanhengeImg,
+	.victoryImg {
+		width: 900px;
 	}
 
 	.ss3MobileImg {
-		width: 361px;
+		width: 240px;
 	}
 
 	// dark
