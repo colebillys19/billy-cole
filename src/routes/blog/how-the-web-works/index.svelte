@@ -28,6 +28,7 @@
 		called a URL address. URL is short for uniform resource locator. Basically it's a way to locate
 		some resource on the internet. Resources can be web pages, image files, user profile data, etc.
 	</p>
+	<div class="divider" />
 	<p>
 		There are two main concepts to keep in mind here. There's our internet browser <span
 			class="parens">(chrome, safari, edge, etc.)</span

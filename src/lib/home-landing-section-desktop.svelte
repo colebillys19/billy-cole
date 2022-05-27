@@ -52,6 +52,7 @@
 	.contentContainer {
 		clip-path: inset(0 40px 0 0);
 		height: 100vh;
+		min-width: 360px;
 		padding: 40px;
 		position: fixed;
 		top: 0;

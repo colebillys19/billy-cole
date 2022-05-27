@@ -34,7 +34,7 @@ li {
 }
 
 .parens {
-	opacity: 0.6;
+	color: $palette-e;
 }
 
 .boxParagraph {
@@ -68,7 +68,7 @@ li {
 }
 
 .isDarkMode .parens {
-	color: $palette-a;
+	color: $palette-b;
 }
 
 @media (min-width: 480px) {

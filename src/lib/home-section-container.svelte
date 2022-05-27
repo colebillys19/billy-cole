@@ -27,8 +27,10 @@
 
 <svelte:window on:resize={handleResize} />
 <section bind:this={sectionElement} class:isDarkMode={$isDarkMode} class={className}>
-	<h2>{name}</h2>
-	<slot />
+	<div class="contentContainer">
+		<h2>{name}</h2>
+		<slot />
+	</div>
 </section>
 
 <style lang="scss">
@@ -47,6 +49,12 @@
 
 	.bgColorB {
 		background-color: $palette-b;
+	}
+
+	.contentContainer {
+		margin: 0 auto;
+		max-width: 1200px;
+		min-width: 360px;
 	}
 
 	// dark
