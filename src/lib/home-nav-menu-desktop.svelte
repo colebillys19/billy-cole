@@ -196,7 +196,6 @@
 		}
 	}
 </style> -->
-
 <style lang="scss">
 	nav {
 		background-color: rgba(56, 61, 93, 0.9);

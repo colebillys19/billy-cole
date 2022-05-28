@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ImgCarousel from '$lib/home-img-carousel.svelte';
+
 	import store from '../store';
 	import loanhengeImgA from '../images/loanhenge-a.jpg';
 	import loanhengeImgB from '../images/loanhenge-b.jpg';
@@ -19,9 +21,7 @@
 <HomeSectionContainer className="bgColorB" name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode}>
 		<h3>Your Mortgage Online</h3>
-		<img class="ss3MobileImg" src={ss3MobileImgA} alt="ss3-mobile" />
-		<img class="ss3MobileImg" src={ss3MobileImgB} alt="ss3-mobile" />
-		<img class="ss3MobileImg" src={ss3MobileImgC} alt="ss3-mobile" />
+		<ImgCarousel />
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero ipsam, porro placeat
 			eaque tempora id labore cumque velit tenetur hic nam inventore quia quod sit non voluptatum
@@ -66,7 +66,8 @@
 
 	// dark
 
-	.isDarkMode p {
+	.isDarkMode p,
+	.isDarkMode h3 {
 		color: $palette-a;
 	}
 

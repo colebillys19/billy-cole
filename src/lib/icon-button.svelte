@@ -2,11 +2,13 @@
 	export let ariaLabel = '';
 	export let handleClick: () => void;
 	export let hideHamburger = false;
+	export let isOpaque = false;
 	export let tabIndex = 0;
 </script>
 
 <button
 	class:hideHamburger
+	class:isOpaque
 	on:click={handleClick}
 	aria-label={ariaLabel}
 	class={$$props.class}
@@ -42,5 +44,9 @@
 
 	.hideHamburger {
 		top: -70px;
+	}
+
+	.isOpaque {
+		opacity: 0.3;
 	}
 </style>
