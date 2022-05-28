@@ -55,7 +55,7 @@
 	.contentContainer {
 		margin: 0 auto;
 		max-width: 1200px;
-		min-width: 360px;
+		text-align: center;
 	}
 
 	// dark
@@ -70,5 +70,11 @@
 
 	.isDarkMode.bgColorB {
 		background-color: $palette-f;
+	}
+
+	@media (min-width: 768px) {
+		.contentContainer {
+			text-align: left;
+		}
 	}
 </style>

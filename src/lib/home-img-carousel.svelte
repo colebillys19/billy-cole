@@ -62,6 +62,6 @@
 	.imagesSubcontainer {
 		display: flex;
 		position: absolute;
-		transition: left 400ms ease;
+		transition: left 500ms ease;
 	}
 </style>

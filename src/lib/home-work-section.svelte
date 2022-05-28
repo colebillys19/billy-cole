@@ -5,23 +5,30 @@
 	import loanhengeImgA from '../images/loanhenge-a.jpg';
 	import loanhengeImgB from '../images/loanhenge-b.jpg';
 	import ss3MobileImgA from '../images/ss3-mobile-a.jpg';
-	import ss3MobileImgB from '../images/ss3-mobile-b.jpg';
-	import ss3MobileImgC from '../images/ss3-mobile-c.jpg';
 	import victoryImgA from '../images/victory-a.jpg';
 	import victoryImgB from '../images/victory-b.jpg';
 	import HomeSectionContainer from './home-section-container.svelte';
 
 	const { isDarkMode, workOffset } = store;
 
+	let innerWidth = 0;
+
+	console.log(innerWidth);
+
 	const updateOffset = (offset: number): void => {
 		workOffset.set(offset);
 	};
 </script>
 
+<svelte:window bind:innerWidth />
 <HomeSectionContainer className="bgColorB" name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode}>
 		<h3>Your Mortgage Online</h3>
-		<ImgCarousel />
+		{#if innerWidth < 560}
+			<img class="mobileImg" src={ss3MobileImgA} alt="your-mortgage-online" />
+		{:else}
+			<ImgCarousel />
+		{/if}
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero ipsam, porro placeat
 			eaque tempora id labore cumque velit tenetur hic nam inventore quia quod sit non voluptatum
@@ -57,11 +64,7 @@
 	}
 
 	.mobileImg {
-		width: 240px;
-	}
-
-	.ss3MobileImg {
-		width: 240px;
+		width: 252px;
 	}
 
 	// dark
@@ -69,6 +72,16 @@
 	.isDarkMode p,
 	.isDarkMode h3 {
 		color: $palette-a;
+	}
+
+	@media (min-width: 560px) {
+		.mobileImg {
+			width: 480px;
+		}
+
+		.ss3MobileImg {
+			width: 240px;
+		}
 	}
 
 	@media (min-width: 768px) {
