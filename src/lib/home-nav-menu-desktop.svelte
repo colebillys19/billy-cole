@@ -119,7 +119,7 @@
 	</nav>
 </div>
 
-<style lang="scss">
+<!-- <style lang="scss">
 	nav {
 		background-color: rgba(56, 61, 93, 0.9);
 		border-bottom-color: $palette-c;
@@ -194,5 +194,62 @@
 		li:not(:last-of-type) {
 			margin: 0 60px 0 0;
 		}
+	}
+</style> -->
+
+<style lang="scss">
+	nav {
+		background-color: rgba(56, 61, 93, 0.9);
+		border-bottom-color: $palette-c;
+		border-bottom-style: solid;
+		border-bottom-width: 4px;
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+		position: fixed;
+		top: -84px;
+		transition: top 320ms ease-in-out;
+		width: 100%;
+		z-index: 2;
+	}
+
+	ul {
+		align-items: center;
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	li:not(:last-of-type) {
+		margin: 0 60px 0 0;
+	}
+
+	li button {
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0);
+		border: none;
+		display: flex;
+	}
+
+	li button span {
+		color: $palette-a;
+		font-size: 18px;
+		margin-left: 12px;
+	}
+
+	button:hover {
+		cursor: pointer;
+	}
+
+	.isNavOpen nav {
+		top: 0;
+	}
+
+	// dark
+
+	.isDarkMode {
+		background-color: $palette-g;
 	}
 </style>

@@ -5,7 +5,8 @@
 	import HomeLandingSectionMobile from '$lib/home-landing-section-mobile.svelte';
 	import HomeLandingSectionDesktop from '$lib/home-landing-section-desktop.svelte';
 	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
-	import HomeNavMenu from '$lib/home-nav-menu.svelte';
+	import HomeNavMenuDesktop from '$lib/home-nav-menu-desktop.svelte';
+	import HomeNavMenuMobile from '$lib/home-nav-menu-mobile.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
 
 	import store from '../store';
@@ -13,6 +14,7 @@
 	const { isMobile } = store;
 
 	let innerHeight = 0;
+	let innerWidth = 0;
 	let scrollY = 0;
 	let shouldRenderLandingContent = true;
 
@@ -30,8 +32,12 @@
 	};
 </script>
 
-<svelte:window bind:innerHeight bind:scrollY on:scroll={handleScroll} />
-<HomeNavMenu />
+<svelte:window bind:innerHeight bind:innerWidth bind:scrollY on:scroll={handleScroll} />
+{#if innerWidth < 816}
+	<HomeNavMenuMobile />
+{:else}
+	<HomeNavMenuDesktop />
+{/if}
 <HomeLandingSectionContainer>
 	{#if shouldRenderLandingContent}
 		{#if $isMobile}
