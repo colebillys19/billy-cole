@@ -1,4 +1,6 @@
 <script lang="ts">
+	import NameHeading from '$lib/home-landing-section-desktop-heading.svelte';
+
 	import store from '../store';
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
 
@@ -37,31 +39,19 @@
 <svelte:window on:mousemove={handleMouseMove} />
 <div class:isDarkMode={$isDarkMode} class="contentContainer">
 	<div class="contentSubcontainer">
-		<div class="nameContainer">
-			<h1
-				style={`transform: translate(${(mouseInitialX - mouseX) / -120}px, ${
-					(mouseInitialY - mouseY) / -160 - scrollY / 4
-				}px);`}
-			>
-				Billy Cole
-			</h1>
-		</div>
-		<div class="illuContainer">
-			<IlluSvg
-				offsetX={(mouseInitialX - mouseX) / 360}
-				offsetY={(mouseInitialY - mouseY) / 320 - scrollY / 16}
+		<div class="nameContainer" style={`top: -${scrollY / 4}px;`}>
+			<NameHeading
+				offsetX={(mouseInitialX - mouseX) / -120}
+				offsetY={(mouseInitialY - mouseY) / -160}
 			/>
+		</div>
+		<div class="illuContainer" style={`top: -${scrollY / 16}px;`}>
+			<IlluSvg offsetX={(mouseInitialX - mouseX) / 360} offsetY={(mouseInitialY - mouseY) / 320} />
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
-	h1 {
-		font-size: 32px;
-		text-shadow: 1px 1px 2px $palette-e;
-		white-space: nowrap;
-	}
-
 	.contentContainer {
 		clip-path: inset(0 40px 0 0);
 		height: 100vh;
@@ -105,22 +95,18 @@
 		position: relative;
 	}
 
-	// dark
-
-	.isDarkMode h1 {
-		color: $palette-a;
-		text-shadow: 1px 1px 2px $palette-c;
+	.isAnimationDisabled {
+		transform: translate(0, 0);
+		transition: transform 320ms ease-in-out;
 	}
+
+	// dark
 
 	.isDarkMode .illuContainer {
 		border-right-color: $palette-b;
 	}
 
 	@media (min-width: 768px) {
-		h1 {
-			font-size: 48px;
-		}
-
 		.contentContainer {
 			clip-path: inset(0 60px 0 0);
 			padding: 60px;
