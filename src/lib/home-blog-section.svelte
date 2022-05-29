@@ -1,6 +1,7 @@
 <script lang="ts">
-	import HomeSectionContainer from './home-section-container.svelte';
+	import PostList from '$lib/home-blog-section-post-list.svelte';
 	import store from '../store';
+	import HomeSectionContainer from './home-section-container.svelte';
 
 	const { isDarkMode, blogOffset } = store;
 
@@ -11,14 +12,29 @@
 
 <HomeSectionContainer className="bgColorA" name="blog" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode}>
-		<a href="/blog">blog</a>
+		<h3>Recent Posts:</h3>
+		<PostList />
+		<a href="/blog">go to blog</a>
 	</div>
 </HomeSectionContainer>
 
 <style lang="scss">
+	h3 {
+		font-size: 24px;
+		margin-bottom: 36px;
+	}
+
+	a {
+		font-size: 20px;
+	}
+
 	// dark
 
-	.isDarkMode a {
+	.isDarkMode h3 {
 		color: $palette-a;
+	}
+
+	.isDarkMode a {
+		color: $palette-b;
 	}
 </style>

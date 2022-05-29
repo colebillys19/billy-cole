@@ -16,6 +16,7 @@
 </svelte:head>
 <div class:isDarkMode={$isDarkMode} class="blogPostContainer">
 	<h1>How the Web Works</h1>
+	<p class="date">May 11th, 2022</p>
 	<p>
 		Let's say your phone charger just stopped working and you want to order a new one. You open our
 		internet browser, type “amazon.com” into the address bar and hit enter. The Amazon home page

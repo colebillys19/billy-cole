@@ -34,6 +34,7 @@
 </svelte:head>
 <div class:isDarkMode={$isDarkMode} class="blogPostContainer">
 	<h1>Vue vs. Svelte</h1>
+	<p class="date">April 8th, 2022</p>
 	<p>
 		Javascript frameworks like React, Vue, and Svelte make building robust web applications easier.
 		They provide a declarative layer that acts as sort of a middle-man between the user and DOM. The
