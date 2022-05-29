@@ -5,6 +5,17 @@
 	import ss3MobileImgA from '../images/ss3-mobile-a.jpg';
 	import ss3MobileImgB from '../images/ss3-mobile-b.jpg';
 	import ss3MobileImgC from '../images/ss3-mobile-c.jpg';
+	import ss3MobileImgD from '../images/ss3-mobile-d.jpg';
+	import ss3MobileImgE from '../images/ss3-mobile-e.jpg';
+	import ss3MobileImgF from '../images/ss3-mobile-f.jpg';
+	import ss3MobileImgG from '../images/ss3-mobile-g.jpg';
+	import ss3MobileImgH from '../images/ss3-mobile-h.jpg';
+	import ss3MobileImgI from '../images/ss3-mobile-i.jpg';
+	import ss3MobileImgJ from '../images/ss3-mobile-j.jpg';
+	import ss3MobileImgK from '../images/ss3-mobile-k.jpg';
+	import ss3MobileImgL from '../images/ss3-mobile-l.jpg';
+	import ss3MobileImgM from '../images/ss3-mobile-m.jpg';
+	import ss3MobileImgN from '../images/ss3-mobile-n.jpg';
 	import LeftChevIcon from '../svgComponents/left-chev-icon.svelte';
 	import RightChevIcon from '../svgComponents/right-chev-icon.svelte';
 
@@ -19,7 +30,7 @@
 	};
 
 	const handleRightClick = () => {
-		if (imgIndex < 2) {
+		if (imgIndex < 13) {
 			imgIndex = imgIndex + 1;
 		}
 	};
@@ -39,9 +50,20 @@
 			<img src={ss3MobileImgA} alt="ss3-mobile" />
 			<img src={ss3MobileImgB} alt="ss3-mobile" />
 			<img src={ss3MobileImgC} alt="ss3-mobile" />
+			<img src={ss3MobileImgD} alt="ss3-mobile" />
+			<img src={ss3MobileImgE} alt="ss3-mobile" />
+			<img src={ss3MobileImgF} alt="ss3-mobile" />
+			<img src={ss3MobileImgG} alt="ss3-mobile" />
+			<img src={ss3MobileImgH} alt="ss3-mobile" />
+			<img src={ss3MobileImgI} alt="ss3-mobile" />
+			<img src={ss3MobileImgJ} alt="ss3-mobile" />
+			<img src={ss3MobileImgK} alt="ss3-mobile" />
+			<img src={ss3MobileImgL} alt="ss3-mobile" />
+			<img src={ss3MobileImgM} alt="ss3-mobile" />
+			<img src={ss3MobileImgN} alt="ss3-mobile" />
 		</div>
 	</div>
-	<IconButton handleClick={handleRightClick} isOpaque={imgIndex === 2}>
+	<IconButton handleClick={handleRightClick} isOpaque={imgIndex === 13}>
 		<RightChevIcon />
 	</IconButton>
 </div>
@@ -49,6 +71,7 @@
 <style lang="scss">
 	img {
 		width: 300px;
+		border-radius: 6px;
 	}
 
 	img:not(:last-of-type) {
