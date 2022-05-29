@@ -25,26 +25,51 @@
 	<div class:isDarkMode={$isDarkMode}>
 		<h3>Your Mortgage Online</h3>
 		{#if innerWidth < 560}
-			<img class="mobileImg" src={ss3MobileImgA} alt="your-mortgage-online" />
+			<img
+				alt="your-mortgage-online"
+				class="mobileImg"
+				src={ss3MobileImgA}
+				style={`border-color: ${$isDarkMode ? '#e68a6e' : '#5d5c7b'};`}
+			/>
 		{:else}
 			<ImgCarousel />
 		{/if}
-		<p>
+		<p class="hasPaddingBottom">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero ipsam, porro placeat
 			eaque tempora id labore cumque velit tenetur hic nam inventore quia quod sit non voluptatum
 			excepturi itaque.
 		</p>
 		<h3>Loanhenge</h3>
-		<img class="desktopImg" src={loanhengeImgA} alt="loanhenge" />
-		<img class="mobileImg" src={loanhengeImgB} alt="loanhenge" />
-		<p>
+		<img
+			alt="loanhenge"
+			class="desktopImg"
+			src={loanhengeImgA}
+			style={`border-color: ${$isDarkMode ? '#e68a6e' : '#5d5c7b'};`}
+		/>
+		<img
+			alt="loanhenge"
+			class="mobileImg"
+			src={loanhengeImgB}
+			style={`border-color: ${$isDarkMode ? '#e68a6e' : '#5d5c7b'};`}
+		/>
+		<p class="hasPaddingBottom">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero ipsam, porro placeat
 			eaque tempora id labore cumque velit tenetur hic nam inventore quia quod sit non voluptatum
 			excepturi itaque.
 		</p>
 		<h3>Victory Templates</h3>
-		<img class="desktopImg" src={victoryImgA} alt="victory" />
-		<img class="mobileImg" src={victoryImgB} alt="victory" />
+		<img
+			alt="victory"
+			class="desktopImg"
+			src={victoryImgA}
+			style={`border-color: ${$isDarkMode ? '#e68a6e' : '#fffeef'};`}
+		/>
+		<img
+			alt="victory"
+			class="mobileImg"
+			src={victoryImgB}
+			style={`border-color: ${$isDarkMode ? '#e68a6e' : '#fffeef'};`}
+		/>
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero ipsam, porro placeat
 			eaque tempora id labore cumque velit tenetur hic nam inventore quia quod sit non voluptatum
@@ -54,16 +79,33 @@
 </HomeSectionContainer>
 
 <style lang="scss">
+	h3 {
+		font-size: 24px;
+		margin-bottom: 24px;
+	}
+
+	p {
+		margin-top: 24px;
+	}
+
 	img {
 		display: inline-block;
 	}
 
+	.hasPaddingBottom {
+		margin-bottom: 96px;
+	}
+
 	.desktopImg {
+		border-style: solid;
+		border-width: 3px;
 		display: none;
 		width: 900px;
 	}
 
 	.mobileImg {
+		border-style: solid;
+		border-width: 3px;
 		width: 252px;
 	}
 

@@ -36,11 +36,12 @@
 <style lang="scss">
 	section {
 		min-height: 100vh;
-		padding: 10px 60px 24px;
+		padding: 24px 60px 96px;
 	}
 
 	h2 {
-		line-height: 60px;
+		font-size: 32px;
+		padding: 24px 0;
 		text-align: right;
 	}
 
