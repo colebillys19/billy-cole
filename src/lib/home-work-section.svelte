@@ -83,7 +83,7 @@
 		{#if !$isMobile}
 			<p class="hasPaddingBottom">
 				<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
-					>Visit &#x1F440;</a
+					>Visit &#x1F440; &#x1F440; &#x1F440;</a
 				>
 			</p>
 		{/if}
@@ -120,7 +120,7 @@
 		{#if !$isMobile}
 			<p class="hasPaddingBottom">
 				<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
-					>Visit &#x1F440;</a
+					>Visit &#x1F440; &#x1F440; &#x1F440;</a
 				>
 			</p>
 		{/if}

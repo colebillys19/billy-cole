@@ -16,6 +16,7 @@
 	import ss3MobileImgL from '../images/ss3-mobile-l.jpg';
 	import ss3MobileImgM from '../images/ss3-mobile-m.jpg';
 	import ss3MobileImgN from '../images/ss3-mobile-n.jpg';
+	import ss3MobileImgO from '../images/ss3-mobile-o.jpg';
 	import LeftChevIcon from '../svgComponents/left-chev-icon.svelte';
 	import RightChevIcon from '../svgComponents/right-chev-icon.svelte';
 
@@ -30,7 +31,7 @@
 	};
 
 	const handleRightClick = () => {
-		if (imgIndex < 13) {
+		if (imgIndex < 14) {
 			imgIndex = imgIndex + 1;
 		}
 	};
@@ -61,9 +62,10 @@
 			<img src={ss3MobileImgL} alt="ss3-mobile" />
 			<img src={ss3MobileImgM} alt="ss3-mobile" />
 			<img src={ss3MobileImgN} alt="ss3-mobile" />
+			<img src={ss3MobileImgO} alt="ss3-mobile" />
 		</div>
 	</div>
-	<IconButton handleClick={handleRightClick} isOpaque={imgIndex === 13}>
+	<IconButton handleClick={handleRightClick} isOpaque={imgIndex === 14}>
 		<RightChevIcon />
 	</IconButton>
 </div>
