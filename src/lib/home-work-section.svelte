@@ -13,8 +13,6 @@
 
 	let innerWidth = 0;
 
-	console.log(innerWidth);
-
 	const updateOffset = (offset: number): void => {
 		workOffset.set(offset);
 	};

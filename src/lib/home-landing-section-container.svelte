@@ -1,10 +1,22 @@
 <script lang="ts">
 	import store from '../store';
 
-	const { isDarkMode } = store;
+	const { isLandingAnimationDisabled, isDarkMode } = store;
+
+	const disableLandingAnimation = () => {
+		isLandingAnimationDisabled.set(true);
+	};
+
+	const enableLandingAnimation = () => {
+		isLandingAnimationDisabled.set(false);
+	};
 </script>
 
-<section class:isDarkMode={$isDarkMode}>
+<section
+	class:isDarkMode={$isDarkMode}
+	on:click={enableLandingAnimation}
+	on:mouseleave={disableLandingAnimation}
+>
 	<slot />
 </section>
 

@@ -4,6 +4,7 @@ const store = {
 	aboutOffset: writable(0),
 	blogOffset: writable(0),
 	contactOffset: writable(0),
+	isLandingAnimationDisabled: writable(false),
 	isDarkMode: writable(false),
 	isMobile: writable(-1),
 	isNavOpen: writable(false),

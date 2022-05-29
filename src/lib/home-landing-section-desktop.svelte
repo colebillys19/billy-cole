@@ -2,7 +2,7 @@
 	import store from '../store';
 	import IlluSvg from '../svgComponents/landing-illu.svelte';
 
-	const { isDarkMode } = store;
+	const { isLandingAnimationDisabled, isDarkMode } = store;
 
 	export let scrollY = 0;
 
@@ -11,13 +11,26 @@
 	let mouseX = 0;
 	let mouseY = 0;
 
-	const handleMouseMove = (e: MouseEvent) => {
-		if (mouseInitialX === -1) {
-			mouseInitialX = e.clientX;
-			mouseInitialY = e.clientY;
+	$: $isLandingAnimationDisabled, resetMouseValues();
+
+	const resetMouseValues = () => {
+		if ($isLandingAnimationDisabled) {
+			mouseInitialX = -1;
+			mouseInitialY = 0;
+			mouseX = 0;
+			mouseY = 0;
 		}
-		mouseX = e.clientX;
-		mouseY = e.clientY;
+	};
+
+	const handleMouseMove = (e: MouseEvent) => {
+		if (!$isLandingAnimationDisabled) {
+			if (mouseInitialX === -1) {
+				mouseInitialX = e.clientX;
+				mouseInitialY = e.clientY;
+			}
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+		}
 	};
 </script>
 
