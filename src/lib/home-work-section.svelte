@@ -2,11 +2,12 @@
 	import ImgCarousel from '$lib/home-img-carousel.svelte';
 
 	import store from '../store';
-	import loanhengeImgA from '../images/loanhenge-a.jpg';
-	import loanhengeImgB from '../images/loanhenge-b.jpg';
+	import loanhengeImgDesktop from '../images/loanhenge-a.jpg';
+	import loanhengeImgMobile from '../images/loanhenge-b.jpg';
 	import ss3MobileImgA from '../images/ss3-mobile-a.jpg';
-	import victoryImgA from '../images/victory-a.jpg';
-	import victoryImgB from '../images/victory-b.jpg';
+	import victoryImgDesktop from '../images/victory-a.jpg';
+	import victoryImgMobile from '../images/victory-b.jpg';
+	import type { ImgSrcLookup } from '../typeDeclarations';
 	import HomeSectionContainer from './home-section-container.svelte';
 
 	const { isDarkMode, isMobile, workOffset } = store;
@@ -16,19 +17,29 @@
 	const updateOffset = (offset: number): void => {
 		workOffset.set(offset);
 	};
+
+	const SRC_DICT: ImgSrcLookup = {
+		loanhengeL: loanhengeImgDesktop,
+		loanhengeS: loanhengeImgMobile,
+		ss3: ss3MobileImgA,
+		victoryL: victoryImgDesktop,
+		victoryS: victoryImgMobile
+	};
+
+	$: getImageSrcStyle = (imgId: string) => {
+		const keyName: string = innerWidth < 1040 ? `${imgId}S` : `${imgId}L`;
+		const yo: string = imgId === 'ss3' ? imgId : keyName;
+		const src: string = SRC_DICT[yo];
+		return `background-image: url(${src});`;
+	};
 </script>
 
 <svelte:window bind:innerWidth />
 <HomeSectionContainer className="bgColorB" name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Your Mortgage Online</h3>
-		{#if innerWidth < 560}
-			<img
-				alt="your-mortgage-online"
-				class="mobileImg"
-				src={ss3MobileImgA}
-				style={`border-color: ${$isDarkMode ? '#e68a6e' : '#5d5c7b'};`}
-			/>
+		{#if innerWidth <= 560}
+			<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
 		{:else}
 			<ImgCarousel />
 		{/if}
@@ -49,18 +60,7 @@
 		</ul>
 		<div class="divider" />
 		<h3>Loanhenge</h3>
-		<img
-			alt="loanhenge"
-			class="desktopImg"
-			src={loanhengeImgA}
-			style={`border-color: ${$isDarkMode ? '#e68a6e' : '#5d5c7b'};`}
-		/>
-		<img
-			alt="loanhenge"
-			class="mobileImg"
-			src={loanhengeImgB}
-			style={`border-color: ${$isDarkMode ? '#e68a6e' : '#5d5c7b'};`}
-		/>
+		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
 		<p>
 			Loanhenge is a project I started as a sort of sandbox to experiment with front-end concepts
 			and best-practices while cutting my teeth as a developer. Not long after getting my first job
@@ -90,18 +90,7 @@
 		{/if}
 		<div class="divider" />
 		<h3>Victory Templates</h3>
-		<img
-			alt="victory"
-			class="desktopImg"
-			src={victoryImgA}
-			style={`border-color: ${$isDarkMode ? '#e68a6e' : '#fffeef'};`}
-		/>
-		<img
-			alt="victory"
-			class="mobileImg"
-			src={victoryImgB}
-			style={`border-color: ${$isDarkMode ? '#e68a6e' : '#fffeef'};`}
-		/>
+		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
 		<p>
 			Victory Templates is a project I created as a resource for the devs on my team <span
 				class="opaque">(and for myself!)</span
@@ -148,34 +137,43 @@
 		text-align: left;
 	}
 
-	img {
-		display: inline-block;
-	}
-
 	ul {
 		margin: 0;
 		text-align: left;
+	}
+
+	.imgDiv {
+		background-size: cover;
+	}
+
+	.ss3ImgDiv {
+		border: 3px solid $palette-f;
+		height: 448px;
+		width: 252px;
+	}
+
+	.loanhengeImgDiv {
+		border: 3px solid $palette-f;
+		height: 352px;
+		width: 252px;
+	}
+
+	.victoryImgDiv {
+		border: 3px solid $palette-a;
+		height: 270px;
+		width: 252px;
 	}
 
 	.container {
 		text-align: center;
 	}
 
+	.imgDiv {
+		display: inline-block;
+	}
+
 	.hasPaddingBottom {
 		margin-bottom: 96px;
-	}
-
-	.desktopImg {
-		border-style: solid;
-		border-width: 3px;
-		display: none;
-		width: 900px;
-	}
-
-	.mobileImg {
-		border-style: solid;
-		border-width: 3px;
-		width: 252px;
 	}
 
 	.tools {
@@ -209,27 +207,37 @@
 		color: $palette-b;
 	}
 
+	.isDarkMode .ss3ImgDiv,
+	.isDarkMode .loanhengeImgDiv,
+	.isDarkMode .victoryImgDiv {
+		border: 3px solid $palette-c;
+	}
+
 	@media (min-width: 560px) {
-		.mobileImg {
+		.loanhengeImgDiv {
+			height: 671px;
 			width: 480px;
 		}
 
-		.ss3MobileImg {
-			width: 240px;
+		.victoryImgDiv {
+			height: 514px;
+			width: 480px;
 		}
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 1040px) {
 		.container {
 			text-align: left;
 		}
 
-		.desktopImg {
-			display: inline-block;
+		.loanhengeImgDiv {
+			height: 464px;
+			width: 900px;
 		}
 
-		.mobileImg {
-			display: none;
+		.victoryImgDiv {
+			height: 459px;
+			width: 900px;
 		}
 	}
 </style>
