@@ -66,7 +66,7 @@
 		</div>
 	</div>
 	<IconButton handleClick={handleRightClick} isOpaque={imgIndex === 14}>
-		<RightChevIcon />
+		<RightChevIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
 </div>
 

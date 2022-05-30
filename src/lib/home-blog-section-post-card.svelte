@@ -22,7 +22,7 @@
 		</div>
 		{#if innerWidth >= 560}
 			<div>
-				<RightChevIcon />
+				<RightChevIcon color={$isDarkMode ? '#f2c3ad' : '#bb77a2'} />
 			</div>
 		{/if}
 	</div>
@@ -39,8 +39,9 @@
 
 	.contentContainer {
 		align-items: center;
-		border-left: 3px solid $palette-c;
-		box-shadow: 1px 1px 1px $palette-b;
+		// border-bottom: 3px solid $palette-c;
+		border: 1px solid $palette-b;
+		box-shadow: -2px 2px 0 $palette-c;
 		color: $palette-g;
 		display: flex;
 		margin-bottom: 54px;
@@ -49,10 +50,11 @@
 	}
 
 	.contentSubcontainer {
-		padding: 8px 24px;
+		padding: 8px 24px 10px;
 	}
 
 	.date {
+		color: $palette-d;
 		font-size: 12px;
 		margin-bottom: 12px;
 	}
@@ -60,11 +62,15 @@
 	// dark
 
 	.isDarkMode {
-		box-shadow: 1px 1px 1px $palette-e;
+		border: 1px solid $palette-e;
 	}
 
 	.isDarkMode h4,
 	.isDarkMode p {
 		color: $palette-a;
+	}
+
+	.isDarkMode .date {
+		color: $palette-b;
 	}
 </style>
