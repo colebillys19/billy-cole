@@ -20,7 +20,7 @@
 
 <svelte:window bind:innerWidth />
 <HomeSectionContainer className="bgColorB" name="work" {updateOffset}>
-	<div class:isDarkMode={$isDarkMode}>
+	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Your Mortgage Online</h3>
 		{#if innerWidth < 560}
 			<img
@@ -47,6 +47,7 @@
 			<li>Koa</li>
 			<li>Styled Components</li>
 		</ul>
+		<div class="divider" />
 		<h3>Loanhenge</h3>
 		<img
 			alt="loanhenge"
@@ -87,6 +88,7 @@
 				>
 			</p>
 		{/if}
+		<div class="divider" />
 		<h3>Victory Templates</h3>
 		<img
 			alt="victory"
@@ -124,6 +126,7 @@
 				>
 			</p>
 		{/if}
+		<div class="divider" />
 		<h3>This Site!</h3>
 		<p class="tools"><b>Tools used:</b></p>
 		<ul class="tools">
@@ -152,6 +155,10 @@
 	ul {
 		margin: 0;
 		text-align: left;
+	}
+
+	.container {
+		text-align: center;
 	}
 
 	.hasPaddingBottom {
@@ -185,6 +192,11 @@
 		text-decoration: none;
 	}
 
+	.divider {
+		border-bottom: 1px solid $palette-e;
+		margin-bottom: 24px;
+	}
+
 	// dark
 
 	.isDarkMode p,
@@ -208,6 +220,10 @@
 	}
 
 	@media (min-width: 768px) {
+		.container {
+			text-align: left;
+		}
+
 		.desktopImg {
 			display: inline-block;
 		}

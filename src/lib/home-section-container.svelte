@@ -72,10 +72,4 @@
 	.isDarkMode.bgColorB {
 		background-color: $palette-f;
 	}
-
-	@media (min-width: 768px) {
-		.contentContainer {
-			text-align: left;
-		}
-	}
 </style>

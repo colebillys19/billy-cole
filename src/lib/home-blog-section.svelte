@@ -11,7 +11,7 @@
 </script>
 
 <HomeSectionContainer className="bgColorA" name="blog" {updateOffset}>
-	<div class:isDarkMode={$isDarkMode}>
+	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Recent Posts:</h3>
 		<PostList />
 		<a href="/blog">go to blog</a>
@@ -36,5 +36,11 @@
 
 	.isDarkMode a {
 		color: $palette-b;
+	}
+
+	@media (min-width: 768px) {
+		.container {
+			text-align: left;
+		}
 	}
 </style>

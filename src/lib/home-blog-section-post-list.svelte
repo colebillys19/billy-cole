@@ -17,4 +17,8 @@
 	{/each}
 </ul>
 
-<style></style>
+<style>
+	ul {
+		padding: 0;
+	}
+</style>
