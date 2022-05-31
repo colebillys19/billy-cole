@@ -14,6 +14,7 @@
 <style lang="scss">
 	h1 {
 		margin-bottom: 54px;
+		text-shadow: 1px 1px 2px $palette-e;
 	}
 
 	.blogContainer {
@@ -26,6 +27,7 @@
 
 	.isDarkMode h1 {
 		color: $palette-a;
+		text-shadow: 1px 1px 2px $palette-c;
 	}
 
 	.isDarkMode a {

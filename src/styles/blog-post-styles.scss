@@ -1,4 +1,7 @@
-h1,
+h1 {
+	text-shadow: 1px 1px 2px $palette-e;
+}
+
 h2,
 p {
 	margin-bottom: 30px;
@@ -23,12 +26,19 @@ li {
 }
 
 .blogPostContainer {
+	margin: 24px auto 0;
+	max-width: 1200px;
 	padding: 0 24px 96px;
+}
+
+.date {
+	color: $palette-d;
+	font-size: 14px;
 }
 
 .divider {
 	border-bottom: 1px solid $palette-c;
-	height: 90px;
+	height: 48px;
 	margin-bottom: 30px;
 	width: 100%;
 }
@@ -57,6 +67,10 @@ li {
 
 .isDarkMode a {
 	color: $palette-b;
+}
+
+.isDarkMode h1 {
+	text-shadow: 1px 1px 2px $palette-c;
 }
 
 .isDarkMode h1,
