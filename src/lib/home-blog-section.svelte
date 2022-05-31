@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PostList from '$lib/home-blog-section-post-list.svelte';
+	import PostList from '$lib/blog-section-post-list.svelte';
 	import store from '../store';
 	import HomeSectionContainer from './home-section-container.svelte';
 
@@ -14,7 +14,7 @@
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Recent Posts:</h3>
 		<PostList />
-		<a href="/blog">go to blog</a>
+		<a href="/blog">see all posts</a>
 	</div>
 </HomeSectionContainer>
 
@@ -25,7 +25,9 @@
 	}
 
 	a {
+		display: block;
 		font-size: 20px;
+		margin-top: 54px;
 	}
 
 	// dark

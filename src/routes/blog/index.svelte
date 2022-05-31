@@ -1,4 +1,6 @@
 <script lang="ts">
+	import PostList from '$lib/blog-section-post-list.svelte';
+
 	import store from '../../store';
 
 	const { isDarkMode } = store;
@@ -6,20 +8,18 @@
 
 <div class:isDarkMode={$isDarkMode} class="blogContainer">
 	<h1>blog</h1>
-	<div>
-		<a href="/blog/vue-vs-svelte">vue vs svelte</a>
-	</div>
-	<div>
-		<a href="/blog/intro-to-wordpress">intro to wordpress</a>
-	</div>
-	<div>
-		<a href="/blog/how-the-web-works">how the web works</a>
-	</div>
+	<PostList isFullList />
 </div>
 
 <style lang="scss">
+	h1 {
+		margin-bottom: 54px;
+	}
+
 	.blogContainer {
-		padding: 0 60px;
+		margin: 0 auto;
+		max-width: 1200px;
+		padding: 0 60px 96px;
 	}
 
 	/* dark */

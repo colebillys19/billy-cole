@@ -30,7 +30,12 @@
 
 <style lang="scss">
 	a {
+		display: block;
 		text-decoration: none;
+	}
+
+	a:not(:last-of-type) {
+		margin-bottom: 54px;
 	}
 
 	h4 {
@@ -39,12 +44,10 @@
 
 	.contentContainer {
 		align-items: center;
-		// border-bottom: 3px solid $palette-c;
 		border: 1px solid $palette-b;
 		box-shadow: -2px 2px 0 $palette-c;
 		color: $palette-g;
 		display: flex;
-		margin-bottom: 54px;
 		padding: 10px;
 		text-align: left;
 	}

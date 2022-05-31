@@ -1,13 +1,15 @@
 <script lang="ts">
-	import PostCard from '$lib/home-blog-section-post-card.svelte';
+	import PostCard from '$lib/blog-section-post-card.svelte';
 
 	import blogData from '../blogData';
 
-	const slicedData = blogData.slice(0, 3);
+	export let isFullList = false;
+
+	const data = isFullList ? blogData : blogData.slice(0, 3);
 </script>
 
 <ul>
-	{#each slicedData as dataObj}
+	{#each data as dataObj}
 		<PostCard
 			date={dataObj.date}
 			excerpt={dataObj.excerpt}
