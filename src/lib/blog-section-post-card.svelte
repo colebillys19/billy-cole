@@ -48,7 +48,7 @@
 		box-shadow: -2px 2px 0 $palette-c;
 		color: $palette-g;
 		display: flex;
-		padding: 10px;
+		padding: 16px 10px;
 		text-align: left;
 	}
 

@@ -44,6 +44,7 @@
 		font-size: 32px;
 		padding: 24px 0;
 		text-align: right;
+		text-shadow: 1px 1px 2px $palette-e;
 	}
 
 	.bgColorA {
@@ -64,6 +65,7 @@
 
 	.isDarkMode h2 {
 		color: $palette-a;
+		text-shadow: 1px 1px 2px $palette-c;
 	}
 
 	.isDarkMode.bgColorA {
