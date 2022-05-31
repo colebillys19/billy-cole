@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import debounce from 'lodash.debounce';
 
 	import store from '../store';
@@ -12,8 +12,9 @@
 
 	let sectionElement: HTMLElement;
 
-	onMount(() => {
+	onMount(async () => {
 		if (sectionElement.parentElement) {
+			await tick();
 			updateOffset(sectionElement.parentElement.offsetTop + sectionElement.offsetTop);
 		}
 	});

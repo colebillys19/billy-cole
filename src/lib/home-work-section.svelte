@@ -1,24 +1,20 @@
 <script lang="ts">
 	import ImgCarousel from '$lib/home-img-carousel.svelte';
 
-	import store from '../store';
+	import { hasKey } from '../helpers';
 	import loanhengeImgDesktop from '../images/loanhenge-a.jpg';
 	import loanhengeImgMobile from '../images/loanhenge-b.jpg';
 	import ss3MobileImgA from '../images/ss3-mobile-a.jpg';
 	import victoryImgDesktop from '../images/victory-a.jpg';
 	import victoryImgMobile from '../images/victory-b.jpg';
-	import type { ImgSrcLookup } from '../typeDeclarations';
+	import store from '../store';
 	import HomeSectionContainer from './home-section-container.svelte';
 
 	const { isDarkMode, isMobile, workOffset } = store;
 
 	let innerWidth = 0;
 
-	const updateOffset = (offset: number): void => {
-		workOffset.set(offset);
-	};
-
-	const SRC_DICT: ImgSrcLookup = {
+	const SRC_DICT = {
 		loanhengeL: loanhengeImgDesktop,
 		loanhengeS: loanhengeImgMobile,
 		ss3: ss3MobileImgA,
@@ -26,11 +22,19 @@
 		victoryS: victoryImgMobile
 	};
 
+	const updateOffset = (offset: number): void => {
+		workOffset.set(offset);
+	};
+
 	$: getImageSrcStyle = (imgId: string) => {
-		const keyName: string = innerWidth < 1040 ? `${imgId}S` : `${imgId}L`;
-		const yo: string = imgId === 'ss3' ? imgId : keyName;
-		const src: string = SRC_DICT[yo];
-		return `background-image: url(${src});`;
+		let keyName = imgId;
+		if (imgId !== 'ss3') {
+			keyName = innerWidth < 1040 ? `${imgId}S` : `${imgId}L`;
+		}
+		if (hasKey(SRC_DICT, keyName)) {
+			const src = SRC_DICT[keyName];
+			return `background-image: url(${src});`;
+		}
 	};
 </script>
 
