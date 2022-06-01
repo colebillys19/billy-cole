@@ -2,9 +2,10 @@
 	import HomeAboutSection from '$lib/home-about-section.svelte';
 	import HomeBlogSection from '$lib/home-blog-section.svelte';
 	import HomeContactSection from '$lib/home-contact-section.svelte';
-	import HomeLandingSectionMobile from '$lib/home-landing-section-mobile.svelte';
-	import HomeLandingSectionDesktop from '$lib/home-landing-section-desktop.svelte';
+	import HomeFooter from '$lib/home-footer.svelte';
 	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
+	import HomeLandingSectionDesktop from '$lib/home-landing-section-desktop.svelte';
+	import HomeLandingSectionMobile from '$lib/home-landing-section-mobile.svelte';
 	import HomeNavMenuDesktop from '$lib/home-nav-menu-desktop.svelte';
 	import HomeNavMenuMobile from '$lib/home-nav-menu-mobile.svelte';
 	import HomeWorkSection from '$lib/home-work-section.svelte';
@@ -51,7 +52,8 @@
 	<HomeWorkSection />
 	<HomeBlogSection />
 	<HomeAboutSection />
-	<HomeContactSection {handleBackToTop} />
+	<HomeContactSection />
+	<HomeFooter {handleBackToTop} />
 </div>
 
 <style>

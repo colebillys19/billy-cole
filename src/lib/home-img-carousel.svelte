@@ -38,7 +38,7 @@
 </script>
 
 <div class="container">
-	<IconButton handleClick={handleLeftClick} isOpaque={imgIndex === 0}>
+	<IconButton handleClick={handleLeftClick} isDisabled={imgIndex === 0}>
 		<LeftChevIcon />
 	</IconButton>
 	<div class="imagesContainer" style={`outline: 3px solid ${$isDarkMode ? '#e68a6e' : '#5d5c7b'};`}>
@@ -65,7 +65,7 @@
 			<img src={ss3MobileImgO} alt="ss3-mobile" />
 		</div>
 	</div>
-	<IconButton handleClick={handleRightClick} isOpaque={imgIndex === 14}>
+	<IconButton handleClick={handleRightClick} isDisabled={imgIndex === 14}>
 		<RightChevIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
 </div>

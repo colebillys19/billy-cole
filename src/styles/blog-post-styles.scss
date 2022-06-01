@@ -81,6 +81,10 @@ li {
 	color: $palette-a;
 }
 
+.isDarkMode .date {
+	color: $palette-d;
+}
+
 .isDarkMode .parens {
 	color: $palette-b;
 }

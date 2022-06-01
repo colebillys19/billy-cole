@@ -1,13 +1,8 @@
 <script lang="ts">
-	import IconButton from '$lib/icon-button.svelte';
-
 	import store from '../store';
-	import ArrowUpIcon from '../svgComponents/arrow-up-icon.svelte';
 	import HomeSectionContainer from './home-section-container.svelte';
 
 	const { contactOffset, isDarkMode } = store;
-
-	export let handleBackToTop: () => void;
 
 	const updateOffset = (offset: number): void => {
 		contactOffset.set(offset);
@@ -16,10 +11,7 @@
 
 <HomeSectionContainer className="bgColorA" name="contact" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode}>
-		<p>yes</p>
-		<IconButton ariaLabel="back to top" handleClick={handleBackToTop}>
-			<ArrowUpIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
-		</IconButton>
+		<p>placeholder</p>
 	</div>
 </HomeSectionContainer>
 
