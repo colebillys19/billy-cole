@@ -62,7 +62,7 @@
 			reach out!
 		</p>
 		<TextIconLink href={cvPdf} isIconRight download="billy-cole-cv">
-			<DownloadIcon color="green" slot="icon" />
+			<DownloadIcon color="#bb77a2" slot="icon" />
 			<span slot="text">download cv</span>
 		</TextIconLink>
 		<div class="imgDiv" style={`background-image: url(${headshotImg});`} />

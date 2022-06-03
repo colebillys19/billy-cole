@@ -83,6 +83,7 @@
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($workOffset)}
+					isNavMargin
 					tabindex={$isNavOpen ? 0 : -1}
 				>
 					<MonitorIcon slot="icon" />
@@ -92,6 +93,7 @@
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($blogOffset)}
+					isNavMargin
 					tabindex={$isNavOpen ? 0 : -1}
 				>
 					<BulbIcon slot="icon" />
@@ -101,6 +103,7 @@
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($aboutOffset)}
+					isNavMargin
 					tabindex={$isNavOpen ? 0 : -1}
 				>
 					<UserIcon slot="icon" />
@@ -110,6 +113,7 @@
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($contactOffset)}
+					isNavMargin
 					tabindex={$isNavOpen ? 0 : -1}
 				>
 					<MailIcon slot="icon" />
@@ -157,8 +161,13 @@
 		text-align: center;
 	}
 
+	li {
+		align-items: center;
+		display: flex;
+	}
+
 	li:not(:last-of-type) {
-		margin: 0 60px 0 0;
+		margin: 0 72px 0 0;
 	}
 
 	li span {

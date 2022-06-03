@@ -16,24 +16,26 @@
 
 <HomeSectionContainer className="bgColorA" name="contact" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
-		<div>
-			<TextIconLink href="https://www.google.com/" target="_blank">
-				<TwitterIcon color="green" slot="icon" />
-				<span slot="text">twitter</span>
-			</TextIconLink>
-		</div>
-		<div>
-			<TextIconLink href="https://www.google.com/" target="_blank">
-				<LinkedinIcon color="green" slot="icon" />
-				<span slot="text">linkedin</span>
-			</TextIconLink>
-		</div>
-		<div>
-			<TextIconLink href="https://www.google.com/" target="_blank">
-				<GithubIcon color="green" slot="icon" />
-				<span slot="text">github</span>
-			</TextIconLink>
-		</div>
+		<ul>
+			<li>
+				<TextIconLink href="https://www.google.com/" target="_blank">
+					<TwitterIcon color="#bb77a2" slot="icon" />
+					<span slot="text">twitter</span>
+				</TextIconLink>
+			</li>
+			<li>
+				<TextIconLink href="https://www.google.com/" target="_blank">
+					<LinkedinIcon color="#bb77a2" slot="icon" />
+					<span slot="text">linkedin</span>
+				</TextIconLink>
+			</li>
+			<li>
+				<TextIconLink href="https://www.google.com/" target="_blank">
+					<GithubIcon color="#bb77a2" slot="icon" />
+					<span slot="text">github</span>
+				</TextIconLink>
+			</li>
+		</ul>
 		<h3>Reach out!</h3>
 		<label for="msg">message:</label>
 		<textarea name="msg" id="msg" cols="30" rows="10" />
@@ -46,6 +48,16 @@
 <style lang="scss">
 	h3 {
 		margin-top: 24px;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	li:not(:last-of-type) {
+		margin-bottom: 16px;
 	}
 
 	label {

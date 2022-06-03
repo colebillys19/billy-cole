@@ -34,7 +34,7 @@
 </script>
 
 <svelte:window bind:innerHeight bind:innerWidth bind:scrollY on:scroll={handleScroll} />
-{#if innerWidth < 816}
+{#if innerWidth < 920}
 	<HomeNavMenuMobile />
 {:else}
 	<HomeNavMenuDesktop />

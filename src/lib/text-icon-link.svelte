@@ -3,6 +3,7 @@
 	export let handleClick: () => void = () => null;
 	export let href = '#';
 	export let isIconRight = false;
+	export let isNavMargin = false;
 
 	const onClick = (e: MouseEvent) => {
 		if (handleClick() !== null) {
@@ -16,7 +17,7 @@
 	<div class:isIconRight>
 		<slot name="icon" />
 	</div>
-	<span class:isIconRight>
+	<span class:isIconRight class:isNavMargin>
 		<slot name="text" />
 	</span>
 </a>
@@ -36,8 +37,12 @@
 	}
 
 	span {
-		margin-left: 8px;
+		margin-left: 13px;
 		order: 2;
+	}
+
+	.isNavMargin {
+		margin-left: 16px;
 	}
 
 	div.isIconRight {
@@ -45,7 +50,11 @@
 	}
 
 	span.isIconRight {
-		margin: 0 8px 0 0;
+		margin: 0 13px 0 0;
 		order: 1;
+	}
+
+	.isIconRight.isNavMargin {
+		margin: 0 16px 0 0;
 	}
 </style>
