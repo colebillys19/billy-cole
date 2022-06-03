@@ -61,7 +61,7 @@
 			know is looking for a solid developer with a great sense for UI/UX, please don't hesitate to
 			reach out!
 		</p>
-		<TextIconLink href={cvPdf} isIconRight download="billy-cole-cv">
+		<TextIconLink download="billy-cole-cv" href={cvPdf} isIconRight target="_blank">
 			<DownloadIcon color="#bb77a2" slot="icon" />
 			<span slot="text">download cv</span>
 		</TextIconLink>

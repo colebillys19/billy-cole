@@ -48,18 +48,18 @@
 		}
 	};
 
-	const handleMousedown = (e: MouseEvent) => {
+	const handleWindowClick = (e: MouseEvent) => {
 		const target = e.target as HTMLElement;
 		closeOnClickAway(target);
 	};
 
-	const handleTouchstart = (e: TouchEvent) => {
+	const handleTouchend = (e: TouchEvent) => {
 		const target = e.target as HTMLElement;
 		closeOnClickAway(target);
 	};
 </script>
 
-<svelte:window bind:scrollY on:click={handleMousedown} on:touchstart={handleTouchstart} />
+<svelte:window bind:scrollY on:click={handleWindowClick} on:touchend={handleTouchend} />
 <div class:isDarkMode={$isDarkMode} class:isNavOpen={$isNavOpen}>
 	<IconButton
 		ariaLabel="open nav menu"

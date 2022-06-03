@@ -48,12 +48,12 @@
 		box-shadow: -2px 2px 0 $palette-c;
 		color: $palette-g;
 		display: flex;
-		padding: 16px 10px;
+		padding: 32px 48px;
 		text-align: left;
 	}
 
 	.contentSubcontainer {
-		padding: 8px 24px 10px;
+		padding-right: 24px;
 	}
 
 	.date {
