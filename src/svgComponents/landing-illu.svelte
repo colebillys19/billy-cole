@@ -75,6 +75,7 @@
 <style>
 	svg {
 		height: 100%;
+		pointer-events: none;
 		position: absolute;
 		right: -60px;
 		width: 100%;

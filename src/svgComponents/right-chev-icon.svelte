@@ -8,3 +8,9 @@
 		fill={color}
 	/>
 </svg>
+
+<style>
+	svg {
+		pointer-events: none;
+	}
+</style>
