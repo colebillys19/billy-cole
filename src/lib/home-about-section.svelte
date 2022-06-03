@@ -14,34 +14,48 @@
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Hi! I'm Billy.</h3>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-			labore et dolore magna aliqua. Duis ut diam quam nulla porttitor massa id neque. Aliquam
-			vestibulum morbi blandit cursus risus at ultrices mi tempus. Gravida quis blandit turpis
-			cursus. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis. Habitant
-			morbi tristique senectus et netus et malesuada fames.
+			Growing up, I always gravitated toward creative pursuits - when I was young it started with
+			drawing, then later it was photography, and then eventually music. In high school I developed
+			a love for writing and recording music. My friends and I always had some sort of garage band
+			going, and I was the defacto recording engineer. This led to me pursuing audio engineering as
+			a career. I attended Full Sail University in Florida and earned a Bachelor's degree in
+			Recording Arts. I worked as an audio-visual tech and audio engineer for a number of years,
+			playing and recording my own music on the side.
 		</p>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-			labore et dolore magna aliqua. Duis ut diam quam nulla porttitor massa id neque. Aliquam
-			vestibulum morbi blandit cursus risus at ultrices mi tempus. Gravida quis blandit turpis
-			cursus. Quis risus sed vulputate odio ut enim. Et malesuada fames ac turpis egestas maecenas
-			pharetra convallis. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit.
-			Mauris vitae ultricies leo integer malesuada. Interdum velit laoreet id donec ultrices
-			tincidunt. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis.
-			Habitant morbi tristique senectus et netus et malesuada fames. Vitae auctor eu augue ut lectus
-			arcu bibendum at varius. Eu feugiat pretium nibh ipsum consequat. Eu ultrices vitae auctor eu.
-			Egestas dui id ornare arcu odio ut. Sapien nec sagittis aliquam malesuada bibendum arcu vitae
-			elementum curabitur.
+			Then one fateful day a friend introduced me to web development. I was pleased with how web
+			development tapped into different parts of my brain and played into my strengths.
+		</p>
+		<p>It played into natural strengths:</p>
+		<ul>
+			<li>my creative eye</li>
+			<li>my gift for pattern recognition</li>
+			<li>my ability to solve puzzles (especially visual ones)</li>
+			<li>my propensity to keep things orderly/organized</li>
+		</ul>
+		<p>It played into learned strengths:</p>
+		<ul>
+			<li>a familiarity with computing (and googling!) I'd developed as a recording engineer</li>
+			<li>
+				a familiarity with how interfaces should look and feel I'd developed working with audio,
+				video, and lighting equipment
+			</li>
+			<li>an ability to solve complex problems on the fly I'd developed working live events</li>
+			<li>a desire and ability to seek out original ideas I'd developed as a songwriter</li>
+		</ul>
+		<p>
+			What started as an interest turned into a passion. I spent time learning the craft on my own,
+			then took a few classes at a local community college. Eventually I decided to take the plunge
+			and pursue a coding career - I flew out to San Francisco and attended Rith School's four month
+			web development bootcamp. Shortly after Rithm I landed a job as a software engineer at
+			Dovenmuehle's SF office. Dovenmuehle is a mortgage-focused finance company based out of
+			Illinois. After a few years working as a full stack dev and learning a ton, I decided to
+			explore what else the vast field of web development had to offer.
 		</p>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-			labore et dolore magna aliqua. Duis ut diam quam nulla porttitor massa id neque. Aliquam
-			vestibulum morbi blandit cursus risus at ultrices mi tempus. Gravida quis blandit turpis
-			cursus. Quis risus sed vulputate odio ut enim. Et malesuada fames ac turpis egestas maecenas
-			pharetra convallis. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit.
-			Mauris vitae ultricies leo integer malesuada. Interdum velit laoreet id donec ultrices
-			tincidunt. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis.
-			Habitant morbi tristique senectus et netus et malesuada fames.
+			If you're reading this, that means I'm still on the hunt for a new job! If you or someone you
+			know is looking for a solid developer with a great sense for UI/UX, please don't hesitate to
+			reach out!
 		</p>
 		<div class="imgDiv" style={`background-image: url(${headshotImg});`} />
 	</div>
