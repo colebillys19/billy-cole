@@ -2,7 +2,6 @@
 	export let ariaLabel = '';
 	export let handleClick: () => void = () => null;
 	export let href = '#';
-	export let isExternalLink = false;
 	export let isIconRight = false;
 
 	const onClick = (e: MouseEvent) => {
@@ -13,7 +12,7 @@
 	};
 </script>
 
-<a on:click={onClick} aria-label={ariaLabel} {href} target={isExternalLink ? '_blank' : '_self'}>
+<a on:click={onClick} aria-label={ariaLabel} {href} {...$$restProps}>
 	<div class:isIconRight>
 		<slot name="icon" />
 	</div>

@@ -1,5 +1,10 @@
 <script lang="ts">
+	import TextIconLink from '$lib/text-icon-link.svelte';
+
 	import store from '../store';
+	import TwitterIcon from '../svgComponents/twitter-icon.svelte';
+	import LinkedinIcon from '../svgComponents/linkedin-icon.svelte';
+	import GithubIcon from '../svgComponents/github-icon.svelte';
 	import HomeSectionContainer from './home-section-container.svelte';
 
 	const { contactOffset, isDarkMode } = store;
@@ -11,9 +16,24 @@
 
 <HomeSectionContainer className="bgColorA" name="contact" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
-		<a href="https://www.google.com/" target="_blank">twitter</a>
-		<a href="https://www.google.com/" target="_blank">linkedin</a>
-		<a href="https://www.google.com/" target="_blank">github</a>
+		<div>
+			<TextIconLink href="https://www.google.com/" target="_blank">
+				<TwitterIcon color="green" slot="icon" />
+				<span slot="text">twitter</span>
+			</TextIconLink>
+		</div>
+		<div>
+			<TextIconLink href="https://www.google.com/" target="_blank">
+				<LinkedinIcon color="green" slot="icon" />
+				<span slot="text">linkedin</span>
+			</TextIconLink>
+		</div>
+		<div>
+			<TextIconLink href="https://www.google.com/" target="_blank">
+				<GithubIcon color="green" slot="icon" />
+				<span slot="text">github</span>
+			</TextIconLink>
+		</div>
 		<h3>Reach out!</h3>
 		<label for="msg">message:</label>
 		<textarea name="msg" id="msg" cols="30" rows="10" />
@@ -24,15 +44,6 @@
 </HomeSectionContainer>
 
 <style lang="scss">
-	a {
-		display: block;
-		font-size: 20px;
-	}
-
-	a:not(:last-of-type) {
-		margin-bottom: 10px;
-	}
-
 	h3 {
 		margin-top: 24px;
 	}

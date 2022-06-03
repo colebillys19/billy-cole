@@ -1,5 +1,6 @@
 <script lang="ts">
 	import IconButton from '$lib/icon-button.svelte';
+	import TextIconLink from '$lib/text-icon-link.svelte';
 
 	import store from '../store';
 	import BulbIcon from '../svgComponents/bulb-icon.svelte';
@@ -80,28 +81,40 @@
 		</IconButton>
 		<ul class="navElement">
 			<li>
-				<button on:click={() => handleScrollClick($workOffset)} tabindex={$isNavOpen ? 0 : -1}>
-					<MonitorIcon />
-					<span>work</span>
-				</button>
+				<TextIconLink
+					handleClick={() => handleScrollClick($workOffset)}
+					tabindex={$isNavOpen ? 0 : -1}
+				>
+					<MonitorIcon slot="icon" />
+					<span slot="text">work</span>
+				</TextIconLink>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($blogOffset)} tabindex={$isNavOpen ? 0 : -1}>
-					<BulbIcon />
-					<span>blog</span>
-				</button>
+				<TextIconLink
+					handleClick={() => handleScrollClick($blogOffset)}
+					tabindex={$isNavOpen ? 0 : -1}
+				>
+					<BulbIcon slot="icon" />
+					<span slot="text">blog</span>
+				</TextIconLink>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($aboutOffset)} tabindex={$isNavOpen ? 0 : -1}>
-					<UserIcon />
-					<span>about</span>
-				</button>
+				<TextIconLink
+					handleClick={() => handleScrollClick($aboutOffset)}
+					tabindex={$isNavOpen ? 0 : -1}
+				>
+					<UserIcon slot="icon" />
+					<span slot="text">about</span>
+				</TextIconLink>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($contactOffset)} tabindex={$isNavOpen ? 0 : -1}>
-					<MailIcon />
-					<span>contact</span>
-				</button>
+				<TextIconLink
+					handleClick={() => handleScrollClick($contactOffset)}
+					tabindex={$isNavOpen ? 0 : -1}
+				>
+					<MailIcon slot="icon" />
+					<span slot="text">contact</span>
+				</TextIconLink>
 			</li>
 		</ul>
 		<IconButton
@@ -146,21 +159,8 @@
 		margin-bottom: 30px;
 	}
 
-	li button {
-		align-items: center;
-		background-color: rgba(0, 0, 0, 0);
-		border: none;
-		display: flex;
-	}
-
-	li button span {
+	li span {
 		color: $palette-a;
-		font-size: 18px;
-		margin-left: 12px;
-	}
-
-	button:hover {
-		cursor: pointer;
 	}
 
 	.isNavOpen nav {

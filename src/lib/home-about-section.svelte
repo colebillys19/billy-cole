@@ -1,6 +1,10 @@
 <script lang="ts">
-	import store from '../store';
+	import TextIconLink from '$lib/text-icon-link.svelte';
+
+	import cvPdf from '../billy-cole-cv.pdf';
 	import headshotImg from '../images/headshot.jpg';
+	import store from '../store';
+	import DownloadIcon from '../svgComponents/download-icon.svelte';
 	import HomeSectionContainer from './home-section-container.svelte';
 
 	const { aboutOffset, isDarkMode } = store;
@@ -57,6 +61,10 @@
 			know is looking for a solid developer with a great sense for UI/UX, please don't hesitate to
 			reach out!
 		</p>
+		<TextIconLink href={cvPdf} isIconRight download="billy-cole-cv">
+			<DownloadIcon color="green" slot="icon" />
+			<span slot="text">download cv</span>
+		</TextIconLink>
 		<div class="imgDiv" style={`background-image: url(${headshotImg});`} />
 	</div>
 </HomeSectionContainer>

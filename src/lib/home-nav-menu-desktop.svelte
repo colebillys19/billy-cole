@@ -1,5 +1,6 @@
 <script lang="ts">
 	import IconButton from '$lib/icon-button.svelte';
+	import TextIconLink from '$lib/text-icon-link.svelte';
 
 	import store from '../store';
 	import BulbIcon from '../svgComponents/bulb-icon.svelte';
@@ -80,28 +81,40 @@
 		</IconButton>
 		<ul class="navElement">
 			<li>
-				<button on:click={() => handleScrollClick($workOffset)} tabindex={$isNavOpen ? 0 : -1}>
-					<MonitorIcon />
-					<span>work</span>
-				</button>
+				<TextIconLink
+					handleClick={() => handleScrollClick($workOffset)}
+					tabindex={$isNavOpen ? 0 : -1}
+				>
+					<MonitorIcon slot="icon" />
+					<span slot="text">work</span>
+				</TextIconLink>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($blogOffset)} tabindex={$isNavOpen ? 0 : -1}>
-					<BulbIcon />
-					<span>blog</span>
-				</button>
+				<TextIconLink
+					handleClick={() => handleScrollClick($blogOffset)}
+					tabindex={$isNavOpen ? 0 : -1}
+				>
+					<BulbIcon slot="icon" />
+					<span slot="text">blog</span>
+				</TextIconLink>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($aboutOffset)} tabindex={$isNavOpen ? 0 : -1}>
-					<UserIcon />
-					<span>about</span>
-				</button>
+				<TextIconLink
+					handleClick={() => handleScrollClick($aboutOffset)}
+					tabindex={$isNavOpen ? 0 : -1}
+				>
+					<UserIcon slot="icon" />
+					<span slot="text">about</span>
+				</TextIconLink>
 			</li>
 			<li>
-				<button on:click={() => handleScrollClick($contactOffset)} tabindex={$isNavOpen ? 0 : -1}>
-					<MailIcon />
-					<span>contact</span>
-				</button>
+				<TextIconLink
+					handleClick={() => handleScrollClick($contactOffset)}
+					tabindex={$isNavOpen ? 0 : -1}
+				>
+					<MailIcon slot="icon" />
+					<span slot="text">contact</span>
+				</TextIconLink>
 			</li>
 		</ul>
 		<IconButton
@@ -119,83 +132,6 @@
 	</nav>
 </div>
 
-<!-- <style lang="scss">
-	nav {
-		background-color: rgba(56, 61, 93, 0.9);
-		border-bottom-color: $palette-c;
-		border-bottom-style: solid;
-		border-bottom-width: 6px;
-		display: flex;
-		justify-content: space-between;
-		padding: 10px;
-		position: fixed;
-		top: -304px;
-		transition: top 320ms ease-in-out;
-		width: 100%;
-		z-index: 2;
-	}
-
-	ul {
-		list-style: none;
-		margin: 30px 0 0 0;
-		padding: 0;
-		text-align: center;
-	}
-
-	li {
-		margin-bottom: 30px;
-	}
-
-	li button {
-		align-items: center;
-		background-color: rgba(0, 0, 0, 0);
-		border: none;
-		display: flex;
-	}
-
-	li button span {
-		color: $palette-a;
-		font-size: 18px;
-		margin-left: 12px;
-	}
-
-	button:hover {
-		cursor: pointer;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
-	}
-
-	// nav open
-
-	.isNavOpen nav {
-		top: 0;
-	}
-
-	@media (min-width: 816px) {
-		nav {
-			border-bottom-width: 4px;
-			top: -84px;
-		}
-
-		ul {
-			align-items: center;
-			display: flex;
-			margin: 0;
-		}
-
-		li {
-			margin: 0;
-		}
-
-		li:not(:last-of-type) {
-			margin: 0 60px 0 0;
-		}
-	}
-</style> -->
 <style lang="scss">
 	nav {
 		background-color: rgba(56, 61, 93, 0.9);
@@ -225,21 +161,8 @@
 		margin: 0 60px 0 0;
 	}
 
-	li button {
-		align-items: center;
-		background-color: rgba(0, 0, 0, 0);
-		border: none;
-		display: flex;
-	}
-
-	li button span {
+	li span {
 		color: $palette-a;
-		font-size: 18px;
-		margin-left: 12px;
-	}
-
-	button:hover {
-		cursor: pointer;
 	}
 
 	.isNavOpen nav {
