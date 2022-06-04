@@ -28,6 +28,6 @@
 
 <style lang="scss">
 	main {
-		background-color: $palette-a;
+		background-color: $lightBgA;
 	}
 </style>

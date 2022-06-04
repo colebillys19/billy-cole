@@ -13,7 +13,7 @@
 <style lang="scss">
 	div {
 		background-color: #ffffff;
-		border-color: $palette-e;
+		border-color: blue;
 		border-style: solid;
 		border-width: 1px;
 		box-shadow: 1px 1px 1px rgba(129, 122, 153, 0.5);
@@ -28,7 +28,7 @@
 
 	.isDarkMode {
 		background-color: #000000;
-		border-color: $palette-a;
+		border-color: blue;
 		box-shadow: 1px 1px 1px rgba(255, 254, 239, 0.5);
 		color: #ffffff;
 	}

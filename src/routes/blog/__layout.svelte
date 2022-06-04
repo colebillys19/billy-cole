@@ -31,7 +31,6 @@
 
 <style lang="scss">
 	main {
-		background-color: $palette-a;
 		min-height: 100vh;
 	}
 </style>

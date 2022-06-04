@@ -47,6 +47,5 @@
 
 	.excerpt {
 		font-family: 'Roboto', sans-serif;
-		font-size: 18px;
 	}
 </style>

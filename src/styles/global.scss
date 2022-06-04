@@ -1,23 +1,14 @@
-$palette-a: #fffeef;
-$palette-b: #f2c3ad;
-$palette-c: #e68a6e;
-$palette-d: #bb77a2;
-$palette-e: #817a99;
-$palette-f: #5d5c7b;
-$palette-g: #383d5d;
+$paletteDark: #817a99;
+$paletteExtraDark: #383d5d;
+$paletteExtraLight: #fffeef;
+$paletteLight: #e68a6e;
+$paletteMedium: #bb77a2;
 
-// TODO
-
-$paletteDark: #000000;
-$paletteLight: #000000;
-$paletteMedium: #000000;
-$paletteMediumDark: #000000;
-$paletteMediumLight: #000000;
-
-$darkBgA: #000000;
-$darkBgB: #000000;
-$lightBgA: #000000;
-$lightBgB: #000000;
+// #5d5c7b;
+// $darkBgA: #000000;
+// $darkBgB: #000000;
+$lightBgA: #fffeef;
+$lightBgB: #f9e1ce;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -26,6 +17,5 @@ $lightBgB: #000000;
 }
 
 html {
-	background-color: $palette-f;
-	color: $palette-g;
+	background-color: $paletteExtraDark;
 }

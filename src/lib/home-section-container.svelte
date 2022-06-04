@@ -44,11 +44,11 @@
 	}
 
 	.bgColorA {
-		background-color: $palette-a;
+		background-color: $lightBgA;
 	}
 
 	.bgColorB {
-		background-color: $palette-b;
+		background-color: $lightBgB;
 	}
 
 	.contentContainer {

@@ -162,10 +162,6 @@
 		margin-bottom: 30px;
 	}
 
-	li span {
-		color: $palette-a;
-	}
-
 	.isNavOpen nav {
 		top: 0;
 	}

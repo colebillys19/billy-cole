@@ -49,11 +49,10 @@
 
 	figcaption {
 		font-family: 'Roboto', sans-serif;
-		font-size: 18px;
 	}
 
 	pre {
-		border-color: $palette-e;
+		border-color: blue;
 		border-style: solid;
 		border-width: 1px;
 		margin: 0;
@@ -82,14 +81,5 @@
 
 	.noMargin {
 		margin: 0;
-	}
-
-	.isDarkMode pre {
-		border-color: $palette-a;
-		box-shadow: 1px 1px 1px rgba(255, 254, 239, 0.5);
-	}
-
-	.isDarkMode figcaption {
-		color: $palette-a;
 	}
 </style>

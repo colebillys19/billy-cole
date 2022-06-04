@@ -76,7 +76,7 @@
 	.illuContainer {
 		border-right-style: solid;
 		border-right-width: 4px;
-		border-right-color: $palette-f;
+		border-right-color: blue;
 		grid-column-end: 6;
 		grid-column-start: 1;
 		grid-row-end: 6;
