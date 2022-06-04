@@ -27,15 +27,28 @@ h2 {
 
 h3 {
 	font-size: 28px;
+	color: $palette-extra-dark;
+	text-shadow: 1px 1px 0 $palette-dark;
 }
 
 h4 {
-	font-size: 20px;
+	font-size: 24px;
+}
+
+a {
+	color: $palette-medium;
+	font-weight: 700;
+	text-decoration: none;
 }
 
 .reading,
 .reading * {
 	font-family: 'Roboto', sans-serif;
+}
+
+.bigLink {
+	font-size: 24px;
+	text-shadow: 1px 1px 0 $palette-dark;
 }
 
 @media (min-width: 768px) {

@@ -40,7 +40,7 @@
 </script>
 
 <svelte:window bind:innerWidth />
-<HomeSectionContainer className="bgColorB" name="work" {updateOffset}>
+<HomeSectionContainer isAltColor name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Your Mortgage Online</h3>
 		<!-- {#if innerWidth <= 560}
@@ -54,12 +54,15 @@
 		<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
 		<p class="reading">
 			Your Mortgage Online is a widely used iOS/Android application that gives homeowners the
-			ability to easily manage their mortgages. Users can make payments | they can manage escrow
-			accounts, taxes, and insurance | they can contact customer support | and more. I was an
-			integral part of the team that built the app from the ground up.
+			ability to easily manage their mortgages. Users can make payments <span class="lighten"
+				>-</span
+			>
+			they can manage escrow accounts, taxes, and insurance <span class="lighten">-</span> they can
+			contact customer support <span class="lighten">-</span> and much more. I was an integral part of
+			the team that built the app from the ground up.
 		</p>
-		<p><b>Tools used:</b></p>
-		<ul>
+		<p class="tools"><b>Tools used:</b></p>
+		<ul class="tools">
 			<li>React Native</li>
 			<li>Redux</li>
 			<li>Redux Saga, Immer, Reselect</li>
@@ -77,10 +80,10 @@
 			used by banks to keep track of bulk loan data. While building that application there were
 			scenarios where I wanted to spend more time fleshing out features and experimenting. I decided
 			to start a project I could work on in my free time that would allow for more freedom. That
-			project became Loanhenge! (desktop only)
+			project became Loanhenge! <span class="lighten">(desktop only)</span>
 		</p>
-		<p><b>Tools used:</b></p>
-		<ul>
+		<p class="tools"><b>Tools used:</b></p>
+		<ul class="tools">
 			<li>React</li>
 			<li>Redux</li>
 			<li>Redux Saga, Immer, Reselect</li>
@@ -101,15 +104,16 @@
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
 		<p class="reading">
-			Victory Templates is a project I created as a resource for the devs on my team (and for
-			myself!). We were tasked with recreating a legacy application that implemented various
-			interactive charts. We decided to make use of Formidable's React chart component library
+			Victory Templates is a project I created as a resource for the devs on my team <span
+				class="lighten">(and for myself!)</span
+			>. We were tasked with recreating a legacy application that implemented various interactive
+			charts. We decided to make use of Formidable's React chart component library
 			<a href="https://formidable.com/open-source/victory/">Victory</a>. I was asked to research the
 			library and put together a repo we could reference as we built out the app. That ask became
-			Victory Templates. (desktop only)
+			Victory Templates. <span class="lighten">(desktop only)</span>
 		</p>
-		<p><b>Tools used:</b></p>
-		<ul>
+		<p class="tools"><b>Tools used:</b></p>
+		<ul class="tools">
 			<li>React</li>
 			<li>Victory</li>
 			<li>Material UI</li>
@@ -124,8 +128,8 @@
 		{/if}
 		<div class="divider" />
 		<h3>This Site!</h3>
-		<p><b>Tools used:</b></p>
-		<ul>
+		<p class="tools"><b>Tools used:</b></p>
+		<ul class="tools">
 			<li>Svelte</li>
 			<li>TypeScript</li>
 			<li>more...</li>
@@ -143,19 +147,19 @@
 	}
 
 	.ss3ImgDiv {
-		border: 3px solid blue;
+		border: 3px solid $palette-extra-dark;
 		height: 448px;
 		width: 252px;
 	}
 
 	.loanhengeImgDiv {
-		border: 3px solid blue;
+		border: 3px solid $palette-extra-dark;
 		height: 352px;
 		width: 252px;
 	}
 
 	.victoryImgDiv {
-		border: 3px solid blue;
+		border: 3px solid $palette-light;
 		height: 270px;
 		width: 252px;
 	}
@@ -168,12 +172,16 @@
 		display: inline-block;
 	}
 
-	.bigLink {
-		text-decoration: none;
+	.tools {
+		color: $palette-extra-dark;
+	}
+
+	.lighten {
+		color: $palette-dark;
 	}
 
 	.divider {
-		border-bottom: 1px solid blue;
+		border-bottom: 3px solid $palette-extra-dark;
 	}
 
 	@media (min-width: 560px) {

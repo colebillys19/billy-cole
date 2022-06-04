@@ -11,11 +11,11 @@
 	};
 </script>
 
-<HomeSectionContainer className="bgColorA" name="blog" {updateOffset}>
+<HomeSectionContainer name="blog" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Recent Posts:</h3>
 		<PostList />
-		<a href="/blog">see all posts</a>
+		<a class="bigLink" href="/blog">see all posts</a>
 	</div>
 </HomeSectionContainer>
 

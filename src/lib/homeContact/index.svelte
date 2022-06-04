@@ -14,24 +14,24 @@
 	};
 </script>
 
-<HomeSectionContainer className="bgColorA" name="contact" {updateOffset}>
+<HomeSectionContainer name="contact" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<ul>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<TwitterIcon slot="icon" />
+					<TwitterIcon color="#383d5d" slot="icon" />
 					<span slot="text">twitter</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<LinkedinIcon slot="icon" />
+					<LinkedinIcon color="#383d5d" slot="icon" />
 					<span slot="text">linkedin</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<GithubIcon slot="icon" />
+					<GithubIcon color="#383d5d" slot="icon" />
 					<span slot="text">github</span>
 				</TextIconLink>
 			</li>

@@ -16,13 +16,13 @@
 <a href={`/blog/${path}`}>
 	<div class:isDarkMode={$isDarkMode} class="contentContainer">
 		<div>
-			<h3>{title}</h3>
+			<h4>{title}</h4>
 			<p class="date">{date}</p>
 			<p class="reading">{innerWidth < 768 ? excerpt.slice(0, 150) : excerpt}...</p>
 		</div>
 		{#if innerWidth >= 560}
 			<div>
-				<RightChevIcon />
+				<RightChevIcon color="#817a99" />
 			</div>
 		{/if}
 	</div>
@@ -31,14 +31,22 @@
 <style lang="scss">
 	a {
 		display: block;
-		text-decoration: none;
+	}
+
+	h4 {
+		color: $palette-dark;
+		text-shadow: 1px 1px 0 $palette-extra-dark;
+	}
+
+	.reading {
+		font-weight: 400;
+		color: #000000;
 	}
 
 	.contentContainer {
 		align-items: center;
-		border: 1px solid blue;
-		box-shadow: -2px 2px 0 blue;
-		color: blue;
+		border: 1px solid $palette-light;
+		box-shadow: -2px 2px 0 $palette-medium;
 		display: flex;
 		text-align: left;
 	}

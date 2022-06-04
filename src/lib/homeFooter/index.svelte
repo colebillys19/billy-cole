@@ -11,13 +11,14 @@
 
 <div class:isDarkMode={$isDarkMode}>
 	<TextIconLink handleClick={handleBackToTop} isIconRight>
-		<ArrowUpIcon slot="icon" />
+		<ArrowUpIcon color="#383d5d" slot="icon" />
 		<span slot="text">back to top</span>
 	</TextIconLink>
 </div>
 
 <style lang="scss">
 	div {
+		background-color: $light-bg-b;
 		text-align: center;
 	}
 

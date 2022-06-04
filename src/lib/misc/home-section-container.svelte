@@ -6,7 +6,7 @@
 
 	const { isDarkMode } = store;
 
-	export let className = '';
+	export let isAltColor = false;
 	export let name = '';
 	export let updateOffset = (offset: number): void => undefined;
 
@@ -27,7 +27,7 @@
 </script>
 
 <svelte:window on:resize={handleResize} />
-<section bind:this={sectionElement} class:isDarkMode={$isDarkMode} class={className}>
+<section bind:this={sectionElement} class:isAltColor class:isDarkMode={$isDarkMode}>
 	<div class="contentContainer">
 		<h2>{name}</h2>
 		<slot />
@@ -37,6 +37,7 @@
 <style lang="scss">
 	section {
 		min-height: 100vh;
+		background-color: $light-bg-a;
 	}
 
 	h2 {
@@ -46,11 +47,7 @@
 		text-shadow: 1px 1px 0 #000000;
 	}
 
-	.bgColorA {
-		background-color: $light-bg-a;
-	}
-
-	.bgColorB {
+	.isAltColor {
 		background-color: $light-bg-b;
 	}
 

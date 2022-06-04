@@ -14,21 +14,21 @@
 	};
 </script>
 
-<HomeSectionContainer className="bgColorB" name="about" {updateOffset}>
+<HomeSectionContainer isAltColor name="about" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Hi! I'm Billy.</h3>
 		<p class="reading">
-			Growing up, I always gravitated toward creative pursuits - when I was young it started with
-			drawing, then later it was photography, and then eventually music. In high school I developed
-			a love for writing and recording music. My friends and I always had some sort of garage band
-			going, and I was the defacto recording engineer. This led to me pursuing audio engineering as
-			a career. I attended Full Sail University in Florida and earned a Bachelor's degree in
-			Recording Arts. I worked as an audio-visual tech and audio engineer for a number of years,
-			playing and recording my own music on the side.
+			As a kid I always gravitated toward creative pursuits - first it was drawing, then
+			photography, and then music. In high school I developed a love for writing and recording
+			music. My friends and I always had some sort of garage band going, and I was the defacto
+			recording engineer. This led to me pursuing audio engineering as a career. I attended Full
+			Sail University in Florida and earned a Bachelor's degree in Recording Arts. I worked as an
+			audio-visual tech and audio engineer for a number of years, playing and recording music on the
+			side.
 		</p>
 		<p class="reading">
-			Then one fateful day a friend introduced me to web development. I was pleased with how web
-			development tapped into different parts of my brain and played into my strengths.
+			In my late 20's a friend introduced me to web development. I loved how web development tapped
+			into different parts of my brain and played to my strengths.
 		</p>
 		<p class="reading">It played into natural strengths:</p>
 		<ul class="reading">
@@ -37,27 +37,22 @@
 			<li>my ability to solve puzzles (especially visual ones)</li>
 			<li>my propensity to keep things orderly/organized</li>
 		</ul>
-		<p class="reading">It played into learned strengths:</p>
+		<p class="reading">...and learned strengths:</p>
 		<ul class="reading">
-			<li>a familiarity with computing (and googling!) I'd developed as a recording engineer</li>
-			<li>
-				a familiarity with how interfaces should look and feel I'd developed working with audio,
-				video, and lighting equipment
-			</li>
+			<li>a familiarity with computing I'd developed as a recording engineer</li>
+			<li>a familiarity with how interfaces should look and feel I'd developed...</li>
 			<li>an ability to solve complex problems on the fly I'd developed working live events</li>
 			<li>a desire and ability to seek out original ideas I'd developed as a songwriter</li>
 		</ul>
 		<p class="reading">
 			What started as an interest turned into a passion. I spent time learning the craft on my own,
 			then took a few classes at a local community college. Eventually I decided to take the plunge
-			and pursue a coding career - I flew out to San Francisco and attended Rith School's four month
-			web development bootcamp. Shortly after Rithm I landed a job as a software engineer at
-			Dovenmuehle's SF office. Dovenmuehle is a mortgage-focused finance company based out of
-			Illinois. After a few years working as a full stack dev and learning a ton, I decided to
-			explore what else the vast field of web development had to offer.
+			and pursue a coding career. I moved out to San Francisco and attended Rith School's four month
+			web development bootcamp. Shortly after I landed a job as a software engineer at Dovenmuehle,
+			a mortgage-focused finance company based out of Illinois...
 		</p>
 		<TextIconLink download="billy-cole-cv" href={cvPdf} isIconRight target="_blank">
-			<DownloadIcon slot="icon" />
+			<DownloadIcon color="#383d5d" slot="icon" />
 			<span slot="text">download cv</span>
 		</TextIconLink>
 		<div class="imgDiv" style={`background-image: url(${headshotImg});`} />
@@ -71,7 +66,7 @@
 
 	.imgDiv {
 		background-size: cover;
-		border: 3px solid blue;
+		border: 3px solid $palette-light;
 		height: 240px;
 		margin: 0 auto;
 		width: 240px;
