@@ -56,11 +56,6 @@
 			Illinois. After a few years working as a full stack dev and learning a ton, I decided to
 			explore what else the vast field of web development had to offer.
 		</p>
-		<p>
-			If you're reading this, that means I'm still on the hunt for a new job! If you or someone you
-			know is looking for a solid developer with a great sense for UI/UX, please don't hesitate to
-			reach out!
-		</p>
 		<TextIconLink download="billy-cole-cv" href={cvPdf} isIconRight target="_blank">
 			<DownloadIcon color="#bb77a2" slot="icon" />
 			<span slot="text">download cv</span>
@@ -76,11 +71,19 @@
 	}
 
 	p {
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
 		margin-bottom: 24px;
 	}
 
-	p:last-of-type {
-		margin-bottom: 48px;
+	ul {
+		margin: 0 0 24px 0;
+		padding: 0 48px;
+	}
+
+	li {
+		font-size: 18px;
+		font-family: 'Roboto', sans-serif;
 	}
 
 	.container {
@@ -89,10 +92,10 @@
 
 	.imgDiv {
 		background-size: cover;
-		height: 240px;
-		margin: 0 auto;
-		width: 240px;
 		border: 3px solid $palette-a;
+		height: 240px;
+		margin: 24px auto 0;
+		width: 240px;
 	}
 
 	// dark

@@ -47,7 +47,7 @@
 		{:else}
 			<ImgCarousel />
 		{/if}
-		<p>
+		<p class="blurb">
 			Your Mortgage Online is a widely used iOS/Android application that gives homeowners the
 			ability to easily manage their mortgages. Users can make payments <b>|</b> they can manage
 			escrow accounts, taxes, and insurance <b>|</b> they can contact customer support <b>|</b> and more.
@@ -65,7 +65,7 @@
 		<div class="divider" />
 		<h3>Loanhenge</h3>
 		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
-		<p>
+		<p class="blurb">
 			Loanhenge is a project I started as a sort of sandbox to experiment with front-end concepts
 			and best-practices while cutting my teeth as a developer. Not long after getting my first job
 			after bootcamp, I was put on a small team tasked with building a React application that'd be
@@ -95,7 +95,7 @@
 		<div class="divider" />
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
-		<p>
+		<p class="blurb">
 			Victory Templates is a project I created as a resource for the devs on my team <span
 				class="opaque">(and for myself!)</span
 			>. We were tasked with recreating a legacy application that implemented various interactive
@@ -174,6 +174,13 @@
 
 	.imgDiv {
 		display: inline-block;
+	}
+
+	.blurb,
+	.blurb span,
+	.blurb a {
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
 	}
 
 	.hasPaddingBottom {

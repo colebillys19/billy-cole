@@ -36,36 +36,49 @@
 				</TextIconLink>
 			</li>
 		</ul>
-		<h3>Reach out!</h3>
-		<label for="msg">message:</label>
-		<textarea name="msg" id="msg" cols="30" rows="10" />
-		<div>
-			<button>send</button>
+		<p>
+			If you're reading this that means I'm still on the hunt for a new job! If you or someone you
+			know is looking for a solid developer with a great sense for UI/UX, please don't hesitate to
+			reach out!
+		</p>
+		<div class="formContainer">
+			<form action="">
+				<label for="msg">send a note:</label>
+				<textarea name="msg" id="msg" cols="30" rows="10" />
+				<button>send</button>
+			</form>
 		</div>
 	</div>
 </HomeSectionContainer>
 
 <style lang="scss">
-	h3 {
-		margin-top: 24px;
-	}
-
 	ul {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
 		list-style: none;
+		margin: 0 auto 24px;
 		padding: 0;
-		margin: 0;
 	}
 
-	li:not(:last-of-type) {
-		margin-bottom: 16px;
+	p {
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
+		margin-bottom: 24px;
 	}
 
 	label {
 		display: block;
+		margin-bottom: 12px;
 	}
 
 	textarea {
 		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	button {
+		margin: 0;
 	}
 
 	.container {
@@ -79,8 +92,9 @@
 	}
 
 	@media (min-width: 768px) {
-		textarea {
-			width: 600px;
+		.container {
+			margin: 0 auto;
+			width: 720px;
 		}
 	}
 </style>

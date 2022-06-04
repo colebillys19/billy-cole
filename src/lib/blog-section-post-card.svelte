@@ -18,7 +18,7 @@
 		<div class="contentSubcontainer">
 			<h4>{title}</h4>
 			<p class="date">{date}</p>
-			<p>{innerWidth < 768 ? excerpt.slice(0, 150) : excerpt}...</p>
+			<p class="excerpt">{innerWidth < 768 ? excerpt.slice(0, 150) : excerpt}...</p>
 		</div>
 		{#if innerWidth >= 560}
 			<div>
@@ -39,7 +39,7 @@
 	}
 
 	h4 {
-		font-size: 20px;
+		font-size: 24px;
 	}
 
 	.contentContainer {
@@ -58,8 +58,12 @@
 
 	.date {
 		color: $palette-d;
-		font-size: 12px;
 		margin-bottom: 12px;
+	}
+
+	.excerpt {
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
 	}
 
 	// dark
