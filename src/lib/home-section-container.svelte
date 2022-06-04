@@ -37,14 +37,10 @@
 <style lang="scss">
 	section {
 		min-height: 100vh;
-		padding: 24px 60px 96px;
 	}
 
 	h2 {
-		font-size: 32px;
-		padding: 24px 0;
 		text-align: right;
-		text-shadow: 1px 1px 2px $palette-e;
 	}
 
 	.bgColorA {
@@ -59,20 +55,5 @@
 		margin: 0 auto;
 		max-width: 1200px;
 		text-align: center;
-	}
-
-	// dark
-
-	.isDarkMode h2 {
-		color: $palette-a;
-		text-shadow: 1px 1px 2px $palette-c;
-	}
-
-	.isDarkMode.bgColorA {
-		background-color: $palette-g;
-	}
-
-	.isDarkMode.bgColorB {
-		background-color: $palette-f;
 	}
 </style>

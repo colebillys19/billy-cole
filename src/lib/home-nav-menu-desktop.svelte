@@ -130,7 +130,7 @@
 			{#if $isDarkMode}
 				<SunIcon />
 			{:else}
-				<MoonIcon color="#fffeef" />
+				<MoonIcon />
 			{/if}
 		</IconButton>
 	</nav>
@@ -138,10 +138,7 @@
 
 <style lang="scss">
 	nav {
-		background-color: rgba(56, 61, 93, 0.9);
-		border-bottom-color: $palette-c;
-		border-bottom-style: solid;
-		border-bottom-width: 4px;
+		border-bottom: 4px solid blue;
 		display: flex;
 		justify-content: space-between;
 		padding: 10px;
@@ -170,17 +167,7 @@
 		margin: 0 72px 0 0;
 	}
 
-	li span {
-		color: $palette-a;
-	}
-
 	.isNavOpen nav {
 		top: 0;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
 	}
 </style>

@@ -19,19 +19,19 @@
 		<ul>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<TwitterIcon color="#bb77a2" slot="icon" />
+					<TwitterIcon slot="icon" />
 					<span slot="text">twitter</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<LinkedinIcon color="#bb77a2" slot="icon" />
+					<LinkedinIcon slot="icon" />
 					<span slot="text">linkedin</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<GithubIcon color="#bb77a2" slot="icon" />
+					<GithubIcon slot="icon" />
 					<span slot="text">github</span>
 				</TextIconLink>
 			</li>
@@ -43,7 +43,7 @@
 		</p>
 		<div class="formContainer">
 			<form action="">
-				<label for="msg">send a note:</label>
+				<label for="msg">send me a note:</label>
 				<textarea name="msg" id="msg" cols="30" rows="10" />
 				<button>send</button>
 			</form>
@@ -55,40 +55,23 @@
 	ul {
 		align-items: center;
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 		list-style: none;
-		margin: 0 auto 24px;
+		margin: 0 auto;
 		padding: 0;
-	}
-
-	p {
-		font-family: 'Roboto', sans-serif;
-		font-size: 18px;
-		margin-bottom: 24px;
 	}
 
 	label {
 		display: block;
-		margin-bottom: 12px;
 	}
 
 	textarea {
 		width: 100%;
-		margin-bottom: 10px;
-	}
-
-	button {
-		margin: 0;
 	}
 
 	.container {
 		text-align: left;
-	}
-
-	// dark
-
-	.isDarkMode p {
-		color: $palette-a;
 	}
 
 	@media (min-width: 768px) {

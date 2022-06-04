@@ -138,10 +138,7 @@
 
 <style lang="scss">
 	nav {
-		background-color: rgba(56, 61, 93, 0.9);
-		border-bottom-color: $palette-c;
-		border-bottom-style: solid;
-		border-bottom-width: 6px;
+		border-bottom: 6px solid blue;
 		display: flex;
 		justify-content: space-between;
 		padding: 10px;
@@ -171,11 +168,5 @@
 
 	.isNavOpen nav {
 		top: 0;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
 	}
 </style>

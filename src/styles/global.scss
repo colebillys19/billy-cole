@@ -6,6 +6,19 @@ $palette-e: #817a99;
 $palette-f: #5d5c7b;
 $palette-g: #383d5d;
 
+// TODO
+
+$paletteDark: #000000;
+$paletteLight: #000000;
+$paletteMedium: #000000;
+$paletteMediumDark: #000000;
+$paletteMediumLight: #000000;
+
+$darkBgA: #000000;
+$darkBgB: #000000;
+$lightBgA: #000000;
+$lightBgB: #000000;
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
@@ -15,8 +28,4 @@ $palette-g: #383d5d;
 html {
 	background-color: $palette-f;
 	color: $palette-g;
-}
-
-a {
-	color: $palette-d;
 }

@@ -23,13 +23,13 @@
 		appears and you start shopping away. But what happened there when you hit enter? A whole lot
 		happened there.
 	</p>
+	<div class="divider" />
 	<p>
 		Some insane amount of web pages are visited every day. But what's going on behind the scenes?
 		What allows you to "visit a web page"? Let's start with what you typed in: “amazon.com”. This is
 		called a URL address. URL is short for uniform resource locator. Basically it's a way to locate
 		some resource on the internet. Resources can be web pages, image files, user profile data, etc.
 	</p>
-	<div class="divider" />
 	<p>
 		There are two main concepts to keep in mind here. There's our internet browser <span
 			class="parens">(chrome, safari, edge, etc.)</span

@@ -42,7 +42,7 @@
 		{#if $isDarkMode}
 			<SunIcon />
 		{:else}
-			<MoonIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
+			<MoonIcon />
 		{/if}
 	</IconButton>
 </nav>
@@ -59,15 +59,5 @@
 	nav a {
 		font-size: 18px;
 		text-decoration: none;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
-	}
-
-	.isDarkMode a {
-		color: $palette-b;
 	}
 </style>

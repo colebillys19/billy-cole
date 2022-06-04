@@ -100,12 +100,6 @@
 		transition: transform 320ms ease-in-out;
 	}
 
-	// dark
-
-	.isDarkMode .illuContainer {
-		border-right-color: $palette-b;
-	}
-
 	@media (min-width: 768px) {
 		.contentContainer {
 			clip-path: inset(0 60px 0 0);

@@ -21,7 +21,6 @@
 <style lang="scss">
 	h1 {
 		font-size: 32px;
-		text-shadow: 1px 1px 2px $palette-e;
 		white-space: nowrap;
 	}
 
@@ -48,7 +47,7 @@
 	.illuContainer {
 		border-right-style: solid;
 		border-right-width: 4px;
-		border-right-color: $palette-f;
+		border-right-color: blue;
 		grid-column-end: 6;
 		grid-column-start: 1;
 		grid-row-end: 6;
@@ -65,17 +64,6 @@
 		grid-row-start: 6;
 		justify-content: center;
 		position: relative;
-	}
-
-	// dark
-
-	.isDarkMode h1 {
-		color: $palette-a;
-		text-shadow: 1px 1px 2px $palette-c;
-	}
-
-	.isDarkMode .illuContainer {
-		border-right-color: $palette-b;
 	}
 
 	@media (min-width: 768px) {

@@ -20,14 +20,4 @@
 		font-size: 18px;
 		text-decoration: none;
 	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
-	}
-
-	.isDarkMode a {
-		color: $palette-b;
-	}
 </style>

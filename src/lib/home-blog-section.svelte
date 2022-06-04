@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PostList from '$lib/blog-section-post-list.svelte';
+	import PostList from '$lib/home-blog-section-post-list.svelte';
 	import store from '../store';
 	import HomeSectionContainer from './home-section-container.svelte';
 
@@ -19,27 +19,6 @@
 </HomeSectionContainer>
 
 <style lang="scss">
-	h3 {
-		font-size: 24px;
-		margin-bottom: 36px;
-	}
-
-	a {
-		display: block;
-		font-size: 20px;
-		margin-top: 54px;
-	}
-
-	// dark
-
-	.isDarkMode h3 {
-		color: $palette-a;
-	}
-
-	.isDarkMode a {
-		color: $palette-b;
-	}
-
 	@media (min-width: 768px) {
 		.container {
 			text-align: left;

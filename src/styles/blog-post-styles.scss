@@ -63,32 +63,6 @@ li {
 	margin-bottom: 10px;
 }
 
-// dark
-
-.isDarkMode a {
-	color: $palette-b;
-}
-
-.isDarkMode h1 {
-	text-shadow: 1px 1px 2px $palette-c;
-}
-
-.isDarkMode h1,
-.isDarkMode h2,
-.isDarkMode p,
-.isDarkMode ol,
-.isDarkMode ul {
-	color: $palette-a;
-}
-
-.isDarkMode .date {
-	color: $palette-d;
-}
-
-.isDarkMode .parens {
-	color: $palette-b;
-}
-
 @media (min-width: 480px) {
 	.blogPostContainer {
 		padding: 0 48px 96px;

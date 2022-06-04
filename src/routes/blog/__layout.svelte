@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	import GetIsMobile from '$lib/get-is-mobile.svelte';
-	import NavMenu from '$lib/blog-nav-menu.svelte';
+	import NavMenu from '$lib/home-blog-nav-menu.svelte';
 
 	import store from '../../store';
 	import '../../styles/reset.css';
@@ -33,11 +33,5 @@
 	main {
 		background-color: $palette-a;
 		min-height: 100vh;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
 	}
 </style>

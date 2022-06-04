@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PostCard from '$lib/blog-section-post-card.svelte';
+	import PostCard from '$lib/home-blog-section-post-card.svelte';
 
 	import blogData from '../blogData';
 

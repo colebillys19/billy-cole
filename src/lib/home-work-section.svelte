@@ -1,6 +1,7 @@
 <script lang="ts">
-	import ImgCarousel from '$lib/home-img-carousel.svelte';
+	// import ImgCarousel from '$lib/home-img-carousel.svelte';
 
+	// import { getCarouselProps, hasKey } from '../helpers';
 	import { hasKey } from '../helpers';
 	import loanhengeImgDesktop from '../images/loanhenge-a.jpg';
 	import loanhengeImgMobile from '../images/loanhenge-b.jpg';
@@ -42,19 +43,23 @@
 <HomeSectionContainer className="bgColorB" name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Your Mortgage Online</h3>
-		{#if innerWidth <= 560}
+		<!-- {#if innerWidth <= 560}
 			<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
 		{:else}
-			<ImgCarousel />
-		{/if}
+			<ImgCarousel
+				offsets={getCarouselProps(innerWidth).offsets}
+				width={getCarouselProps(innerWidth).width}
+			/>
+		{/if} -->
+		<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
 		<p class="blurb">
 			Your Mortgage Online is a widely used iOS/Android application that gives homeowners the
 			ability to easily manage their mortgages. Users can make payments <b>|</b> they can manage
 			escrow accounts, taxes, and insurance <b>|</b> they can contact customer support <b>|</b> and more.
 			I was an integral part of the team that built the app from the ground up.
 		</p>
-		<p class="tools"><b>Tools used:</b></p>
-		<ul class="hasPaddingBottom tools">
+		<p><b>Tools used:</b></p>
+		<ul>
 			<li>React Native</li>
 			<li>Redux</li>
 			<li>Redux Saga, Immer, Reselect</li>
@@ -72,10 +77,10 @@
 			used by banks to keep track of bulk loan data. While building that application there were
 			scenarios where I wanted to spend more time fleshing out features and experimenting. I decided
 			to start a project I could work on in my free time that would allow for more freedom. That
-			project became Loanhenge! <span class="opaque">(desktop only)</span>
+			project became Loanhenge! (desktop only)
 		</p>
-		<p class="tools"><b>Tools used:</b></p>
-		<ul class:hasPaddingBottom={$isMobile} class="tools">
+		<p><b>Tools used:</b></p>
+		<ul>
 			<li>React</li>
 			<li>Redux</li>
 			<li>Redux Saga, Immer, Reselect</li>
@@ -86,7 +91,7 @@
 			<li>React Testing Library</li>
 		</ul>
 		{#if !$isMobile}
-			<p class="hasPaddingBottom">
+			<p>
 				<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
 					>Visit &#x1F440; &#x1F440; &#x1F440;</a
 				>
@@ -96,24 +101,22 @@
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
 		<p class="blurb">
-			Victory Templates is a project I created as a resource for the devs on my team <span
-				class="opaque">(and for myself!)</span
-			>. We were tasked with recreating a legacy application that implemented various interactive
-			charts. We decided to make use of Formidable's React chart component library
+			Victory Templates is a project I created as a resource for the devs on my team (and for
+			myself!). We were tasked with recreating a legacy application that implemented various
+			interactive charts. We decided to make use of Formidable's React chart component library
 			<a href="https://formidable.com/open-source/victory/">Victory</a>. I was asked to research the
 			library and put together a repo we could reference as we built out the app. That ask became
-			Victory Templates.
-			<span class="opaque">(desktop only)</span>
+			Victory Templates. (desktop only)
 		</p>
-		<p class="tools"><b>Tools used:</b></p>
-		<ul class:hasPaddingBottom={$isMobile} class="tools">
+		<p><b>Tools used:</b></p>
+		<ul>
 			<li>React</li>
 			<li>Victory</li>
 			<li>Material UI</li>
 			<li>Styled Components</li>
 		</ul>
 		{#if !$isMobile}
-			<p class="hasPaddingBottom">
+			<p>
 				<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
 					>Visit &#x1F440; &#x1F440; &#x1F440;</a
 				>
@@ -121,8 +124,8 @@
 		{/if}
 		<div class="divider" />
 		<h3>This Site!</h3>
-		<p class="tools"><b>Tools used:</b></p>
-		<ul class="tools">
+		<p><b>Tools used:</b></p>
+		<ul>
 			<li>Svelte</li>
 			<li>TypeScript</li>
 			<li>more...</li>
@@ -131,18 +134,7 @@
 </HomeSectionContainer>
 
 <style lang="scss">
-	h3 {
-		font-size: 24px;
-		margin-bottom: 24px;
-	}
-
 	p {
-		margin-top: 24px;
-		text-align: left;
-	}
-
-	ul {
-		margin: 0;
 		text-align: left;
 	}
 
@@ -151,19 +143,19 @@
 	}
 
 	.ss3ImgDiv {
-		border: 3px solid $palette-f;
+		border: 3px solid blue;
 		height: 448px;
 		width: 252px;
 	}
 
 	.loanhengeImgDiv {
-		border: 3px solid $palette-f;
+		border: 3px solid blue;
 		height: 352px;
 		width: 252px;
 	}
 
 	.victoryImgDiv {
-		border: 3px solid $palette-a;
+		border: 3px solid blue;
 		height: 270px;
 		width: 252px;
 	}
@@ -180,48 +172,14 @@
 	.blurb span,
 	.blurb a {
 		font-family: 'Roboto', sans-serif;
-		font-size: 18px;
-	}
-
-	.hasPaddingBottom {
-		margin-bottom: 96px;
-	}
-
-	.tools {
-		color: $palette-f;
-	}
-
-	.opaque {
-		opacity: 0.6;
 	}
 
 	.bigLink {
-		font-size: 20px;
-		font-weight: 700;
 		text-decoration: none;
 	}
 
 	.divider {
-		border-bottom: 1px solid $palette-e;
-		margin-bottom: 24px;
-	}
-
-	// dark
-
-	.isDarkMode p,
-	.isDarkMode h3 {
-		color: $palette-a;
-	}
-
-	.isDarkMode a,
-	.isDarkMode .tools {
-		color: $palette-b;
-	}
-
-	.isDarkMode .ss3ImgDiv,
-	.isDarkMode .loanhengeImgDiv,
-	.isDarkMode .victoryImgDiv {
-		border: 3px solid $palette-c;
+		border-bottom: 1px solid blue;
 	}
 
 	@media (min-width: 560px) {

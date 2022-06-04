@@ -57,7 +57,7 @@
 			explore what else the vast field of web development had to offer.
 		</p>
 		<TextIconLink download="billy-cole-cv" href={cvPdf} isIconRight target="_blank">
-			<DownloadIcon color="#bb77a2" slot="icon" />
+			<DownloadIcon slot="icon" />
 			<span slot="text">download cv</span>
 		</TextIconLink>
 		<div class="imgDiv" style={`background-image: url(${headshotImg});`} />
@@ -65,54 +65,16 @@
 </HomeSectionContainer>
 
 <style lang="scss">
-	h3 {
-		font-size: 24px;
-		margin-bottom: 24px;
-	}
-
-	p {
-		font-family: 'Roboto', sans-serif;
-		font-size: 18px;
-		margin-bottom: 24px;
-	}
-
-	ul {
-		margin: 0 0 24px 0;
-		padding: 0 48px;
-	}
-
-	li {
-		font-size: 18px;
-		font-family: 'Roboto', sans-serif;
-	}
-
 	.container {
 		text-align: left;
 	}
 
 	.imgDiv {
 		background-size: cover;
-		border: 3px solid $palette-a;
+		border: 3px solid blue;
 		height: 240px;
-		margin: 24px auto 0;
+		margin: 0 auto;
 		width: 240px;
-	}
-
-	// dark
-
-	.isDarkMode h3 {
-		color: $palette-c;
-	}
-
-	.isDarkMode p {
-		color: $palette-a;
-	}
-
-	.isDarkMode .imgDiv {
-		border: 3px solid $palette-c;
-	}
-
-	@media (min-width: 560px) {
 	}
 
 	@media (min-width: 1040px) {

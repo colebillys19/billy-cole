@@ -28,10 +28,4 @@
 		justify-content: center;
 		position: relative;
 	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
-	}
 </style>

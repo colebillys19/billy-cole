@@ -15,14 +15,14 @@
 <svelte:window bind:innerWidth />
 <a href={`/blog/${path}`}>
 	<div class:isDarkMode={$isDarkMode} class="contentContainer">
-		<div class="contentSubcontainer">
+		<div>
 			<h4>{title}</h4>
 			<p class="date">{date}</p>
 			<p class="excerpt">{innerWidth < 768 ? excerpt.slice(0, 150) : excerpt}...</p>
 		</div>
 		{#if innerWidth >= 560}
 			<div>
-				<RightChevIcon color={$isDarkMode ? '#f2c3ad' : '#bb77a2'} />
+				<RightChevIcon />
 			</div>
 		{/if}
 	</div>
@@ -34,50 +34,19 @@
 		text-decoration: none;
 	}
 
-	a:not(:last-of-type) {
-		margin-bottom: 54px;
-	}
-
-	h4 {
-		font-size: 24px;
-	}
-
 	.contentContainer {
 		align-items: center;
-		border: 1px solid $palette-b;
-		box-shadow: -2px 2px 0 $palette-c;
-		color: $palette-g;
+		border: 1px solid blue;
+		box-shadow: -2px 2px 0 blue;
+		color: blue;
 		display: flex;
-		padding: 32px 48px;
 		text-align: left;
 	}
 
-	.contentSubcontainer {
-		padding-right: 24px;
-	}
-
-	.date {
-		color: $palette-d;
-		margin-bottom: 12px;
-	}
+	// .date {}
 
 	.excerpt {
 		font-family: 'Roboto', sans-serif;
 		font-size: 18px;
-	}
-
-	// dark
-
-	.isDarkMode {
-		border: 1px solid $palette-e;
-	}
-
-	.isDarkMode h4,
-	.isDarkMode p {
-		color: $palette-a;
-	}
-
-	.isDarkMode .date {
-		color: $palette-b;
 	}
 </style>
