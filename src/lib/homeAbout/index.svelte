@@ -1,11 +1,11 @@
 <script lang="ts">
-	import TextIconLink from '$lib/text-icon-link.svelte';
+	import HomeSectionContainer from '$lib/misc/home-section-container.svelte';
+	import TextIconLink from '$lib/misc/text-icon-link.svelte';
 
-	import cvPdf from '../billy-cole-cv.pdf';
-	import headshotImg from '../images/headshot.jpg';
-	import store from '../store';
-	import DownloadIcon from '../svgComponents/download-icon.svelte';
-	import HomeSectionContainer from './home-section-container.svelte';
+	import cvPdf from '../../billy-cole-cv.pdf';
+	import DownloadIcon from '../../svgComponents/download-icon.svelte';
+	import headshotImg from '../../images/headshot.jpg';
+	import store from '../../store';
 
 	const { aboutOffset, isDarkMode } = store;
 
@@ -17,7 +17,7 @@
 <HomeSectionContainer className="bgColorB" name="about" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Hi! I'm Billy.</h3>
-		<p>
+		<p class="reading">
 			Growing up, I always gravitated toward creative pursuits - when I was young it started with
 			drawing, then later it was photography, and then eventually music. In high school I developed
 			a love for writing and recording music. My friends and I always had some sort of garage band
@@ -26,19 +26,19 @@
 			Recording Arts. I worked as an audio-visual tech and audio engineer for a number of years,
 			playing and recording my own music on the side.
 		</p>
-		<p>
+		<p class="reading">
 			Then one fateful day a friend introduced me to web development. I was pleased with how web
 			development tapped into different parts of my brain and played into my strengths.
 		</p>
-		<p>It played into natural strengths:</p>
-		<ul>
+		<p class="reading">It played into natural strengths:</p>
+		<ul class="reading">
 			<li>my creative eye</li>
 			<li>my gift for pattern recognition</li>
 			<li>my ability to solve puzzles (especially visual ones)</li>
 			<li>my propensity to keep things orderly/organized</li>
 		</ul>
-		<p>It played into learned strengths:</p>
-		<ul>
+		<p class="reading">It played into learned strengths:</p>
+		<ul class="reading">
 			<li>a familiarity with computing (and googling!) I'd developed as a recording engineer</li>
 			<li>
 				a familiarity with how interfaces should look and feel I'd developed working with audio,
@@ -47,7 +47,7 @@
 			<li>an ability to solve complex problems on the fly I'd developed working live events</li>
 			<li>a desire and ability to seek out original ideas I'd developed as a songwriter</li>
 		</ul>
-		<p>
+		<p class="reading">
 			What started as an interest turned into a passion. I spent time learning the craft on my own,
 			then took a few classes at a local community college. Eventually I decided to take the plunge
 			and pursue a coding career - I flew out to San Francisco and attended Rith School's four month

@@ -1,7 +1,8 @@
 <script lang="ts">
-	import PostList from '$lib/home-blog-section-post-list.svelte';
-	import store from '../store';
-	import HomeSectionContainer from './home-section-container.svelte';
+	import HomeSectionContainer from '$lib/misc/home-section-container.svelte';
+	import PostList from '$lib/blogHome/post-list.svelte';
+
+	import store from '../../store';
 
 	const { isDarkMode, blogOffset } = store;
 

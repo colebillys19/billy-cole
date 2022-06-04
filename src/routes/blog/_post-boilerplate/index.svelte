@@ -1,9 +1,9 @@
 <script lang="ts">
-	import PostFooter from '$lib/blog-post-footer.svelte';
+	import PostFooter from '$lib/blogPost/post-footer.svelte';
 
-	import store from '../../../store';
 	import snippetStylesDark from '../../../styles/codeSnippetStyles/dark';
 	import snippetStylesLight from '../../../styles/codeSnippetStyles/light';
+	import store from '../../../store';
 
 	const { isDarkMode } = store;
 </script>

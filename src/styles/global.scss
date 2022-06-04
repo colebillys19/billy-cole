@@ -1,14 +1,14 @@
-$paletteDark: #817a99;
-$paletteExtraDark: #383d5d;
-$paletteExtraLight: #fffeef;
-$paletteLight: #e68a6e;
-$paletteMedium: #bb77a2;
+$palette-dark: #817a99;
+$palette-extra-dark: #383d5d;
+$palette-extra-light: #fffeef;
+$palette-light: #e68a6e;
+$palette-medium: #bb77a2;
 
 // #5d5c7b;
-// $darkBgA: #000000;
-// $darkBgB: #000000;
-$lightBgA: #fffeef;
-$lightBgB: #f9e1ce;
+// $dark-bg-a: #000000;
+// $dark-bg-b: #000000;
+$light-bg-a: #fffeef;
+$light-bg-b: #f9e1ce;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -17,5 +17,29 @@ $lightBgB: #f9e1ce;
 }
 
 html {
-	background-color: $paletteExtraDark;
+	background-color: $palette-extra-dark;
+	font-size: 18px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 28px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+.reading,
+.reading * {
+	font-family: 'Roboto', sans-serif;
+}
+
+@media (min-width: 768px) {
+	.reading {
+		font-size: 20px;
+	}
 }

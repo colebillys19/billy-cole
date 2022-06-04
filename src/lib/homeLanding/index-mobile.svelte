@@ -1,6 +1,6 @@
 <script lang="ts">
-	import store from '../store';
-	import IlluSvg from '../svgComponents/landing-illu.svelte';
+	import IlluSvg from '../../svgComponents/landing-illu.svelte';
+	import store from '../../store';
 
 	const { isDarkMode, isMobile } = store;
 
@@ -20,7 +20,8 @@
 
 <style lang="scss">
 	h1 {
-		font-size: 32px;
+		font-size: 36px;
+		text-shadow: 1px 1px 0 #000000;
 		white-space: nowrap;
 	}
 
@@ -45,9 +46,7 @@
 	}
 
 	.illuContainer {
-		border-right-style: solid;
-		border-right-width: 4px;
-		border-right-color: blue;
+		border-right: 4px solid $palette-extra-dark;
 		grid-column-end: 6;
 		grid-column-start: 1;
 		grid-row-end: 6;
@@ -94,7 +93,7 @@
 
 	@media (orientation: landscape) {
 		h1 {
-			font-size: 32px;
+			font-size: 36px;
 		}
 
 		.nameContainer {

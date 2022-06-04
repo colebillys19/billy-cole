@@ -1,14 +1,14 @@
 <script lang="ts">
-	import HomeAboutSection from '$lib/home-about-section.svelte';
-	import HomeBlogSection from '$lib/home-blog-section.svelte';
-	import HomeContactSection from '$lib/home-contact-section.svelte';
-	import HomeFooter from '$lib/home-footer.svelte';
-	import HomeLandingSectionContainer from '$lib/home-landing-section-container.svelte';
-	import HomeLandingSectionDesktop from '$lib/home-landing-section-desktop.svelte';
-	import HomeLandingSectionMobile from '$lib/home-landing-section-mobile.svelte';
-	import HomeNavMenuDesktop from '$lib/home-nav-menu-desktop.svelte';
-	import HomeNavMenuMobile from '$lib/home-nav-menu-mobile.svelte';
-	import HomeWorkSection from '$lib/home-work-section.svelte';
+	import AboutSection from '$lib/homeAbout/index.svelte';
+	import BlogSection from '$lib/homeBlog/index.svelte';
+	import ContactSection from '$lib/homeContact/index.svelte';
+	import Footer from '$lib/homeFooter/index.svelte';
+	import LandingSectionContainer from '$lib/homeLanding/container.svelte';
+	import LandingSectionDesktop from '$lib/homeLanding/index-desktop.svelte';
+	import LandingSectionMobile from '$lib/homeLanding/index-mobile.svelte';
+	import NavMenuDesktop from '$lib/homeNav/index-desktop.svelte';
+	import NavMenuMobile from '$lib/homeNav/index-mobile.svelte';
+	import WorkSection from '$lib/homeWork/index.svelte';
 
 	import store from '../store';
 
@@ -35,28 +35,28 @@
 
 <svelte:window bind:innerHeight bind:innerWidth bind:scrollY on:scroll={handleScroll} />
 {#if innerWidth < 920}
-	<HomeNavMenuMobile />
+	<NavMenuMobile />
 {:else}
-	<HomeNavMenuDesktop />
+	<NavMenuDesktop />
 {/if}
-<HomeLandingSectionContainer>
+<LandingSectionContainer>
 	{#if shouldRenderLandingContent}
 		{#if $isMobile}
-			<HomeLandingSectionMobile {scrollY} />
+			<LandingSectionMobile {scrollY} />
 		{:else}
-			<HomeLandingSectionDesktop {scrollY} />
+			<LandingSectionDesktop {scrollY} />
 		{/if}
 	{/if}
-</HomeLandingSectionContainer>
+</LandingSectionContainer>
 <div class="raised">
-	<HomeWorkSection />
-	<HomeBlogSection />
-	<HomeAboutSection />
-	<HomeContactSection />
-	<HomeFooter {handleBackToTop} />
+	<WorkSection />
+	<BlogSection />
+	<AboutSection />
+	<ContactSection />
+	<Footer {handleBackToTop} />
 </div>
 
-<style>
+<style lang="scss">
 	.raised {
 		position: relative;
 		z-index: 1;

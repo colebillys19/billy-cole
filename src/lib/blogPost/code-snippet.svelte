@@ -8,7 +8,7 @@
 	import hljs from 'highlight.js';
 	import { createEventDispatcher, afterUpdate } from 'svelte';
 
-	import store from '../store';
+	import store from '../../store';
 
 	const { isDarkMode } = store;
 

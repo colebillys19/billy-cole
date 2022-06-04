@@ -1,5 +1,5 @@
 <script lang="ts">
-	import store from '../store';
+	import store from '../../store';
 
 	const { isLandingAnimationDisabled, isDarkMode } = store;
 
@@ -17,7 +17,9 @@
 
 <style lang="scss">
 	h1 {
-		font-size: 32px;
+		color: $palette-extra-dark;
+		font-size: 36px;
+		text-shadow: 1px 1px 0 #000000;
 		white-space: nowrap;
 	}
 

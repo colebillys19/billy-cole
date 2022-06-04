@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import GetIsMobile from '$lib/get-is-mobile.svelte';
-	import '../styles/reset.css';
+	import GetIsMobile from '$lib/misc/get-is-mobile.svelte';
+
 	import '../styles/global.scss';
+	import '../styles/reset.css';
 	import store from '../store';
 
 	const { isDarkMode } = store;
@@ -28,6 +29,6 @@
 
 <style lang="scss">
 	main {
-		background-color: $lightBgA;
+		background-color: $light-bg-a;
 	}
 </style>

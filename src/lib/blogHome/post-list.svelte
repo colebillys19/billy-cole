@@ -1,7 +1,7 @@
 <script lang="ts">
-	import PostCard from '$lib/home-blog-section-post-card.svelte';
+	import blogData from '../../blogData';
 
-	import blogData from '../blogData';
+	import PostCard from './post-card.svelte';
 
 	export let isFullList = false;
 

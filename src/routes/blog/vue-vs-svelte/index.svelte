@@ -1,11 +1,12 @@
 <script lang="ts">
-	import CodeSnip from '$lib/blog-code-snippet.svelte';
-	import HornsDivider from '$lib/blog-horns-divider.svelte';
-	import PostFooter from '$lib/blog-post-footer.svelte';
+	import CodeSnip from '$lib/blogPost/code-snippet.svelte';
+	import HornsDivider from '$lib/blogPost/horns-divider.svelte';
+	import PostFooter from '$lib/blogPost/post-footer.svelte';
 
 	import snippetStylesDark from '../../../styles/codeSnippetStyles/dark';
 	import snippetStylesLight from '../../../styles/codeSnippetStyles/light';
 	import store from '../../../store';
+
 	import {
 		computedSvelte,
 		computedVue,

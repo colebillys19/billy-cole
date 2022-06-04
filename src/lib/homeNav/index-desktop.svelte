@@ -1,16 +1,16 @@
 <script lang="ts">
-	import IconButton from '$lib/icon-button.svelte';
-	import TextIconLink from '$lib/text-icon-link.svelte';
+	import IconButton from '$lib/misc/icon-button.svelte';
+	import TextIconLink from '$lib/misc/text-icon-link.svelte';
 
-	import store from '../store';
-	import BulbIcon from '../svgComponents/bulb-icon.svelte';
-	import CloseIcon from '../svgComponents/close-icon.svelte';
-	import HamburgerIcon from '../svgComponents/hamburger-icon.svelte';
-	import MailIcon from '../svgComponents/mail-icon.svelte';
-	import MonitorIcon from '../svgComponents/monitor-icon.svelte';
-	import MoonIcon from '../svgComponents/moon-icon.svelte';
-	import SunIcon from '../svgComponents/sun-icon.svelte';
-	import UserIcon from '../svgComponents/user-icon.svelte';
+	import BulbIcon from '../../svgComponents/bulb-icon.svelte';
+	import CloseIcon from '../../svgComponents/close-icon.svelte';
+	import HamburgerIcon from '../../svgComponents/hamburger-icon.svelte';
+	import MailIcon from '../../svgComponents/mail-icon.svelte';
+	import MonitorIcon from '../../svgComponents/monitor-icon.svelte';
+	import MoonIcon from '../../svgComponents/moon-icon.svelte';
+	import store from '../../store';
+	import SunIcon from '../../svgComponents/sun-icon.svelte';
+	import UserIcon from '../../svgComponents/user-icon.svelte';
 
 	const { aboutOffset, blogOffset, contactOffset, isDarkMode, isNavOpen, workOffset } = store;
 

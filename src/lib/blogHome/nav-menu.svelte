@@ -3,14 +3,12 @@
 
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import IconButton from '$lib/icon-button.svelte';
+	import IconButton from '$lib/misc/icon-button.svelte';
 
-	import store from '../store';
-	import HomeIcon from '../svgComponents/home-icon.svelte';
-	import MoonIcon from '../svgComponents/moon-icon.svelte';
-	import SunIcon from '../svgComponents/sun-icon.svelte';
-	import '../styles/reset.css';
-	import '../styles/global.scss';
+	import HomeIcon from '../../svgComponents/home-icon.svelte';
+	import MoonIcon from '../../svgComponents/moon-icon.svelte';
+	import store from '../../store';
+	import SunIcon from '../../svgComponents/sun-icon.svelte';
 
 	const { isDarkMode } = store;
 

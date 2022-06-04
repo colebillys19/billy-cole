@@ -2,14 +2,14 @@
 	// import ImgCarousel from '$lib/home-img-carousel.svelte';
 
 	// import { getCarouselProps, hasKey } from '../helpers';
-	import { hasKey } from '../helpers';
-	import loanhengeImgDesktop from '../images/loanhenge-a.jpg';
-	import loanhengeImgMobile from '../images/loanhenge-b.jpg';
-	import ss3MobileImgA from '../images/ss3-mobile-a.jpg';
-	import victoryImgDesktop from '../images/victory-a.jpg';
-	import victoryImgMobile from '../images/victory-b.jpg';
-	import store from '../store';
-	import HomeSectionContainer from './home-section-container.svelte';
+	import { hasKey } from '../../helpers';
+	import HomeSectionContainer from '../misc/home-section-container.svelte';
+	import loanhengeImgDesktop from '../../images/loanhenge-a.jpg';
+	import loanhengeImgMobile from '../../images/loanhenge-b.jpg';
+	import ss3MobileImgA from '../../images/ss3-mobile-a.jpg';
+	import store from '../../store';
+	import victoryImgDesktop from '../../images/victory-a.jpg';
+	import victoryImgMobile from '../../images/victory-b.jpg';
 
 	const { isDarkMode, isMobile, workOffset } = store;
 
@@ -52,11 +52,11 @@
 			/>
 		{/if} -->
 		<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
-		<p class="blurb">
+		<p class="reading">
 			Your Mortgage Online is a widely used iOS/Android application that gives homeowners the
-			ability to easily manage their mortgages. Users can make payments <b>|</b> they can manage
-			escrow accounts, taxes, and insurance <b>|</b> they can contact customer support <b>|</b> and more.
-			I was an integral part of the team that built the app from the ground up.
+			ability to easily manage their mortgages. Users can make payments | they can manage escrow
+			accounts, taxes, and insurance | they can contact customer support | and more. I was an
+			integral part of the team that built the app from the ground up.
 		</p>
 		<p><b>Tools used:</b></p>
 		<ul>
@@ -70,7 +70,7 @@
 		<div class="divider" />
 		<h3>Loanhenge</h3>
 		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
-		<p class="blurb">
+		<p class="reading">
 			Loanhenge is a project I started as a sort of sandbox to experiment with front-end concepts
 			and best-practices while cutting my teeth as a developer. Not long after getting my first job
 			after bootcamp, I was put on a small team tasked with building a React application that'd be
@@ -100,7 +100,7 @@
 		<div class="divider" />
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
-		<p class="blurb">
+		<p class="reading">
 			Victory Templates is a project I created as a resource for the devs on my team (and for
 			myself!). We were tasked with recreating a legacy application that implemented various
 			interactive charts. We decided to make use of Formidable's React chart component library
@@ -166,12 +166,6 @@
 
 	.imgDiv {
 		display: inline-block;
-	}
-
-	.blurb,
-	.blurb span,
-	.blurb a {
-		font-family: 'Roboto', sans-serif;
 	}
 
 	.bigLink {

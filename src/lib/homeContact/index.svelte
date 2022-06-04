@@ -1,11 +1,11 @@
 <script lang="ts">
-	import TextIconLink from '$lib/text-icon-link.svelte';
+	import HomeSectionContainer from '$lib/misc/home-section-container.svelte';
+	import TextIconLink from '$lib/misc/text-icon-link.svelte';
 
-	import store from '../store';
-	import TwitterIcon from '../svgComponents/twitter-icon.svelte';
-	import LinkedinIcon from '../svgComponents/linkedin-icon.svelte';
-	import GithubIcon from '../svgComponents/github-icon.svelte';
-	import HomeSectionContainer from './home-section-container.svelte';
+	import GithubIcon from '../../svgComponents/github-icon.svelte';
+	import LinkedinIcon from '../../svgComponents/linkedin-icon.svelte';
+	import store from '../../store';
+	import TwitterIcon from '../../svgComponents/twitter-icon.svelte';
 
 	const { contactOffset, isDarkMode } = store;
 
@@ -36,7 +36,7 @@
 				</TextIconLink>
 			</li>
 		</ul>
-		<p>
+		<p class="reading">
 			If you're reading this that means I'm still on the hunt for a new job! If you or someone you
 			know is looking for a solid developer with a great sense for UI/UX, please don't hesitate to
 			reach out!

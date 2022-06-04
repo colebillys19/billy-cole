@@ -1,8 +1,8 @@
 <script lang="ts">
-	import TextIconLink from '$lib/text-icon-link.svelte';
+	import TextIconLink from '$lib/misc/text-icon-link.svelte';
 
-	import store from '../store';
-	import ArrowUpIcon from '../svgComponents/arrow-up-icon.svelte';
+	import ArrowUpIcon from '../../svgComponents/arrow-up-icon.svelte';
+	import store from '../../store';
 
 	const { isDarkMode } = store;
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import NameHeading from '$lib/home-landing-section-desktop-heading.svelte';
+	import IlluSvg from '../../svgComponents/landing-illu.svelte';
+	import store from '../../store';
 
-	import store from '../store';
-	import IlluSvg from '../svgComponents/landing-illu.svelte';
+	import DynamicHeading from './dynamic-heading.svelte';
 
 	const { isLandingAnimationDisabled, isDarkMode } = store;
 
@@ -40,7 +40,7 @@
 <div class:isDarkMode={$isDarkMode} class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer" style={`top: -${scrollY / 4}px;`}>
-			<NameHeading
+			<DynamicHeading
 				offsetX={(mouseInitialX - mouseX) / -120}
 				offsetY={(mouseInitialY - mouseY) / -160}
 			/>
@@ -74,9 +74,7 @@
 	}
 
 	.illuContainer {
-		border-right-style: solid;
-		border-right-width: 4px;
-		border-right-color: blue;
+		border-right: 4px solid $palette-extra-dark;
 		grid-column-end: 6;
 		grid-column-start: 1;
 		grid-row-end: 6;

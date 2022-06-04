@@ -1,6 +1,6 @@
 <script lang="ts">
-	import store from '../store';
-	import RightChevIcon from '../svgComponents/right-chev-icon.svelte';
+	import RightChevIcon from '../../svgComponents/right-chev-icon.svelte';
+	import store from '../../store';
 
 	const { isDarkMode } = store;
 
@@ -16,9 +16,9 @@
 <a href={`/blog/${path}`}>
 	<div class:isDarkMode={$isDarkMode} class="contentContainer">
 		<div>
-			<h4>{title}</h4>
+			<h3>{title}</h3>
 			<p class="date">{date}</p>
-			<p class="excerpt">{innerWidth < 768 ? excerpt.slice(0, 150) : excerpt}...</p>
+			<p class="reading">{innerWidth < 768 ? excerpt.slice(0, 150) : excerpt}...</p>
 		</div>
 		{#if innerWidth >= 560}
 			<div>
@@ -41,11 +41,5 @@
 		color: blue;
 		display: flex;
 		text-align: left;
-	}
-
-	// .date {}
-
-	.excerpt {
-		font-family: 'Roboto', sans-serif;
 	}
 </style>

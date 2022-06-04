@@ -2,7 +2,7 @@
 	import { onMount, tick } from 'svelte';
 	import debounce from 'lodash.debounce';
 
-	import store from '../store';
+	import store from '../../store';
 
 	const { isDarkMode } = store;
 
@@ -40,15 +40,18 @@
 	}
 
 	h2 {
+		color: $palette-extra-dark;
+		font-size: 36px;
 		text-align: right;
+		text-shadow: 1px 1px 0 #000000;
 	}
 
 	.bgColorA {
-		background-color: $lightBgA;
+		background-color: $light-bg-a;
 	}
 
 	.bgColorB {
-		background-color: $lightBgB;
+		background-color: $light-bg-b;
 	}
 
 	.contentContainer {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PostList from '$lib/home-blog-section-post-list.svelte';
+	import PostList from '$lib/blogHome/post-list.svelte';
 
 	import store from '../../store';
 
