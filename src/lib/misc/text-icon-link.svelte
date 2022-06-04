@@ -13,11 +13,11 @@
 	};
 </script>
 
-<a on:click={onClick} aria-label={ariaLabel} class="bigLink" {href} {...$$restProps}>
+<a on:click={onClick} aria-label={ariaLabel} {href} {...$$restProps}>
 	<div class:isIconRight>
 		<slot name="icon" />
 	</div>
-	<span class:isIconRight class:isNavMargin>
+	<span class:isIconRight class:isNavMargin class="bigLink">
 		<slot name="text" />
 	</span>
 </a>

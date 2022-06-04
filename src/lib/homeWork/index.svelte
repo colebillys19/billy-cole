@@ -142,6 +142,14 @@
 		text-align: left;
 	}
 
+	ul {
+		padding: 0 40px;
+	}
+
+	li::marker {
+		color: $palette-medium;
+	}
+
 	.imgDiv {
 		background-size: cover;
 	}

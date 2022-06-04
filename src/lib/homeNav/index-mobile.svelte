@@ -80,7 +80,7 @@
 			<CloseIcon />
 		</IconButton>
 		<ul class="navElement">
-			<li>
+			<li style="left: 2px; position: relative;">
 				<TextIconLink
 					handleClick={() => handleScrollClick($workOffset)}
 					isNavMargin
@@ -90,7 +90,7 @@
 					<span slot="text">work</span>
 				</TextIconLink>
 			</li>
-			<li>
+			<li style="left: 7px; position: relative;">
 				<TextIconLink
 					handleClick={() => handleScrollClick($blogOffset)}
 					isNavMargin
@@ -100,7 +100,7 @@
 					<span slot="text">blog</span>
 				</TextIconLink>
 			</li>
-			<li>
+			<li style="left: 4px; position: relative;">
 				<TextIconLink
 					handleClick={() => handleScrollClick($aboutOffset)}
 					isNavMargin
@@ -143,7 +143,7 @@
 		justify-content: space-between;
 		padding: 10px;
 		position: fixed;
-		top: -304px;
+		top: -320px;
 		transition: top 320ms ease-in-out;
 		width: 100%;
 		z-index: 2;
