@@ -1,16 +1,23 @@
 <script lang="ts">
 	import store from '../store';
 
-	const { isLandingAnimationDisabled, isDarkMode } = store;
+	const {
+		isDarkMode,
+		isLandingAnimationDisabled,
+		isMobile,
+		landingMouseInitialX,
+		landingMouseInitialY,
+		landingMouseX,
+		landingMouseY
+	} = store;
 
-	export let isMobile = false;
-	export let offsetX = 0;
-	export let offsetY = 0;
+	$: offsetX = ($landingMouseInitialX - $landingMouseX) / 360;
+	$: offsetY = ($landingMouseInitialY - $landingMouseY) / 320;
 </script>
 
 <svg
 	class:isAnimationDisabled={$isLandingAnimationDisabled}
-	class:isMobile
+	class:isMobile={$isMobile}
 	fill="none"
 	height="771"
 	style={!$isLandingAnimationDisabled ? `transform: translate(${offsetX}px, ${offsetY}px);` : ''}

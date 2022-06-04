@@ -2,33 +2,30 @@
 	import IlluSvg from '../../svgComponents/landing-illu.svelte';
 	import store from '../../store';
 
-	const { isDarkMode, isMobile } = store;
+	import DynamicHeading from './dynamic-heading.svelte';
+
+	const { isDarkMode } = store;
 
 	export let scrollY = 0;
 </script>
 
 <div class:isDarkMode={$isDarkMode} class="contentContainer">
 	<div class="contentSubcontainer">
-		<div class="nameContainer">
-			<h1 style={`transform: translateY(${scrollY / -4}px);`}>Billy Cole</h1>
+		<div class="nameContainer" style={`top: -${scrollY / 4}px;`}>
+			<DynamicHeading />
 		</div>
-		<div class="illuContainer">
-			<IlluSvg isMobile={$isMobile === 1} offsetY={scrollY / -16} />
+		<div class="illuContainer" style={`top: -${scrollY / 16}px;`}>
+			<IlluSvg />
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
-	h1 {
-		font-size: 36px;
-		text-shadow: 1px 1px 0 #000000;
-		white-space: nowrap;
-	}
-
 	.contentContainer {
 		clip-path: inset(0 40px 0 0);
 		height: 100vh;
 		padding: 40px;
+		pointer-events: none;
 		position: fixed;
 		top: 0;
 	}
@@ -65,11 +62,12 @@
 		position: relative;
 	}
 
-	@media (min-width: 768px) {
-		h1 {
-			font-size: 48px;
-		}
+	.isAnimationDisabled {
+		transform: translate(0, 0);
+		transition: transform 320ms ease-in-out;
+	}
 
+	@media (min-width: 768px) {
 		.contentContainer {
 			clip-path: inset(0 60px 0 0);
 			padding: 60px;
@@ -88,16 +86,6 @@
 			grid-row-end: 7;
 			grid-row-start: 1;
 			justify-content: flex-start;
-		}
-	}
-
-	@media (orientation: landscape) {
-		h1 {
-			font-size: 36px;
-		}
-
-		.nameContainer {
-			left: 10px;
 		}
 	}
 </style>

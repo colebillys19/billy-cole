@@ -4,15 +4,10 @@
 	import ContactSection from '$lib/homeContact/index.svelte';
 	import Footer from '$lib/homeFooter/index.svelte';
 	import LandingSectionContainer from '$lib/homeLanding/container.svelte';
-	import LandingSectionDesktop from '$lib/homeLanding/index-desktop.svelte';
-	import LandingSectionMobile from '$lib/homeLanding/index-mobile.svelte';
+	import LandingSection from '$lib/homeLanding/index.svelte';
 	import NavMenuDesktop from '$lib/homeNav/index-desktop.svelte';
 	import NavMenuMobile from '$lib/homeNav/index-mobile.svelte';
 	import WorkSection from '$lib/homeWork/index.svelte';
-
-	import store from '../store';
-
-	const { isMobile } = store;
 
 	let innerHeight = 0;
 	let innerWidth = 0;
@@ -40,13 +35,7 @@
 	<NavMenuDesktop />
 {/if}
 <LandingSectionContainer>
-	{#if shouldRenderLandingContent}
-		{#if $isMobile}
-			<LandingSectionMobile {scrollY} />
-		{:else}
-			<LandingSectionDesktop {scrollY} />
-		{/if}
-	{/if}
+	<LandingSection {scrollY} />
 </LandingSectionContainer>
 <div class="raised">
 	<WorkSection />

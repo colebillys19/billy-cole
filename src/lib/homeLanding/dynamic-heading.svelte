@@ -1,10 +1,17 @@
 <script lang="ts">
 	import store from '../../store';
 
-	const { isLandingAnimationDisabled, isDarkMode } = store;
+	const {
+		isDarkMode,
+		isLandingAnimationDisabled,
+		landingMouseInitialX,
+		landingMouseInitialY,
+		landingMouseX,
+		landingMouseY
+	} = store;
 
-	export let offsetX = 0;
-	export let offsetY = 0;
+	$: offsetX = ($landingMouseInitialX - $landingMouseX) / -120;
+	$: offsetY = ($landingMouseInitialY - $landingMouseY) / -160;
 </script>
 
 <h1
@@ -31,6 +38,7 @@
 	@media (min-width: 768px) {
 		h1 {
 			font-size: 48px;
+			pointer-events: none;
 		}
 	}
 </style>
