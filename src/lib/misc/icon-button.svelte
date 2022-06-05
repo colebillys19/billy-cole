@@ -17,7 +17,7 @@
 	<slot />
 </button>
 
-<style>
+<style lang="scss">
 	button {
 		align-items: center;
 		background-color: rgba(0, 0, 0, 0);

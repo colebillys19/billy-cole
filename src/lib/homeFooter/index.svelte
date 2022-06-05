@@ -1,8 +1,8 @@
 <script lang="ts">
-	import TextIconLink from '$lib/text-icon-link.svelte';
+	import TextIconLink from '$lib/misc/text-icon-link.svelte';
 
-	import store from '../store';
-	import ArrowUpIcon from '../svgComponents/arrow-up-icon.svelte';
+	import ArrowUpIcon from '../../svgComponents/arrow-up-icon.svelte';
+	import store from '../../store';
 
 	const { isDarkMode } = store;
 
@@ -11,22 +11,16 @@
 
 <div class:isDarkMode={$isDarkMode}>
 	<TextIconLink handleClick={handleBackToTop} isIconRight>
-		<ArrowUpIcon color="#bb77a2" slot="icon" />
+		<ArrowUpIcon color="#383d5d" slot="icon" />
 		<span slot="text">back to top</span>
 	</TextIconLink>
 </div>
 
 <style lang="scss">
 	div {
-		background-color: $palette-b;
-		padding: 24px 48px;
+		background-color: $light-bg-b;
+		padding: 24px;
 		text-align: center;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-f;
 	}
 
 	@media (min-width: 560px) {

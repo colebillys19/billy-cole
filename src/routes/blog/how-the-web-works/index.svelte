@@ -1,11 +1,12 @@
 <script lang="ts">
-	import TextSnippet from '$lib/blog-text-snippet.svelte';
-	import HornsDivider from '$lib/blog-horns-divider.svelte';
-	import PostFooter from '$lib/blog-post-footer.svelte';
+	import TextSnippet from '$lib/blogPost/text-snippet.svelte';
+	import HornsDivider from '$lib/blogPost/horns-divider.svelte';
+	import PostFooter from '$lib/blogPost/post-footer.svelte';
 
-	import store from '../../../store';
 	import snippetStylesDark from '../../../styles/codeSnippetStyles/dark';
 	import snippetStylesLight from '../../../styles/codeSnippetStyles/light';
+	import store from '../../../store';
+
 	import { httpRequest, httpResponse } from './snippets';
 
 	const { isDarkMode } = store;
@@ -23,13 +24,13 @@
 		appears and you start shopping away. But what happened there when you hit enter? A whole lot
 		happened there.
 	</p>
+	<div class="divider" />
 	<p>
 		Some insane amount of web pages are visited every day. But what's going on behind the scenes?
 		What allows you to "visit a web page"? Let's start with what you typed in: “amazon.com”. This is
 		called a URL address. URL is short for uniform resource locator. Basically it's a way to locate
 		some resource on the internet. Resources can be web pages, image files, user profile data, etc.
 	</p>
-	<div class="divider" />
 	<p>
 		There are two main concepts to keep in mind here. There's our internet browser <span
 			class="parens">(chrome, safari, edge, etc.)</span

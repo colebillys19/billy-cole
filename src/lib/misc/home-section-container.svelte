@@ -2,11 +2,11 @@
 	import { onMount, tick } from 'svelte';
 	import debounce from 'lodash.debounce';
 
-	import store from '../store';
+	import store from '../../store';
 
 	const { isDarkMode } = store;
 
-	export let className = '';
+	export let isAltColor = false;
 	export let name = '';
 	export let updateOffset = (offset: number): void => undefined;
 
@@ -27,7 +27,7 @@
 </script>
 
 <svelte:window on:resize={handleResize} />
-<section bind:this={sectionElement} class:isDarkMode={$isDarkMode} class={className}>
+<section bind:this={sectionElement} class:isAltColor class:isDarkMode={$isDarkMode}>
 	<div class="contentContainer">
 		<h2>{name}</h2>
 		<slot />
@@ -36,43 +36,27 @@
 
 <style lang="scss">
 	section {
+		background-color: $light-bg-a;
 		min-height: 100vh;
-		padding: 24px 60px 96px;
+		padding: 24px 0 96px;
 	}
 
 	h2 {
-		font-size: 32px;
-		padding: 24px 0;
+		color: $palette-extra-dark;
+		font-size: 36px;
+		margin-bottom: 24px;
 		text-align: right;
-		text-shadow: 1px 1px 2px $palette-e;
+		text-shadow: 1px 1px 0 #000000;
 	}
 
-	.bgColorA {
-		background-color: $palette-a;
-	}
-
-	.bgColorB {
-		background-color: $palette-b;
+	.isAltColor {
+		background-color: $light-bg-b;
 	}
 
 	.contentContainer {
 		margin: 0 auto;
 		max-width: 1200px;
+		padding: 0 58px;
 		text-align: center;
-	}
-
-	// dark
-
-	.isDarkMode h2 {
-		color: $palette-a;
-		text-shadow: 1px 1px 2px $palette-c;
-	}
-
-	.isDarkMode.bgColorA {
-		background-color: $palette-g;
-	}
-
-	.isDarkMode.bgColorB {
-		background-color: $palette-f;
 	}
 </style>

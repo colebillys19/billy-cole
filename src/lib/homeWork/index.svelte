@@ -1,14 +1,15 @@
 <script lang="ts">
-	import ImgCarousel from '$lib/home-img-carousel.svelte';
+	import ImgCarousel from '$lib/misc/img-carousel.svelte';
 
-	import { hasKey } from '../helpers';
-	import loanhengeImgDesktop from '../images/loanhenge-a.jpg';
-	import loanhengeImgMobile from '../images/loanhenge-b.jpg';
-	import ss3MobileImgA from '../images/ss3-mobile-a.jpg';
-	import victoryImgDesktop from '../images/victory-a.jpg';
-	import victoryImgMobile from '../images/victory-b.jpg';
-	import store from '../store';
-	import HomeSectionContainer from './home-section-container.svelte';
+	import { hasKey } from '../../helpers';
+	import loanhengeImgDesktop from '../../images/loanhenge-a.jpg';
+	import loanhengeImgMobile from '../../images/loanhenge-b.jpg';
+	import ss3MobileImgA from '../../images/ss3-mobile-a.jpg';
+	import store from '../../store';
+	import victoryImgDesktop from '../../images/victory-a.jpg';
+	import victoryImgMobile from '../../images/victory-b.jpg';
+
+	import HomeSectionContainer from '../misc/home-section-container.svelte';
 
 	const { isDarkMode, isMobile, workOffset } = store;
 
@@ -39,22 +40,29 @@
 </script>
 
 <svelte:window bind:innerWidth />
-<HomeSectionContainer className="bgColorB" name="work" {updateOffset}>
+<HomeSectionContainer isAltColor name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Your Mortgage Online</h3>
 		{#if innerWidth <= 560}
 			<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
+		{:else if innerWidth <= 900}
+			<ImgCarousel numToShow={1} />
+		{:else if innerWidth <= 1200}
+			<ImgCarousel numToShow={2} />
 		{:else}
-			<ImgCarousel />
+			<ImgCarousel numToShow={3} />
 		{/if}
-		<p class="blurb">
+		<p class="reading">
 			Your Mortgage Online is a widely used iOS/Android application that gives homeowners the
-			ability to easily manage their mortgages. Users can make payments <b>|</b> they can manage
-			escrow accounts, taxes, and insurance <b>|</b> they can contact customer support <b>|</b> and more.
-			I was an integral part of the team that built the app from the ground up.
+			ability to easily manage their mortgages. Users can make payments <span class="lighten"
+				>-</span
+			>
+			they can manage escrow accounts, taxes, and insurance <span class="lighten">-</span> they can
+			contact customer support <span class="lighten">-</span> and much more. I was an integral part of
+			the team that built the app from the ground up.
 		</p>
 		<p class="tools"><b>Tools used:</b></p>
-		<ul class="hasPaddingBottom tools">
+		<ul class="homeList tools">
 			<li>React Native</li>
 			<li>Redux</li>
 			<li>Redux Saga, Immer, Reselect</li>
@@ -65,17 +73,17 @@
 		<div class="divider" />
 		<h3>Loanhenge</h3>
 		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
-		<p class="blurb">
+		<p class="reading">
 			Loanhenge is a project I started as a sort of sandbox to experiment with front-end concepts
 			and best-practices while cutting my teeth as a developer. Not long after getting my first job
 			after bootcamp, I was put on a small team tasked with building a React application that'd be
 			used by banks to keep track of bulk loan data. While building that application there were
 			scenarios where I wanted to spend more time fleshing out features and experimenting. I decided
 			to start a project I could work on in my free time that would allow for more freedom. That
-			project became Loanhenge! <span class="opaque">(desktop only)</span>
+			project became Loanhenge! <span class="lighten">(desktop only)</span>
 		</p>
 		<p class="tools"><b>Tools used:</b></p>
-		<ul class:hasPaddingBottom={$isMobile} class="tools">
+		<ul class="homeList tools">
 			<li>React</li>
 			<li>Redux</li>
 			<li>Redux Saga, Immer, Reselect</li>
@@ -86,7 +94,7 @@
 			<li>React Testing Library</li>
 		</ul>
 		{#if !$isMobile}
-			<p class="hasPaddingBottom">
+			<p>
 				<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
 					>Visit &#x1F440; &#x1F440; &#x1F440;</a
 				>
@@ -95,25 +103,24 @@
 		<div class="divider" />
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
-		<p class="blurb">
+		<p class="reading">
 			Victory Templates is a project I created as a resource for the devs on my team <span
-				class="opaque">(and for myself!)</span
+				class="lighten">(and for myself!)</span
 			>. We were tasked with recreating a legacy application that implemented various interactive
 			charts. We decided to make use of Formidable's React chart component library
 			<a href="https://formidable.com/open-source/victory/">Victory</a>. I was asked to research the
 			library and put together a repo we could reference as we built out the app. That ask became
-			Victory Templates.
-			<span class="opaque">(desktop only)</span>
+			Victory Templates. <span class="lighten">(desktop only)</span>
 		</p>
 		<p class="tools"><b>Tools used:</b></p>
-		<ul class:hasPaddingBottom={$isMobile} class="tools">
+		<ul class="homeList tools">
 			<li>React</li>
 			<li>Victory</li>
 			<li>Material UI</li>
 			<li>Styled Components</li>
 		</ul>
 		{#if !$isMobile}
-			<p class="hasPaddingBottom">
+			<p>
 				<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
 					>Visit &#x1F440; &#x1F440; &#x1F440;</a
 				>
@@ -121,8 +128,11 @@
 		{/if}
 		<div class="divider" />
 		<h3>This Site!</h3>
+		<p class="reading">
+			I wanted to build my personal page with something... responsive and accessible...
+		</p>
 		<p class="tools"><b>Tools used:</b></p>
-		<ul class="tools">
+		<ul class="homeList tools">
 			<li>Svelte</li>
 			<li>TypeScript</li>
 			<li>more...</li>
@@ -132,38 +142,38 @@
 
 <style lang="scss">
 	h3 {
-		font-size: 24px;
 		margin-bottom: 24px;
+		text-align: center;
 	}
 
 	p {
-		margin-top: 24px;
+		margin-bottom: 24px;
 		text-align: left;
 	}
 
 	ul {
-		margin: 0;
-		text-align: left;
+		margin-bottom: 24px;
 	}
 
 	.imgDiv {
 		background-size: cover;
+		margin: 0 auto 24px;
 	}
 
 	.ss3ImgDiv {
-		border: 3px solid $palette-f;
+		border: 3px solid $palette-extra-dark;
 		height: 448px;
 		width: 252px;
 	}
 
 	.loanhengeImgDiv {
-		border: 3px solid $palette-f;
+		border: 3px solid $palette-extra-dark;
 		height: 352px;
 		width: 252px;
 	}
 
 	.victoryImgDiv {
-		border: 3px solid $palette-a;
+		border: 3px solid $palette-light;
 		height: 270px;
 		width: 252px;
 	}
@@ -172,56 +182,21 @@
 		text-align: center;
 	}
 
-	.imgDiv {
-		display: inline-block;
-	}
-
-	.blurb,
-	.blurb span,
-	.blurb a {
-		font-family: 'Roboto', sans-serif;
-		font-size: 18px;
-	}
-
-	.hasPaddingBottom {
-		margin-bottom: 96px;
-	}
-
 	.tools {
-		color: $palette-f;
+		color: $palette-extra-dark;
 	}
 
-	.opaque {
-		opacity: 0.6;
-	}
-
-	.bigLink {
-		font-size: 20px;
-		font-weight: 700;
-		text-decoration: none;
+	.lighten {
+		color: $palette-dark;
 	}
 
 	.divider {
-		border-bottom: 1px solid $palette-e;
-		margin-bottom: 24px;
+		border-bottom: 3px solid $palette-extra-dark;
+		margin: 96px 0 24px;
 	}
 
-	// dark
-
-	.isDarkMode p,
-	.isDarkMode h3 {
-		color: $palette-a;
-	}
-
-	.isDarkMode a,
-	.isDarkMode .tools {
-		color: $palette-b;
-	}
-
-	.isDarkMode .ss3ImgDiv,
-	.isDarkMode .loanhengeImgDiv,
-	.isDarkMode .victoryImgDiv {
-		border: 3px solid $palette-c;
+	.homeList {
+		text-align: left;
 	}
 
 	@media (min-width: 560px) {
@@ -249,6 +224,16 @@
 		.victoryImgDiv {
 			height: 459px;
 			width: 900px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		h3 {
+			text-align: left;
+		}
+
+		.imgDiv {
+			margin: 0 0 24px;
 		}
 	}
 </style>

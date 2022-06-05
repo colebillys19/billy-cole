@@ -1,10 +1,14 @@
-$palette-a: #fffeef;
-$palette-b: #f2c3ad;
-$palette-c: #e68a6e;
-$palette-d: #bb77a2;
-$palette-e: #817a99;
-$palette-f: #5d5c7b;
-$palette-g: #383d5d;
+$palette-dark: #817a99;
+$palette-extra-dark: #383d5d;
+$palette-extra-light: #fffeef;
+$palette-light: #e68a6e;
+$palette-medium: #bb77a2;
+
+// #5d5c7b;
+// $dark-bg-a: #000000;
+// $dark-bg-b: #000000;
+$light-bg-a: #fffeef;
+$light-bg-b: #f9e1ce;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -13,10 +17,68 @@ $palette-g: #383d5d;
 }
 
 html {
-	background-color: $palette-f;
-	color: $palette-g;
+	background-color: $palette-extra-dark;
+	font-size: 18px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 24px;
+	color: $palette-extra-dark;
+	text-shadow: 1px 1px 0 $palette-dark;
+}
+
+h4 {
+	font-size: 20px;
 }
 
 a {
-	color: $palette-d;
+	color: $palette-medium;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.reading,
+.reading * {
+	font-family: 'Roboto', sans-serif;
+}
+
+.bigLink {
+	font-size: 22px;
+	text-shadow: 1px 1px 0 $palette-dark;
+}
+
+.homeList {
+	padding: 0 40px;
+}
+
+.homeList li::marker {
+	color: $palette-medium;
+}
+
+@media (min-width: 560px) {
+	h3 {
+		font-size: 28px;
+	}
+}
+
+@media (min-width: 768px) {
+	h2 {
+		font-size: 36px;
+	}
+
+	h4 {
+		font-size: 24px;
+	}
+
+	.reading {
+		font-size: 20px;
+	}
+
+	.bigLink {
+		font-size: 24px;
+	}
 }

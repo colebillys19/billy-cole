@@ -1,13 +1,14 @@
 <script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
+
 	export const load: Load = ({ error }) => ({
 		props: { error }
 	});
 </script>
 
 <script lang="ts">
-	import GetIsMobile from '$lib/get-is-mobile.svelte';
-	import NavMenu from '$lib/blog-nav-menu.svelte';
+	import GetIsMobile from '$lib/misc/get-is-mobile.svelte';
+	import NavMenu from '$lib/blogHome/nav-menu.svelte';
 
 	import store from '../store';
 
@@ -26,15 +27,5 @@
 <style lang="scss">
 	main {
 		min-height: calc(100vh - 80px);
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
-	}
-
-	.isDarkMode p {
-		color: $palette-a;
 	}
 </style>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import UAParser from 'ua-parser-js';
 
-	import store from '../store';
+	import store from '../../store';
 
 	const { isMobile } = store;
 

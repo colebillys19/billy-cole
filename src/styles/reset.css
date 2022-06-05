@@ -15,7 +15,8 @@ p,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+ul {
 	margin: 0;
 }
 
@@ -73,3 +74,8 @@ select {
     scroll-behavior: auto !important;
   }
 } */
+
+ul,
+ol {
+	padding: 0;
+}

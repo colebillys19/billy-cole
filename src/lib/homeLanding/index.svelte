@@ -1,34 +1,31 @@
 <script lang="ts">
-	import store from '../store';
-	import IlluSvg from '../svgComponents/landing-illu.svelte';
+	import IlluSvg from '../../svgComponents/landing-illu.svelte';
+	import store from '../../store';
 
-	const { isDarkMode, isMobile } = store;
+	import DynamicHeading from './dynamic-heading.svelte';
+
+	const { isDarkMode } = store;
 
 	export let scrollY = 0;
 </script>
 
 <div class:isDarkMode={$isDarkMode} class="contentContainer">
 	<div class="contentSubcontainer">
-		<div class="nameContainer">
-			<h1 style={`transform: translateY(${scrollY / -4}px);`}>Billy Cole</h1>
+		<div class="nameContainer" style={`top: -${scrollY / 4}px;`}>
+			<DynamicHeading />
 		</div>
-		<div class="illuContainer">
-			<IlluSvg isMobile={$isMobile === 1} offsetY={scrollY / -16} />
+		<div class="illuContainer" style={`top: -${scrollY / 16}px;`}>
+			<IlluSvg />
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
-	h1 {
-		font-size: 32px;
-		text-shadow: 1px 1px 2px $palette-e;
-		white-space: nowrap;
-	}
-
 	.contentContainer {
 		clip-path: inset(0 40px 0 0);
 		height: 100vh;
 		padding: 40px;
+		pointer-events: none;
 		position: fixed;
 		top: 0;
 	}
@@ -46,9 +43,7 @@
 	}
 
 	.illuContainer {
-		border-right-style: solid;
-		border-right-width: 4px;
-		border-right-color: $palette-f;
+		border-right: 4px solid $palette-extra-dark;
 		grid-column-end: 6;
 		grid-column-start: 1;
 		grid-row-end: 6;
@@ -67,22 +62,12 @@
 		position: relative;
 	}
 
-	// dark
-
-	.isDarkMode h1 {
-		color: $palette-a;
-		text-shadow: 1px 1px 2px $palette-c;
-	}
-
-	.isDarkMode .illuContainer {
-		border-right-color: $palette-b;
+	.isAnimationDisabled {
+		transform: translate(0, 0);
+		transition: transform 320ms ease-in-out;
 	}
 
 	@media (min-width: 768px) {
-		h1 {
-			font-size: 48px;
-		}
-
 		.contentContainer {
 			clip-path: inset(0 60px 0 0);
 			padding: 60px;
@@ -101,16 +86,6 @@
 			grid-row-end: 7;
 			grid-row-start: 1;
 			justify-content: flex-start;
-		}
-	}
-
-	@media (orientation: landscape) {
-		h1 {
-			font-size: 32px;
-		}
-
-		.nameContainer {
-			left: 10px;
 		}
 	}
 </style>

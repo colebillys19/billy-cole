@@ -1,5 +1,5 @@
 <script lang="ts">
-	import store from '../store';
+	import store from '../../store';
 
 	const { isDarkMode } = store;
 </script>
@@ -17,17 +17,6 @@
 	}
 
 	a {
-		font-size: 18px;
 		text-decoration: none;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
-	}
-
-	.isDarkMode a {
-		color: $palette-b;
 	}
 </style>

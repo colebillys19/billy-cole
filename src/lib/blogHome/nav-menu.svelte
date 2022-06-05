@@ -3,14 +3,12 @@
 
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import IconButton from '$lib/icon-button.svelte';
+	import IconButton from '$lib/misc/icon-button.svelte';
 
-	import store from '../store';
-	import HomeIcon from '../svgComponents/home-icon.svelte';
-	import MoonIcon from '../svgComponents/moon-icon.svelte';
-	import SunIcon from '../svgComponents/sun-icon.svelte';
-	import '../styles/reset.css';
-	import '../styles/global.scss';
+	import HomeIcon from '../../svgComponents/home-icon.svelte';
+	import MoonIcon from '../../svgComponents/moon-icon.svelte';
+	import store from '../../store';
+	import SunIcon from '../../svgComponents/sun-icon.svelte';
 
 	const { isDarkMode } = store;
 
@@ -42,7 +40,7 @@
 		{#if $isDarkMode}
 			<SunIcon />
 		{:else}
-			<MoonIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
+			<MoonIcon />
 		{/if}
 	</IconButton>
 </nav>
@@ -57,17 +55,6 @@
 	}
 
 	nav a {
-		font-size: 18px;
 		text-decoration: none;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
-	}
-
-	.isDarkMode a {
-		color: $palette-b;
 	}
 </style>

@@ -1,16 +1,16 @@
 <script lang="ts">
-	import IconButton from '$lib/icon-button.svelte';
-	import TextIconLink from '$lib/text-icon-link.svelte';
+	import IconButton from '$lib/misc/icon-button.svelte';
+	import TextIconLink from '$lib/misc/text-icon-link.svelte';
 
-	import store from '../store';
-	import BulbIcon from '../svgComponents/bulb-icon.svelte';
-	import CloseIcon from '../svgComponents/close-icon.svelte';
-	import HamburgerIcon from '../svgComponents/hamburger-icon.svelte';
-	import MailIcon from '../svgComponents/mail-icon.svelte';
-	import MonitorIcon from '../svgComponents/monitor-icon.svelte';
-	import MoonIcon from '../svgComponents/moon-icon.svelte';
-	import SunIcon from '../svgComponents/sun-icon.svelte';
-	import UserIcon from '../svgComponents/user-icon.svelte';
+	import BulbIcon from '../../svgComponents/bulb-icon.svelte';
+	import CloseIcon from '../../svgComponents/close-icon.svelte';
+	import HamburgerIcon from '../../svgComponents/hamburger-icon.svelte';
+	import MailIcon from '../../svgComponents/mail-icon.svelte';
+	import MonitorIcon from '../../svgComponents/monitor-icon.svelte';
+	import MoonIcon from '../../svgComponents/moon-icon.svelte';
+	import store from '../../store';
+	import SunIcon from '../../svgComponents/sun-icon.svelte';
+	import UserIcon from '../../svgComponents/user-icon.svelte';
 
 	const { aboutOffset, blogOffset, contactOffset, isDarkMode, isNavOpen, workOffset } = store;
 
@@ -48,18 +48,18 @@
 		}
 	};
 
-	const handleMousedown = (e: MouseEvent) => {
+	const handleWindowClick = (e: MouseEvent) => {
 		const target = e.target as HTMLElement;
 		closeOnClickAway(target);
 	};
 
-	const handleTouchstart = (e: TouchEvent) => {
+	const handleTouchend = (e: TouchEvent) => {
 		const target = e.target as HTMLElement;
 		closeOnClickAway(target);
 	};
 </script>
 
-<svelte:window bind:scrollY on:click={handleMousedown} on:touchstart={handleTouchstart} />
+<svelte:window bind:scrollY on:click={handleWindowClick} on:touchend={handleTouchend} />
 <div class:isDarkMode={$isDarkMode} class:isNavOpen={$isNavOpen}>
 	<IconButton
 		ariaLabel="open nav menu"
@@ -68,7 +68,7 @@
 		hideHamburger={$isNavOpen}
 		tabIndex={$isNavOpen ? -1 : 0}
 	>
-		<HamburgerIcon />
+		<HamburgerIcon color="#383d5d" />
 	</IconButton>
 	<nav class="navElement">
 		<IconButton
@@ -77,46 +77,46 @@
 			handleClick={handleCloseMenu}
 			tabIndex={$isNavOpen ? 0 : -1}
 		>
-			<CloseIcon />
+			<CloseIcon color="#fffeef" />
 		</IconButton>
 		<ul class="navElement">
-			<li>
+			<li style="left: 2px; position: relative;">
 				<TextIconLink
 					handleClick={() => handleScrollClick($workOffset)}
-					isNavMargin
+					isNav
 					tabindex={$isNavOpen ? 0 : -1}
 				>
-					<MonitorIcon slot="icon" />
+					<MonitorIcon color="#e68a6e" slot="icon" />
 					<span slot="text">work</span>
 				</TextIconLink>
 			</li>
-			<li>
+			<li style="left: 7px; position: relative;">
 				<TextIconLink
 					handleClick={() => handleScrollClick($blogOffset)}
-					isNavMargin
+					isNav
 					tabindex={$isNavOpen ? 0 : -1}
 				>
-					<BulbIcon slot="icon" />
+					<BulbIcon color="#e68a6e" slot="icon" />
 					<span slot="text">blog</span>
 				</TextIconLink>
 			</li>
-			<li>
+			<li style="left: 4px; position: relative;">
 				<TextIconLink
 					handleClick={() => handleScrollClick($aboutOffset)}
-					isNavMargin
+					isNav
 					tabindex={$isNavOpen ? 0 : -1}
 				>
-					<UserIcon slot="icon" />
+					<UserIcon color="#e68a6e" slot="icon" />
 					<span slot="text">about</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($contactOffset)}
-					isNavMargin
+					isNav
 					tabindex={$isNavOpen ? 0 : -1}
 				>
-					<MailIcon slot="icon" />
+					<MailIcon color="#e68a6e" slot="icon" />
 					<span slot="text">contact</span>
 				</TextIconLink>
 			</li>
@@ -128,7 +128,7 @@
 			tabIndex={$isNavOpen ? 0 : -1}
 		>
 			{#if $isDarkMode}
-				<SunIcon />
+				<SunIcon color="#fffeef" />
 			{:else}
 				<MoonIcon color="#fffeef" />
 			{/if}
@@ -139,24 +139,20 @@
 <style lang="scss">
 	nav {
 		background-color: rgba(56, 61, 93, 0.9);
-		border-bottom-color: $palette-c;
-		border-bottom-style: solid;
-		border-bottom-width: 4px;
+		border-bottom: 6px solid $palette-light;
 		display: flex;
 		justify-content: space-between;
 		padding: 10px;
 		position: fixed;
-		top: -84px;
+		top: -320px;
 		transition: top 320ms ease-in-out;
 		width: 100%;
 		z-index: 2;
 	}
 
 	ul {
-		align-items: center;
-		display: flex;
 		list-style: none;
-		margin: 0;
+		margin: 30px 0 0 0;
 		padding: 0;
 		text-align: center;
 	}
@@ -164,23 +160,10 @@
 	li {
 		align-items: center;
 		display: flex;
-	}
-
-	li:not(:last-of-type) {
-		margin: 0 72px 0 0;
-	}
-
-	li span {
-		color: $palette-a;
+		margin-bottom: 30px;
 	}
 
 	.isNavOpen nav {
 		top: 0;
-	}
-
-	// dark
-
-	.isDarkMode {
-		background-color: $palette-g;
 	}
 </style>

@@ -11,13 +11,12 @@
 	.container {
 		align-items: center;
 		display: flex;
-		font-size: 36px;
 		margin: 96px 0 30px;
 		width: 100%;
 	}
 
 	.thicc {
-		background-color: $palette-c;
+		background-color: blue;
 		flex-grow: 1;
 		height: 5px;
 	}
