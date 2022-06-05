@@ -36,13 +36,15 @@
 
 <style lang="scss">
 	section {
-		min-height: 100vh;
 		background-color: $light-bg-a;
+		min-height: 100vh;
+		padding: 24px 0 96px;
 	}
 
 	h2 {
 		color: $palette-extra-dark;
 		font-size: 36px;
+		margin-bottom: 24px;
 		text-align: right;
 		text-shadow: 1px 1px 0 #000000;
 	}

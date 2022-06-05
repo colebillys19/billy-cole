@@ -31,6 +31,7 @@
 <style lang="scss">
 	a {
 		display: block;
+		margin-bottom: 24px;
 	}
 
 	h4 {
@@ -38,16 +39,21 @@
 		text-shadow: 1px 1px 0 $palette-extra-dark;
 	}
 
-	.reading {
-		font-weight: 400;
-		color: #000000;
-	}
-
 	.contentContainer {
 		align-items: center;
 		border: 1px solid $palette-light;
 		box-shadow: -2px 2px 0 $palette-medium;
 		display: flex;
+		padding: 24px;
 		text-align: left;
+	}
+
+	.date {
+		margin-bottom: 24px;
+	}
+
+	.reading {
+		color: #000000;
+		font-weight: 400;
 	}
 </style>

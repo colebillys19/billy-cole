@@ -36,9 +36,9 @@
 	};
 </script>
 
-<div class="container">
+<div class:isCenter={numToShow < 3} class="container">
 	<IconButton handleClick={handleLeftClick} isDisabled={imgIndex === 0}>
-		<LeftChevIcon />
+		<LeftChevIcon color="#383d5d" />
 	</IconButton>
 	<div
 		class:showOne={numToShow === 1}
@@ -65,12 +65,13 @@
 		</div>
 	</div>
 	<IconButton handleClick={handleRightClick} isDisabled={imgIndex > 11}>
-		<RightChevIcon />
+		<RightChevIcon color="#383d5d" />
 	</IconButton>
 </div>
 
 <style lang="scss">
 	img {
+		border: 3px solid $palette-extra-dark;
 		width: 300px;
 	}
 
@@ -80,7 +81,8 @@
 
 	.container {
 		align-items: center;
-		display: inline-flex;
+		display: flex;
+		margin-bottom: 24px;
 	}
 
 	.imagesContainer {
@@ -105,5 +107,9 @@
 
 	.showThree {
 		width: 944px;
+	}
+
+	.isCenter {
+		justify-content: center;
 	}
 </style>

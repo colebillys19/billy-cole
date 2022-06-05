@@ -59,13 +59,15 @@ a {
 	color: $palette-medium;
 }
 
+@media (min-width: 560px) {
+	h3 {
+		font-size: 28px;
+	}
+}
+
 @media (min-width: 768px) {
 	h2 {
 		font-size: 36px;
-	}
-
-	h3 {
-		font-size: 28px;
 	}
 
 	h4 {

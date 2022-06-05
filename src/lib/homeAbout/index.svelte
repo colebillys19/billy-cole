@@ -27,8 +27,9 @@
 			side.
 		</p>
 		<p class="reading">
-			A number of years later a friend introduced me to web development. I fell in love with how web
-			development tapped into different parts of my brain and challenged me in all the right ways.
+			Then one fateful day a friend introduced me to coding! More specifically, web development. I
+			fell in love with how it tapped into different parts of my brain and challenged me in all the
+			right ways.
 		</p>
 		<p class="reading">It played into inherent strengths:</p>
 		<ul class="homeList reading">
@@ -37,7 +38,7 @@
 			<li>an ability to solve puzzles</li>
 			<li>a propensity to keep things orderly and organized</li>
 		</ul>
-		<p class="reading">and strengths I'd developed as a music and audio guy:</p>
+		<p class="reading">and strengths I'd developed as a music/audio guy:</p>
 		<ul class="homeList reading">
 			<li>a familiarity with computing</li>
 			<li>a familiarity with how interfaces should look and feel</li>
@@ -60,6 +61,12 @@
 </HomeSectionContainer>
 
 <style lang="scss">
+	h3,
+	p,
+	ul {
+		margin-bottom: 24px;
+	}
+
 	.container {
 		text-align: left;
 	}
@@ -68,14 +75,7 @@
 		background-size: cover;
 		border: 3px solid $palette-light;
 		height: 240px;
-		margin: 0 auto;
+		margin: 24px auto 0;
 		width: 240px;
-	}
-
-	@media (min-width: 1040px) {
-		.imgDiv {
-			height: 240px;
-			width: 240px;
-		}
 	}
 </style>

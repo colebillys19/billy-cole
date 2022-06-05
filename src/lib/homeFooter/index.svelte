@@ -19,6 +19,7 @@
 <style lang="scss">
 	div {
 		background-color: $light-bg-b;
+		padding: 24px;
 		text-align: center;
 	}
 

@@ -45,9 +45,9 @@
 		<h3>Your Mortgage Online</h3>
 		{#if innerWidth <= 560}
 			<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
-		{:else if innerWidth <= 1040}
+		{:else if innerWidth <= 900}
 			<ImgCarousel numToShow={1} />
-		{:else if innerWidth <= 1500}
+		{:else if innerWidth <= 1200}
 			<ImgCarousel numToShow={2} />
 		{:else}
 			<ImgCarousel numToShow={3} />
@@ -141,12 +141,23 @@
 </HomeSectionContainer>
 
 <style lang="scss">
+	h3 {
+		margin-bottom: 24px;
+		text-align: center;
+	}
+
 	p {
+		margin-bottom: 24px;
 		text-align: left;
+	}
+
+	ul {
+		margin-bottom: 24px;
 	}
 
 	.imgDiv {
 		background-size: cover;
+		margin: 0 auto 24px;
 	}
 
 	.ss3ImgDiv {
@@ -171,10 +182,6 @@
 		text-align: center;
 	}
 
-	.imgDiv {
-		display: inline-block;
-	}
-
 	.tools {
 		color: $palette-extra-dark;
 	}
@@ -185,6 +192,7 @@
 
 	.divider {
 		border-bottom: 3px solid $palette-extra-dark;
+		margin: 96px 0 24px;
 	}
 
 	.homeList {
@@ -216,6 +224,16 @@
 		.victoryImgDiv {
 			height: 459px;
 			width: 900px;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		h3 {
+			text-align: left;
+		}
+
+		.imgDiv {
+			margin: 0 0 24px;
 		}
 	}
 </style>

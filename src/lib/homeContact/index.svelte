@@ -58,11 +58,20 @@
 		flex-direction: column;
 		justify-content: space-between;
 		list-style: none;
-		margin: 0 auto;
+		margin: 0 auto 24px;
 		padding: 0;
 	}
 
+	li:not(:last-of-type) {
+		margin-bottom: 24px;
+	}
+
+	p {
+		margin-bottom: 24px;
+	}
+
 	label {
+		color: $palette-extra-dark;
 		display: block;
 	}
 
@@ -76,7 +85,6 @@
 		border: none;
 		box-shadow: 1px 1px 0 $palette-medium;
 		color: $palette-extra-light;
-		font-size: 20px;
 		padding: 6px 12px;
 		text-shadow: 1px 1px 0 $palette-extra-dark;
 	}
@@ -93,6 +101,10 @@
 		.container {
 			margin: 0 auto;
 			width: 720px;
+		}
+
+		button {
+			font-size: 20px;
 		}
 	}
 </style>

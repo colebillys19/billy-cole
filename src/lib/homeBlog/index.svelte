@@ -20,6 +20,10 @@
 </HomeSectionContainer>
 
 <style lang="scss">
+	h3 {
+		margin-bottom: 24px;
+	}
+
 	@media (min-width: 768px) {
 		.container {
 			text-align: left;
