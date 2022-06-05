@@ -28,7 +28,7 @@
 	};
 
 	const handleRightClick = () => {
-		if (imgIndex < 14) {
+		if (imgIndex < 13) {
 			imgIndex = imgIndex + 1;
 		}
 	};
@@ -39,7 +39,7 @@
 		<LeftChevIcon />
 	</IconButton>
 	<div class="imagesContainer">
-		<div class="imagesSubcontainer" style={`left: ${imgIndex * -310}px;`}>
+		<div class="imagesSubcontainer" style={`left: ${imgIndex * -322}px;`}>
 			<img src={ss3MobileImgA} alt="ss3-mobile" />
 			<img src={ss3MobileImgB} alt="ss3-mobile" />
 			<img src={ss3MobileImgC} alt="ss3-mobile" />
@@ -57,7 +57,7 @@
 			<img src={ss3MobileImgO} alt="ss3-mobile" />
 		</div>
 	</div>
-	<IconButton handleClick={handleRightClick} isDisabled={imgIndex > 13}>
+	<IconButton handleClick={handleRightClick} isDisabled={imgIndex > 12}>
 		<RightChevIcon />
 	</IconButton>
 </div>
@@ -68,7 +68,7 @@
 	}
 
 	img:not(:last-of-type) {
-		margin-right: 10px;
+		margin-right: 22px;
 	}
 
 	.container {
@@ -80,7 +80,7 @@
 		height: 533px;
 		overflow: hidden;
 		position: relative;
-		width: 300px;
+		width: 622px;
 	}
 
 	.imagesSubcontainer {

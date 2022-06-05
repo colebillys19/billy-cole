@@ -1,9 +1,13 @@
 <script lang="ts">
-	import ImgCarousel from '$lib/misc/img-carousel.svelte';
+	import ImgCarouselOne from '$lib/misc/img-carousel-one.svelte';
+	import ImgCarouselTwo from '$lib/misc/img-carousel-two.svelte';
+	import ImgCarouselThree from '$lib/misc/img-carousel-three.svelte';
 </script>
 
 <div>
-	<ImgCarousel />
+	<!-- <ImgCarouselOne /> -->
+	<ImgCarouselTwo />
+	<!-- <ImgCarouselThree /> -->
 </div>
 
 <style>

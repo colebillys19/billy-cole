@@ -51,6 +51,14 @@ a {
 	text-shadow: 1px 1px 0 $palette-dark;
 }
 
+.homeList {
+	padding: 0 40px;
+}
+
+.homeList li::marker {
+	color: $palette-medium;
+}
+
 @media (min-width: 768px) {
 	.reading {
 		font-size: 20px;

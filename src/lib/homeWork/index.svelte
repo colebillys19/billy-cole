@@ -53,7 +53,7 @@
 			the team that built the app from the ground up.
 		</p>
 		<p class="tools"><b>Tools used:</b></p>
-		<ul class="tools">
+		<ul class="homeList tools">
 			<li>React Native</li>
 			<li>Redux</li>
 			<li>Redux Saga, Immer, Reselect</li>
@@ -74,7 +74,7 @@
 			project became Loanhenge! <span class="lighten">(desktop only)</span>
 		</p>
 		<p class="tools"><b>Tools used:</b></p>
-		<ul class="tools">
+		<ul class="homeList tools">
 			<li>React</li>
 			<li>Redux</li>
 			<li>Redux Saga, Immer, Reselect</li>
@@ -104,7 +104,7 @@
 			Victory Templates. <span class="lighten">(desktop only)</span>
 		</p>
 		<p class="tools"><b>Tools used:</b></p>
-		<ul class="tools">
+		<ul class="homeList tools">
 			<li>React</li>
 			<li>Victory</li>
 			<li>Material UI</li>
@@ -120,7 +120,7 @@
 		<div class="divider" />
 		<h3>This Site!</h3>
 		<p class="tools"><b>Tools used:</b></p>
-		<ul class="tools">
+		<ul class="homeList tools">
 			<li>Svelte</li>
 			<li>TypeScript</li>
 			<li>more...</li>
@@ -131,14 +131,6 @@
 <style lang="scss">
 	p {
 		text-align: left;
-	}
-
-	ul {
-		padding: 0 40px;
-	}
-
-	li::marker {
-		color: $palette-medium;
 	}
 
 	.imgDiv {
