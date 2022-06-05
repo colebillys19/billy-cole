@@ -1,15 +1,13 @@
 <script lang="ts">
-	// import ImgCarousel from '$lib/home-img-carousel.svelte';
-
-	// import { getCarouselProps, hasKey } from '../helpers';
 	import { hasKey } from '../../helpers';
-	import HomeSectionContainer from '../misc/home-section-container.svelte';
 	import loanhengeImgDesktop from '../../images/loanhenge-a.jpg';
 	import loanhengeImgMobile from '../../images/loanhenge-b.jpg';
 	import ss3MobileImgA from '../../images/ss3-mobile-a.jpg';
 	import store from '../../store';
 	import victoryImgDesktop from '../../images/victory-a.jpg';
 	import victoryImgMobile from '../../images/victory-b.jpg';
+
+	import HomeSectionContainer from '../misc/home-section-container.svelte';
 
 	const { isDarkMode, isMobile, workOffset } = store;
 
@@ -43,14 +41,7 @@
 <HomeSectionContainer isAltColor name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Your Mortgage Online</h3>
-		<!-- {#if innerWidth <= 560}
-			<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
-		{:else}
-			<ImgCarousel
-				offsets={getCarouselProps(innerWidth).offsets}
-				width={getCarouselProps(innerWidth).width}
-			/>
-		{/if} -->
+		<!-- {#if innerWidth <= 560}{:else}{/if} -->
 		<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
 		<p class="reading">
 			Your Mortgage Online is a widely used iOS/Android application that gives homeowners the

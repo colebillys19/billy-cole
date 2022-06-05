@@ -19,38 +19,27 @@
 	import ss3MobileImgN from '../../images/ss3-mobile-n.jpg';
 	import ss3MobileImgO from '../../images/ss3-mobile-o.jpg';
 
-	// export let offsets = [];
-	export let width = 0;
-
 	let imgIndex = 0;
 
-	$: () => {
-		if (width) {
-			imgIndex = 0;
+	const handleLeftClick = () => {
+		if (imgIndex > 0) {
+			imgIndex = imgIndex - 1;
 		}
 	};
 
-	// const handleLeftClick = () => {
-	// 	if (imgIndex > 0) {
-	// 		imgIndex = imgIndex - 1;
-	// 	}
-	// };
-
-	// const handleRightClick = () => {
-	// 	if (imgIndex < offsets.length - 1) {
-	// 		imgIndex = imgIndex + 1;
-	// 	}
-	// };
+	const handleRightClick = () => {
+		if (imgIndex < 14) {
+			imgIndex = imgIndex + 1;
+		}
+	};
 </script>
 
 <div class="container">
-	<IconButton handleClick={() => null}>
-		<!-- <IconButton handleClick={handleLeftClick} isDisabled={imgIndex === 0}> -->
+	<IconButton handleClick={handleLeftClick} isDisabled={imgIndex === 0}>
 		<LeftChevIcon />
 	</IconButton>
-	<div class="imagesContainer" style={`width: ${width}px;`}>
-		<div class="imagesSubcontainer">
-			<!-- <div class="imagesSubcontainer" style={`left: -${offsets[imgIndex]}px;`}> -->
+	<div class="imagesContainer">
+		<div class="imagesSubcontainer" style={`left: ${imgIndex * -310}px;`}>
 			<img src={ss3MobileImgA} alt="ss3-mobile" />
 			<img src={ss3MobileImgB} alt="ss3-mobile" />
 			<img src={ss3MobileImgC} alt="ss3-mobile" />
@@ -68,8 +57,7 @@
 			<img src={ss3MobileImgO} alt="ss3-mobile" />
 		</div>
 	</div>
-	<IconButton handleClick={() => null}>
-		<!-- <IconButton handleClick={handleRightClick} isDisabled={imgIndex === offsets.length - 1}> -->
+	<IconButton handleClick={handleRightClick} isDisabled={imgIndex > 13}>
 		<RightChevIcon />
 	</IconButton>
 </div>
@@ -77,7 +65,6 @@
 <style lang="scss">
 	img {
 		width: 300px;
-		border-radius: 6px;
 	}
 
 	img:not(:last-of-type) {
@@ -93,18 +80,7 @@
 		height: 533px;
 		overflow: hidden;
 		position: relative;
-	}
-
-	.showOne {
 		width: 300px;
-	}
-
-	.showTwo {
-		width: 610px;
-	}
-
-	.showThree {
-		width: 920px;
 	}
 
 	.imagesSubcontainer {
