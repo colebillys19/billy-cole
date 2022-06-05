@@ -47,9 +47,9 @@
 		<p class="reading">
 			What started as an interest turned into a passion. I spent time learning the craft on my own,
 			then took a few classes at a local community college. Eventually I decided to take the plunge
-			and pursue a coding career. I moved out to San Francisco and attended Rith School's four month
-			web development bootcamp. Shortly after I landed a job as a software engineer at Dovenmuehle,
-			a mortgage-focused finance company based out of Illinois...
+			and pursue a coding career. I moved out to San Francisco and attended Rithm School's four
+			month web development bootcamp. Shortly after I landed a job as a software engineer at
+			Dovenmuehle, a mortgage-focused finance company based out of Illinois...
 		</p>
 		<TextIconLink download="billy-cole-cv" href={cvPdf} isIconRight target="_blank">
 			<DownloadIcon color="#383d5d" slot="icon" />

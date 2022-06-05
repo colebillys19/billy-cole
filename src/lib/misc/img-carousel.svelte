@@ -19,6 +19,8 @@
 	import ss3MobileImgN from '../../images/ss3-mobile-n.jpg';
 	import ss3MobileImgO from '../../images/ss3-mobile-o.jpg';
 
+	export let numToShow = 0;
+
 	let imgIndex = 0;
 
 	const handleLeftClick = () => {
@@ -28,7 +30,7 @@
 	};
 
 	const handleRightClick = () => {
-		if (imgIndex < 13) {
+		if (imgIndex < 12) {
 			imgIndex = imgIndex + 1;
 		}
 	};
@@ -38,7 +40,12 @@
 	<IconButton handleClick={handleLeftClick} isDisabled={imgIndex === 0}>
 		<LeftChevIcon />
 	</IconButton>
-	<div class="imagesContainer">
+	<div
+		class:showOne={numToShow === 1}
+		class:showTwo={numToShow === 2}
+		class:showThree={numToShow === 3}
+		class="imagesContainer"
+	>
 		<div class="imagesSubcontainer" style={`left: ${imgIndex * -322}px;`}>
 			<img src={ss3MobileImgA} alt="ss3-mobile" />
 			<img src={ss3MobileImgB} alt="ss3-mobile" />
@@ -57,7 +64,7 @@
 			<img src={ss3MobileImgO} alt="ss3-mobile" />
 		</div>
 	</div>
-	<IconButton handleClick={handleRightClick} isDisabled={imgIndex > 12}>
+	<IconButton handleClick={handleRightClick} isDisabled={imgIndex > 11}>
 		<RightChevIcon />
 	</IconButton>
 </div>
@@ -80,12 +87,23 @@
 		height: 533px;
 		overflow: hidden;
 		position: relative;
-		width: 622px;
 	}
 
 	.imagesSubcontainer {
 		display: flex;
 		position: absolute;
 		transition: left 500ms ease;
+	}
+
+	.showOne {
+		width: 300px;
+	}
+
+	.showTwo {
+		width: 622px;
+	}
+
+	.showThree {
+		width: 944px;
 	}
 </style>

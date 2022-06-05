@@ -22,17 +22,17 @@ html {
 }
 
 h2 {
-	font-size: 36px;
+	font-size: 32px;
 }
 
 h3 {
-	font-size: 28px;
+	font-size: 24px;
 	color: $palette-extra-dark;
 	text-shadow: 1px 1px 0 $palette-dark;
 }
 
 h4 {
-	font-size: 24px;
+	font-size: 20px;
 }
 
 a {
@@ -47,7 +47,7 @@ a {
 }
 
 .bigLink {
-	font-size: 24px;
+	font-size: 22px;
 	text-shadow: 1px 1px 0 $palette-dark;
 }
 
@@ -60,7 +60,27 @@ a {
 }
 
 @media (min-width: 768px) {
+	html {
+		font-size: 20px;
+	}
+
+	h2 {
+		font-size: 36px;
+	}
+
+	h3 {
+		font-size: 28px;
+	}
+
+	h4 {
+		font-size: 24px;
+	}
+
 	.reading {
 		font-size: 20px;
+	}
+
+	.bigLink {
+		font-size: 24px;
 	}
 }

@@ -68,7 +68,7 @@
 		hideHamburger={$isNavOpen}
 		tabIndex={$isNavOpen ? -1 : 0}
 	>
-		<HamburgerIcon />
+		<HamburgerIcon color="#383d5d" />
 	</IconButton>
 	<nav class="navElement">
 		<IconButton
@@ -77,46 +77,46 @@
 			handleClick={handleCloseMenu}
 			tabIndex={$isNavOpen ? 0 : -1}
 		>
-			<CloseIcon />
+			<CloseIcon color="#fffeef" />
 		</IconButton>
 		<ul class="navElement">
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($workOffset)}
-					isNavMargin
+					isNav
 					tabindex={$isNavOpen ? 0 : -1}
 				>
-					<MonitorIcon slot="icon" />
+					<MonitorIcon color="#e68a6e" slot="icon" />
 					<span slot="text">work</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($blogOffset)}
-					isNavMargin
+					isNav
 					tabindex={$isNavOpen ? 0 : -1}
 				>
-					<BulbIcon slot="icon" />
+					<BulbIcon color="#e68a6e" slot="icon" />
 					<span slot="text">blog</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($aboutOffset)}
-					isNavMargin
+					isNav
 					tabindex={$isNavOpen ? 0 : -1}
 				>
-					<UserIcon slot="icon" />
+					<UserIcon color="#e68a6e" slot="icon" />
 					<span slot="text">about</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink
 					handleClick={() => handleScrollClick($contactOffset)}
-					isNavMargin
+					isNav
 					tabindex={$isNavOpen ? 0 : -1}
 				>
-					<MailIcon slot="icon" />
+					<MailIcon color="#e68a6e" slot="icon" />
 					<span slot="text">contact</span>
 				</TextIconLink>
 			</li>
@@ -128,9 +128,9 @@
 			tabIndex={$isNavOpen ? 0 : -1}
 		>
 			{#if $isDarkMode}
-				<SunIcon />
+				<SunIcon color="#fffeef" />
 			{:else}
-				<MoonIcon />
+				<MoonIcon color="#fffeef" />
 			{/if}
 		</IconButton>
 	</nav>
@@ -138,12 +138,13 @@
 
 <style lang="scss">
 	nav {
-		border-bottom: 4px solid blue;
+		background-color: rgba(56, 61, 93, 0.9);
+		border-bottom: 6px solid $palette-light;
 		display: flex;
 		justify-content: space-between;
 		padding: 10px;
 		position: fixed;
-		top: -84px;
+		top: -86px;
 		transition: top 320ms ease-in-out;
 		width: 100%;
 		z-index: 2;

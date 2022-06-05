@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ImgCarousel from '$lib/misc/img-carousel.svelte';
+
 	import { hasKey } from '../../helpers';
 	import loanhengeImgDesktop from '../../images/loanhenge-a.jpg';
 	import loanhengeImgMobile from '../../images/loanhenge-b.jpg';
@@ -41,8 +43,15 @@
 <HomeSectionContainer isAltColor name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Your Mortgage Online</h3>
-		<!-- {#if innerWidth <= 560}{:else}{/if} -->
-		<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
+		{#if innerWidth <= 560}
+			<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
+		{:else if innerWidth <= 1040}
+			<ImgCarousel numToShow={1} />
+		{:else if innerWidth <= 1500}
+			<ImgCarousel numToShow={2} />
+		{:else}
+			<ImgCarousel numToShow={3} />
+		{/if}
 		<p class="reading">
 			Your Mortgage Online is a widely used iOS/Android application that gives homeowners the
 			ability to easily manage their mortgages. Users can make payments <span class="lighten"
@@ -173,6 +182,10 @@
 
 	.divider {
 		border-bottom: 3px solid $palette-extra-dark;
+	}
+
+	.homeList {
+		text-align: left;
 	}
 
 	@media (min-width: 560px) {

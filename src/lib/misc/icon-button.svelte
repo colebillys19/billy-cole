@@ -17,9 +17,10 @@
 	<slot />
 </button>
 
-<style>
+<style lang="scss">
 	button {
 		align-items: center;
+		background-color: rgba(0, 0, 0, 0);
 		border-radius: 50%;
 		border: none;
 		display: flex;
