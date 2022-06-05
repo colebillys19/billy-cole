@@ -4,6 +4,7 @@
 	const {
 		isLandingAnimationDisabled,
 		isDarkMode,
+		isMobile,
 		landingMouseInitialX,
 		landingMouseInitialY,
 		landingMouseX,
@@ -48,6 +49,9 @@
 	on:mousemove={handleMouseMove}
 >
 	<slot />
+	{#if !$isMobile}
+		<div />
+	{/if}
 </section>
 
 <style lang="scss">
@@ -57,5 +61,15 @@
 		height: 150vh;
 		justify-content: center;
 		position: relative;
+	}
+
+	div {
+		border-radius: 50%;
+		box-shadow: 1px 0 0 $light-bg-b;
+		height: 60px;
+		left: 10px;
+		position: fixed;
+		top: 10px;
+		width: 60px;
 	}
 </style>

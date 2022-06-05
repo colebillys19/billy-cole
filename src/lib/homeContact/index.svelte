@@ -43,7 +43,7 @@
 		</p>
 		<div class="formContainer">
 			<form action="">
-				<label for="msg">send me a note:</label>
+				<label for="msg">send me a note</label>
 				<textarea name="msg" id="msg" cols="30" rows="10" />
 				<button>send</button>
 			</form>
@@ -68,6 +68,21 @@
 
 	textarea {
 		width: 100%;
+	}
+
+	button {
+		background-color: $palette-dark;
+		border-radius: 6px;
+		border: none;
+		box-shadow: 1px 1px 0 $palette-medium;
+		color: $palette-extra-light;
+		font-size: 20px;
+		padding: 6px 12px;
+		text-shadow: 1px 1px 0 $palette-extra-dark;
+	}
+
+	button:hover {
+		cursor: pointer;
 	}
 
 	.container {

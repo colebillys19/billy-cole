@@ -128,6 +128,9 @@
 		{/if}
 		<div class="divider" />
 		<h3>This Site!</h3>
+		<p class="reading">
+			I wanted to build my personal page with something... responsive and accessible...
+		</p>
 		<p class="tools"><b>Tools used:</b></p>
 		<ul class="homeList tools">
 			<li>Svelte</li>
