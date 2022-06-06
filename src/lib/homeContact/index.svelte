@@ -76,6 +76,10 @@
 	}
 
 	textarea {
+		color: $palette-extra-dark;
+		font-family: 'Roboto', sans-serif;
+		padding: 12px;
+		resize: none;
 		width: 100%;
 	}
 
@@ -84,6 +88,8 @@
 		border-radius: 6px;
 		border: none;
 		color: $palette-extra-light;
+		display: block;
+		margin: 0 0 0 auto;
 		padding: 6px 12px;
 	}
 
@@ -96,6 +102,10 @@
 	}
 
 	// DARK
+
+	.isDarkMode textarea {
+		color: $palette-extra-dark;
+	}
 
 	.isDarkMode button {
 		background-color: $palette-dark;

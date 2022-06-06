@@ -148,7 +148,14 @@
 		second to none.
 	</p>
 	<HornsDivider />
-	<p>To wrap up, here's a syntax comparison for a few common scenarios:</p>
+	<p>
+		Depending on what you're looking to do, both Vue and Svelte are great options. I built out basic
+		todo list applications as a way to get a better feel for these two frameworks. He're my <a
+			href="https://www.google.com/"
+			target="_blank">Vue todo app</a
+		>, and here's my <a href="https://www.google.com/" target="_blank">Svelte todo app</a>. To wrap
+		up, here's a syntax comparison for a few common scenarios:
+	</p>
 	<h2>Conditionals</h2>
 	<CodeSnip caption="Vue" code={conditionalVue} />
 	<CodeSnip caption="Svelte" code={conditionalSvelte} />

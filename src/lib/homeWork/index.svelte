@@ -76,11 +76,12 @@
 		<p class="reading">
 			Loanhenge is a project I started as a sort of sandbox to experiment with front-end concepts
 			and best-practices while cutting my teeth as a developer. Not long after getting my first job
-			after bootcamp, I was put on a small team tasked with building a React application that'd be
+			after bootcamp I was put on a small team tasked with building a React application that'd be
 			used by banks to keep track of bulk loan data. While building that application there were
 			scenarios where I wanted to spend more time fleshing out features and experimenting. I decided
-			to start a project I could work on in my free time that would allow for more freedom. That
-			project became Loanhenge! <span class="lighten">(desktop only)</span>
+			to start a project I could work on in my free time that would allow for more freedom. <span
+				class="lighten">(desktop only)</span
+			>
 		</p>
 		<p class="tools"><b>Tools used:</b></p>
 		<ul class="homeList tools">
@@ -106,11 +107,11 @@
 		<p class="reading">
 			Victory Templates is a project I created as a resource for the devs on my team <span
 				class="lighten">(and for myself!)</span
-			>. We were tasked with recreating a legacy application that implemented various interactive
-			charts. We decided to make use of Formidable's React chart component library
-			<a href="https://formidable.com/open-source/victory/">Victory</a>. I was asked to research the
-			library and put together a repo we could reference as we built out the app. That ask became
-			Victory Templates. <span class="lighten">(desktop only)</span>
+			>. We needed to recreate a legacy application that implemented various interactive charts. We
+			decided to make use of Formidable's React chart component library
+			<a href="https://formidable.com/open-source/victory/" target="_blank">Victory</a>. I was asked
+			to research the library and put together a repo we could reference as we built out the app.
+			<span class="lighten">(desktop only)</span>
 		</p>
 		<p class="tools"><b>Tools used:</b></p>
 		<ul class="homeList tools">
@@ -174,7 +175,7 @@
 
 	.victoryImgDiv {
 		border: 3px solid $palette-light;
-		height: 270px;
+		height: 268px;
 		width: 252px;
 	}
 
@@ -222,8 +223,9 @@
 		}
 
 		.victoryImgDiv {
-			height: 514px;
+			height: 510px;
 			width: 480px;
+			// 2.67555
 		}
 	}
 
@@ -238,7 +240,7 @@
 		}
 
 		.victoryImgDiv {
-			height: 459px;
+			height: 478px;
 			width: 900px;
 		}
 	}

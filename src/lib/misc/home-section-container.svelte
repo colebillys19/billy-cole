@@ -46,7 +46,7 @@
 		font-size: 36px;
 		margin-bottom: 24px;
 		text-align: right;
-		text-shadow: 2px 2px 0 #000000;
+		text-shadow: 2px 2px 0 $palette-dark;
 	}
 
 	.isAltColor {

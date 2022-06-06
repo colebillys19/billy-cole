@@ -26,7 +26,7 @@
 	h1 {
 		color: $palette-extra-dark;
 		font-size: 36px;
-		text-shadow: 2px 2px 0 #000000;
+		text-shadow: 2px 2px 0 $palette-dark;
 		white-space: nowrap;
 	}
 

@@ -74,7 +74,7 @@
 		background-size: cover;
 		border: 3px solid $palette-light;
 		height: 240px;
-		margin: 24px auto 0;
+		margin: 48px auto 0;
 		width: 240px;
 	}
 
