@@ -46,7 +46,7 @@
 		font-size: 36px;
 		margin-bottom: 24px;
 		text-align: right;
-		text-shadow: 1px 1px 0 #000000;
+		text-shadow: 2px 2px 0 #000000;
 	}
 
 	.isAltColor {
@@ -71,7 +71,7 @@
 	}
 
 	.isDarkMode h2 {
-		color: $light-bg-b;
-		text-shadow: 1px 1px 0 #ffffff;
+		color: $palette-extra-light;
+		text-shadow: 2px 2px 0 $palette-medium;
 	}
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import IconButton from '$lib/misc/icon-button.svelte';
 
+	import store from '../../store';
 	import LeftChevIcon from '../../svgComponents/left-chev-icon.svelte';
 	import RightChevIcon from '../../svgComponents/right-chev-icon.svelte';
 	import ss3MobileImgA from '../../images/ss3-mobile-a.jpg';
@@ -19,6 +20,8 @@
 	import ss3MobileImgN from '../../images/ss3-mobile-n.jpg';
 	import ss3MobileImgO from '../../images/ss3-mobile-o.jpg';
 
+	const { isDarkMode } = store;
+
 	export let numToShow = 0;
 
 	let imgIndex = 0;
@@ -36,9 +39,9 @@
 	};
 </script>
 
-<div class:isCenter={numToShow < 3} class="container">
+<div class:isCenter={numToShow < 3} class:isDarkMode={$isDarkMode} class="container">
 	<IconButton handleClick={handleLeftClick} isDisabled={imgIndex === 0}>
-		<LeftChevIcon color="#383d5d" />
+		<LeftChevIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
 	<div
 		class:showOne={numToShow === 1}
@@ -65,7 +68,7 @@
 		</div>
 	</div>
 	<IconButton handleClick={handleRightClick} isDisabled={imgIndex > 11}>
-		<RightChevIcon color="#383d5d" />
+		<RightChevIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
 </div>
 
@@ -111,5 +114,11 @@
 
 	.isCenter {
 		justify-content: center;
+	}
+
+	// DARK
+
+	.isDarkMode img {
+		border: 3px solid $palette-light;
 	}
 </style>

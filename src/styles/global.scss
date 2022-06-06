@@ -27,7 +27,6 @@ h2 {
 h3 {
 	font-size: 24px;
 	color: $palette-extra-dark;
-	text-shadow: 1px 1px 0 $palette-dark;
 }
 
 h4 {
@@ -36,7 +35,6 @@ h4 {
 
 a {
 	color: $palette-medium;
-	font-weight: 700;
 	text-decoration: none;
 }
 
@@ -47,7 +45,6 @@ a {
 
 .bigLink {
 	font-size: 22px;
-	text-shadow: 1px 1px 0 $palette-dark;
 }
 
 .homeList {
@@ -58,6 +55,15 @@ a {
 	color: $palette-medium;
 }
 
+.textIconLinkText {
+	font-weight: 700;
+}
+
+.isNav .textIconLinkText {
+	color: $palette-extra-light;
+	font-weight: 400 !important;
+}
+
 // DARK
 
 .isDarkMode * {
@@ -65,16 +71,11 @@ a {
 }
 
 .isDarkMode h3 {
-	color: $light-bg-b;
-	text-shadow: 1px 1px 0 $palette-light;
+	color: $palette-extra-light;
 }
 
 .isDarkMode a {
-	color: $palette-medium;
-}
-
-.isDarkMode .bigLink {
-	text-shadow: 1px 1px 0 $palette-light;
+	color: $palette-light;
 }
 
 .isDarkMode .reading {
@@ -82,12 +83,11 @@ a {
 }
 
 .isDarkMode .textIconLinkText {
-	color: $palette-medium;
+	color: $palette-light;
 }
 
-.isNav .textIconLinkText {
-	color: $palette-extra-light !important;
-	text-shadow: none;
+.isDarkMode .isNav .textIconLinkText {
+	color: $palette-extra-light;
 }
 
 @media (min-width: 560px) {

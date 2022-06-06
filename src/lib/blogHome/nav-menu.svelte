@@ -31,16 +31,16 @@
 
 <nav class:isDarkMode={$isDarkMode}>
 	<IconButton ariaLabel="go to home" handleClick={() => goto('/')}>
-		<HomeIcon />
+		<HomeIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
 	{#if $page.url.pathname !== '/blog' && !isErrorNav}
 		<a href="/blog">blog page</a>
 	{/if}
 	<IconButton ariaLabel="toggle dark mode" handleClick={toggleDarkMode}>
 		{#if $isDarkMode}
-			<SunIcon />
+			<SunIcon color="#fffeef" />
 		{:else}
-			<MoonIcon />
+			<MoonIcon color="#383d5d" />
 		{/if}
 	</IconButton>
 </nav>

@@ -5,6 +5,7 @@
 		isLandingAnimationDisabled,
 		isDarkMode,
 		isMobile,
+		isNavOpen,
 		landingMouseInitialX,
 		landingMouseInitialY,
 		landingMouseX,
@@ -49,9 +50,7 @@
 	on:mousemove={handleMouseMove}
 >
 	<slot />
-	{#if !$isMobile}
-		<div />
-	{/if}
+	<div class:isMobile={$isMobile} class:isNavOpen={$isNavOpen} />
 </section>
 
 <style lang="scss">
@@ -65,17 +64,22 @@
 
 	div {
 		border-radius: 50%;
-		box-shadow: 1px 0 0 $light-bg-b;
+		box-shadow: -1px 1px 0 $light-bg-b;
 		height: 60px;
 		left: 10px;
 		position: fixed;
 		top: 10px;
+		transition: top 320ms ease-in-out;
 		width: 60px;
+	}
+
+	.isNavOpen {
+		top: -70px;
 	}
 
 	// DARK
 
 	.isDarkMode div {
-		box-shadow: 1px 0 0 $palette-dark;
+		box-shadow: -1px 1px 0 $palette-dark;
 	}
 </style>

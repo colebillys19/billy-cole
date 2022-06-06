@@ -22,7 +22,7 @@
 		</div>
 		{#if innerWidth >= 560}
 			<div>
-				<RightChevIcon color={$isDarkMode ? '#e68a6e' : '#817a99'} />
+				<RightChevIcon color={$isDarkMode ? '#bb77a2' : '#817a99'} />
 			</div>
 		{/if}
 	</div>
@@ -31,12 +31,11 @@
 <style lang="scss">
 	a {
 		display: block;
-		margin-bottom: 24px;
+		margin-bottom: 36px;
 	}
 
 	h4 {
-		color: $palette-dark;
-		text-shadow: 1px 1px 0 $palette-extra-dark;
+		color: $palette-extra-dark;
 	}
 
 	.contentContainer {
@@ -49,7 +48,7 @@
 	}
 
 	.date {
-		margin-bottom: 24px;
+		margin-bottom: 12px;
 	}
 
 	.reading {
@@ -65,8 +64,7 @@
 	}
 
 	.isDarkMode h4 {
-		color: $palette-light;
-		text-shadow: 1px 1px 0 $palette-extra-light;
+		color: $palette-extra-light;
 	}
 
 	.isDarkMode .date {

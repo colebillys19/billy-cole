@@ -54,10 +54,7 @@
 	}
 
 	.isNav {
-		color: $palette-extra-light;
-		font-weight: 400;
 		margin-left: 16px;
-		text-shadow: none;
 	}
 
 	.isIconRight.isNav {

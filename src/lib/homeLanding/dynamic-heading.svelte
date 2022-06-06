@@ -26,7 +26,7 @@
 	h1 {
 		color: $palette-extra-dark;
 		font-size: 36px;
-		text-shadow: 1px 1px 0 #000000;
+		text-shadow: 2px 2px 0 #000000;
 		white-space: nowrap;
 	}
 
@@ -38,8 +38,8 @@
 	// DARK
 
 	.isDarkMode {
-		color: $light-bg-b;
-		text-shadow: 1px 1px 0 #ffffff;
+		color: $palette-extra-light;
+		text-shadow: 2px 2px 0 $palette-medium;
 	}
 
 	@media (min-width: 768px) {

@@ -37,9 +37,9 @@
 			</li>
 		</ul>
 		<p class="reading">
-			If you're reading this that means I'm still on the hunt for a new job! If you or someone you
-			know is looking for a solid developer with a great sense for UI/UX, please don't hesitate to
-			reach out!
+			If you're reading this that means I'm still on the hunt for a job! If you or someone you know
+			is looking for a solid developer with a great sense for UI/UX, please don't hesitate to reach
+			out!
 		</p>
 		<div class="formContainer">
 			<form action="">
@@ -83,10 +83,8 @@
 		background-color: $palette-dark;
 		border-radius: 6px;
 		border: none;
-		box-shadow: 1px 1px 0 $palette-medium;
 		color: $palette-extra-light;
 		padding: 6px 12px;
-		text-shadow: 1px 1px 0 $palette-extra-dark;
 	}
 
 	button:hover {
@@ -100,9 +98,8 @@
 	// DARK
 
 	.isDarkMode button {
-		background-color: $palette-light;
-		color: $dark-bg-b;
-		text-shadow: 1px 1px 0 $palette-extra-light;
+		background-color: $palette-dark;
+		color: $palette-extra-light;
 	}
 
 	@media (min-width: 768px) {

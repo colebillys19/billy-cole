@@ -18,24 +18,23 @@
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Hi! I'm Billy.</h3>
 		<p class="reading">
-			As a kid I always gravitated toward creative pursuits - first it was drawing, then
-			photography, and then music. In high school I developed a passion for writing and recording
-			music. My friends and I always had some sort of garage band going - and I was the defacto
-			"producer". This led to me pursuing audio engineering as a career. I attended Full Sail
-			University in Florida and earned a Bachelor's degree in Recording Arts. I worked as an
-			audio-visual tech and audio engineer for a number of years, playing and recording music on the
-			side.
+			As a kid I always gravitated toward creative pursuits - first it was drawing and photography,
+			then in high school I developed a love for writing and recording music. My friends and I
+			always had some sort of garage band going - and I was the defacto "producer". This led to me
+			pursuing audio engineering as a career. I attended Full Sail University in Florida and earned
+			a Bachelor's degree in Recording Arts. I worked as an audio-visual tech and audio engineer for
+			a number of years, playing and recording music on the side.
 		</p>
 		<p class="reading">
 			Then one fateful day a friend introduced me to coding! More specifically, web development. I
-			fell in love with how it tapped into different parts of my brain and challenged me in all the
-			right ways.
+			was drawn to how it tapped into different parts of my brain and challenged me in all the right
+			ways.
 		</p>
 		<p class="reading">It played into inherent strengths:</p>
 		<ul class="homeList reading">
 			<li>a creative eye</li>
 			<li>a gift for pattern recognition</li>
-			<li>an ability to solve puzzles</li>
+			<li>a knack for solving puzzles</li>
 			<li>a propensity to keep things orderly and organized</li>
 		</ul>
 		<p class="reading">and strengths I'd developed as a music/audio guy:</p>
@@ -46,8 +45,8 @@
 			<li>a desire and ability to seek out original ideas</li>
 		</ul>
 		<p class="reading">
-			What started as an interest turned into a new passion. I spent time learning the craft on my
-			own, then took a few classes at a local community college. Eventually I decided to take the
+			What started as an interest turned into a real passion. I spent time learning the craft on my
+			own then took a few classes at a local community college. Eventually I decided to take the
 			plunge and pursue a coding career. I moved out to San Francisco and attended Rithm School's
 			four month web development bootcamp. Shortly after I landed a job as a software engineer at
 			Dovenmuehle, a mortgage-focused finance company based out of Illinois. Since then...
@@ -77,5 +76,11 @@
 		height: 240px;
 		margin: 24px auto 0;
 		width: 240px;
+	}
+
+	// DARK
+
+	.isDarkMode li {
+		color: $palette-extra-light;
 	}
 </style>

@@ -202,7 +202,7 @@
 	// DARK
 
 	.isDarkMode .lighten {
-		color: $palette-light;
+		color: $palette-medium;
 	}
 
 	.isDarkMode li,
