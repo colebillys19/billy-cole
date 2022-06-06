@@ -22,7 +22,7 @@
 		</div>
 		{#if innerWidth >= 560}
 			<div>
-				<RightChevIcon color="#817a99" />
+				<RightChevIcon color={$isDarkMode ? '#e68a6e' : '#817a99'} />
 			</div>
 		{/if}
 	</div>
@@ -55,5 +55,21 @@
 	.reading {
 		color: #000000;
 		font-weight: 400;
+	}
+
+	// DARK
+
+	.isDarkMode {
+		border: 1px solid $palette-medium;
+		box-shadow: -2px 2px 0 $palette-light;
+	}
+
+	.isDarkMode h4 {
+		color: $palette-light;
+		text-shadow: 1px 1px 0 $palette-extra-light;
+	}
+
+	.isDarkMode .date {
+		color: $palette-medium;
 	}
 </style>

@@ -53,8 +53,8 @@
 			Dovenmuehle, a mortgage-focused finance company based out of Illinois. Since then...
 		</p>
 		<TextIconLink download="billy-cole-cv" href={cvPdf} isIconRight target="_blank">
-			<DownloadIcon color="#383d5d" slot="icon" />
-			<span slot="text">download cv</span>
+			<DownloadIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
+			<span class="textIconLinkText" slot="text">download cv</span>
 		</TextIconLink>
 		<div class="imgDiv" style={`background-image: url(${headshotImg});`} />
 	</div>

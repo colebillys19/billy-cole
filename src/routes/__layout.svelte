@@ -31,4 +31,10 @@
 	main {
 		background-color: $light-bg-a;
 	}
+
+	// DARK
+
+	.isDarkMode {
+		background-color: $dark-bg-a;
+	}
 </style>

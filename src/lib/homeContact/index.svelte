@@ -19,20 +19,20 @@
 		<ul>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<TwitterIcon color="#383d5d" slot="icon" />
-					<span slot="text">twitter</span>
+					<TwitterIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
+					<span class="textIconLinkText" slot="text">twitter</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<LinkedinIcon color="#383d5d" slot="icon" />
-					<span slot="text">linkedin</span>
+					<LinkedinIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
+					<span class="textIconLinkText" slot="text">linkedin</span>
 				</TextIconLink>
 			</li>
 			<li>
 				<TextIconLink href="https://www.google.com/" target="_blank">
-					<GithubIcon color="#383d5d" slot="icon" />
-					<span slot="text">github</span>
+					<GithubIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
+					<span class="textIconLinkText" slot="text">github</span>
 				</TextIconLink>
 			</li>
 		</ul>
@@ -95,6 +95,14 @@
 
 	.container {
 		text-align: left;
+	}
+
+	// DARK
+
+	.isDarkMode button {
+		background-color: $palette-light;
+		color: $dark-bg-b;
+		text-shadow: 1px 1px 0 $palette-extra-light;
 	}
 
 	@media (min-width: 768px) {

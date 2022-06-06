@@ -1,4 +1,8 @@
 <script lang="ts">
+	import store from '../../store';
+
+	const { isDarkMode } = store;
+
 	export let ariaLabel = '';
 	export let handleClick: () => void = () => null;
 	export let href = '#';
@@ -13,7 +17,7 @@
 	};
 </script>
 
-<a on:click={onClick} aria-label={ariaLabel} {href} {...$$restProps}>
+<a class:isDarkMode={$isDarkMode} on:click={onClick} aria-label={ariaLabel} {href} {...$$restProps}>
 	<div class:isIconRight>
 		<slot name="icon" />
 	</div>
@@ -40,13 +44,6 @@
 		order: 2;
 	}
 
-	.isNav {
-		color: $palette-extra-light;
-		font-weight: 400;
-		margin-left: 16px;
-		text-shadow: none;
-	}
-
 	div.isIconRight {
 		order: 2;
 	}
@@ -54,6 +51,13 @@
 	span.isIconRight {
 		margin: 0 13px 0 0;
 		order: 1;
+	}
+
+	.isNav {
+		color: $palette-extra-light;
+		font-weight: 400;
+		margin-left: 16px;
+		text-shadow: none;
 	}
 
 	.isIconRight.isNav {

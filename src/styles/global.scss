@@ -4,9 +4,8 @@ $palette-extra-light: #fffeef;
 $palette-light: #e68a6e;
 $palette-medium: #bb77a2;
 
-// #5d5c7b;
-// $dark-bg-a: #000000;
-// $dark-bg-b: #000000;
+$dark-bg-a: #383d5d;
+$dark-bg-b: #4a4c6c;
 $light-bg-a: #fffeef;
 $light-bg-b: #f9e1ce;
 
@@ -57,6 +56,38 @@ a {
 
 .homeList li::marker {
 	color: $palette-medium;
+}
+
+// DARK
+
+.isDarkMode * {
+	color: $light-bg-b;
+}
+
+.isDarkMode h3 {
+	color: $light-bg-b;
+	text-shadow: 1px 1px 0 $palette-light;
+}
+
+.isDarkMode a {
+	color: $palette-medium;
+}
+
+.isDarkMode .bigLink {
+	text-shadow: 1px 1px 0 $palette-light;
+}
+
+.isDarkMode .reading {
+	color: $palette-extra-light;
+}
+
+.isDarkMode .textIconLinkText {
+	color: $palette-medium;
+}
+
+.isNav .textIconLinkText {
+	color: $palette-extra-light !important;
+	text-shadow: none;
 }
 
 @media (min-width: 560px) {

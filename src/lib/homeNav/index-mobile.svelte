@@ -68,7 +68,7 @@
 		hideHamburger={$isNavOpen}
 		tabIndex={$isNavOpen ? -1 : 0}
 	>
-		<HamburgerIcon color="#383d5d" />
+		<HamburgerIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
 	<nav class="navElement">
 		<IconButton
@@ -87,7 +87,7 @@
 					tabindex={$isNavOpen ? 0 : -1}
 				>
 					<MonitorIcon color="#e68a6e" slot="icon" />
-					<span slot="text">work</span>
+					<span class="textIconLinkText" slot="text">work</span>
 				</TextIconLink>
 			</li>
 			<li style="left: 7px; position: relative;">
@@ -97,7 +97,7 @@
 					tabindex={$isNavOpen ? 0 : -1}
 				>
 					<BulbIcon color="#e68a6e" slot="icon" />
-					<span slot="text">blog</span>
+					<span class="textIconLinkText" slot="text">blog</span>
 				</TextIconLink>
 			</li>
 			<li style="left: 4px; position: relative;">
@@ -107,7 +107,7 @@
 					tabindex={$isNavOpen ? 0 : -1}
 				>
 					<UserIcon color="#e68a6e" slot="icon" />
-					<span slot="text">about</span>
+					<span class="textIconLinkText" slot="text">about</span>
 				</TextIconLink>
 			</li>
 			<li>
@@ -117,7 +117,7 @@
 					tabindex={$isNavOpen ? 0 : -1}
 				>
 					<MailIcon color="#e68a6e" slot="icon" />
-					<span slot="text">contact</span>
+					<span class="textIconLinkText" slot="text">contact</span>
 				</TextIconLink>
 			</li>
 		</ul>

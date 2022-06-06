@@ -72,4 +72,10 @@
 		top: 10px;
 		width: 60px;
 	}
+
+	// DARK
+
+	.isDarkMode div {
+		box-shadow: 1px 0 0 $palette-dark;
+	}
 </style>

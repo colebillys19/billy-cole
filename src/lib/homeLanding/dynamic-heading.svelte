@@ -35,6 +35,13 @@
 		transition: transform 320ms ease-in-out;
 	}
 
+	// DARK
+
+	.isDarkMode {
+		color: $light-bg-b;
+		text-shadow: 1px 1px 0 #ffffff;
+	}
+
 	@media (min-width: 768px) {
 		h1 {
 			font-size: 48px;

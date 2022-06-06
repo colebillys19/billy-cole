@@ -11,8 +11,8 @@
 
 <div class:isDarkMode={$isDarkMode}>
 	<TextIconLink handleClick={handleBackToTop} isIconRight>
-		<ArrowUpIcon color="#383d5d" slot="icon" />
-		<span slot="text">back to top</span>
+		<ArrowUpIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
+		<span class="textIconLinkText" slot="text">back to top</span>
 	</TextIconLink>
 </div>
 
@@ -21,6 +21,12 @@
 		background-color: $light-bg-b;
 		padding: 24px;
 		text-align: center;
+	}
+
+	// DARK
+
+	.isDarkMode {
+		background-color: $dark-bg-b;
 	}
 
 	@media (min-width: 560px) {

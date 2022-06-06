@@ -199,6 +199,22 @@
 		text-align: left;
 	}
 
+	// DARK
+
+	.isDarkMode .lighten {
+		color: $palette-light;
+	}
+
+	.isDarkMode li,
+	.isDarkMode .tools b {
+		color: $light-bg-b;
+	}
+
+	.isDarkMode .ss3ImgDiv,
+	.isDarkMode .loanhengeImgDiv {
+		border: 3px solid $palette-light;
+	}
+
 	@media (min-width: 560px) {
 		.loanhengeImgDiv {
 			height: 671px;

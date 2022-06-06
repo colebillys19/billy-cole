@@ -67,6 +67,12 @@
 		transition: transform 320ms ease-in-out;
 	}
 
+	// DARK
+
+	.isDarkMode .illuContainer {
+		border-right: 4px solid $light-bg-b;
+	}
+
 	@media (min-width: 768px) {
 		.contentContainer {
 			clip-path: inset(0 60px 0 0);

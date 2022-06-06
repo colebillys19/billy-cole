@@ -59,4 +59,19 @@
 		padding: 0 58px;
 		text-align: center;
 	}
+
+	// DARK
+
+	.isDarkMode {
+		background-color: $dark-bg-a;
+	}
+
+	.isDarkMode.isAltColor {
+		background-color: $dark-bg-b;
+	}
+
+	.isDarkMode h2 {
+		color: $light-bg-b;
+		text-shadow: 1px 1px 0 #ffffff;
+	}
 </style>
