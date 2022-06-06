@@ -50,7 +50,9 @@
 	on:mousemove={handleMouseMove}
 >
 	<slot />
-	<div class:isMobile={$isMobile} class:isNavOpen={$isNavOpen} />
+	{#if !$isMobile}
+		<div class:isNavOpen={$isNavOpen} />
+	{/if}
 </section>
 
 <style lang="scss">
