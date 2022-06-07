@@ -192,8 +192,9 @@
 	}
 
 	.divider {
-		border-bottom: 3px solid $palette-extra-dark;
-		margin: 96px 0 24px;
+		border-bottom: 3px solid $palette-light;
+		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
+		margin: 96px 0 72px;
 	}
 
 	.homeList {

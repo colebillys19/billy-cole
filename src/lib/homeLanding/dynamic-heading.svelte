@@ -14,20 +14,29 @@
 	$: offsetY = ($landingMouseInitialY - $landingMouseY) / -160;
 </script>
 
-<h1
-	class:isAnimationDisabled={$isLandingAnimationDisabled}
-	class:isDarkMode={$isDarkMode}
+<div
 	style={!$isLandingAnimationDisabled ? `transform: translate(${offsetX}px, ${offsetY}px);` : ''}
 >
-	Billy Cole
-</h1>
+	<h1 class:isAnimationDisabled={$isLandingAnimationDisabled} class:isDarkMode={$isDarkMode}>
+		Billy Cole
+	</h1>
+	<span>UI Dev. UX Thinker.</span>
+</div>
 
 <style lang="scss">
+	div {
+		text-align: center;
+	}
+
 	h1 {
 		color: $palette-extra-dark;
 		font-size: 36px;
 		text-shadow: 2px 2px 0 $palette-dark;
 		white-space: nowrap;
+	}
+
+	span {
+		font-size: 18px;
 	}
 
 	.isAnimationDisabled {
@@ -46,6 +55,10 @@
 		h1 {
 			font-size: 48px;
 			pointer-events: none;
+		}
+
+		span {
+			font-size: 22px;
 		}
 	}
 </style>

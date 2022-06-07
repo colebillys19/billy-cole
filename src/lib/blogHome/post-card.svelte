@@ -40,8 +40,8 @@
 
 	.contentContainer {
 		align-items: center;
-		border: 1px solid $palette-light;
-		box-shadow: -2px 2px 0 $palette-medium;
+		border: 1px solid $palette-medium;
+		box-shadow: 2px 2px 0 $palette-dark;
 		display: flex;
 		padding: 24px;
 		text-align: left;
@@ -59,8 +59,8 @@
 	// DARK
 
 	.isDarkMode {
-		border: 1px solid $palette-medium;
-		box-shadow: -2px 2px 0 $palette-light;
+		border: 1px solid $palette-light;
+		box-shadow: 2px 2px 0 $palette-medium;
 	}
 
 	.isDarkMode h4 {

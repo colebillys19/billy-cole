@@ -66,7 +66,7 @@
 
 	div {
 		border-radius: 50%;
-		box-shadow: -1px 1px 0 $palette-dark;
+		box-shadow: 1px 1px 0 $palette-dark;
 		height: 60px;
 		left: 10px;
 		position: fixed;
@@ -82,6 +82,6 @@
 	// DARK
 
 	.isDarkMode div {
-		box-shadow: -1px 1px 0 $palette-medium;
+		box-shadow: 1px 1px 0 $palette-medium;
 	}
 </style>

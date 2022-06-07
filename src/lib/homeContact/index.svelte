@@ -41,13 +41,11 @@
 			is looking for a solid developer with a great sense for UI/UX, please don't hesitate to reach
 			out!
 		</p>
-		<div class="formContainer">
-			<form action="">
-				<label for="msg">send me a note</label>
-				<textarea name="msg" id="msg" cols="30" rows="10" />
-				<button>send</button>
-			</form>
-		</div>
+		<form action="">
+			<label for="msg">send me a note</label>
+			<textarea name="msg" id="msg" cols="30" rows="10" />
+			<button>send</button>
+		</form>
 	</div>
 </HomeSectionContainer>
 
@@ -58,8 +56,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		list-style: none;
-		margin: 0 auto 24px;
-		padding: 0;
+		padding: 0 0 48px;
 	}
 
 	li:not(:last-of-type) {
@@ -98,6 +95,7 @@
 	}
 
 	.container {
+		max-width: 720px;
 		text-align: left;
 	}
 
@@ -115,7 +113,6 @@
 	@media (min-width: 768px) {
 		.container {
 			margin: 0 auto;
-			width: 720px;
 		}
 
 		button {

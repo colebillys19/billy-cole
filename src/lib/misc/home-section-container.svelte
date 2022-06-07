@@ -29,7 +29,10 @@
 <svelte:window on:resize={handleResize} />
 <section bind:this={sectionElement} class:isAltColor class:isDarkMode={$isDarkMode}>
 	<div class="contentContainer">
-		<h2>{name}</h2>
+		<div class="headingContainer">
+			<div class="divider" />
+			<h2>{name}</h2>
+		</div>
 		<slot />
 	</div>
 </section>
@@ -38,14 +41,13 @@
 	section {
 		background-color: $light-bg-a;
 		min-height: 100vh;
-		padding: 24px 0 96px;
+		padding: 72px 0 96px;
 	}
 
 	h2 {
 		color: $palette-extra-dark;
-		font-size: 36px;
-		margin-bottom: 24px;
-		text-align: right;
+		line-height: 22px;
+		margin-left: 24px;
 		text-shadow: 2px 2px 0 $palette-dark;
 	}
 
@@ -58,6 +60,19 @@
 		max-width: 1200px;
 		padding: 0 58px;
 		text-align: center;
+	}
+
+	.headingContainer {
+		align-items: center;
+		display: flex;
+		margin-bottom: 72px;
+	}
+
+	.divider {
+		background-color: $palette-light;
+		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
+		flex-grow: 1;
+		height: 3px;
 	}
 
 	// DARK
@@ -73,5 +88,11 @@
 	.isDarkMode h2 {
 		color: $palette-extra-light;
 		text-shadow: 2px 2px 0 $palette-medium;
+	}
+
+	@media (min-width: 768px) {
+		h2 {
+			line-height: 26px;
+		}
 	}
 </style>
