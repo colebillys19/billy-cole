@@ -138,7 +138,9 @@
 		by hand." So, as far as the browser's concerned, you're not even using a framework. It performs lightning
 		quick.
 	</p>
-	<p>Svelte's component syntax is pretty similar to Vue, but it's even simpler:</p>
+	<p class="lessBottomMargin">
+		Svelte's component syntax is pretty similar to Vue, but it's even simpler:
+	</p>
 	<CodeSnip code={svelteA} />
 	<p>
 		With all that said - the Vue team has started adopting Svelte's ideas in recent years. Compared
@@ -156,6 +158,7 @@
 		>, and here's my <a href="https://www.google.com/" target="_blank">Svelte todo app</a>. To wrap
 		up, here's a syntax comparison for a few common scenarios:
 	</p>
+	<div class="divider" />
 	<h2>Conditionals</h2>
 	<CodeSnip caption="Vue" code={conditionalVue} />
 	<CodeSnip caption="Svelte" code={conditionalSvelte} />

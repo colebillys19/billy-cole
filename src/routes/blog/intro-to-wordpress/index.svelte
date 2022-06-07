@@ -60,8 +60,8 @@
 		WordPress, setting up project file architecture, and hosting your site. Using other methods, you
 		typically have to do all of this separately. Plus the UI on the Local native app is &#x1F525;.
 	</p>
-	<p>Run through the following steps:</p>
-	<ol>
+	<p class="lessBottomMargin">Run through the following steps:</p>
+	<ol class="lessBottomMargin">
 		<li>
 			go to <a aria-label="local wordpress development" href="https://localwp.com/" target="_blank"
 				>https://localwp.com/</a
@@ -130,7 +130,7 @@
 		boilerplate theme directory here. Finally, go to "Themes"
 		<span class="parens">(in the appearance menu)</span> in the WordPress dashboard and activate it.
 	</p>
-	<p>
+	<p class="lessBottomMargin">
 		Depending on what you tinkered with earlier, your site may or may not have much content at this
 		point. I suggest doing the following in order to give it a similar structure to a blog site you
 		might see online. First we'll add home and blog pages:
@@ -147,7 +147,7 @@
 		<li>don't add anything in body here</li>
 		<li>click "Publish"</li>
 	</ol>
-	<p>Next, we'll give those two pages the proper roles:</p>
+	<p class="lessBottomMargin">Next, we'll give those two pages the proper roles:</p>
 	<ol>
 		<li>go to "Settings" > "Reading"</li>
 		<li>for "Your homepage displays" select "A static page"</li>
@@ -155,7 +155,7 @@
 		<li>set the "Posts" page to your blog page</li>
 		<li>click "Save Changes"</li>
 	</ol>
-	<p>Finally, we'll update the navigation menu order:</p>
+	<p class="lessBottomMargin">Finally, we'll update the navigation menu order:</p>
 	<ol>
 		<li>go to "Appearance > Menus"</li>
 		<li>under "Menu structure" set the menu name to "Nav Menu" or something similar</li>
@@ -187,7 +187,7 @@
 	</p>
 	<p>Something something something.</p>
 	<HornsDivider />
-	<p>
+	<p class="noBottomMargin">
 		<b>More on that JSON error</b>: This is a bug related to the new WordPress editor that's used to
 		create and edit content. Although these errors are displayed, you'll find they aren't actually
 		preventing you from doing anything. For example, if it says you failed to publish a page,

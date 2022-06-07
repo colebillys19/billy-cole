@@ -45,7 +45,7 @@
 	}
 
 	figure {
-		margin: 0 0 24px 0;
+		margin: 0 0 48px 0;
 	}
 
 	figcaption {
@@ -53,7 +53,7 @@
 	}
 
 	pre {
-		border: 1px solid $palette-light;
+		border: 1px solid $palette-medium;
 		margin: 0;
 	}
 
@@ -85,6 +85,10 @@
 
 	.isDarkMode figcaption {
 		color: $palette-extra-light;
+	}
+
+	.isDarkMode pre {
+		border: 1px solid $palette-light;
 	}
 
 	@media (min-width: 768px) {

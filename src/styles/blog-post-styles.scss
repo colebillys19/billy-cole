@@ -4,7 +4,7 @@ h1 {
 
 h2,
 p {
-	margin-bottom: 24px;
+	margin-bottom: 64px;
 }
 
 p,
@@ -18,6 +18,7 @@ b {
 
 ul,
 ol {
+	margin: 0 0 48px;
 	padding: 0 48px;
 }
 
@@ -26,7 +27,7 @@ li {
 }
 
 li::marker {
-	color: $palette-light;
+	color: $palette-medium;
 }
 
 .blogPostContainer {
@@ -36,14 +37,13 @@ li::marker {
 }
 
 .date {
-	color: $palette-light;
+	color: $palette-dark;
 	font-family: 'Source Code Pro', monospace;
 }
 
 .divider {
 	border-bottom: 1px solid $palette-medium;
-	height: 48px;
-	margin-bottom: 24px;
+	margin-bottom: 64px;
 	width: 100%;
 }
 
@@ -52,8 +52,8 @@ li::marker {
 }
 
 .boxParagraph {
-	border: 1px solid $palette-light;
-	margin: 0 24px 24px;
+	border: 1px solid $palette-medium;
+	margin: 0 24px 48px;
 	padding: 24px;
 }
 
@@ -63,8 +63,12 @@ li::marker {
 	opacity: 0.8;
 }
 
+.noBottomMargin {
+	margin: 0;
+}
+
 .lessBottomMargin {
-	margin-bottom: 10px;
+	margin-bottom: 24px;
 }
 
 // DARK
@@ -82,6 +86,22 @@ li::marker {
 	color: $palette-medium;
 }
 
+.isDarkMode .divider {
+	border-bottom: 1px solid $palette-light;
+}
+
+.isDarkMode li::marker {
+	color: $palette-light;
+}
+
+.isDarkMode .boxParagraph {
+	border: 1px solid $palette-light;
+}
+
+.isDarkMode .date {
+	color: $palette-medium;
+}
+
 @media (min-width: 480px) {
 	.blogPostContainer {
 		padding: 0 48px 96px;
@@ -94,7 +114,7 @@ li::marker {
 	li,
 	span,
 	b {
-		font-size: 20px;
+		font-size: 22px;
 	}
 
 	.blogPostContainer {

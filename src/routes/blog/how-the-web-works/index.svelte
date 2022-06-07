@@ -59,10 +59,10 @@
 		the language that clients and servers use to talk to each other - but let's ignore this for now.
 	</p>
 	<p class="lessBottomMargin">Here's a simple example of an HTTP request:</p>
-	<TextSnippet class="inline lessBottomMargin">
+	<TextSnippet class="inline">
 		{httpRequest}
 	</TextSnippet>
-	<ul>
+	<ul class="lessBottomMargin">
 		<li>
 			on the first line it says that it wants to get a page or a file called “index.html” using HTTP
 			version 1.1 <span class="parens"
@@ -84,10 +84,10 @@
 		response is like the waiter delivering you your meal.
 	</p>
 	<p class="lessBottomMargin">Here's a simple example of an HTTP response:</p>
-	<TextSnippet class="inline lessBottomMargin">
+	<TextSnippet class="inline">
 		{httpResponse}
 	</TextSnippet>
-	<ul>
+	<ul class="lessBottomMargin">
 		<li>
 			on the first line you can see the version of http protocol used, followed by the “status code”
 			<span class="parens">(a 200 status code means the response was successful)</span>
@@ -148,7 +148,7 @@
 		journey.
 	</p>
 	<HornsDivider />
-	<p>
+	<p class="noBottomMargin">
 		It's kind of overwhelming to think about - but this complicated process happens every time you
 		visit a web page. It's even more overwhelming when you think about the number of people browsing
 		the internet every second. No doubt we take the technology at our disposal for granted!

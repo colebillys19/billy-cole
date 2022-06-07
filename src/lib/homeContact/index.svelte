@@ -18,19 +18,19 @@
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<ul>
 			<li>
-				<TextIconLink href="https://www.google.com/" target="_blank">
+				<TextIconLink href="https://twitter.com/colebillys19" target="_blank">
 					<TwitterIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
 					<span class="textIconLinkText" slot="text">twitter</span>
 				</TextIconLink>
 			</li>
 			<li>
-				<TextIconLink href="https://www.google.com/" target="_blank">
+				<TextIconLink href="https://www.linkedin.com/in/billy-cole-4a3915178/" target="_blank">
 					<LinkedinIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
 					<span class="textIconLinkText" slot="text">linkedin</span>
 				</TextIconLink>
 			</li>
 			<li>
-				<TextIconLink href="https://www.google.com/" target="_blank">
+				<TextIconLink href="https://github.com/colebillys19" target="_blank">
 					<GithubIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
 					<span class="textIconLinkText" slot="text">github</span>
 				</TextIconLink>
