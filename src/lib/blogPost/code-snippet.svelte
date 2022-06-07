@@ -40,11 +40,12 @@
 
 <style lang="scss">
 	code {
-		padding: 30px !important;
+		font-size: 16px;
+		padding: 24px !important;
 	}
 
 	figure {
-		margin: 0 0 30px 0;
+		margin: 0 0 24px 0;
 	}
 
 	figcaption {
@@ -52,11 +53,8 @@
 	}
 
 	pre {
-		border-color: blue;
-		border-style: solid;
-		border-width: 1px;
+		border: 1px solid $palette-light;
 		margin: 0;
-		box-shadow: 1px 1px 1px rgba(129, 122, 153, 0.5);
 	}
 
 	pre.langtag {
@@ -81,5 +79,17 @@
 
 	.noMargin {
 		margin: 0;
+	}
+
+	// DARK
+
+	.isDarkMode figcaption {
+		color: $palette-extra-light;
+	}
+
+	@media (min-width: 768px) {
+		code {
+			font-size: 18px;
+		}
 	}
 </style>

@@ -16,7 +16,7 @@
 	}
 
 	.thicc {
-		background-color: blue;
+		background-color: $palette-medium;
 		flex-grow: 1;
 		height: 5px;
 	}

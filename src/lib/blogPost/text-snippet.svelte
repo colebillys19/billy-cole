@@ -13,24 +13,14 @@
 <style lang="scss">
 	div {
 		background-color: #ffffff;
-		border-color: blue;
-		border-style: solid;
-		border-width: 1px;
-		box-shadow: 1px 1px 1px rgba(129, 122, 153, 0.5);
+		border: 1px solid $palette-light;
 		color: #000000;
-		margin-bottom: 30px;
-		padding: 30px 60px;
+		margin-bottom: 24px;
+		padding: 24px 48px;
 	}
 
 	code {
 		white-space: pre-wrap;
-	}
-
-	.isDarkMode {
-		background-color: #000000;
-		border-color: blue;
-		box-shadow: 1px 1px 1px rgba(255, 254, 239, 0.5);
-		color: #ffffff;
 	}
 
 	.lessBottomMargin {
@@ -39,5 +29,15 @@
 
 	.inline {
 		display: inline-block;
+	}
+
+	// DARK
+
+	.isDarkMode {
+		background-color: #000000;
+	}
+
+	.isDarkMode code {
+		color: #ffffff;
 	}
 </style>

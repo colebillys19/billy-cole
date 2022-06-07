@@ -48,7 +48,7 @@ a {
 }
 
 .homeList {
-	padding: 0 40px;
+	padding: 0 44px;
 }
 
 .homeList li::marker {
@@ -62,6 +62,10 @@ a {
 .isNav .textIconLinkText {
 	color: $palette-extra-light;
 	font-weight: 400 !important;
+}
+
+.blogPostContainer h1 {
+	font-family: 'Source Code Pro', monospace;
 }
 
 // DARK
