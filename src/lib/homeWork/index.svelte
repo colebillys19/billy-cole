@@ -70,6 +70,10 @@
 			<li>Koa</li>
 			<li>Styled Components</li>
 		</ul>
+		<div class="stripesAnchor">
+			<div class="stripes" />
+			<div class="verticalStripes" />
+		</div>
 		<h3>Loanhenge</h3>
 		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
 		<p class="reading">
@@ -100,6 +104,10 @@
 				>
 			</p>
 		{/if}
+		<div class="stripesAnchor">
+			<div class="stripes" />
+			<div class="verticalStripes" />
+		</div>
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
 		<p class="reading">
@@ -125,6 +133,10 @@
 				>
 			</p>
 		{/if}
+		<div class="stripesAnchor">
+			<div class="stripes" />
+			<div class="verticalStripes" />
+		</div>
 		<h3>This Site!</h3>
 		<p class="reading">
 			I wanted to build my personal page with something... responsive and accessible...
@@ -188,10 +200,30 @@
 		color: $palette-dark;
 	}
 
-	.divider {
-		border-bottom: 3px solid $palette-light;
+	.stripesAnchor {
+		height: 9px;
+		margin: 72px 0 24px;
+		position: relative;
+	}
+
+	.stripes {
+		background-color: $palette-light;
 		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
-		margin: 96px 0 72px;
+		height: 3px;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: calc(100% + 61px);
+	}
+
+	.verticalStripes {
+		background-color: $palette-light;
+		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
+		height: 186px;
+		position: absolute;
+		right: -61px;
+		top: 0;
+		width: 3px;
 	}
 
 	.homeList {
@@ -223,7 +255,6 @@
 		.victoryImgDiv {
 			height: 510px;
 			width: 480px;
-			// 2.67555
 		}
 	}
 

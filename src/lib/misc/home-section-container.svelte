@@ -92,7 +92,7 @@
 		height: 3px;
 		left: 18px;
 		position: absolute;
-		width: 1200px;
+		width: 100vw;
 	}
 
 	.verticalStripes {
