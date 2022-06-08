@@ -72,14 +72,15 @@
 	.headingContainer {
 		align-items: center;
 		display: flex;
+		justify-content: flex-end;
 		margin-bottom: 72px;
 	}
 
 	.stripes {
 		background-color: $palette-light;
 		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
-		flex-grow: 1;
 		height: 3px;
+		width: 72px;
 	}
 
 	.absStripesAnchor {
@@ -98,10 +99,10 @@
 	.verticalStripes {
 		background-color: $palette-light;
 		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
-		height: 186px;
+		height: 72px;
 		position: absolute;
 		right: -3px;
-		top: -78px;
+		top: -21px;
 		width: 3px;
 	}
 
