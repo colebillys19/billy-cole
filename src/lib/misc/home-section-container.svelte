@@ -44,7 +44,9 @@
 <style lang="scss">
 	section {
 		background-color: $light-bg-a;
+		border-top: 1px solid $palette-dark;
 		min-height: 100vh;
+		overflow: hidden;
 		padding: 72px 0 96px;
 	}
 
@@ -96,10 +98,10 @@
 	.verticalStripes {
 		background-color: $palette-light;
 		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
-		height: 364px;
+		height: 186px;
 		position: absolute;
 		right: -3px;
-		top: -20px;
+		top: -78px;
 		width: 3px;
 	}
 
@@ -107,6 +109,7 @@
 
 	.isDarkMode {
 		background-color: $dark-bg-a;
+		border-top: 1px solid light;
 	}
 
 	.isDarkMode.isAltColor {

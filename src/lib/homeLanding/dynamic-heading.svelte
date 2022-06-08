@@ -15,11 +15,11 @@
 </script>
 
 <div
+	class:isAnimationDisabled={$isLandingAnimationDisabled}
+	class:isDarkMode={$isDarkMode}
 	style={!$isLandingAnimationDisabled ? `transform: translate(${offsetX}px, ${offsetY}px);` : ''}
 >
-	<h1 class:isAnimationDisabled={$isLandingAnimationDisabled} class:isDarkMode={$isDarkMode}>
-		Billy Cole
-	</h1>
+	<h1>Billy Cole</h1>
 	<span>UI Dev. UX Thinker.</span>
 </div>
 
@@ -46,7 +46,7 @@
 
 	// DARK
 
-	.isDarkMode {
+	.isDarkMode h1 {
 		color: $palette-extra-light;
 		text-shadow: 2px 2px 0 $palette-medium;
 	}

@@ -1,5 +1,6 @@
 h1 {
-	text-shadow: 2px 2px 2px $palette-dark;
+	color: $palette-extra-dark;
+	text-shadow: 2px 2px 0 $palette-dark;
 }
 
 h2,
@@ -79,7 +80,7 @@ li::marker {
 
 .isDarkMode h1 {
 	color: $palette-extra-light;
-	text-shadow: 2px 2px 2px $palette-medium;
+	text-shadow: 2px 2px 0 $palette-medium;
 }
 
 .isDarkMode .parens {

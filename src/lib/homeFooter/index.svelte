@@ -19,6 +19,7 @@
 <style lang="scss">
 	div {
 		background-color: $light-bg-b;
+		border-top: 1px solid $palette-dark;
 		padding: 24px 48px;
 		text-align: center;
 	}
@@ -27,6 +28,7 @@
 
 	.isDarkMode {
 		background-color: $dark-bg-b;
+		border-top: 1px solid light;
 	}
 
 	@media (min-width: 560px) {

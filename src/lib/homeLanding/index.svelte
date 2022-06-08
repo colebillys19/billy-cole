@@ -11,7 +11,7 @@
 
 <div class:isDarkMode={$isDarkMode} class="contentContainer">
 	<div class="contentSubcontainer">
-		<div class="nameContainer" style={`top: -${scrollY / 4}px;`}>
+		<div class="nameContainer" style={`top: -${scrollY / 8}px;`}>
 			<DynamicHeading />
 		</div>
 		<div class="illuContainer" style={`top: -${scrollY / 16}px;`}>
@@ -34,7 +34,7 @@
 		column-gap: 60px;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: repeat(6, 1fr);
+		grid-template-rows: repeat(12, 1fr);
 		height: 100%;
 		max-width: 1200px;
 		position: relative;
@@ -46,8 +46,8 @@
 		border-right: 4px solid $palette-extra-dark;
 		grid-column-end: 6;
 		grid-column-start: 1;
-		grid-row-end: 6;
-		grid-row-start: 1;
+		grid-row-end: 10;
+		grid-row-start: 2;
 		position: relative;
 	}
 
@@ -56,8 +56,8 @@
 		display: flex;
 		grid-column-end: 5;
 		grid-column-start: 2;
-		grid-row-end: 7;
-		grid-row-start: 6;
+		grid-row-end: 12;
+		grid-row-start: 9;
 		justify-content: center;
 		position: relative;
 	}
@@ -77,6 +77,10 @@
 		.contentContainer {
 			clip-path: inset(0 60px 0 0);
 			padding: 60px;
+		}
+
+		.contentSubcontainer {
+			grid-template-rows: repeat(6, 1fr);
 		}
 
 		.illuContainer {
