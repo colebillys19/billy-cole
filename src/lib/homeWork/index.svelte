@@ -70,7 +70,6 @@
 			<li>Koa</li>
 			<li>Styled Components</li>
 		</ul>
-		<div class="divider" />
 		<h3>Loanhenge</h3>
 		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
 		<p class="reading">
@@ -101,7 +100,6 @@
 				>
 			</p>
 		{/if}
-		<div class="divider" />
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
 		<p class="reading">
@@ -127,7 +125,6 @@
 				>
 			</p>
 		{/if}
-		<div class="divider" />
 		<h3>This Site!</h3>
 		<p class="reading">
 			I wanted to build my personal page with something... responsive and accessible...

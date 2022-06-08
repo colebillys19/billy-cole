@@ -30,10 +30,14 @@
 <section bind:this={sectionElement} class:isAltColor class:isDarkMode={$isDarkMode}>
 	<div class="contentContainer">
 		<div class="headingContainer">
-			<div class="divider" />
+			<div class="stripes" />
 			<h2>{name}</h2>
+			<div class="absStripesAnchor">
+				<div class="absStripes" />
+			</div>
 		</div>
 		<slot />
+		<div class="verticalStripes" />
 	</div>
 </section>
 
@@ -59,6 +63,7 @@
 		margin: 0 auto;
 		max-width: 1200px;
 		padding: 0 58px;
+		position: relative;
 		text-align: center;
 	}
 
@@ -68,11 +73,34 @@
 		margin-bottom: 72px;
 	}
 
-	.divider {
+	.stripes {
 		background-color: $palette-light;
 		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
 		flex-grow: 1;
 		height: 3px;
+	}
+
+	.absStripesAnchor {
+		position: relative;
+	}
+
+	.absStripes {
+		background-color: $palette-light;
+		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
+		height: 3px;
+		left: 18px;
+		position: absolute;
+		width: 1200px;
+	}
+
+	.verticalStripes {
+		background-color: $palette-light;
+		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
+		height: 364px;
+		position: absolute;
+		right: -3px;
+		top: -20px;
+		width: 3px;
 	}
 
 	// DARK

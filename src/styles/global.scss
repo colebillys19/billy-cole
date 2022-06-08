@@ -18,6 +18,11 @@ $light-bg-b: #f9e1ce;
 html {
 	background-color: $palette-extra-dark;
 	font-size: 18px;
+	overflow-x: hidden;
+}
+
+body {
+	overflow-x: hidden;
 }
 
 h2 {
