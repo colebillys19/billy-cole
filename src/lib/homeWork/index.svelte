@@ -138,14 +138,14 @@
 			<div class="verticalStripes" />
 		</div> -->
 		<h3>This Site!</h3>
-		<p class="reading">
+		<!-- <p class="reading">
 			I wanted to build my personal page with something... responsive and accessible...
-		</p>
+		</p> -->
 		<p class="tools"><b>Tools used:</b></p>
 		<ul class="homeList tools">
 			<li>Svelte</li>
+			<li>SvelteKit</li>
 			<li>TypeScript</li>
-			<li>more...</li>
 		</ul>
 	</div>
 </HomeSectionContainer>

@@ -151,39 +151,36 @@
 	</p>
 	<HornsDivider />
 	<p>
-		Depending on what you're looking to do, both Vue and Svelte are great options. I built out basic
-		todo list applications as a way to get a better feel for these two frameworks. He're my <a
-			href="https://www.google.com/"
-			target="_blank">Vue todo app</a
-		>, and here's my <a href="https://www.google.com/" target="_blank">Svelte todo app</a>. To wrap
-		up, here's a syntax comparison for a few common scenarios:
+		Depending on what you're looking to do, both Vue and Svelte are great options. I should mention
+		I built out basic todo list applications as a way to get a better feel for these two
+		technologies. If you want to check out the Vue one, the repo's <a
+			href="https://github.com/colebillys19/vue-todo"
+			target="_blank">here</a
+		>, and app is deployed <a href="https://vuetodo919.herokuapp.com/" target="_blank">here</a>. For
+		the Svelte one, the repo's
+		<a href="https://github.com/colebillys19/svelte-todo" target="_blank">here</a>, and app is
+		deployed <a href="https://sveltetodo919.herokuapp.com/" target="_blank">here</a>.
 	</p>
-	<div class="divider" />
-	<h2>Conditionals</h2>
+	<p>To wrap up, here's a syntax comparison for a few common scenarios:</p>
+	<h2 style="margin-bottom: 48px;">Conditionals</h2>
 	<CodeSnip caption="Vue" code={conditionalVue} />
 	<CodeSnip caption="Svelte" code={conditionalSvelte} />
-	<div class="divider" />
-	<h2>Looping</h2>
+	<h2 style="margin-bottom: 48px;">Looping</h2>
 	<CodeSnip caption="Vue" code={loopingVue} />
 	<CodeSnip caption="Svelte" code={loopingSvelte} />
-	<div class="divider" />
-	<h2>Reactive Values</h2>
+	<h2 style="margin-bottom: 48px;">Reactive Values</h2>
 	<CodeSnip caption="Vue" code={reactiveVue} />
 	<CodeSnip caption="Svelte" code={reactiveSvelte} />
-	<div class="divider" />
-	<h2>Binding an Input Value</h2>
+	<h2 style="margin-bottom: 48px;">Binding an Input Value</h2>
 	<CodeSnip caption="Vue" code={inputBindingVue} />
 	<CodeSnip caption="Svelte" code={inputBindingSvelte} />
-	<div class="divider" />
-	<h2>Computed Values</h2>
+	<h2 style="margin-bottom: 48px;">Computed Values</h2>
 	<CodeSnip caption="Vue" code={computedVue} />
 	<CodeSnip caption="Svelte" code={computedSvelte} />
-	<div class="divider" />
-	<h2>Props</h2>
+	<h2 style="margin-bottom: 48px;">Props</h2>
 	<CodeSnip caption="Vue" code={propsVue} />
 	<CodeSnip caption="Svelte" code={propsSvelte} />
-	<div class="divider" />
-	<h2>Named Slots</h2>
+	<h2 style="margin-bottom: 48px;">Named Slots</h2>
 	<CodeSnip caption="Vue" code={namedSlotsVue} />
 	<CodeSnip caption="Svelte" code={namedSlotsSvelte} noMargin={true} />
 </div>
