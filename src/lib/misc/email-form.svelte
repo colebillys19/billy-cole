@@ -2,71 +2,89 @@
 	import CheckIcon from '../../svgComponents/check-icon.svelte';
 	import HourglassIcon from '../../svgComponents/hourglass-icon.svelte';
 	import SpinnerIcon from '../../svgComponents/spinner-icon.svelte';
-	// import store from '../../store';
+	import store from '../../store';
 	import WarningIcon from '../../svgComponents/warning-icon.svelte';
 
-	// const { isDarkMode } = store;
+	const { isDarkMode } = store;
 
 	let messageText = '';
 
 	//
-	let isDoubleError = false;
+	let isDoubleError = true;
 	let isError = false;
 	let isLoading = false;
 	let isSuccess = false;
 	let isWaiting = false;
 
+	$: isFormDisabled = isDoubleError || isError || isLoading || isSuccess || isWaiting;
+
 	const handleFormSubmit = async () => {
 		try {
-			const submit = await fetch('/postEmail', {
-				method: 'POST',
-				body: JSON.stringify({ messageText })
-			});
+			if (!isFormDisabled) {
+				const submit = await fetch('/postEmail', {
+					method: 'POST',
+					body: JSON.stringify({ messageText })
+				});
 
-			const { noIssues } = await submit.json();
-			console.log('noIssues:', noIssues);
+				const { noIssues } = await submit.json();
+				console.log('noIssues:', noIssues);
+			}
 		} catch (err) {
 			console.error(err);
 		}
 	};
 </script>
 
-<div class="formContainer">
-	{#if isLoading}
-		<SpinnerIcon />
-	{:else if isDoubleError}
-		<div class="formFeedbackContainer">
-			<WarningIcon />
-			<p>
-				Looks like there are issues with this right now. Try again in a little bit or hit me up via
-				email/social media.
-			</p>
-		</div>
-	{:else if isError}
-		<div class="formFeedbackContainer">
-			<WarningIcon />
-			<p>There was an issue sending your message. Try again in a minute.</p>
-		</div>
-	{:else if isSuccess}
-		<div class="formFeedbackContainer">
-			<CheckIcon />
-			<p>Message sent!</p>
-		</div>
-	{:else if isWaiting}
-		<div class="formFeedbackContainer">
-			<HourglassIcon />
-			<p>Thanks for the message. Feel free to send another in a few minutes.</p>
-		</div>
-	{:else}
-		<form on:submit|preventDefault={handleFormSubmit}>
-			<label for="msg">send me a note</label>
-			<textarea bind:value={messageText} name="msg" id="msg" cols="30" rows="10" />
-			<button class:isDisabled={!messageText}>send</button>
-		</form>
-	{/if}
+<div class:isDarkMode={$isDarkMode} class="formContainer">
+	<form class:isFormDisabled on:submit|preventDefault={handleFormSubmit}>
+		<label for="msg">send me a note</label>
+		<textarea bind:value={messageText} name="msg" id="msg" cols="30" rows="10" />
+		<button class:isButtonDisabled={!messageText}>send</button>
+	</form>
+	<div class="formFeedbackContainer">
+		{#if isLoading}
+			<SpinnerIcon color={$isDarkMode ? '#e68a6e' : '#817a99'} />
+		{:else if isDoubleError}
+			<div class="formFeedbackFlexContainer">
+				<div>
+					<WarningIcon color={$isDarkMode ? '#e68a6e' : '#817a99'} />
+				</div>
+				<p>
+					Looks like there are issues with this feature right now. Try again in a little bit or hit
+					me up via email/social media.
+				</p>
+			</div>
+		{:else if isError}
+			<div class="formFeedbackFlexContainer">
+				<div>
+					<WarningIcon color={$isDarkMode ? '#fffeef' : '#bb77a2'} />
+				</div>
+				<p>There was an issue sending your message. Try again in a minute.</p>
+			</div>
+		{:else if isSuccess}
+			<div class="formFeedbackFlexContainer">
+				<div>
+					<CheckIcon color={$isDarkMode ? '#fffeef' : '#bb77a2'} />
+				</div>
+				<p>Message sent!</p>
+			</div>
+		{:else if isWaiting}
+			<div class="formFeedbackFlexContainer">
+				<div>
+					<HourglassIcon color={$isDarkMode ? '#fffeef' : '#bb77a2'} />
+				</div>
+				<p>Thanks for the message! Feel free to send another in a few minutes.</p>
+			</div>
+		{/if}
+	</div>
 </div>
 
 <style lang="scss">
+	p {
+		margin-top: 12px;
+		text-align: center;
+	}
+
 	form {
 		width: 100%;
 	}
@@ -103,19 +121,33 @@
 		display: flex;
 		height: 374px;
 		justify-content: center;
-
-		outline: 1px solid orange;
+		position: relative;
 	}
 
 	.formFeedbackContainer {
-		align-items: center;
-		display: flex;
-		margin: 0 48px;
-
-		outline: 1px solid green;
+		padding-bottom: 24px;
+		position: absolute;
+		z-index: 1;
 	}
 
-	.isDisabled {
+	.formFeedbackFlexContainer {
+		align-items: center;
+		background-color: $light-bg-b;
+		border: 1px solid $palette-medium;
+		box-shadow: 2px 2px 0 $palette-dark;
+		display: flex;
+		flex-direction: column;
+		margin: 0 48px;
+		min-width: 360px;
+		padding: 48px 64px;
+	}
+
+	.isFormDisabled {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+
+	.isButtonDisabled {
 		opacity: 0.5;
 		pointer-events: none;
 	}
@@ -129,6 +161,12 @@
 	.isDarkMode button {
 		background-color: $palette-dark;
 		color: $palette-extra-light;
+	}
+
+	.isDarkMode .formFeedbackFlexContainer {
+		background-color: $dark-bg-b;
+		border: 1px solid $palette-light;
+		box-shadow: 2px 2px 0 $palette-medium;
 	}
 
 	@media (min-width: 768px) {
