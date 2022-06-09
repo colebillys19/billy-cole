@@ -34,8 +34,8 @@
 		<ul class="homeList reading">
 			<li>a creative eye</li>
 			<li>a gift for pattern recognition</li>
+			<li>a propensity to keep things organized and orderly</li>
 			<li>a knack for solving puzzles</li>
-			<li>a propensity to keep things orderly and organized</li>
 		</ul>
 		<p class="reading">and strengths I'd developed as a music/audio guy:</p>
 		<ul class="homeList reading">
