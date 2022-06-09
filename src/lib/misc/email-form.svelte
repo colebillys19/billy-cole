@@ -3,14 +3,17 @@
 	import HourglassIcon from '../../svgComponents/hourglass-icon.svelte';
 	import SpinnerIcon from '../../svgComponents/spinner-icon.svelte';
 	import store from '../../store';
+	// import variables from '../../variables';
 	import WarningIcon from '../../svgComponents/warning-icon.svelte';
+
+	// const { recaptchaSiteKey } = variables;
 
 	const { isDarkMode } = store;
 
 	let messageText = '';
 
 	//
-	let isDoubleError = true;
+	let isDoubleError = false;
 	let isError = false;
 	let isLoading = false;
 	let isSuccess = false;
@@ -27,10 +30,15 @@
 				});
 
 				const { noIssues } = await submit.json();
-				console.log('noIssues:', noIssues);
+
+				if (noIssues === 'yup') {
+					isSuccess = true;
+				}
+				// clear messageText and do stuff
 			}
 		} catch (err) {
 			console.error(err);
+			isError = true;
 		}
 	};
 </script>
@@ -97,6 +105,7 @@
 	textarea {
 		color: $palette-extra-dark;
 		font-family: 'Roboto', sans-serif;
+		margin: 5px 0;
 		padding: 12px;
 		resize: none;
 		width: 100%;
@@ -119,7 +128,7 @@
 	.formContainer {
 		align-items: center;
 		display: flex;
-		height: 374px;
+		height: 384px;
 		justify-content: center;
 		position: relative;
 	}
