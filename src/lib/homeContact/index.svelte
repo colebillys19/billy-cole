@@ -9,6 +9,23 @@
 
 	const { contactOffset, isDarkMode } = store;
 
+	let messageText = '';
+
+	const handleFormSubmit = async () => {
+		try {
+			const submit = await fetch('/postEmail', {
+				method: 'POST',
+				body: JSON.stringify({ messageText })
+			});
+
+			const { messageText: returningMessageText } = await submit.json();
+			console.log('*');
+			console.log('returningMessageText:', returningMessageText);
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
 	const updateOffset = (offset: number): void => {
 		contactOffset.set(offset);
 	};
@@ -41,9 +58,9 @@
 			is looking for a solid developer with a great sense for UI/UX, please don't hesitate to reach
 			out!
 		</p>
-		<form action="">
+		<form on:submit|preventDefault={handleFormSubmit}>
 			<label for="msg">send me a note</label>
-			<textarea name="msg" id="msg" cols="30" rows="10" />
+			<textarea bind:value={messageText} name="msg" id="msg" cols="30" rows="10" />
 			<button>send</button>
 		</form>
 	</div>
