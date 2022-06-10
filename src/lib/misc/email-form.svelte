@@ -3,10 +3,7 @@
 	import HourglassIcon from '../../svgComponents/hourglass-icon.svelte';
 	import SpinnerIcon from '../../svgComponents/spinner-icon.svelte';
 	import store from '../../store';
-	import variables from '../../variables';
 	import WarningIcon from '../../svgComponents/warning-icon.svelte';
-
-	const { recaptchaSiteKey } = variables;
 
 	const { isDarkMode } = store;
 
@@ -46,14 +43,10 @@
 	};
 </script>
 
-<svelte:head>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</svelte:head>
 <div class:isDarkMode={$isDarkMode} class="formContainer">
 	<form class:isFormDisabled on:submit|preventDefault={handleFormSubmit}>
 		<label for="msg">send me a note</label>
 		<textarea bind:value={messageText} name="msg" id="msg" cols="30" rows="10" />
-		<div class="g-recaptcha" data-sitekey={recaptchaSiteKey} />
 		<button class:isButtonDisabled={!messageText}>send</button>
 	</form>
 	<div class="formFeedbackContainer">
