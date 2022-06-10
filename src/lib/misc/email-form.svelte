@@ -46,6 +46,9 @@
 	};
 </script>
 
+<svelte:head>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</svelte:head>
 <div class:isDarkMode={$isDarkMode} class="formContainer">
 	<form class:isFormDisabled on:submit|preventDefault={handleFormSubmit}>
 		<label for="msg">send me a note</label>
