@@ -11,9 +11,13 @@
 
 	import HomeSectionContainer from '../misc/home-section-container.svelte';
 
-	const { isDarkMode, isMobile, workOffset } = store;
+	const { blogOffset, isDarkMode, isMobile, isNavOpen, workOffset } = store;
+
+	export let scrollY = 0;
 
 	let innerWidth = 0;
+
+	$: showBurgerBackground = scrollY > $workOffset + 300 && scrollY < $blogOffset - 300;
 
 	const SRC_DICT = {
 		loanhengeL: loanhengeImgDesktop,
@@ -42,6 +46,9 @@
 <svelte:window bind:innerWidth />
 <HomeSectionContainer isAltColor name="work" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
+		{#if showBurgerBackground}
+			<div class:burgerBackgroundHidden={$isNavOpen} class="burgerBackground" />
+		{/if}
 		<h3>Your Mortgage Online</h3>
 		{#if innerWidth <= 560}
 			<div class="imgDiv ss3ImgDiv" style={getImageSrcStyle('ss3')} />
@@ -70,6 +77,9 @@
 			<li>Koa</li>
 			<li>Styled Components</li>
 		</ul>
+		<div class="dividerAnchor">
+			<div class="divider" />
+		</div>
 		<h3>Loanhenge</h3>
 		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
 		<p class="reading">
@@ -94,12 +104,13 @@
 			<li>React Testing Library</li>
 		</ul>
 		{#if !$isMobile}
-			<p>
-				<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
-					>Visit &#x1F440; &#x1F440; &#x1F440;</a
-				>
-			</p>
+			<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
+				>Visit &#x1F440; &#x1F440; &#x1F440;</a
+			>
 		{/if}
+		<div class="dividerAnchor">
+			<div class="divider" />
+		</div>
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
 		<p class="reading">
@@ -119,12 +130,13 @@
 			<li>Styled Components</li>
 		</ul>
 		{#if !$isMobile}
-			<p>
-				<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
-					>Visit &#x1F440; &#x1F440; &#x1F440;</a
-				>
-			</p>
+			<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
+				>Visit &#x1F440; &#x1F440; &#x1F440;</a
+			>
 		{/if}
+		<div class="dividerAnchor">
+			<div class="divider" />
+		</div>
 		<h3>This Site!</h3>
 		<p class="tools"><b>Tools used:</b></p>
 		<ul class="homeList tools">
@@ -145,10 +157,6 @@
 	p {
 		margin-bottom: 24px;
 		text-align: left;
-	}
-
-	ul {
-		margin-bottom: 24px;
 	}
 
 	.imgDiv {
@@ -178,16 +186,51 @@
 		text-align: center;
 	}
 
+	.burgerBackground {
+		background-color: $light-bg-b;
+		border-radius: 50%;
+		height: 60px;
+		left: 10px;
+		position: fixed;
+		top: 10px;
+		transition: top 320ms ease-in-out;
+		width: 60px;
+		z-index: 1;
+	}
+
+	.burgerBackgroundHidden {
+		top: -70px;
+	}
+
 	.tools {
 		color: $palette-extra-dark;
 	}
 
-	.lighten {
-		color: $palette-dark;
-	}
-
 	.homeList {
 		text-align: left;
+	}
+
+	.bigLink {
+		margin-top: 24px;
+		display: block;
+	}
+
+	.dividerAnchor {
+		position: relative;
+		height: 191px;
+	}
+
+	.divider {
+		background-color: $light-bg-a;
+		height: 1px;
+		position: absolute;
+		right: 0;
+		top: 96px;
+		width: 100vw;
+	}
+
+	.lighten {
+		color: $palette-dark;
 	}
 
 	// DARK
@@ -204,6 +247,14 @@
 	.isDarkMode .ss3ImgDiv,
 	.isDarkMode .loanhengeImgDiv {
 		border: 3px solid $palette-light;
+	}
+
+	.isDarkMode .burgerBackground {
+		background-color: $dark-bg-b;
+	}
+
+	.isDarkMode .divider {
+		background-color: $dark-bg-a;
 	}
 
 	@media (min-width: 560px) {

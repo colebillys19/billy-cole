@@ -35,10 +35,12 @@
 	<NavMenuDesktop />
 {/if}
 <LandingSectionContainer>
-	<LandingSection {scrollY} />
+	{#if shouldRenderLandingContent}
+		<LandingSection {scrollY} />
+	{/if}
 </LandingSectionContainer>
 <div class="raised">
-	<WorkSection />
+	<WorkSection {scrollY} />
 	<BlogSection />
 	<AboutSection />
 	<ContactSection />
