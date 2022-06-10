@@ -3,10 +3,10 @@
 	import HourglassIcon from '../../svgComponents/hourglass-icon.svelte';
 	import SpinnerIcon from '../../svgComponents/spinner-icon.svelte';
 	import store from '../../store';
-	// import variables from '../../variables';
+	import variables from '../../variables';
 	import WarningIcon from '../../svgComponents/warning-icon.svelte';
 
-	// const { recaptchaSiteKey } = variables;
+	const { recaptchaSiteKey } = variables;
 
 	const { isDarkMode } = store;
 
@@ -24,6 +24,8 @@
 	const handleFormSubmit = async () => {
 		try {
 			if (!isFormDisabled) {
+				isLoading = true;
+
 				const submit = await fetch('/postEmail', {
 					method: 'POST',
 					body: JSON.stringify({ messageText })
@@ -33,6 +35,7 @@
 
 				if (noIssues === 'yup') {
 					isSuccess = true;
+					isLoading = false;
 				}
 				// clear messageText and do stuff
 			}
@@ -47,6 +50,7 @@
 	<form class:isFormDisabled on:submit|preventDefault={handleFormSubmit}>
 		<label for="msg">send me a note</label>
 		<textarea bind:value={messageText} name="msg" id="msg" cols="30" rows="10" />
+		<div class="g-recaptcha" data-sitekey={recaptchaSiteKey} />
 		<button class:isButtonDisabled={!messageText}>send</button>
 	</form>
 	<div class="formFeedbackContainer">
@@ -117,7 +121,6 @@
 		border: none;
 		color: $palette-extra-light;
 		display: block;
-		margin: 0 0 0 auto;
 		padding: 6px 12px;
 	}
 
@@ -128,7 +131,7 @@
 	.formContainer {
 		align-items: center;
 		display: flex;
-		height: 384px;
+		// height: 384px;
 		justify-content: center;
 		position: relative;
 	}
