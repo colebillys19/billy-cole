@@ -20,35 +20,37 @@
 	$: isFormDisabled = isError || isLoading || isSuccess || isWaiting;
 
 	const handleFormSubmit = () => {
-		var xhr = new XMLHttpRequest();
-		xhr.open('POST', contactActionUrl);
-		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		if (!isFormDisabled) {
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', contactActionUrl);
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-		isLoading = true;
+			isLoading = true;
 
-		xhr.onreadystatechange = () => {
-			console.log(xhr.status);
-			if (xhr.status !== 200) {
-				isError = true;
-				isLoading = false;
-				messageText = '';
-				setTimeout(() => {
-					isError = false;
-				}, 10000);
-				return false;
-			}
-			if (xhr.readyState === 4 && xhr.status === 200) {
-				isSuccess = true;
-				isLoading = false;
-				messageText = '';
-				setTimeout(() => {
-					isSuccess = false;
-					isWaiting = true;
-				}, 3000);
-			}
-		};
+			xhr.onreadystatechange = () => {
+				console.log(xhr.status);
+				if (xhr.status !== 200) {
+					isError = true;
+					isLoading = false;
+					messageText = '';
+					setTimeout(() => {
+						isError = false;
+					}, 10000);
+					return false;
+				}
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					isSuccess = true;
+					isLoading = false;
+					messageText = '';
+					setTimeout(() => {
+						isSuccess = false;
+						isWaiting = true;
+					}, 3000);
+				}
+			};
 
-		xhr.send(`message=${messageText}`);
+			xhr.send(`message=${messageText}`);
+		}
 	};
 </script>
 

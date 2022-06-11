@@ -17,7 +17,7 @@
 
 	let innerWidth = 0;
 
-	$: showBurgerBackground = scrollY > $workOffset + 300 && scrollY < $blogOffset - 300;
+	$: showBurgerBackground = scrollY > $workOffset && scrollY < $blogOffset - 100;
 
 	const SRC_DICT = {
 		loanhengeL: loanhengeImgDesktop,
@@ -188,13 +188,13 @@
 
 	.burgerBackground {
 		background-color: $light-bg-b;
-		border-radius: 50%;
-		height: 60px;
-		left: 10px;
+		border-radius: 6px;
+		height: 40px;
+		left: 22px;
 		position: fixed;
-		top: 10px;
+		top: 20px;
 		transition: top 320ms ease-in-out;
-		width: 60px;
+		width: 36px;
 		z-index: 1;
 	}
 
@@ -292,6 +292,14 @@
 
 		.imgDiv {
 			margin: 0 0 24px;
+		}
+
+		.burgerBackground {
+			border-radius: 50%;
+			height: 60px;
+			left: 10px;
+			top: 10px;
+			width: 60px;
 		}
 	}
 </style>
