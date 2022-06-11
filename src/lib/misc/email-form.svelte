@@ -6,7 +6,7 @@
 	import variables from '../../variables';
 	import WarningIcon from '../../svgComponents/warning-icon.svelte';
 
-	const { contactActionUrl, contactEmail } = variables;
+	const { contactActionUrl } = variables;
 	const { isDarkMode } = store;
 
 	let messageText = '';
@@ -17,22 +17,30 @@
 	let isSuccess = false;
 	let isWaiting = false;
 
-	$: isFormDisabled = isLoading || isSuccess || isWaiting;
+	$: isFormDisabled = isError || isLoading || isSuccess || isWaiting;
 
-	const handleFormSubmit = async () => {
+	const handleFormSubmit = () => {
 		var xhr = new XMLHttpRequest();
-
 		xhr.open('POST', contactActionUrl);
 		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 		isLoading = true;
 
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4 && xhr.status === 200) {
+		xhr.onreadystatechange = () => {
+			console.log(xhr.status);
+			if (xhr.status !== 200) {
+				isError = true;
 				isLoading = false;
-				isSuccess = true;
 				messageText = '';
-
+				setTimeout(() => {
+					isError = false;
+				}, 10000);
+				return false;
+			}
+			if (xhr.readyState === 4 && xhr.status === 200) {
+				isSuccess = true;
+				isLoading = false;
+				messageText = '';
 				setTimeout(() => {
 					isSuccess = false;
 					isWaiting = true;
@@ -50,7 +58,6 @@
 		on:submit|preventDefault={handleFormSubmit}
 		action={contactActionUrl}
 		class="gform"
-		data-email={contactEmail}
 		method="POST"
 	>
 		<label for="message">send me a note</label>
