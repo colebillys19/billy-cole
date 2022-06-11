@@ -4,17 +4,17 @@
 
 	import DynamicHeading from './dynamic-heading.svelte';
 
-	const { isDarkMode } = store;
+	const { isDarkMode, isMobile } = store;
 
 	export let scrollY = 0;
 </script>
 
 <div class:isDarkMode={$isDarkMode} class="contentContainer">
 	<div class="contentSubcontainer">
-		<div class="nameContainer" style={`top: -${scrollY / 8}px;`}>
+		<div class="nameContainer" style={`top: -${$isMobile ? 0 : scrollY / 8}px;`}>
 			<DynamicHeading />
 		</div>
-		<div class="illuContainer" style={`top: -${scrollY / 16}px;`}>
+		<div class="illuContainer" style={`top: -${$isMobile ? 0 : scrollY / 16}px;`}>
 			<IlluSvg />
 		</div>
 	</div>

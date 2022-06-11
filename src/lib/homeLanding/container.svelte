@@ -23,7 +23,7 @@
 	};
 
 	const handleMouseMove = (e: MouseEvent) => {
-		if (!$isLandingAnimationDisabled) {
+		if (!$isLandingAnimationDisabled && !$isMobile) {
 			if ($landingMouseInitialX === -1) {
 				landingMouseInitialX.set(e.clientX);
 				landingMouseInitialY.set(e.clientY);
@@ -45,6 +45,7 @@
 
 <section
 	class:isDarkMode={$isDarkMode}
+	class:isMobile={$isMobile}
 	on:click={enableLandingAnimation}
 	on:mouseleave={disableLandingAnimation}
 	on:mousemove={handleMouseMove}
@@ -73,6 +74,10 @@
 		top: 10px;
 		transition: top 320ms ease-in-out;
 		width: 60px;
+	}
+
+	.isMobile {
+		height: 120vh;
 	}
 
 	.isNavOpen {
