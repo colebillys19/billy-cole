@@ -3,50 +3,58 @@
 	import HourglassIcon from '../../svgComponents/hourglass-icon.svelte';
 	import SpinnerIcon from '../../svgComponents/spinner-icon.svelte';
 	import store from '../../store';
+	import variables from '../../variables';
 	import WarningIcon from '../../svgComponents/warning-icon.svelte';
 
+	const { contactActionUrl, contactEmail } = variables;
 	const { isDarkMode } = store;
 
 	let messageText = '';
 
-	//
 	let isDoubleError = false;
 	let isError = false;
 	let isLoading = false;
 	let isSuccess = false;
 	let isWaiting = false;
 
-	$: isFormDisabled = isDoubleError || isError || isLoading || isSuccess || isWaiting;
+	$: isFormDisabled = isLoading || isSuccess || isWaiting;
 
 	const handleFormSubmit = async () => {
-		try {
-			if (!isFormDisabled) {
-				isLoading = true;
+		var xhr = new XMLHttpRequest();
 
-				const submit = await fetch('/postEmail', {
-					method: 'POST',
-					body: JSON.stringify({ messageText })
-				});
+		xhr.open('POST', contactActionUrl);
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-				const { noIssues } = await submit.json();
+		isLoading = true;
 
-				if (noIssues === 'yup') {
-					isSuccess = true;
-					isLoading = false;
-				}
-				// clear messageText and do stuff
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4 && xhr.status === 200) {
+				isLoading = false;
+				isSuccess = true;
+				messageText = '';
+
+				setTimeout(() => {
+					isSuccess = false;
+					isWaiting = true;
+				}, 3000);
 			}
-		} catch (err) {
-			console.error(err);
-			isError = true;
-		}
+		};
+
+		xhr.send(`message=${messageText}`);
 	};
 </script>
 
 <div class:isDarkMode={$isDarkMode} class="formContainer">
-	<form class:isFormDisabled on:submit|preventDefault={handleFormSubmit}>
-		<label for="msg">send me a note</label>
-		<textarea bind:value={messageText} name="msg" id="msg" cols="30" rows="10" />
+	<form
+		class:isFormDisabled
+		on:submit|preventDefault={handleFormSubmit}
+		action={contactActionUrl}
+		class="gform"
+		data-email={contactEmail}
+		method="POST"
+	>
+		<label for="message">send me a note</label>
+		<textarea bind:value={messageText} name="message" id="message" cols="30" rows="10" />
 		<button class:isButtonDisabled={!messageText}>send</button>
 	</form>
 	<div class="formFeedbackContainer">
@@ -127,7 +135,7 @@
 	.formContainer {
 		align-items: center;
 		display: flex;
-		// height: 384px;
+		height: 384px;
 		justify-content: center;
 		position: relative;
 	}
