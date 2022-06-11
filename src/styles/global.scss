@@ -53,7 +53,7 @@ a {
 }
 
 .homeList {
-	padding: 0 44px;
+	padding: 0 20px;
 }
 
 .homeList li::marker {
@@ -120,5 +120,9 @@ a {
 
 	.bigLink {
 		font-size: 24px;
+	}
+
+	.homeList {
+		padding: 0 44px;
 	}
 }
