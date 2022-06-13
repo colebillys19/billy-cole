@@ -186,12 +186,15 @@
 		>.
 	</p>
 	<p>
-		From time to time I'll see an article or youtube video forecasting the "death of wordpress" or
-		something similar. However this is not the case! According to W3Techs, wordpress is used by
-		about 43% of ALL websites in 2022. It's thriving and continues to grow. I'll admit the developer
-		experience it provides is lacking compared to newer tech, but the product you're shipping to
-		users is still top notch. If you need to get a site up and running quick and don't need anything
-		too fancy, look no further than the CMS king!
+		From time to time I'll see an article or youtube video forecasting the "death of WordPress" or
+		something similar. However this is not the case! According to <a
+			aria-label="youtube video: How to Create a Custom WordPress Theme"
+			href="https://w3techs.com/technologies/details/cm-wordpress"
+			target="_blank">W3Techs</a
+		>, WordPress is used by about 43% of ALL websites in 2022. It's thriving and continues to grow.
+		I'll admit the developer experience it provides is lacking compared to newer tech, but the
+		product you're shipping to users is still top notch. If you need to get a site up and running
+		quick and don't need anything too fancy, look no further than the CMS king!
 	</p>
 	<HornsDivider />
 	<p class="noBottomMargin">
@@ -209,4 +212,5 @@
 </div>
 <PostFooter />
 
+<!-- https://w3techs.com/technologies/details/cm-wordpress -->
 <style src="../../../styles/blog-post-styles.scss"></style>

@@ -130,7 +130,7 @@
 			<li>Styled Components</li>
 		</ul>
 		{#if !$isMobile}
-			<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
+			<a class="bigLink" href="https://victorycharts.herokuapp.com/" target="_blank"
 				>Visit &#x1F440; &#x1F440; &#x1F440;</a
 			>
 		{/if}
@@ -143,7 +143,7 @@
 			<li>Svelte</li>
 			<li>SvelteKit</li>
 			<li>TypeScript</li>
-			<!-- <li>SendGrid</li> -->
+			<li>SendGrid</li>
 		</ul>
 	</div>
 </HomeSectionContainer>

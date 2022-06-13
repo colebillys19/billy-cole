@@ -11,6 +11,16 @@
 
 <style>
 	svg {
+		animation-duration: 800ms;
+		animation-iteration-count: infinite;
+		animation-name: spin;
+		animation-timing-function: steps(8, end);
 		pointer-events: none;
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
 	}
 </style>
