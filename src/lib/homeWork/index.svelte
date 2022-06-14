@@ -104,8 +104,11 @@
 			<li>React Testing Library</li>
 		</ul>
 		{#if !$isMobile}
-			<a class="bigLink" href="https://loanhenge.herokuapp.com/" target="_blank"
-				>Visit &#x1F440; &#x1F440; &#x1F440;</a
+			<a
+				aria-label="visit loanhenge"
+				class="bigLink"
+				href="https://loanhenge.herokuapp.com/"
+				target="_blank">Visit &#x1F440; &#x1F440; &#x1F440;</a
 			>
 		{/if}
 		<div class="dividerAnchor">
@@ -130,8 +133,11 @@
 			<li>Styled Components</li>
 		</ul>
 		{#if !$isMobile}
-			<a class="bigLink" href="https://victorycharts.herokuapp.com/" target="_blank"
-				>Visit &#x1F440; &#x1F440; &#x1F440;</a
+			<a
+				aria-label="visit victory charts"
+				class="bigLink"
+				href="https://victorycharts.herokuapp.com/"
+				target="_blank">Visit &#x1F440; &#x1F440; &#x1F440;</a
 			>
 		{/if}
 		<div class="dividerAnchor">

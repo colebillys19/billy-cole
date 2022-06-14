@@ -154,12 +154,23 @@
 		Depending on what you're looking to do, both Vue and Svelte are great options. I should mention
 		I built out basic todo list applications as a way to get a better feel for these two
 		technologies. If you want to check out the Vue one, the repo's <a
+			aria-label="vue todo app, github"
 			href="https://github.com/colebillys19/vue-todo"
 			target="_blank">here</a
-		>, and app is deployed <a href="https://vuetodo919.herokuapp.com/" target="_blank">here</a>. For
-		the Svelte one, the repo's
-		<a href="https://github.com/colebillys19/svelte-todo" target="_blank">here</a>, and app is
-		deployed <a href="https://sveltetodo919.herokuapp.com/" target="_blank">here</a>.
+		>, and app is deployed
+		<a aria-label="visit vue todo app" href="https://vuetodo919.herokuapp.com/" target="_blank"
+			>here</a
+		>. For the Svelte one, the repo's
+		<a
+			aria-label="svelte todo app, github"
+			href="https://github.com/colebillys19/svelte-todo"
+			target="_blank">here</a
+		>, and app is deployed
+		<a
+			aria-label="visit svelte todo app"
+			href="https://sveltetodo919.herokuapp.com/"
+			target="_blank">here</a
+		>.
 	</p>
 	<p>To wrap up, here's a syntax comparison for a few common scenarios:</p>
 	<h2 style="margin-bottom: 48px;">Conditionals</h2>

@@ -188,7 +188,7 @@
 	<p>
 		From time to time I'll see an article or youtube video forecasting the "death of WordPress" or
 		something similar. However this is not the case! According to <a
-			aria-label="youtube video: How to Create a Custom WordPress Theme"
+			aria-label="wordpress usage statistics"
 			href="https://w3techs.com/technologies/details/cm-wordpress"
 			target="_blank">W3Techs</a
 		>, WordPress is used by about 43% of ALL websites in 2022. It's thriving and continues to grow.

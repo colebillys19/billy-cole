@@ -40,7 +40,11 @@
 </script>
 
 <div class:isCenter={numToShow < 3} class:isDarkMode={$isDarkMode} class="container">
-	<IconButton handleClick={handleLeftClick} isDisabled={imgIndex === 0}>
+	<IconButton
+		ariaLabel={`previous image${imgIndex === 0 ? ', disabled' : ''}`}
+		handleClick={handleLeftClick}
+		isDisabled={imgIndex === 0}
+	>
 		<LeftChevIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
 	<div
@@ -67,7 +71,11 @@
 			<img src={ss3MobileImgO} alt="ss3-mobile" />
 		</div>
 	</div>
-	<IconButton handleClick={handleRightClick} isDisabled={imgIndex > 11}>
+	<IconButton
+		ariaLabel={`next image${imgIndex > 11 ? ', disabled' : ''}`}
+		handleClick={handleRightClick}
+		isDisabled={imgIndex > 11}
+	>
 		<RightChevIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
 </div>
