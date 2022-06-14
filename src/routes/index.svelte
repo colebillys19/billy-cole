@@ -12,23 +12,16 @@
 	let innerHeight = 0;
 	let innerWidth = 0;
 	let scrollY = 0;
-	let shouldRenderLandingContent = true;
+	let shouldRenderLandingContent = false;
 
-	const handleScroll = () => {
-		if (scrollY > innerHeight * 2) {
-			shouldRenderLandingContent = false;
-		} else {
-			shouldRenderLandingContent = true;
-		}
-	};
+	$: shouldRenderLandingContent = scrollY < innerHeight * 2;
 
 	const handleBackToTop = () => {
-		shouldRenderLandingContent = true;
 		scrollY = 0;
 	};
 </script>
 
-<svelte:window bind:innerHeight bind:innerWidth bind:scrollY on:scroll={handleScroll} />
+<svelte:window bind:innerHeight bind:innerWidth bind:scrollY />
 {#if innerWidth < 1000}
 	<NavMenuMobile />
 {:else}
