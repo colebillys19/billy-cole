@@ -1,6 +1,8 @@
 <script lang="ts" context="module">
 	import type { Load } from '@sveltejs/kit';
 
+	import WarningIcon from '../svgComponents/warning-icon.svelte';
+
 	export const load: Load = ({ error }) => ({
 		props: { error }
 	});
@@ -19,13 +21,46 @@
 
 <GetIsMobile />
 <NavMenu isErrorNav />
-<main class:isDarkMode={$isDarkMode}>
-	<p>404</p>
+<div class:isDarkMode={$isDarkMode} class="container">
+	<div class="headingContainer">
+		<WarningIcon color={$isDarkMode ? '#e68a6e' : '#bb77a2'} />
+		<h1>404</h1>
+	</div>
 	<p>{error.message}</p>
-</main>
+</div>
 
 <style lang="scss">
-	main {
+	h1 {
+		bottom: 3px;
+		color: $palette-extra-dark;
+		font-size: 48px;
+		margin-left: 12px;
+		position: relative;
+		text-shadow: 2px 2px 0 #000000;
+	}
+
+	p {
+		color: $palette-extra-dark;
+	}
+
+	.container {
+		margin: 0 auto;
+		max-width: 1200px;
 		min-height: calc(100vh - 80px);
+		padding: 0 60px 96px;
+		text-align: center;
+	}
+
+	.headingContainer {
+		align-items: center;
+		display: inline-flex;
+		margin-bottom: 24px;
+	}
+
+	// DARK
+
+	.isDarkMode h1 {
+		color: $palette-extra-light;
+		text-shadow: 2px 2px 0 $palette-medium;
 	}
 </style>
