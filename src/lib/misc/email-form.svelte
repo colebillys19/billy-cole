@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import CheckIcon from '../../svgComponents/check-icon.svelte';
 	import HourglassIcon from '../../svgComponents/hourglass-icon.svelte';
 	import SpinnerIcon from '../../svgComponents/spinner-icon.svelte';
@@ -17,7 +18,50 @@
 	let isSuccess = false;
 	let isWaiting = false;
 
-	$: isFormDisabled = isError || isLoading || isSuccess || isWaiting;
+	$: isFormDisabled = isDoubleError || isError || isLoading || isSuccess || isWaiting;
+
+	onMount(() => {
+		const nowTimestamp = Date.now();
+
+		const successTimestamp = localStorage.getItem('successTimestamp');
+		if (successTimestamp) {
+			const successTimestampNum = Number(successTimestamp);
+			const successTimestampNumPlus3Min = successTimestampNum + 180000;
+			if (successTimestampNumPlus3Min > nowTimestamp) {
+				isWaiting = true;
+				setTimeout(() => {
+					localStorage.removeItem('successTimestamp');
+					isWaiting = false;
+				}, successTimestampNumPlus3Min - nowTimestamp);
+			} else {
+				localStorage.removeItem('successTimestamp');
+			}
+		}
+
+		const doubleErrorTimestamp = localStorage.getItem('doubleErrorTimestamp');
+		if (doubleErrorTimestamp) {
+			const doubleErrorTimestampNum = Number(doubleErrorTimestamp);
+			const doubleErrorTimestampNumPlus10Min = doubleErrorTimestampNum + 600000;
+			if (doubleErrorTimestampNumPlus10Min > nowTimestamp) {
+				isDoubleError = true;
+				setTimeout(() => {
+					localStorage.removeItem('doubleErrorTimestamp');
+					isDoubleError = false;
+				}, doubleErrorTimestampNumPlus10Min - nowTimestamp);
+			} else {
+				localStorage.removeItem('doubleErrorTimestamp');
+			}
+		}
+
+		const errorTimestamp = localStorage.getItem('errorTimestamp');
+		if (errorTimestamp) {
+			const errorTimestampNum = Number(errorTimestamp);
+			const errorTimestampNumPlus3Min = errorTimestampNum + 300000;
+			if (errorTimestampNumPlus3Min <= nowTimestamp) {
+				localStorage.removeItem('errorTimestamp');
+			}
+		}
+	});
 
 	const handleFormSubmit = () => {
 		if (!isFormDisabled) {
@@ -28,20 +72,39 @@
 			isLoading = true;
 
 			xhr.onreadystatechange = () => {
-				console.log(xhr.status);
 				if (xhr.status !== 200) {
-					isError = true;
 					isLoading = false;
 					messageText = '';
-					setTimeout(() => {
-						isError = false;
-					}, 10000);
+
+					const errorTimestamp = localStorage.getItem('errorTimestamp');
+					if (errorTimestamp) {
+						const nowTimestamp = Date.now();
+						const errorTimestampNum = Number(errorTimestamp);
+						const wasPrevError = nowTimestamp - errorTimestampNum > 3000;
+						if (wasPrevError) {
+							localStorage.setItem('doubleErrorTimestamp', `${Date.now()}`);
+							localStorage.removeItem('errorTimestamp');
+							isDoubleError = true;
+							setTimeout(() => {
+								isDoubleError = false;
+							}, 600000);
+						}
+					} else {
+						localStorage.setItem('errorTimestamp', `${Date.now()}`);
+						isError = true;
+						setTimeout(() => {
+							isError = false;
+						}, 10000);
+					}
+
 					return false;
 				}
+
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					isSuccess = true;
 					isLoading = false;
 					messageText = '';
+					localStorage.setItem('successTimestamp', `${Date.now()}`);
 					setTimeout(() => {
 						isSuccess = false;
 						isWaiting = true;
@@ -68,11 +131,11 @@
 	</form>
 	<div class="formFeedbackContainer">
 		{#if isLoading}
-			<SpinnerIcon color={$isDarkMode ? '#e68a6e' : '#817a99'} />
+			<SpinnerIcon color={$isDarkMode ? '#fffeef' : '#bb77a2'} />
 		{:else if isDoubleError}
 			<div class="formFeedbackFlexContainer">
 				<div>
-					<WarningIcon color={$isDarkMode ? '#e68a6e' : '#817a99'} />
+					<WarningIcon color={$isDarkMode ? '#fffeef' : '#bb77a2'} />
 				</div>
 				<p>
 					Looks like there are issues with this feature right now. Try again in a little bit or hit
