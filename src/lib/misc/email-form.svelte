@@ -14,11 +14,12 @@
 
 	let isDoubleError = false;
 	let isError = false;
+	let isFormEnabled = false;
 	let isLoading = false;
 	let isSuccess = false;
 	let isWaiting = false;
 
-	$: isFormDisabled = isDoubleError || isError || isLoading || isSuccess || isWaiting;
+	$: isFormEnabled = !isDoubleError && !isError && !isLoading && !isSuccess && !isWaiting;
 
 	onMount(() => {
 		const nowTimestamp = Date.now();
@@ -64,7 +65,7 @@
 	});
 
 	const handleFormSubmit = () => {
-		if (!isFormDisabled) {
+		if (isFormEnabled) {
 			var xhr = new XMLHttpRequest();
 			xhr.open('POST', contactActionUrl);
 			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -119,7 +120,7 @@
 
 <div class:isDarkMode={$isDarkMode} class="formContainer">
 	<form
-		class:isFormDisabled
+		class:isFormDisabled={!isFormEnabled}
 		on:submit|preventDefault={handleFormSubmit}
 		action={contactActionUrl}
 		class="gform"
