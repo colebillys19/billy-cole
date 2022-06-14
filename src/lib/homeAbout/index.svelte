@@ -4,7 +4,7 @@
 
 	import cvPdf from '../../billy-cole-cv.pdf';
 	import DownloadIcon from '../../svgComponents/download-icon.svelte';
-	import headshotImg from '../../images/headshot.jpg';
+	import headshotImg from '../../images/headshot-b.jpg';
 	import store from '../../store';
 
 	const { aboutOffset, isDarkMode } = store;
