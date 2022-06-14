@@ -98,4 +98,10 @@
 			justify-content: flex-start;
 		}
 	}
+
+	@media (orientation: landscape) {
+		.contentContainer {
+			padding: 24px 40px;
+		}
+	}
 </style>
