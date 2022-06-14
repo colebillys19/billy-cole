@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import IconButton from '$lib/misc/icon-button.svelte';
@@ -13,12 +11,6 @@
 	const { isDarkMode } = store;
 
 	export let isErrorNav = false;
-
-	onMount(() => {
-		if (localStorage.getItem('isDarkMode')) {
-			isDarkMode.set(true);
-		}
-	});
 
 	const toggleDarkMode = () => {
 		isDarkMode.update((userPrefersDarkModeState) => {
