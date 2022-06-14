@@ -149,7 +149,7 @@
 			<li>Svelte</li>
 			<li>SvelteKit</li>
 			<li>TypeScript</li>
-			<li>SendGrid</li>
+			<!-- <li>SendGrid</li> -->
 		</ul>
 	</div>
 </HomeSectionContainer>
