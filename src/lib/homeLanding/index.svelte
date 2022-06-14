@@ -9,7 +9,7 @@
 	export let scrollY = 0;
 </script>
 
-<div class:isDarkMode={$isDarkMode} class="contentContainer">
+<div class:isDarkMode={$isDarkMode} class:isMobile={$isMobile} class="contentContainer">
 	<div class="contentSubcontainer">
 		<div class="nameContainer" style={`top: -${$isMobile ? 0 : scrollY / 8}px;`}>
 			<DynamicHeading />
@@ -100,7 +100,7 @@
 	}
 
 	@media (orientation: landscape) {
-		.contentContainer {
+		.isMobile {
 			padding: 24px 40px;
 		}
 	}
