@@ -49,7 +49,8 @@
 			own then took a few classes at a local community college. Eventually I decided to take the
 			plunge and pursue a coding career. I moved out to San Francisco and attended Rithm School's
 			four month web development bootcamp. Shortly after I landed a job as a software engineer at
-			Dovenmuehle, a mortgage-focused finance company based out of Illinois...
+			Dovenmuehle, a mortgage-focused finance company based out of Illinois. After a few years
+			cutting my teeth in the field I've decided to look for new opportunities!
 		</p>
 		<TextIconLink download="billy-cole-cv" href={cvPdf} isIconRight target="_blank">
 			<DownloadIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
