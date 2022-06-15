@@ -26,6 +26,8 @@
 
 	let imgIndex = 0;
 
+	$: numPages = 16 - numToShow;
+
 	const handleLeftClick = () => {
 		if (imgIndex > 0) {
 			imgIndex = imgIndex - 1;
@@ -33,7 +35,7 @@
 	};
 
 	const handleRightClick = () => {
-		if (imgIndex < 12) {
+		if (imgIndex <= numPages) {
 			imgIndex = imgIndex + 1;
 		}
 	};
@@ -72,9 +74,9 @@
 		</div>
 	</div>
 	<IconButton
-		ariaLabel={`next image${imgIndex > 11 ? ', disabled' : ''}`}
+		ariaLabel={`next image${imgIndex > numPages - 2 ? ', disabled' : ''}`}
 		handleClick={handleRightClick}
-		isDisabled={imgIndex > 11}
+		isDisabled={imgIndex > numPages - 2}
 	>
 		<RightChevIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} />
 	</IconButton>
