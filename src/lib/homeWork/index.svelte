@@ -83,12 +83,12 @@
 		<h3>Loanhenge</h3>
 		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
 		<p class="reading">
-			Loanhenge is a project I started as a sort of sandbox to experiment with front-end concepts
-			and best-practices while cutting my teeth as a developer. Not long after getting my first job
-			after bootcamp I was put on a small team tasked with building a React application that'd be
-			used by banks to keep track of bulk loan data. While building that application there were
-			scenarios where I wanted to spend more time fleshing out features and experimenting. I decided
-			to start a project I could work on in my free time that would allow for more freedom. <span
+			Loanhenge is a project I started as a sort of sandbox to experiment with frontend concepts and
+			best practices while cutting my teeth as a developer. Not long after getting my first job I
+			was put on a small team tasked with building a React application that'd be used by banks to
+			keep track of bulk loan data. While building that application there were scenarios where I
+			wanted to spend more time fleshing out features and experimenting. I decided to start a
+			project I could work on in my free time that would allow for more freedom. <span
 				class="lighten">(desktop only)</span
 			>
 		</p>
@@ -108,7 +108,7 @@
 				aria-label="visit loanhenge"
 				class="bigLink"
 				href="https://loanhenge.herokuapp.com/"
-				target="_blank">Visit &#x1F440; &#x1F440; &#x1F440;</a
+				target="_blank">Visit &#x1F440;</a
 			>
 		{/if}
 		<div class="dividerAnchor">
@@ -137,7 +137,7 @@
 				aria-label="visit victory charts"
 				class="bigLink"
 				href="https://victorycharts.herokuapp.com/"
-				target="_blank">Visit &#x1F440; &#x1F440; &#x1F440;</a
+				target="_blank">Visit &#x1F440;</a
 			>
 		{/if}
 		<div class="dividerAnchor">

@@ -21,7 +21,7 @@
 	<div class:isIconRight>
 		<slot name="icon" />
 	</div>
-	<span class:isIconRight class:isNav class="bigLink">
+	<span class:isIconRight class:isNav class:bigLink={!isNav}>
 		<slot name="text" />
 	</span>
 </a>
@@ -54,6 +54,7 @@
 	}
 
 	.isNav {
+		font-size: 20px;
 		margin-left: 16px;
 	}
 
