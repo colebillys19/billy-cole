@@ -72,6 +72,11 @@ li::marker {
 	margin-bottom: 24px;
 }
 
+.mainImg {
+	border: 1px solid $palette-medium;
+	margin-bottom: 64px;
+}
+
 // DARK
 
 .isDarkMode * {
@@ -101,6 +106,10 @@ li::marker {
 
 .isDarkMode .date {
 	color: $palette-medium;
+}
+
+.isDarkMode .mainImg {
+	border: 1px solid $palette-light;
 }
 
 @media (min-width: 480px) {

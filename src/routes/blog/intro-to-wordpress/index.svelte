@@ -5,6 +5,7 @@
 	import snippetStylesDark from '../../../styles/codeSnippetStyles/dark';
 	import snippetStylesLight from '../../../styles/codeSnippetStyles/light';
 	import store from '../../../store';
+	import typewriterImg from '../../../images/typewriter.jpg';
 
 	const { isDarkMode } = store;
 </script>
@@ -15,6 +16,7 @@
 <div class:isDarkMode={$isDarkMode} class="blogPostContainer">
 	<h1>Intro to WordPress</h1>
 	<p class="date">April 22nd, 2022</p>
+	<img class="mainImg" src={typewriterImg} alt="typewriter" />
 	<p>
 		Content management systems <span class="parens">(or CMS for short)</span> are used to manage the
 		creation and modification of digital content. There are quite a few web page CMS options out

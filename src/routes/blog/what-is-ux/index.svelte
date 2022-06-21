@@ -2,6 +2,7 @@
 	import HornsDivider from '$lib/blogPost/horns-divider.svelte';
 	import PostFooter from '$lib/blogPost/post-footer.svelte';
 
+	import designersImg from '../../../images/designers.jpg';
 	import store from '../../../store';
 
 	const { isDarkMode } = store;
@@ -10,6 +11,7 @@
 <div class:isDarkMode={$isDarkMode} class="blogPostContainer">
 	<h1>What is UX?</h1>
 	<p class="date">June 21st, 2022</p>
+	<img class="mainImg" src={designersImg} alt="designers" />
 	<p>
 		Sometimes you'll hear a person describe an application's look and feel as it's "user experience"
 		or "UX" for short. Although it makes sense to use the term this way, they're really not be

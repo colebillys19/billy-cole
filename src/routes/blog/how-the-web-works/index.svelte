@@ -3,6 +3,7 @@
 	import HornsDivider from '$lib/blogPost/horns-divider.svelte';
 	import PostFooter from '$lib/blogPost/post-footer.svelte';
 
+	import earthImg from '../../../images/earth.jpg';
 	import snippetStylesDark from '../../../styles/codeSnippetStyles/dark';
 	import snippetStylesLight from '../../../styles/codeSnippetStyles/light';
 	import store from '../../../store';
@@ -18,6 +19,7 @@
 <div class:isDarkMode={$isDarkMode} class="blogPostContainer">
 	<h1>How the Web Works</h1>
 	<p class="date">May 11th, 2022</p>
+	<img class="mainImg" src={earthImg} alt="earth" />
 	<p>
 		Let's say your phone charger just stopped working and you want to order a new one. You open our
 		internet browser, type “amazon.com” into the address bar and hit enter. The Amazon home page
