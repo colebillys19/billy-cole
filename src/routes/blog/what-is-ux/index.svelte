@@ -105,9 +105,9 @@
 		were a lot of ideas but nothing tangible to tie them together. Establishing a wireframe for a
 		project is crucial as it can act as a sort of documented "master plan" that they can show
 		everyone from shareholders to software engineers. A good wireframe is usually simple, well
-		organized, and contains short/deliberate desscriptions. With all that said, a project's
-		wireframe is a constant work in progress. Designers are always striving to improve them and
-		there will often by multiple iterations.
+		organized, and contains short/deliberate descriptions. With all that said, a project's wireframe
+		is a constant work in progress. Designers are always striving to improve them and there will
+		often by multiple iterations.
 	</p>
 	<div class="divider" />
 	<p>
