@@ -2,12 +2,7 @@
 	import ImgCarousel from '$lib/misc/img-carousel.svelte';
 
 	import { hasKey } from '../../helpers';
-	import loanhengeImgDesktop from '../../images/loanhenge-a.jpg';
-	import loanhengeImgMobile from '../../images/loanhenge-b.jpg';
-	import ss3MobileImgA from '../../images/ss3-mobile-a.jpg';
 	import store from '../../store';
-	import victoryImgDesktop from '../../images/victory-a.jpg';
-	import victoryImgMobile from '../../images/victory-b.jpg';
 
 	import HomeSectionContainer from '../misc/home-section-container.svelte';
 
@@ -20,11 +15,15 @@
 	$: showBurgerBackground = scrollY > $workOffset && scrollY < $blogOffset - 100;
 
 	const SRC_DICT = {
-		loanhengeL: loanhengeImgDesktop,
-		loanhengeS: loanhengeImgMobile,
-		ss3: ss3MobileImgA,
-		victoryL: victoryImgDesktop,
-		victoryS: victoryImgMobile
+		loanhengeL:
+			'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908709/billycole.dev/loanhenge-a.jpg',
+		loanhengeS:
+			'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908708/billycole.dev/loanhenge-b.jpg',
+		ss3: 'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908682/billycole.dev/ss3-mobile-a.jpg',
+		victoryL:
+			'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908714/billycole.dev/victory-a.jpg',
+		victoryS:
+			'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908714/billycole.dev/victory-b.jpg'
 	};
 
 	const updateOffset = (offset: number): void => {

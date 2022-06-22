@@ -4,7 +4,6 @@
 
 	import cvPdf from '../../billy-cole-cv.pdf';
 	import DownloadIcon from '../../svgComponents/download-icon.svelte';
-	import headshotImg from '../../images/headshot-b.jpg';
 	import store from '../../store';
 
 	const { aboutOffset, isDarkMode } = store;
@@ -56,7 +55,10 @@
 			<DownloadIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
 			<span class="textIconLinkText" slot="text">download cv</span>
 		</TextIconLink>
-		<div class="imgDiv" style={`background-image: url(${headshotImg});`} />
+		<div
+			class="imgDiv"
+			style={`background-image: url(https://res.cloudinary.com/dxklaorw6/image/upload/v1655908702/billycole.dev/headshot-b.jpg);`}
+		/>
 	</div>
 </HomeSectionContainer>
 

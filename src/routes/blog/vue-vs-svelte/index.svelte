@@ -3,7 +3,6 @@
 	import HornsDivider from '$lib/blogPost/horns-divider.svelte';
 	import PostFooter from '$lib/blogPost/post-footer.svelte';
 
-	import pepsiCokeImg from '../../../images/pepsi-vs-coke.jpg';
 	import snippetStylesDark from '../../../styles/codeSnippetStyles/dark';
 	import snippetStylesLight from '../../../styles/codeSnippetStyles/light';
 	import store from '../../../store';
@@ -37,7 +36,11 @@
 <div class:isDarkMode={$isDarkMode} class="blogPostContainer">
 	<h1>Vue vs. Svelte</h1>
 	<p class="date">April 8th, 2022</p>
-	<img class="mainImg" src={pepsiCokeImg} alt="coke-pepsi" />
+	<img
+		class="mainImg"
+		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1655908708/billycole.dev/pepsi-vs-coke.jpg"
+		alt="coke-pepsi"
+	/>
 	<p>
 		Javascript frameworks like React, Vue, and Svelte make building robust web applications easier.
 		They provide a declarative layer that acts as sort of a middle-man between the user and DOM. The
