@@ -57,7 +57,7 @@
 		</TextIconLink>
 		<div
 			class="imgDiv"
-			style={`background-image: url(https://res.cloudinary.com/dxklaorw6/image/upload/v1655908702/billycole.dev/headshot-b.jpg);`}
+			style="background-image: url(https://res.cloudinary.com/dxklaorw6/image/upload/v1655908702/billycole.dev/headshot-b.jpg);"
 		/>
 	</div>
 </HomeSectionContainer>
