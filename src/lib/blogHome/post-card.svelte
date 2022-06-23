@@ -16,9 +16,7 @@
 <svelte:window bind:innerWidth />
 <a href={`/blog/${path}`}>
 	<div class:isDarkMode={$isDarkMode} class="contentContainer">
-		{#if imgSrc}
-			<div class="imgDiv" style={`background-image: url(${imgSrc});`} />
-		{/if}
+		<div class="imgDiv" style={`background-image: url(${imgSrc});`} />
 		<div>
 			<h4>{title}</h4>
 			<p class="date">{date}</p>
@@ -53,7 +51,7 @@
 
 	.imgDiv {
 		background-size: cover;
-		border: 1px solid $palette-light;
+		border: 1px solid $palette-medium;
 		height: 180px;
 		margin-right: 24px;
 		min-width: 180px;
@@ -82,6 +80,10 @@
 
 	.isDarkMode h4 {
 		color: $palette-extra-light;
+	}
+
+	.isDarkMode .imgDiv {
+		border: 1px solid $palette-light;
 	}
 
 	.isDarkMode .date {

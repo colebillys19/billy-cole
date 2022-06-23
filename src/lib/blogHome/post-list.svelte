@@ -13,7 +13,7 @@
 		<PostCard
 			date={dataObj.date}
 			excerpt={dataObj.excerpt}
-			imgSrc={isFullList ? dataObj.imgSrc : ''}
+			imgSrc={dataObj.imgSrc}
 			path={dataObj.path}
 			title={dataObj.title}
 		/>

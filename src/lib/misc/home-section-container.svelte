@@ -80,6 +80,8 @@
 		background-color: $palette-light;
 		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
 		height: 3px;
+		position: relative;
+		right: 6px;
 		width: 72px;
 	}
 
@@ -91,8 +93,9 @@
 		background-color: $palette-light;
 		box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
 		height: 3px;
-		left: 18px;
+		left: 24px;
 		position: absolute;
+		top: -1px;
 		width: 100vw;
 	}
 
