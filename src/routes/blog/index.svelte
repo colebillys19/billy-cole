@@ -8,9 +8,6 @@
 
 <div class:isDarkMode={$isDarkMode} class="container">
 	<div class="headingContainer">
-		<!-- <div class="absStripesAnchor">
-			<div class="absStripes" />
-		</div> -->
 		<h1>blog</h1>
 		<div class="stripes" />
 	</div>
@@ -32,7 +29,7 @@
 	.headingContainer {
 		align-items: center;
 		display: flex;
-		margin-bottom: 24px;
+		margin-bottom: 48px;
 	}
 
 	.stripes {
@@ -44,20 +41,6 @@
 		position: relative;
 		right: 6px;
 	}
-
-	// .absStripesAnchor {
-	// 	position: relative;
-	// }
-
-	// .absStripes {
-	// 	background-color: $palette-light;
-	// 	box-shadow: 3px 3px 0 $palette-medium, 6px 6px 0 $palette-dark;
-	// 	height: 3px;
-	// 	left: calc(-100vw - 30px);
-	// 	position: absolute;
-	// 	top: -1px;
-	// 	width: 100vw;
-	// }
 
 	// DARK
 
