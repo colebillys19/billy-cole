@@ -13,7 +13,7 @@
 	<img
 		class="mainImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257009/billycole.dev/brain.jpg"
-		alt="designers"
+		alt="brain"
 	/>
 	<p>
 		Psychology plays a big role in design. To a certain extent a product should behave how a user
@@ -54,7 +54,7 @@
 	<img
 		class="exampleImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257009/billycole.dev/design-ideas-03.jpg"
-		alt="designers"
+		alt="rakuten"
 	/>
 	<div class="divider" />
 	<h2>People Scan Screens Based on Past Experience and Expectation</h2>
@@ -94,7 +94,7 @@
 	<img
 		class="exampleImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257010/billycole.dev/design-ideas-14.png"
-		alt="designers"
+		alt="bbc"
 	/>
 	<div class="divider" />
 	<h2>People Remember Only Four Items at Once</h2>
@@ -111,7 +111,7 @@
 	<img
 		class="exampleImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257009/billycole.dev/design-ideas-20.jpg"
-		alt="designers"
+		alt="amazon"
 	/>
 	<div class="divider" />
 	<h2>People Have to Use Information to Make it Stick</h2>
@@ -136,7 +136,7 @@
 	<img
 		class="exampleImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257010/billycole.dev/design-ideas-27.jpg"
-		alt="designers"
+		alt="newegg"
 	/>
 	<div class="divider" />
 	<h2>People Learn Best From Examples</h2>
@@ -157,7 +157,7 @@
 	<img
 		class="exampleImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257010/billycole.dev/design-ideas-34.jpg"
-		alt="designers"
+		alt="flexbox-froggy"
 	/>
 	<div class="divider" />
 	<h2>People are More Motivated as They Get Closer to a Goal</h2>
@@ -171,7 +171,7 @@
 	<img
 		class="exampleImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257010/billycole.dev/design-ideas-50.jpg"
-		alt="designers"
+		alt="new-york-times"
 	/>
 	<div class="divider" />
 	<h2>Anecdotes Persuade More Than Data</h2>
@@ -189,7 +189,7 @@
 	<img
 		class="exampleImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257010/billycole.dev/design-ideas-74.jpg"
-		alt="designers"
+		alt="law-firm"
 	/>
 	<div class="divider" />
 	<h2>People Make Most Decisions Unconsciously</h2>
@@ -214,7 +214,7 @@
 	<img
 		class="exampleImg"
 		src="https://res.cloudinary.com/dxklaorw6/image/upload/v1656257010/billycole.dev/design-ideas-98.jpg"
-		alt="designers"
+		alt="sweetwater"
 	/>
 	<div class="divider" />
 	<p class="lessBottomMargin">
