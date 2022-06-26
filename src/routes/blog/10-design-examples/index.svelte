@@ -127,11 +127,13 @@
 		that. You'll want to avoid lumping in extra information if possible. In the context of web
 		development, you might want to put extra information on a separate page and provide a link -
 		rather than having everything in one place. Dr. Weinschenk points out how extra clicking is
-		better than extra thinking. Try linking to supplemental information as opposed to lumping it in.
+		better than extra thinking.
 	</p>
 	<p>
 		Tabs are another way to break down a large amount of information into smaller pieces. You'll see
-		tabs often on the web. Here are some used on the computer parts retailer NewEgg's product pages:
+		tabs often on the web. Here are some used by NewEgg <span class="parens"
+			>(a computer parts retailer)</span
+		> on their product pages:
 	</p>
 	<img
 		class="exampleImg"
@@ -182,8 +184,8 @@
 		quote or an analogy.
 	</p>
 	<p>
-		Perhaps the best example of this is the user testimonial. Gaining the user's trust is invaluable
-		- and providing examples of prior satisfied users helps a ton. Here's a good example of a
+		Perhaps the best example of this is the user testimonial. Gaining the user's trust is
+		invaluable. Providing examples of prior satisfied users helps a ton. Here's a good example of a
 		testimonial section on law firm's website:
 	</p>
 	<img
