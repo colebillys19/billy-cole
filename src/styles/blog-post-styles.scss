@@ -77,6 +77,11 @@ li::marker {
 	margin-bottom: 64px;
 }
 
+.exampleImg {
+	border: 1px solid $palette-medium;
+	margin-bottom: 80px;
+}
+
 // DARK
 
 .isDarkMode * {

@@ -1,5 +1,13 @@
 const blogData = [
 	{
+		date: 'June 26th, 2022',
+		excerpt: `Psychology plays a big role in design. To a certain extent a product should behave how a user "expects" it to. Designers try to figure out how the user thinks and design something with that in mind. When a developer is designing an interface they have some sense for when something looks "right". Whe`,
+		imgSrc:
+			'https://res.cloudinary.com/dxklaorw6/image/upload/v1656257009/billycole.dev/beach-bulb.jpg',
+		path: '10-design-examples',
+		title: 'Design Psychology: 10 Examples'
+	},
+	{
 		date: 'June 21st, 2022',
 		excerpt: `Sometimes you'll hear a person describe an application's look and feel as it's "user experience" or "UX" for short. Although it makes sense to use the term this way, they're really not be giving credit where credit's due. UX is a whole subset of the tech industry - and it's big business. So what doe`,
 		imgSrc: 'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908709/billycole.dev/pen.jpg',
