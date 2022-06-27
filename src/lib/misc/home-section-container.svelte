@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<slot />
-		<div class="verticalStripes" />
+		<!-- <div class="verticalStripes" /> -->
 	</div>
 </section>
 

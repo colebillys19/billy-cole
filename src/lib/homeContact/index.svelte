@@ -61,7 +61,7 @@
 	}
 
 	p {
-		margin-bottom: 24px;
+		margin-bottom: 48px;
 	}
 
 	.container {

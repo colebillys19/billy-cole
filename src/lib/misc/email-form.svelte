@@ -1,16 +1,22 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	// import SvelteHCaptcha from 'svelte-hcaptcha';
+
 	import CheckIcon from '../../svgComponents/check-icon.svelte';
+	import envVariables from '../../envVariables';
 	import HourglassIcon from '../../svgComponents/hourglass-icon.svelte';
 	import SpinnerIcon from '../../svgComponents/spinner-icon.svelte';
 	import store from '../../store';
-	import variables from '../../variables';
 	import WarningIcon from '../../svgComponents/warning-icon.svelte';
 
-	const { contactActionUrl } = variables;
+	const { contactActionUrl } = envVariables;
 	const { isDarkMode } = store;
 
-	let messageText = '';
+	let email = '';
+	let message = '';
+	// let isHcaptchaSuccess = false;
+
+	// let captcha: HCaptcha;
 
 	let isDoubleError = false;
 	let isError = false;
@@ -20,6 +26,13 @@
 	let isWaiting = false;
 
 	$: isFormEnabled = !isDoubleError && !isError && !isLoading && !isSuccess && !isWaiting;
+	$: isValidEmail = email
+		.toLowerCase()
+		.match(
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+		);
+	// $: isButtonEnabled = isValidEmail && message && isHcaptchaSuccess;
+	$: isButtonEnabled = isValidEmail && message;
 
 	onMount(() => {
 		const nowTimestamp = Date.now();
@@ -75,7 +88,8 @@
 			xhr.onreadystatechange = () => {
 				if (xhr.status !== 200) {
 					isLoading = false;
-					messageText = '';
+					email = '';
+					message = '';
 
 					const errorTimestamp = localStorage.getItem('errorTimestamp');
 					if (errorTimestamp) {
@@ -104,7 +118,8 @@
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					isSuccess = true;
 					isLoading = false;
-					messageText = '';
+					email = '';
+					message = '';
 					localStorage.setItem('successTimestamp', `${Date.now()}`);
 					setTimeout(() => {
 						isSuccess = false;
@@ -113,22 +128,37 @@
 				}
 			};
 
-			xhr.send(`message=${messageText}`);
+			xhr.send(`email=${email}&message=${message}`);
 		}
 	};
+
+	// const handleFormSubmit = (e: any) => {
+	// 	console.log(e);
+	// };
+
+	// const handleHcaptchaSuccess = (e: any) => {
+	// 	isHcaptchaSuccess = true;
+	// };
 </script>
 
 <div class:isDarkMode={$isDarkMode} class="formContainer">
 	<form
 		class:isFormDisabled={!isFormEnabled}
 		on:submit|preventDefault={handleFormSubmit}
-		action={contactActionUrl}
+		action=""
 		class="gform"
 		method="POST"
 	>
-		<label for="message">send me a note</label>
-		<textarea bind:value={messageText} name="message" id="message" cols="30" rows="10" />
-		<button class:isButtonDisabled={!messageText}>send</button>
+		<label for="email">contact email:</label>
+		<input bind:value={email} id="email" name="email" type="text" />
+		<label for="message">message:</label>
+		<textarea bind:value={message} name="message" id="message" cols="30" rows="10" />
+		<!-- <SvelteHCaptcha
+			on:error={() => {}}
+			on:success={handleHcaptchaSuccess}
+			sitekey={hcaptchaSiteKey}
+		/> -->
+		<button class:isButtonDisabled={!isButtonEnabled}>send</button>
 	</form>
 	<div class="formFeedbackContainer">
 		{#if isLoading}
@@ -181,12 +211,21 @@
 	label {
 		color: $palette-extra-dark;
 		display: block;
+		margin: 0 0 6px;
+	}
+
+	input {
+		color: $palette-extra-dark;
+		font-family: 'Roboto', sans-serif;
+		margin: 0 0 12px;
+		padding: 12px;
+		width: 100%;
 	}
 
 	textarea {
 		color: $palette-extra-dark;
 		font-family: 'Roboto', sans-serif;
-		margin: 5px 0;
+		margin: 0 0 12px;
 		padding: 12px;
 		resize: none;
 		width: 100%;
@@ -198,6 +237,7 @@
 		border: none;
 		color: $palette-extra-light;
 		display: block;
+		// margin-top: 10px;
 		padding: 6px 12px;
 	}
 
@@ -208,7 +248,6 @@
 	.formContainer {
 		align-items: center;
 		display: flex;
-		height: 384px;
 		justify-content: center;
 		position: relative;
 	}
@@ -243,6 +282,10 @@
 
 	// DARK
 
+	.isDarkMode input {
+		color: $palette-extra-dark;
+	}
+
 	.isDarkMode textarea {
 		color: $palette-extra-dark;
 	}
@@ -261,6 +304,10 @@
 	@media (min-width: 768px) {
 		button {
 			font-size: 20px;
+		}
+
+		input {
+			width: 60%;
 		}
 	}
 </style>
