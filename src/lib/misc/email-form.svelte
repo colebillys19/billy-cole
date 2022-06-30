@@ -215,6 +215,7 @@
 	}
 
 	input {
+		border: 1px solid $palette-medium;
 		color: $palette-extra-dark;
 		font-family: 'Roboto', sans-serif;
 		margin: 0 0 12px;
@@ -223,6 +224,7 @@
 	}
 
 	textarea {
+		border: 1px solid $palette-medium;
 		color: $palette-extra-dark;
 		font-family: 'Roboto', sans-serif;
 		margin: 0 0 12px;
@@ -283,10 +285,12 @@
 	// DARK
 
 	.isDarkMode input {
+		border: 1px solid $palette-light;
 		color: $palette-extra-dark;
 	}
 
 	.isDarkMode textarea {
+		border: 1px solid $palette-light;
 		color: $palette-extra-dark;
 	}
 
