@@ -102,14 +102,14 @@
 			<li>Styled Components</li>
 			<li>React Testing Library</li>
 		</ul>
-		{#if !$isMobile}
+		<!-- {#if !$isMobile}
 			<a
 				aria-label="visit loanhenge"
 				class="bigLink"
 				href="https://loanhenge.herokuapp.com/"
 				target="_blank">Visit &#x1F440;</a
 			>
-		{/if}
+		{/if} -->
 		<div class="dividerAnchor">
 			<div class="divider" />
 		</div>
