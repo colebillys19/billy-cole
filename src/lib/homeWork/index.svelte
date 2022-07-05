@@ -15,10 +15,6 @@
 	$: showBurgerBackground = scrollY > $workOffset && scrollY < $blogOffset - 100;
 
 	const SRC_DICT = {
-		loanhengeL:
-			'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908709/billycole.dev/loanhenge-a.jpg',
-		loanhengeS:
-			'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908708/billycole.dev/loanhenge-b.jpg',
 		ss3: 'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908682/billycole.dev/ss3-mobile-a.jpg',
 		victoryL:
 			'https://res.cloudinary.com/dxklaorw6/image/upload/v1655908714/billycole.dev/victory-a.jpg',
@@ -79,37 +75,6 @@
 		<div class="dividerAnchor">
 			<div class="divider" />
 		</div>
-		<h3>Loanhenge</h3>
-		<div class="imgDiv loanhengeImgDiv" style={getImageSrcStyle('loanhenge')} />
-		<p class="reading">
-			Loanhenge is a project I started as a sort of sandbox to experiment with frontend concepts and
-			best practices while cutting my teeth as a developer. Not long after getting my first job I
-			was put on a small team tasked with building a React application that'd be used by banks to
-			keep track of bulk loan data. While building that application there were scenarios where I
-			wanted to spend more time fleshing out features and experimenting. I decided to start a
-			project I could work on in my free time that would allow for more freedom. <span
-				class="lighten">(desktop only)</span
-			>
-		</p>
-		<p class="tools"><b>Tools used:</b></p>
-		<ul class="homeList tools">
-			<li>React</li>
-			<li>Redux</li>
-			<li>Redux Saga, Immer, Reselect</li>
-			<li>Node</li>
-			<li>Express</li>
-			<li>Material UI</li>
-			<li>Styled Components</li>
-			<li>React Testing Library</li>
-		</ul>
-		<!-- {#if !$isMobile}
-			<a
-				aria-label="visit loanhenge"
-				class="bigLink"
-				href="https://loanhenge.herokuapp.com/"
-				target="_blank">Visit &#x1F440;</a
-			>
-		{/if} -->
 		<div class="dividerAnchor">
 			<div class="divider" />
 		</div>
@@ -172,12 +137,6 @@
 	.ss3ImgDiv {
 		border: 3px solid $palette-extra-dark;
 		height: 448px;
-		width: 252px;
-	}
-
-	.loanhengeImgDiv {
-		border: 3px solid $palette-extra-dark;
-		height: 352px;
 		width: 252px;
 	}
 
@@ -249,8 +208,7 @@
 		color: $light-bg-b;
 	}
 
-	.isDarkMode .ss3ImgDiv,
-	.isDarkMode .loanhengeImgDiv {
+	.isDarkMode .ss3ImgDiv {
 		border: 3px solid $palette-light;
 	}
 
@@ -263,11 +221,6 @@
 	}
 
 	@media (min-width: 560px) {
-		.loanhengeImgDiv {
-			height: 671px;
-			width: 480px;
-		}
-
 		.victoryImgDiv {
 			height: 510px;
 			width: 480px;
@@ -277,11 +230,6 @@
 	@media (min-width: 1040px) {
 		.container {
 			text-align: left;
-		}
-
-		.loanhengeImgDiv {
-			height: 464px;
-			width: 900px;
 		}
 
 		.victoryImgDiv {
