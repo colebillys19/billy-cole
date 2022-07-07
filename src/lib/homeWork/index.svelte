@@ -75,9 +75,6 @@
 		<div class="dividerAnchor">
 			<div class="divider" />
 		</div>
-		<div class="dividerAnchor">
-			<div class="divider" />
-		</div>
 		<h3>Victory Templates</h3>
 		<div class="imgDiv victoryImgDiv" style={getImageSrcStyle('victory')} />
 		<p class="reading">
