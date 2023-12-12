@@ -77,64 +77,65 @@
 		}
 	});
 
-	const handleFormSubmit = () => {
-		if (isFormEnabled) {
-			var xhr = new XMLHttpRequest();
-			xhr.open('POST', contactActionUrl);
-			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	// const handleFormSubmit = () => {
+	// 	if (isFormEnabled) {
+	// 		var xhr = new XMLHttpRequest();
+	// 		xhr.open('POST', contactActionUrl);
+	// 		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-			isLoading = true;
+	// 		isLoading = true;
 
-			xhr.onreadystatechange = () => {
-				if (xhr.status !== 200) {
-					isLoading = false;
-					email = '';
-					message = '';
+	// 		xhr.onreadystatechange = () => {
+	// 			if (xhr.status !== 200) {
+	// 				isLoading = false;
+	// 				email = '';
+	// 				message = '';
 
-					const errorTimestamp = localStorage.getItem('errorTimestamp');
-					if (errorTimestamp) {
-						const nowTimestamp = Date.now();
-						const errorTimestampNum = Number(errorTimestamp);
-						const wasPrevError = nowTimestamp - errorTimestampNum > 3000;
-						if (wasPrevError) {
-							localStorage.setItem('doubleErrorTimestamp', `${Date.now()}`);
-							localStorage.removeItem('errorTimestamp');
-							isDoubleError = true;
-							setTimeout(() => {
-								isDoubleError = false;
-							}, 600000);
-						}
-					} else {
-						localStorage.setItem('errorTimestamp', `${Date.now()}`);
-						isError = true;
-						setTimeout(() => {
-							isError = false;
-						}, 10000);
-					}
+	// 				const errorTimestamp = localStorage.getItem('errorTimestamp');
+	// 				if (errorTimestamp) {
+	// 					const nowTimestamp = Date.now();
+	// 					const errorTimestampNum = Number(errorTimestamp);
+	// 					const wasPrevError = nowTimestamp - errorTimestampNum > 3000;
+	// 					if (wasPrevError) {
+	// 						localStorage.setItem('doubleErrorTimestamp', `${Date.now()}`);
+	// 						localStorage.removeItem('errorTimestamp');
+	// 						isDoubleError = true;
+	// 						setTimeout(() => {
+	// 							isDoubleError = false;
+	// 						}, 600000);
+	// 					}
+	// 				} else {
+	// 					localStorage.setItem('errorTimestamp', `${Date.now()}`);
+	// 					isError = true;
+	// 					setTimeout(() => {
+	// 						isError = false;
+	// 					}, 10000);
+	// 				}
 
-					return false;
-				}
+	// 				return false;
+	// 			}
 
-				if (xhr.readyState === 4 && xhr.status === 200) {
-					isSuccess = true;
-					isLoading = false;
-					email = '';
-					message = '';
-					localStorage.setItem('successTimestamp', `${Date.now()}`);
-					setTimeout(() => {
-						isSuccess = false;
-						isWaiting = true;
-					}, 3000);
-				}
-			};
+	// 			if (xhr.readyState === 4 && xhr.status === 200) {
+	// 				isSuccess = true;
+	// 				isLoading = false;
+	// 				email = '';
+	// 				message = '';
+	// 				localStorage.setItem('successTimestamp', `${Date.now()}`);
+	// 				setTimeout(() => {
+	// 					isSuccess = false;
+	// 					isWaiting = true;
+	// 				}, 3000);
+	// 			}
+	// 		};
 
-			xhr.send(`email=${email}&message=${message}`);
-		}
-	};
-
-	// const handleFormSubmit = (e: any) => {
-	// 	console.log(e);
+	// 		xhr.send(`email=${email}&message=${message}`);
+	// 	}
 	// };
+
+	const handleFormSubmit = () => {
+		email = '';
+		message = '';
+	};
 
 	// const handleHcaptchaSuccess = (e: any) => {
 	// 	isHcaptchaSuccess = true;
