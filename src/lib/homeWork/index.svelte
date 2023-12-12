@@ -93,14 +93,6 @@
 			<li>Material UI</li>
 			<li>Styled Components</li>
 		</ul>
-		{#if !$isMobile}
-			<a
-				aria-label="visit victory charts"
-				class="bigLink"
-				href="https://victorycharts.herokuapp.com/"
-				target="_blank">Visit &#x1F440;</a
-			>
-		{/if}
 		<div class="dividerAnchor">
 			<div class="divider" />
 		</div>
