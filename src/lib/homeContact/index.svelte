@@ -6,7 +6,7 @@
 	import GithubIcon from '../../svgComponents/github-icon.svelte';
 	import LinkedinIcon from '../../svgComponents/linkedin-icon.svelte';
 	import store from '../../store';
-	import TwitterIcon from '../../svgComponents/twitter-icon.svelte';
+	// import TwitterIcon from '../../svgComponents/twitter-icon.svelte';
 
 	const { contactOffset, isDarkMode } = store;
 
@@ -18,12 +18,12 @@
 <HomeSectionContainer name="contact" {updateOffset}>
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<ul>
-			<li>
+			<!-- <li>
 				<TextIconLink href="https://twitter.com/colebillys19" target="_blank">
 					<TwitterIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
 					<span class="textIconLinkText" slot="text">twitter</span>
 				</TextIconLink>
-			</li>
+			</li> -->
 			<li>
 				<TextIconLink href="https://www.linkedin.com/in/billy-cole-4a3915178/" target="_blank">
 					<LinkedinIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
