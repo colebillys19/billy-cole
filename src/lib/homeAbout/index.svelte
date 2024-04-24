@@ -17,7 +17,7 @@
 	<div class:isDarkMode={$isDarkMode} class="container">
 		<h3>Hi! I'm Billy.</h3>
 		<p class="reading">
-			I'm a frontend developer with a passion for graphic design and quality UX. I strive to bridge the gap between people and technology by creating intuitive, aesthetic interfaces. I'm well versed in JavaScript and love working with React and Svelte. I'm experienced with Wordpress and PHP as well. I'm always on the lookout for new tech and what problems it can help solve!
+			I'm a frontend developer with a passion for graphic design and quality UX. I strive to bridge the gap between people and technology by creating intuitive, aesthetic interfaces. I'm well versed in JavaScript and love working with React and Svelte. I'm experienced with Wordpress and PHP as well. I'm always on the lookout for new tech and the problems it can help solve!
 		</p>
 		<TextIconLink download="billy-cole-cv" href={cvPdf} isIconRight target="_blank">
 			<DownloadIcon color={$isDarkMode ? '#fffeef' : '#383d5d'} slot="icon" />
